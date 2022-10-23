@@ -1,9 +1,12 @@
                         #PROJETO INTEGRADOR
 
-##**Instituição de Ensino**: Digital House;
+##**Instituição de Ensino**: Digital House; 
 
 ##**Nome do projeto**: E-commerc de vinhos- Wine House;
- ![logomarca](/./public/img/logo.jpeg)
+
+ ![logo](/public/img/logo.png)
+
+
 
 ##**Objetivos:
 
@@ -14,7 +17,19 @@
          -Uso de  ferramentas como  o Node js, html, css, nodemon para eexecução do projeto;
          - Utilização do git e github;
          - Desenvolver soft skills,fundamental para a carreira profissional;
-         -
-Home:
+
+##Protótipo:
+ Home:
+
+![home](./public/img/home.png)
+
+#Página de produtos:
+
+![produtos](./public/img/produtos.png)
+
+#Produto interno:
+![produto interno](./public/img/produto%20interno.png)
+
+     
 
 
