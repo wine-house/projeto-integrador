@@ -2,19 +2,19 @@
 
 ##**Instituição de Ensino**: Digital House; 
 
-##**Nome do projeto**: E-commerc de vinhos- Wine House;
+##**Nome do projeto**: E-commerce de vinhos - Wine House;
 
  ![logo](https://user-images.githubusercontent.com/107070197/197541009-f942f218-3ca8-4c87-88bc-9999e7f5a46d.png)
 
-##**Objetivos:
+##**Objetivos**:
 
-        - **Geral**: Praticar a teoria adquirida na sala da aula e desenvolver um site funcional.
+        - Geral: Praticar a teoria adquirida na sala de aula e desenvolver um site funcional.
 
-        - **Específicos**:
-        - Utilização da plataforma Figma , na construção de designer e protótipos do projeto.
-         -Uso de  ferramentas como  o Node js, html, css, nodemon para eexecução do projeto;
-         - Utilização do git e github;
-         - Desenvolver soft skills,fundamental para a carreira profissional;
+        - Específicos:
+        - Utilização da plataforma Figma, na construção de designer e protótipos do projeto.
+        -Uso de  ferramentas como  o Node js, html, css, nodemon para execução do projeto;
+        - Utilização do git e github;
+        - Desenvolver soft skills,fundamental para a carreira profissional;
 
 ##Protótipo:
  Home:
