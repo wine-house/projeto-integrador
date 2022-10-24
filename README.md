@@ -4,9 +4,7 @@
 
 ##**Nome do projeto**: E-commerc de vinhos- Wine House;
 
- ![logo](/public/img/logo.png)
-
-
+ ![logo](https://user-images.githubusercontent.com/107070197/197541009-f942f218-3ca8-4c87-88bc-9999e7f5a46d.png)
 
 ##**Objetivos:
 
@@ -20,16 +18,44 @@
 
 ##Protótipo:
  Home:
+ 
+ 
+ 
+ ![home](https://user-images.githubusercontent.com/107070197/197541369-c5fbd0d8-18bf-4455-bfa2-f3552a309417.png)
 
-![home](./public/img/home.png)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
 
 #Página de produtos:
 
-![produtos](./public/img/produtos.png)
+
+![Captura de tela 2022-10-23 155150](https://user-images.githubusercontent.com/107070197/197542097-8d8a1326-8b25-447f-a2cd-278647abaf09.png)
+
+
+
+
 
 #Produto interno:
-![produto interno](./public/img/produto%20interno.png)
+
+
 
      
 
+![produto interno](https://user-images.githubusercontent.com/107070197/197542249-fed326b0-9ed3-49db-97d7-c250a40a35fa.png)
+
+
+##Colaboradores:
+Christian Bisacchi, 
+Keyla Delpupo, 
+Márcio Montovani, 
+Pedro Henrique, 
+Rodrigo Potel.
+     
 
