@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body * {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body > header {
+    background-color: #530112;
+    display: flex;
+    justify-content: space-between;
+}
+
+body > header > img {
+    width: 13vw;
+    margin: 1rem;
+}
+
+body > header > nav {
+    overflow: hidden;
+    margin: 4rem 4rem;
+}
+
+.menu a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #A0B200;
+}
+
+.menu a.active {
+    background-color: #A0B200;
+    color: white;
+  }
+
+.btn {
+    background-color: #530112;
+    border:none
+}
+
+.btn img {
+    width: 4vw;
+    height: 6vh; 
+}
+
+.secao-usuario button:hover {
+    cursor: pointer;
+}
+
+header > section > div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+form {
+    display: flex;
+    margin-top: 4rem;
+    margin-right: 1rem;
+}
+
+form > input {
+    width: 15vw;
+    height: 5vh;
+}
+
+form > button {
+    background-color: #A0B200;
+}
+
+form img {
+    height: 3.9vh;
+    width: 3vw;
+}
+
+/* Seção do produto*/
+main > section > header {
+    background-color: blue;
+}
+
+.container-pai > .filho2 {
+    background-color: aqua;
+}
+
+.seçao-ficha-tec {
+    background-color: blueviolet;
+}
+
+footer {
+    background-color: blanchedalmond;
+}
