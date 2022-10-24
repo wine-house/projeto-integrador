@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css" media="screen" />
     <title></title>
 </head>
 <body>
     <header>
         <img src="img/logo-wine.png" alt="">
-        <nav>
-            <ul>
-                <li><a href="incluirlink">Home</a></li>
-                <li><a href="incluirlink">Quem Somos</a></li>
-                <li><a href="incluirlink">Eventos</a></li>
-                <li><a href="incluirlink">Produtos</a></li>
-                <li><a href="incluirlink">Parceiros</a></li>
-            </ul>
+        <nav class="menu">
+            <a href="incluirlink">Home</a>
+            <a href="incluirlink">Quem Somos</a>
+            <a href="incluirlink">Eventos</a>
+            <a href="incluirlink">Produtos</a>
+            <a href="incluirlink">Parceiros</a>
         </nav>
 
-                <button type="button"><img src="img/login.png" height ="80" width="100"/></button>
-                <button type="button"><img src="img/carrinho.png" height ="80" width="100"/></button>
-                <form>
-                    <input type="search"/>
-                    <button type="submit"><img src="img/lupa.png" height ="80" width="100"/></button>
-                </form>
+        <section class="secao-usuario">
+            <div>
+                <button class="btn" type="button"><img src="img/login.png" height ="80" width="100"/></button>
+                <button class="btn" type="button"><img src="img/carrinho.png" height ="80" width="100"/></button>
+            </div>
+            <form>
+                <input type="search" placeholder="Buscar"/>
+                <button type="submit"><img src="img/lupa.png" height ="80" width="100"/></button>
+            </form>
+        </section>
     </header>
     
     <main>
@@ -40,7 +43,7 @@
             <section class="filho2">
                 <h2>15% OFF</h2>
                 <h3>R$ 2850,85</h3>
-                <section class="botão-verde">
+                <section class="botao-verde">
                     <div>
                         <button>-</button>
                         <p>1</p>
@@ -54,7 +57,7 @@
             </section>
         </section>
 
-        <section class="container-filho">
+        <section class="secao-ficha-tec">
             <p>Ficha Técnica</p>
             <article>
                 <p>Uva <br>
@@ -82,11 +85,11 @@
     </main>
 
     <footer>
-        <section>
+        <section class="mapa">
             <article>
                 <img src="img/mapa.png" alt="">
             </article>
-            <article>
+            <article class="contato">
                 <p>Contato:<br>
                 contato@loja.winehouse.com.br <br>
                 (54) 99427-5500
@@ -103,6 +106,7 @@
                 <img src="img/facebook.png" alt="">
                 <img src="img/twitter.png" alt="">
                 <img src="img/insta.png" alt="">
+                <img src="img/whatsApp.png" alt="">
                 </p>
             </article>
         </section>
