@@ -86,8 +86,8 @@
     display: block;
     width: 100%;
     background-color: var(--cor-vinho-escuro);
-    padding: .7rem 0;
     color: var(--cor-branca);
+    padding: .7rem 0;
     font-size: 1.6rem;
     border: none;
     border-top: 3px solid var(--cor-vinho-claro);
@@ -95,6 +95,12 @@
     cursor: pointer;
     position: absolute;
     bottom: 0px;
+    transition: all .5s;
+}
+.products__item__buy:hover {
+    background-color: var(--cor-vinho-claro);
+    border-top: 3px solid var(--cor-vinho-escuro);
+    border-bottom: 3px solid var(--cor-vinho-escuro);
 }
 
 .products__item__name {
