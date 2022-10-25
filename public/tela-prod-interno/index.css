@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body * {
+* {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -64,15 +64,18 @@ form {
     display: flex;
     margin-top: 4rem;
     margin-right: 1rem;
+ 
 }
 
 form > input {
     width: 15vw;
     height: 5vh;
+    border: 3px solid #997C00;
 }
 
 form > button {
     background-color: #A0B200;
+    border: 1.5px solid #997C00;
 }
 
 form img {
