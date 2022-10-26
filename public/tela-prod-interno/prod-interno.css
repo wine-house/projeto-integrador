@@ -38,6 +38,7 @@ main {
     line-height: 2.5rem;
     font-size: 2rem;
     color: white;
+    border: solid 1.1px black;
 }
 
 .filho2 > h3 {
