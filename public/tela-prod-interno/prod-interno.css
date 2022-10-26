@@ -23,8 +23,8 @@ main {
 }
 
 .filho1:hover img {
-    transform: scale(1.2);
-    cursor: pointer;
+    transform: scale(1.5);
+
 }
 
 .filho2 > h1 {
