@@ -274,6 +274,10 @@ main {
     margin-right: .8rem;
 }
 
+.footer__contact__whatsapp span {
+    color: var(--cor-branca) !important;
+}
+
 .footer__details__social img {
     width: 32px;
     height: 32px;
