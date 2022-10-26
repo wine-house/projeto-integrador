@@ -33,7 +33,6 @@
 .banner__btn-left {
     left: 1.5%;
 }
-
 .banner__btn-right {
     right: 1.5%;
 }
@@ -140,12 +139,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    row-gap: 2rem;
+    row-gap: 3rem;
 }
 
 .promotion__item {
     flex-basis: 23%;
-    /* border: 3px solid var(--cor-dourada); */
     border: 3px solid var(--cor-vinho-verde);
     box-shadow: 0 0 8px var(--cor-dourada), 0 0 0 4px var(--cor-dourada), 0 0 0 4px var(--cor-dourada);
     border-radius: 10px;
@@ -201,7 +199,6 @@
     color: var(--cor-branca);
     font-size: 1.4rem;
     font-weight: bold;
-    border: none;
     cursor: pointer;
     border: 1px solid var(--cor-branca);
     transition: all .5s;
@@ -227,11 +224,10 @@
     grid-template-columns: repeat(4, 23%);
     justify-content: space-between;
     align-items: center;
-    row-gap: 2rem;
+    row-gap: 3rem;
 }
 
 .release__item {
-    /* border: 3px solid var(--cor-rosa); */
     border: 3px solid var(--cor-vinho-escuro);
     box-shadow: 0 0 8px var(--cor-rosa), 0 0 0 4px var(--cor-rosa), 0 0 0 4px var(--cor-rosa);
     border-radius: 10px;
@@ -270,13 +266,17 @@
     bottom: 0px;
 }
 
-.release__item__name {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
+.release__item footer {
     padding: .7rem 0;
-    font-size: 1.5rem;
+}
+
+.release__item__name {
+    padding: .7rem 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
+    background: var(--cor-vinho-escuro);
+    border: 1px solid var(--cor-branca);
+    border-radius: 5px;
     cursor: pointer;
     color: var(--cor-branca);
     text-shadow: -1px -1px 0 var(--cor-preta), 1px -1px 0 var(--cor-preta), -1px 1px 0 var(--cor-preta), 1px 1px 0 var(--cor-preta);
@@ -285,6 +285,7 @@
 .release__item__name:hover {
     color: var(--cor-preta);
     text-shadow: none;
+    background: rgba(255, 255, 255, .5);
 }
 
 /**MEDIA QUERIES**/
@@ -310,7 +311,6 @@
     /*Release*/
     .release__content {
         grid-template-columns: repeat(2, 48%);
-        row-gap: 2rem;
     }
 }
 
@@ -321,12 +321,17 @@
     }
 
     /*Promotion*/
+    .promotion__content {
+        justify-content: center;
+    }
+
     .promotion__item {
-        flex-basis: 100%;
+        flex-basis: 90%;
     }
 
     /*Release*/
     .release__content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 90%;
+        justify-content: center;
     }
 }
