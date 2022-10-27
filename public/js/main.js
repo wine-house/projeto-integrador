@@ -6,7 +6,7 @@ const searchGlass = document.querySelector(".search__glass");
 body.addEventListener("click", (e) => {
     if(e.target == inputText) {
         inputText.classList.add("expand");
-        searchGlass.style.right = "-18px";
+        searchGlass.style.right = "-26px";
     }
     else {
         inputText.classList.remove("expand");
