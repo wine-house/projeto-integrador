@@ -1,0 +1,47 @@
+form {
+
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+
+.container {
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding:300px 100px 200px 100px;
+    background-image:url("/public/img/login/login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    font-size: 18px;
+    
+}
+
+.containerlabel input{
+
+width: 35rem;
+height: 3rem;
+
+}
+
+.audio{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    padding-top: 0;
+    padding-left: 1000px;
+    
+   
+  
+}

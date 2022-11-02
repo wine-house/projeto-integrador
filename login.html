@@ -18,7 +18,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="public/css/main.css">
-    <link rel="stylesheet" href="public/css/parceiros.css">
+    <link rel="stylesheet" href="public/css/login.css">
 </head>
 <body>
     <!--HEADER-->
@@ -34,10 +34,10 @@
         <nav>
             <ul class="navbar">
                 <li class="navbar__link"><a href="index.html">Home</a></li>
-                <li class="navbar__link"><a href="somos.html">Quem Somos</a></li>
+                <li class="navbar__link"><a href="somos.html" class="active-link">Quem Somos</a></li>
                 <li class="navbar__link"><a href="eventos.html">Eventos</a></li>
                 <li class="navbar__link"><a href="produtos.html">Produtos</a></li>
-                <li class="navbar__link"><a href="parceiros.html" class="active-link">Parceiros</a></li>
+                <li class="navbar__link"><a href="parceiros.html">Parceiros</a></li>
             </ul>
         </nav>
 
@@ -68,8 +68,108 @@
     <!--end HEADER-->
 
     <!--MAIN-->
-    <main style="height: 300px; font-size: 2rem; display: flex; justify-content: center; align-items: center;">
-        Conteúdo do MAIN
+        <main>
+     <!--inicio do formulário-->
+
+     
+        <form action="" method="post">
+        <div class="container">
+             <div class="audio">
+                <audio src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
+             </div> 
+                         
+            <div>
+                <h2>Bem-vindo à Wine House!</h2>
+                <p>Antes de continuar, faça seu login.</p><br>
+            </div>
+
+            <div class="containerlabel">
+                <label for="e-mail ou cpf"><strong>E-mail ou CPF</strong></label><br>
+                <input type="e-mail" id="e-mail" name="e-mail"><br>
+             <br>
+                <label for="password"><strong>Senha</strong></label>
+            <br>
+                <input type="password" id="password" name="password"><br>
+         </div>
+          
+            <div>
+                <a href= "">Esqueceu sua senha?</a><br><br>
+                <input type="submit" id="enviar" name="submit"><br><br>
+                <a href="#cadastro">Faça seu cadastro</a>
+                
+            </div>
+            <br>
+            <br>
+            </div>
+            <hr>
+        </form>
+        <br>
+        <form id="cadastro">
+           
+            <div>
+                <h2>Comece agora a viver o melhor do mundo dos vinhos!</h2>
+                <p>Aqui você encontra os melhores vinhos!</p><br>
+            </div>
+
+            <div>
+                <div> 
+                <label for="nome"><strong>Nome</strong></label><br>
+                <input type="text" id="nome" name="nome"><br> 
+
+                <label for="cpf"><strong>Cpf ou cnpj</strong></label><br>
+                <input type="e-mail" id="e-mail" name="e-mail"><br> 
+
+                <label for="e-mail"><strong>E-mail</strong></label><br>
+                <input type="e-mail" id="e-mail" name="e-mail"><br> 
+
+                <label for="idade"><strong>Data de nascimento</strong></label><br>
+                <input type="number" id="idade" name="idade"><br> 
+
+                </div>
+
+                <div>
+                    <div><img src="public/img/login/garrafa.png" alt="garrafas de vinho"></div>
+                                  
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <img src="public/img/login/Vector.png" alt="atenção">
+                    </div>
+                    <div>
+                        <h4>Atenção!</h4>
+                        <p>
+                            Sua senha deve conter entre 8 e 20 caracteres, 
+                            uma letra maiúscula, uma minúscula e um número.</p>
+                    </div>
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+
+                    <div>
+                        <br>
+                        <label><strong>Não esqueça!</strong></label><br><br>
+                        <input id ="ciente" type="checkbox" name="ciente">
+                        <label for="ciente">"Estou ciente da proibição legal 
+                            contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas 
+                            para crianças e adolescentes menores de 18 anos de idade."</label><br>
+                       <input id="maiorque18" type="checkbox" name="maiorque18">
+                       <label for="maiorque18">"Estou ciente  com o tratamento de meus dados pessoais, conforme descrito na Política de Privacidade".
+                    </label>
+
+                       
+                    </div>
+<br>
+                    <button>CADASTRAR</button>
+                </div>
+
+
+
+            </div>
+
+        
+         </form>
+    <!--fim do formulário-->
     </main>
     <!--end MAIN-->
 
