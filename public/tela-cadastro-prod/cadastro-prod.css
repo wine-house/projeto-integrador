@@ -1,0 +1,11 @@
+input[type='file'] {
+    display: none;
+}
+
+#imgFoto {
+    cursor: pointer; 
+}
+
+#imgFoto:hover {
+    transform: scale(1.2);
+}
