@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +12,10 @@
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
     <!--Awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
@@ -20,6 +23,7 @@
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/login.css">
 </head>
+
 <body>
     <!--HEADER-->
     <header class="header">
@@ -59,7 +63,7 @@
             <div class="search__input">
                 <input type="text" id="text" name="text" placeholder="buscar">
             </div>
-            
+
             <div class="search__glass">
                 <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
             </div>
@@ -68,108 +72,100 @@
     <!--end HEADER-->
 
     <!--MAIN-->
-        <main>
-     <!--inicio do formulário-->
+    <main>
+        <!--inicio do formulário-->
 
-     
         <form action="" method="post">
-        <div class="container">
-             <div class="audio">
-                <audio src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
-             </div> 
-                         
-            <div>
-                <h2>Bem-vindo à Wine House!</h2>
-                <p>Antes de continuar, faça seu login.</p><br>
-            </div>
+            <div class="container">
+                <div class="audio">
+                    <audio src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
+                </div>
 
-            <div class="containerlabel">
-                <label for="e-mail ou cpf"><strong>E-mail ou CPF</strong></label><br>
-                <input type="e-mail" id="e-mail" name="e-mail"><br>
-             <br>
-                <label for="password"><strong>Senha</strong></label>
-            <br>
-                <input type="password" id="password" name="password"><br>
-         </div>
-          
-            <div>
-                <a href= "">Esqueceu sua senha?</a><br><br>
-                <input type="submit" id="enviar" name="submit"><br><br>
-                <a href="#cadastro">Faça seu cadastro</a>
-                
-            </div>
-            <br>
-            <br>
+                <div>
+                    <h2 class="title">Bem-vindo à Wine House!</h2>
+                    <p>Antes de continuar, faça seu login.</p><br>
+                </div>
+
+                <div class="containerlabel">
+                    <label for="e-mail ou cpf"><strong>E-mail ou CPF</strong></label><br>
+                    <input type="e-mail" id="e-mail" name="e-mail"><br>
+                    <br>
+                    <label for="password"><strong>Senha</strong></label>
+                    <br>
+                    <input type="password" id="password" name="password"><br>
+                </div>
+
+                <div>
+                    <a href="">Esqueceu sua senha?</a><br><br>
+                    <input type="submit" id="enviar" name="submit"><br><br>
+                    <a href="#cadastro">Faça seu cadastro</a>
+                </div>
+                <br>
+                <br>
             </div>
             <hr>
+            <input id="linha"></input>
+
+
         </form>
         <br>
-        <form id="cadastro">
-           
-            <div>
-                <h2>Comece agora a viver o melhor do mundo dos vinhos!</h2>
-                <p>Aqui você encontra os melhores vinhos!</p><br>
-            </div>
 
-            <div>
-                <div> 
-                <label for="nome"><strong>Nome</strong></label><br>
-                <input type="text" id="nome" name="nome"><br> 
+        <section id="cadastro">
+            <form>
+                <h2 class="title">Comece agora a viver o melhor do mundo dos vinhos!</h2>
+                <h3 subclass="titulo">Aqui você encontra os melhores vinhos!</h3><br>
+                <p>Faça seu cadastro.</p>
 
-                <label for="cpf"><strong>Cpf ou cnpj</strong></label><br>
-                <input type="e-mail" id="e-mail" name="e-mail"><br> 
 
-                <label for="e-mail"><strong>E-mail</strong></label><br>
-                <input type="e-mail" id="e-mail" name="e-mail"><br> 
-
-                <label for="idade"><strong>Data de nascimento</strong></label><br>
-                <input type="number" id="idade" name="idade"><br> 
-
-                </div>
-
-                <div>
-                    <div><img src="public/img/login/garrafa.png" alt="garrafas de vinho"></div>
-                                  
-                </div>
-                
-                
-                <div>
+                <section class="form-body">
                     <div>
-                        <img src="public/img/login/Vector.png" alt="atenção">
-                    </div>
-                    <div>
+                        <label for="nome"><strong>Nome</strong></label><br>
+                        <input type="text" id="nome" name="nome"><br>
+
+                        <label for="cpf"><strong>Cpf ou cnpj</strong></label><br>
+                        <input type="e-mail" id="e-mail" name="e-mail"><br>
+
+                        <label for="e-mail"><strong>E-mail</strong></label><br>
+                        <input type="e-mail" id="e-mail" name="e-mail"><br>
+
+                        <label for="idade"><strong>Data de nascimento</strong></label><br>
+                        <input type="number" id="idade" name="idade"><br>
+
+                        <img id='vetor' src="public/img/login/Vector.png" alt="atenção">
+
                         <h4>Atenção!</h4>
-                        <p>
-                            Sua senha deve conter entre 8 e 20 caracteres, 
+                        <p>Sua senha deve conter entre 8 e 20 caracteres,
                             uma letra maiúscula, uma minúscula e um número.</p>
+
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+
+                        <label><strong>Não esqueça!</strong></label><br><br>
+                        
+                        <label for="ciente">
+                            <input id="ciente" type="checkbox" name="ciente">
+                            "Estou ciente da proibição legal
+                            contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas
+                            para crianças e adolescentes menores de 18 anos de idade."</label><br>
+                       
+                        <label for="maiorque18">
+                            <input id="maiorque18" type="checkbox" name="maiorque18">
+                            "Estou ciente com o tratamento de meus dados pessoais, conforme
+                            descrito na Política de Privacidade".</label>
+                        <button type="submit" class="btn-submit">CADASTRAR</button>
                     </div>
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
 
                     <div>
-                        <br>
-                        <label><strong>Não esqueça!</strong></label><br><br>
-                        <input id ="ciente" type="checkbox" name="ciente">
-                        <label for="ciente">"Estou ciente da proibição legal 
-                            contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas 
-                            para crianças e adolescentes menores de 18 anos de idade."</label><br>
-                       <input id="maiorque18" type="checkbox" name="maiorque18">
-                       <label for="maiorque18">"Estou ciente  com o tratamento de meus dados pessoais, conforme descrito na Política de Privacidade".
-                    </label>
-
-                       
+                        <img class="imagem" src="public/img/login/garrafa.png" alt="garrafas de vinho">
                     </div>
-<br>
-                    <button>CADASTRAR</button>
-                </div>
 
 
+                </section>
 
-            </div>
+            </form>
 
-        
-         </form>
-    <!--fim do formulário-->
+        </section>
+        <!--fim do formulário-->
     </main>
     <!--end MAIN-->
 
@@ -177,7 +173,10 @@
     <footer class="footer">
         <div class="footer__top">
             <div class="footer__top__map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111504.06928210588!2d-51.5877516386636!3d-29.14987091181183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c3b525635c503%3A0x903e94cea10ccfe6!2sBento%20Gon%C3%A7alves%2C%20RS%2C%2095700-000!5e0!3m2!1spt-BR!2sbr!4v1665773995807!5m2!1spt-BR!2sbr" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111504.06928210588!2d-51.5877516386636!3d-29.14987091181183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c3b525635c503%3A0x903e94cea10ccfe6!2sBento%20Gon%C3%A7alves%2C%20RS%2C%2095700-000!5e0!3m2!1spt-BR!2sbr!4v1665773995807!5m2!1spt-BR!2sbr"
+                    width="100%" height="300" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="footer__top__details">
@@ -187,7 +186,7 @@
                     <div class="footer__contact__whatsapp">
                         <span class="pulse-phone">
                             <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        </span>                        
+                        </span>
                         <span>(54) 99427-XXXX</span>
                     </div>
                 </div>
@@ -227,4 +226,5 @@
     <script src="public/js/main.js"></script>
     <!--end JavaScript-->
 </body>
+
 </html>
