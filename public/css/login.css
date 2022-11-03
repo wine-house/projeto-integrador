@@ -1,3 +1,13 @@
+main{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
 form {
 
     background-color: #FFFFFF;
@@ -6,7 +16,6 @@ form {
     width: 100%;
 
 }
-
 
 .container {
 
@@ -22,12 +31,21 @@ form {
     background-size: cover;
     background-position: center;
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     
 }
 
-.containerlabel input{
+.title{
+ color:#454d01;
+ font-size: 25px;
+}
 
+.titulo{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.containerlabel input{
 width: 35rem;
 height: 3rem;
 
@@ -36,12 +54,119 @@ height: 3rem;
 .audio{
 
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    padding-top: 0;
+    flex-direction: row;
     padding-left: 1000px;
-    
-   
-  
+               
+ }
+
+ #enviar{
+
+    width: 150px;
+    height: 30px;
+    color: black ;
+    font-weight: 400;
+    background-color: #ebd8db;
+    border-radius: 5px;
+    font-size: 14px;
+ }
+
+
+ #enviar:hover{
+
+    background-color: #997C00;
+    border-color: black;
+ }
+
+#linha{
+    size: 100%;
+    height: 5px;
+    background-color: #d1e614;
+    border-radius: 5px;
+    margin-top: 50px;
 }
+
+
+
+
+#cadastro {
+    display:flex;
+    flex-direction: column;
+    justify-content:stretch;
+    width: 100%;
+    margin-top: 50px;
+}
+ #cadastro .form-body{
+
+display: flex;
+align-items: flex-start;
+
+
+}
+#cadastro .form-body div {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+#cadastro .form-body div input:not([type="checkbox"]){
+    width:50%;
+}
+
+#cadastro .form-body div label{
+    max-width: 50%;
+}
+
+
+
+
+
+.input {
+    display:flex;
+    flex-direction: column;
+    
+}
+
+
+.inputImagem{
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+.imagem{
+    width: 370px;
+    height: 370px;
+    border-radius: 5px;
+    opacity: .9;
+}
+
+#vetor{
+    width: 4rem;
+    height: 4rem;
+    flex-direction: row;
+}  
+    
+
+.titleSenha h4 {
+    font-size: 2rem;
+}
+.titleSenha p{
+
+font-size: .5rem;
+color:#530112;
+font-size:large;
+
+}
+
+.btn-submit{
+    width: 150px;
+    height: 30px;
+    justify-content: center;
+    font-size: large;
+    background-color: #4e1e27;
+    border-radius: 10px;
+    color: #d8ef07;
+} 
+
