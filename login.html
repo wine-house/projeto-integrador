@@ -77,8 +77,8 @@
 
         <form action="" method="post">
             <div class="container">
-                <div class="audio">
-                    <audio src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
+                <div>
+                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
                 </div>
 
                 <div>
@@ -88,17 +88,18 @@
 
                 <div class="containerlabel">
                     <label for="e-mail ou cpf"><strong>E-mail ou CPF</strong></label><br>
-                    <input type="e-mail" id="e-mail" name="e-mail"><br>
+                    <input type="e-mail" id="e-mail" name="e-mail">
                     <br>
                     <label for="password"><strong>Senha</strong></label>
                     <br>
-                    <input type="password" id="password" name="password"><br>
+                    <input type="password" id="password" name="password">
                 </div>
 
                 <div>
-                    <a href="">Esqueceu sua senha?</a><br><br>
-                    <input type="submit" id="enviar" name="submit"><br><br>
-                    <a href="#cadastro">Faça seu cadastro</a>
+                    <a class="link" href="">Esqueceu sua senha?</a><br><br>
+                    <input type="submit" id="enviar" name="submit"><br>
+                    <a class="link" href="#cadastro">
+                        <span>Faça seu cadastro</span></a>
                 </div>
                 <br>
                 <br>
@@ -113,41 +114,46 @@
         <section id="cadastro">
             <form>
                 <h2 class="title">Comece agora a viver o melhor do mundo dos vinhos!</h2>
-                <h3 subclass="titulo">Aqui você encontra os melhores vinhos!</h3><br>
-                <p>Faça seu cadastro.</p>
+                <h3 class="titulo">Aqui você encontra os melhores vinhos!</h3><br>
+                <h4>Faça seu cadastro.</h4>
 
 
                 <section class="form-body">
                     <div>
-                        <label for="nome"><strong>Nome</strong></label><br>
-                        <input type="text" id="nome" name="nome"><br>
+                        <div>
+                            <label for="nome"><strong>Nome</strong></label>
+                            <input type="text" id="nome" name="nome">
+                        </div>
+                        <div>
+                            <label for="cpf"><strong>Cpf ou cnpj</strong></label>
+                            <input type="e-mail" id="e-mail" name="e-mail">
+                        </div>
+                        <div>
+                            <label for="e-mail"><strong>E-mail</strong></label>
+                            <input type="e-mail" id="e-mail" name="e-mail">
+                        </div>
+                        <div>
+                            <label for="idade"><strong>Data de nascimento</strong></label>
+                            <input type="" id="idade" name="idade">
+                        </div>
 
-                        <label for="cpf"><strong>Cpf ou cnpj</strong></label><br>
-                        <input type="e-mail" id="e-mail" name="e-mail"><br>
 
-                        <label for="e-mail"><strong>E-mail</strong></label><br>
-                        <input type="e-mail" id="e-mail" name="e-mail"><br>
+                        <h3>Atenção!</h3>
+                        <p>Sua senha deve conter entre 6 e 8 caracteres,<br>
+                            uma letra maiúscula.</p>
+                        <div class="password">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                        </div>
 
-                        <label for="idade"><strong>Data de nascimento</strong></label><br>
-                        <input type="number" id="idade" name="idade"><br>
+                        <p><strong>Não esqueça</strong></p>
 
-                        <img id='vetor' src="public/img/login/Vector.png" alt="atenção">
-
-                        <h4>Atenção!</h4>
-                        <p>Sua senha deve conter entre 8 e 20 caracteres,
-                            uma letra maiúscula, uma minúscula e um número.</p>
-
-                        <label for="senha">Senha</label>
-                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-
-                        <label><strong>Não esqueça!</strong></label><br><br>
-                        
                         <label for="ciente">
                             <input id="ciente" type="checkbox" name="ciente">
                             "Estou ciente da proibição legal
                             contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas
                             para crianças e adolescentes menores de 18 anos de idade."</label><br>
-                       
+
                         <label for="maiorque18">
                             <input id="maiorque18" type="checkbox" name="maiorque18">
                             "Estou ciente com o tratamento de meus dados pessoais, conforme
