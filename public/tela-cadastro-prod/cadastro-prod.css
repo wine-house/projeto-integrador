@@ -37,7 +37,10 @@ input[type='file'] {
 }
 
 #imgFoto {
-    cursor: pointer; 
+    cursor: pointer;
+    height: 300px;
+    width: 25vw;
+    border-radius: 2rem;
 }
 
 #imgFoto:hover {
