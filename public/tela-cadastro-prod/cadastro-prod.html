@@ -74,7 +74,7 @@
         </h1>
         <hr>
         <form class="form">
-            <section class="nome-descricao">
+            <section class="section-filha-form section-container1">
                 <em>
                     Nome do produto:
                 </em>
@@ -84,16 +84,16 @@
                 </em>
                 <input class="descricao" type="text" placeholder="Digite a descrição aqui">
             </section>
-            <section class="img-preco-cat">
+            <section class="section-filha-form section-container2">
                 
-                <div class="div-prod">
+                <div class="div-container2 div-filha1">
                     <em>
                         Imagem do produto:
                     </em>
                     <img src="./img/btn-img-prod.png" alt="Selecione uma imagem" id="imgFoto">
                     <input class="btn-cadastro-prod" type="file" id="file" name="file" accept="image/*">
                 </div>
-                <div class="div-preco-cat">
+                <div class="div-container2 div-filha2">
                     <em>
                         Preço:
                     </em>
@@ -101,18 +101,25 @@
                     <em>
                         Categoria:
                     </em>
-                    <input class="input-preco" type="radio" name="tipo-categorias" value="branco">
-                    <label for="branco">Branco</label>
-                    <input class="input-preco" type="radio" name="tipo-categorias" value="rose">
-                    <label for="rose">Rose</label>
-                    <input class="input-preco" type="radio" name="tipo-categorias" value="tinto">
-                    <label for="tinto">Tinto</label>
-                    <input class="input-preco" type="radio" name="tipo-categorias" value="espumante">
-                    <label for="espumante">Espumante</label>
-
-                    <button>Enviar</button>
+                    <div class="radio">
+                        <input class="input-radio" type="radio" name="tipo-categorias" value="branco">
+                        <label for="branco">Branco</label>
+                    </div>    
+                    <div class="radio">
+                        <input class="input-radio" type="radio" name="tipo-categorias" value="rose">
+                        <label for="rose">Rose</label>
+                    </div>
+                    <div class="radio">
+                        <input class="input-radio" type="radio" name="tipo-categorias" value="tinto">
+                        <label for="tinto">Tinto</label>
+                    </div>
+                    <div class="radio">
+                        <input class="input-radio" type="radio" name="tipo-categorias" value="espumante">
+                        <label for="espumante">Espumante</label>
+                    </div>
                 </div>
             </section>
+            <button>Enviar</button>
         </form>
 
     </main>
