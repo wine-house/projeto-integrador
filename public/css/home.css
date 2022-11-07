@@ -6,19 +6,72 @@
     position: relative;
 }
 
+.banner::before,
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--cor-preta);
+    z-index: 1;
+}
+
+.banner::before {
+    left: 50%;
+}
+.banner::after {
+    right: 50%;
+}
+
+.show-effect.banner::before,
+.show-effect.banner::after {
+    animation: move-overlay .7s;
+}
+@keyframes move-overlay {
+    0% {
+        width: 0;
+        opacity: .5;
+    }
+    100% {
+        width: 50%;
+        opacity: 0;
+    }
+}
+
+.banner__item {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.show-item.banner__item {
+    animation: show-img .7s forwards;
+}
+@keyframes show-img {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 .banner__image img {
+    display: block;
     width: 100%;
     height: 88vh;
+    object-fit: cover;
 }
 
 .banner__buttons {
-    position: relative;
-    top: -50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
 }
 
 .banner__btn-left,
 .banner__btn-right {
-    position: absolute;
     cursor: pointer;
     opacity: .55;
     border: none;
@@ -30,11 +83,8 @@
     opacity: 1;
 }
 
-.banner__btn-left {
-    left: 1.5%;
-}
-.banner__btn-right {
-    right: 1.5%;
+.banner__buttons i {
+    position: absolute;
 }
 
 .banner__btn-left i,
@@ -44,6 +94,13 @@
     background: var(--cor-branca);
     font-size: calc(25px + 1vw);
     padding-top: 1px;
+}
+
+.banner__btn-left i {
+    left: 1.3%;
+}
+.banner__btn-right i {
+    right: 1.3%;
 }
 
 .banner__numbers,
@@ -60,29 +117,37 @@
 .banner__numbers {    
     top: 1rem;
     right: 1rem;
-    font-size: 1.25rem;
-    padding: .5rem .9rem;
+    font-size: calc(1rem + .5vw);
+    padding: .4rem .9rem;
 }
 
 .banner__description {
     bottom: 1.8rem;
     left: 1.6rem;
-    font-size: 1.6rem;
+    font-size: calc(1.3rem + .5vw);
     padding: .7rem 1rem;
 }
 
-.current-text.banner__description {
+.moving-text.banner__description {
     animation: move-text 1s;
 }
 @keyframes move-text {
     0% {
-        transform: translateX(70px);
+        transform: translateX(-80px);
         opacity: .5;
     }
     100% {
         transform: translateX(0px);
         opacity: 1;
     }
+}
+
+.moving-text.banner__numbers {
+    animation: move-text2 1s; 
+}
+@keyframes move-text2 {
+    0% {transform: translateX(35px);}
+    100% {transform: translateX(0);}
 }
 
 /**SECTION MISSION**/

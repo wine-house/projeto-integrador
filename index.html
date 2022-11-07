@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!--CSS-->
-    <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/home.css">
+    <link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
     <!--HEADER-->
@@ -53,7 +53,10 @@
             <a href="login.html">
                 <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
             </a>
-            <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
+
+            <a href="#">
+                <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
+            </a>
         </div>
 
         <!--Procura-->
@@ -73,16 +76,80 @@
     <main>
         <!--Banner-->
         <section class="banner">
-            <figure class="banner__image">
-                <img src="public/img/carousel/1-winery.jpg" alt="Vinícola Wine House">
-            </figure>
+            <!--Banner Imagens-->
+            <div class="banner__images">
+                <article class="banner__item show-item">
+                    <figure class="banner__image">
+                        <img src="public/img/carousel/1-winery.jpg" alt="Vinícola Bento Gonçalves - RS">
+                    </figure>
 
-            <div class="banner__numbers">
-                <span class="banner__current-number">1</span>
-                <span>&#x2f;</span>
-                <span class="banner__total-number">5</span>
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="public/img/carousel/2-winery.jpg" alt="Vinícola TerraNova - BA">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="public/img/carousel/3-winery.jpg" alt="Vinícola Santa Teresa - ES">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="public/img/carousel/4-winery.jpg" alt="Vinícola Rio Sol - PE">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="public/img/carousel/5-winery.jpg" alt="Vinícola Vale do Vinho - SP">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
             </div>
 
+            <!--Banner Botões-->
             <div class="banner__buttons">
                 <span class="banner__btn-left">
                     <i class="fas fa-arrow-circle-left"></i>
@@ -92,8 +159,6 @@
                     <i class="fas fa-arrow-circle-right"></i>
                 </span>
             </div>
-
-            <div class="banner__description current-text">Vinícola Wine House</div>
         </section>
 
         <!--Missão-->
@@ -296,9 +361,9 @@
                                 <img src="public/img/curiosities/uva-verde.png" class="curiosity-item__back__img" alt="Front-end">
                             </div>
                             
-                            <p class="curiosity-item__description">
-                                A Serra Gaúcha é o lugar do país que mais produz vinhos, com uma grande concentração de vinícolas.
-                                É no Rio Grande do Sul que está o famoso Vale dos Vinhedos, em Bento Gonçalves.
+                            <p class="curiosity-item__description">                                
+                                O vale do Rio São Francisco fica entre Pernambuco e Bahia, com solos ricos em minerais.
+                                Em 2003 o instituto do Vinho do Vale de São Francisco foi criado para fortalecer a viticultura local.
                             </p>
     
                             <button class="curiosity-item__close">Fechar</button>
@@ -440,11 +505,14 @@
     <!--end FOOTER-->
 
     <!--JAVASCRIPT-->
-    <!--Main-->
-    <script src="public/js/main.js"></script>
-
     <!--Curiosity-->
     <script src="public/js/curiosities.js"></script>
+
+    <!--Banner-->
+    <script src="public/js/banner.js"></script>
+
+    <!--Main-->
+    <script src="public/js/main.js"></script>
     <!--end JAVASCRIPT-->
 </body>
 </html>
