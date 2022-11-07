@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!--CSS-->
-    <link rel="stylesheet" href="public/css/parceiros.css">
     <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/login.css">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                 <li class="navbar__link"><a href="somos.html">Quem Somos</a></li>
                 <li class="navbar__link"><a href="eventos.html">Eventos</a></li>
                 <li class="navbar__link"><a href="produtos.html">Produtos</a></li>
-                <li class="navbar__link"><a href="parceiros.html" class="active-link">Parceiros</a></li>
+                <li class="navbar__link"><a href="parceiros.html">Parceiros</a></li>
             </ul>
         </nav>
 
@@ -54,9 +54,7 @@
 
         <!--Login/Compras-->
         <div class="icons">
-            <a href="login.html">
-                <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
-            </a>
+            <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
             <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
         </div>
 
@@ -75,42 +73,105 @@
 
     <!--MAIN-->
     <main>
-        <section class="container">
-            <img id="first-imag" src="public/img/parceiros/uvas.png" alt="parreiral">
-            <h1>Produtores parceiros</h1>
-            <h3>Região Vale do São Francisco</h3>
+        <!--inicio do formulário-->
 
-            <div class="first-div">
-             
-                <img src="public/img/parceiros/valecom uvas.png" alt="Vale do São Francisco">
-                <p>
-                   <strong>O Vale fica localizado entre Pernambuco e Bahia, com solos argilosos e arenosos pobres, mas
-                    ricos em minerais e clima semiárido. Nos anos 60, as primeiras videiras foram plantadas e nos anos
-                    80 surgiram os primeiros investimentos vinícolas.Em 2003, o Instituto do Vinho do Vale do São
-                    Francisco foi criado, a fim de fortalecer a viticultura local.</strong> 
-                </p>
-            </div>
+        <form action="" method="post">
+            <div class="container">
+                <div>
+                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls muted></audio>
+                </div>
 
-            <div class="second-div">
-               
-                 <img src="public/img/parceiros/rioSol.png" alt="Vínicula Rio sol"><br>
-                
-                    <p><strong>Vínicula Rio do Sol<br><br>O projeto do Rio Sol nasceu em 2002, da parceria entre a Dão Sul, <br>empresa da Global Wines, e a
-                    Expand. Localizada nas margens do rio São Francisco e com mais de 200 hectares de vinhas, é uma
-                    vinícola que contraria a lógica das uvas e<br> elabora até duas safras e meia por ano, graças à
-                    maneira
-                    única de irrigar os vinhedos.</p></strong>
+                <div>
+                    <h2 class="title">Bem-vindo à Wine House!</h2>
+                    <p>Antes de continuar, faça seu login.</p><br>
+                </div>
 
+                <div class="containerlabel">
+                    <label for="e-mail"><strong>E-mail </strong></label><br>
+                    <input type="e-mail" id="e-mail" name="e-mail">
+                    <br>
+                    <label for="senha"><strong>Senha</strong></label>
+                    <br>
+                    <input type="password" id="password" name="senha">
+                </div>
+
+                <div>
+                    <a class="link" href="">Esqueceu sua senha?</a><br><br>
+                    <input type="submit" id="enviar" name="submit"><br>
+                    <a class="link" href="#cadastro">
+                        <span>Faça seu cadastro</span></a>
+                </div>
+                <br>
+                <br>
             </div>
-            <div class="third-div">
-           
-                <img src="public/img/parceiros/terraNova.png" alt="Vínicula Terra Nova">
-                <p><strong>Vínicula Terra Nova<br><br>Quando a Vinícola Miolo chegou na Bahia, em 2001, carregou consigo a mesma esperança que o imigrante
-                    Giuseppe Miolo, bisavô de Adriano Miolo, trouxe da Itália em 1897, que ao plantar as primeiras mudas
-                    de uvas deu origem ao emblemático Lote 43, no Vale dos Vinhedos. Nesses 20 anos no sertão brasileiro, a
-                    marca Terranova germinou e hoje é sinônimo de vida.</p></strong>
-            </div>
+            <hr>
+            <input id="linha"></input>
+
+
+        </form>
+        <br>
+
+        <section id="cadastro">
+            <form>
+                <h2 class="title">Comece agora a viver o melhor do mundo dos vinhos!</h2>
+                <h3 class="titulo">Aqui você encontra os melhores vinhos!</h3><br>
+                <h4>Faça seu cadastro.</h4>
+
+
+                <section class="form-body">
+                    <div>
+                        <div>
+                            <label for="name"><strong>Nome</strong></label>
+                            <input type="text" id="nome" name="name" placeholder="Digite seu nome">
+                        </div>
+                        <div>
+                            <label for="cpf"><strong>Cpf ou Cnpj</strong></label>
+                            <input type="" id="cpf" name="cpf" >
+                        </div>
+                        <div>
+                            <label for="email"><strong>E-mail</strong></label>
+                            <input type="e-mail" id="email" name="e-mail" placeholder="winehouse@gmail.com">
+                        </div>
+                        <div>
+                            <label for="date"><strong>Data de nascimento</strong></label>
+                            <input type="date" id="idade" name="date">
+                        </div>
+
+
+                        <h3>Atenção!</h3>
+                        <p>Sua senha deve conter entre 6 e 8 caracteres,<br>
+                            uma letra maiúscula.</p>
+                        <div class="password">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                        </div>
+
+                        <p><strong>Não esqueça</strong></p>
+
+                        <label for="ciente">
+                            <input id="ciente" type="checkbox" name="ciente">
+                            "Estou ciente da proibição legal
+                            contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas
+                            para crianças e adolescentes menores de 18 anos de idade."</label><br>
+
+                        <label for="maiorque18">
+                            <input id="maiorque18" type="checkbox" name="maiorque18">
+                            "Estou ciente com o tratamento de meus dados pessoais, conforme
+                            descrito na Política de Privacidade".</label>
+                        <button type="submit" class="btn-submit">CADASTRAR</button>
+                    </div>
+
+                    <div>
+                        <img class="imagem" src="public/img/login/garrafa.png" alt="garrafas de vinho">
+                    </div>
+
+
+                </section>
+
+            </form>
+
         </section>
+        <!--fim do formulário-->
     </main>
     <!--end MAIN-->
 
@@ -169,6 +230,7 @@
 
     <!--JavaScript-->
     <script src="public/js/main.js"></script>
+    <script src="public/js/login.js"></script>
     <!--end JavaScript-->
 </body>
 
