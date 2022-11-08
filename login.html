@@ -78,7 +78,7 @@
         <form action="" method="post">
             <div class="container">
                 <div>
-                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
+                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls muted></audio>
                 </div>
 
                 <div>
@@ -87,12 +87,12 @@
                 </div>
 
                 <div class="containerlabel">
-                    <label for="e-mail ou cpf"><strong>E-mail ou CPF</strong></label><br>
+                    <label for="e-mail"><strong>E-mail </strong></label><br>
                     <input type="e-mail" id="e-mail" name="e-mail">
                     <br>
-                    <label for="password"><strong>Senha</strong></label>
+                    <label for="senha"><strong>Senha</strong></label>
                     <br>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="senha">
                 </div>
 
                 <div>
@@ -121,20 +121,20 @@
                 <section class="form-body">
                     <div>
                         <div>
-                            <label for="nome"><strong>Nome</strong></label>
-                            <input type="text" id="nome" name="nome">
+                            <label for="name"><strong>Nome</strong></label>
+                            <input type="text" id="nome" name="name" placeholder="Digite seu nome">
                         </div>
                         <div>
-                            <label for="cpf"><strong>Cpf ou cnpj</strong></label>
-                            <input type="e-mail" id="e-mail" name="e-mail">
+                            <label for="cpf"><strong>Cpf ou Cnpj</strong></label>
+                            <input type="" id="cpf" name="cpf" >
                         </div>
                         <div>
-                            <label for="e-mail"><strong>E-mail</strong></label>
-                            <input type="e-mail" id="e-mail" name="e-mail">
+                            <label for="email"><strong>E-mail</strong></label>
+                            <input type="e-mail" id="email" name="e-mail" placeholder="winehouse@gmail.com">
                         </div>
                         <div>
-                            <label for="idade"><strong>Data de nascimento</strong></label>
-                            <input type="" id="idade" name="idade">
+                            <label for="date"><strong>Data de nascimento</strong></label>
+                            <input type="date" id="idade" name="date">
                         </div>
 
 
@@ -230,6 +230,7 @@
 
     <!--JavaScript-->
     <script src="public/js/main.js"></script>
+    <script src="public/js/login.js"></script>
     <!--end JavaScript-->
 </body>
 
