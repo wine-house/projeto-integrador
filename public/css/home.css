@@ -133,7 +133,7 @@
 }
 @keyframes move-text {
     0% {
-        transform: translateX(-80px);
+        transform: rotateX(180deg) translateX(-80px);
         opacity: .5;
     }
     100% {
