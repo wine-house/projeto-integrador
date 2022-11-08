@@ -53,7 +53,15 @@ em {
     margin-bottom: .5rem;
 }
 
-.nome, .descricao, .input-preco {
+.nome, .descricao, .preco {
+    margin-bottom: 2rem;
+}
+
+#nameError, #descricaoError, #precoError, #categoriaError {
+    display: none;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin-bottom: 2rem;
 }
 
@@ -88,6 +96,8 @@ button {
     font-weight: 500;
     cursor: pointer;
 }
+
+
 
 
 
