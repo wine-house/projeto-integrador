@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -146,3 +146,4 @@ hr {
 .card2 i {
     color: gray;
 }
+
