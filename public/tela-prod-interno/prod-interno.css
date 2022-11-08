@@ -1,0 +1,149 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    display: flex;    
+    flex-direction: column;
+}
+
+.container-pai {
+    display: flex;    
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.filho1 {
+    background-color: #A66F83;
+    display: flex;
+    border-radius: 2rem;
+    border: solid 1.1px black;
+}
+
+.filho1:hover img {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.filho2 > h1 {
+    margin-top: 5rem;
+    font-size: large;
+}
+
+.filho2 > h2 {
+    background-color: red;
+    height: 2.5rem;
+    border-radius: .5rem;
+    margin: 5rem 24rem 5rem 24rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    color: white;
+    border: solid 1.1px black;
+}
+
+.filho2 > h3 {
+    font-size: 5rem;
+    font-weight: 200;
+}
+
+.filho2 {
+    width: 60rem;
+    text-align: center;
+}
+
+.botao-verde div {
+    display: flex;
+    padding: .5rem;
+}
+
+.botao-verde {
+    display: flex;
+    flex-direction: row;
+    background-color: #A0B200;
+    height: 6rem;
+    border-radius: 1rem;
+    justify-content: center;
+    margin: 1rem 15rem 5rem 15rem;
+    padding: .2rem 0rem .2rem 0rem;
+}
+
+.botao-verde > div > p {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    margin:0rem 1rem 0rem 1rem;
+}
+
+.botao-add button {
+    background-color: #A0B200;
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.botao-add {
+    border-left: 1px solid rgb(194, 225, 156);
+    margin-right: 2rem;
+}
+
+.botoes > button {
+    border: none;
+    border-radius: 30rem;
+    font-size: 3.5rem;
+    line-height: 1rem;
+    padding: .5rem;
+    height: 3rem;
+}
+
+.btn-somar {
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+.btn-subtrair {
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.botoes {
+    margin-top: 1rem;
+}
+
+hr {
+     margin: 10px;
+}
+
+.titulo-ficha-tec {
+    font-size: 3rem;
+    text-align: center;
+    color: #540606;
+    font-weight: 500;
+    margin-top: 4rem;
+}
+
+.secao-ficha-tec {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.card2 {
+    font-size: medium;
+}
+
+.card1 {
+    font-size: medium;
+}
+
+.card1 i {
+    color:gray
+}
+
+.card2 i {
+    color: gray;
+}
+
