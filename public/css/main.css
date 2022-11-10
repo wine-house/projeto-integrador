@@ -20,6 +20,7 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -200,6 +201,42 @@ img {
 /**MAIN**/
 main {
     padding-top: 8rem;
+}
+
+/** Link to Top **/
+.link-top {
+    font-size: calc(1.3rem + .5vw);
+    position: fixed;
+    bottom: 1.4rem;
+    right: 1.8rem;
+    background: var(--cor-dourada);
+    color: var(--cor-branca);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    padding: .35rem .45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: all .7s;
+    animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+.link-top:hover {
+    background: var(--cor-branca);
+    color: var(--cor-dourada);
+    border: 2px solid var(--cor-dourada);
+}
+.show-link {
+    visibility: visible;
+    opacity: 1;
+    z-index: 4;
 }
 
 /**FOOTER**/
