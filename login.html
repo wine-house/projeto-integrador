@@ -75,44 +75,47 @@
     <main>
         <!--inicio do formulário-->
 
-        <form action="" method="post">
+        <form class="login" action="#" method="get">
             <div class="container">
-                <div>
-                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls muted></audio>
-                </div>
 
                 <div>
-                    <h2 class="title">Bem-vindo à Wine House!</h2>
-                    <p>Antes de continuar, faça seu login.</p><br>
+                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls></audio>
                 </div>
+                <div class="card">
+                    <div>
+                        <h2 class="title">Bem-vindo à Wine House!</h2>
+                        <p>Antes de continuar, faça seu login.</p><br>
+                    </div>
 
-                <div class="containerlabel">
-                    <label for="e-mail"><strong>E-mail </strong></label><br>
-                    <input type="e-mail" id="e-mail" name="e-mail">
-                    <br>
-                    <label for="senha"><strong>Senha</strong></label>
-                    <br>
-                    <input type="password" id="password" name="senha">
-                </div>
+                    <div class="containerlabel">
+                        <label for="email-login"><strong>E-mail </strong></label><br>
+                        <input type="email" id="email-login" name="email">
+                        <div class="err-login-email invisible" >Esse campo precisa ser preenchido!</div>
+                        <br>
+                        <label for="senha"><strong>Senha</strong></label>
+                        <br>
+                        <input type="password" id="password" name="senha" required>
+                        <div class="err-login-password invisible">Sua senha deve ter pelo menos 6 caracteres!</div>
 
-                <div>
-                    <a class="link" href="">Esqueceu sua senha?</a><br><br>
-                    <input type="submit" id="enviar" name="submit"><br>
-                    <a class="link" href="#cadastro">
-                        <span>Faça seu cadastro</span></a>
+                    </div>
+
+                    <div>
+                        <a class="link" href="">Esqueceu sua senha?</a><br><br>
+                        <input type="submit" id="enviar" name="Enviar"><br>
+                        <a class="link" href="#cadastro">
+                            <span>Faça seu cadastro</span></a>
+                    </div>
                 </div>
                 <br>
                 <br>
             </div>
             <hr>
             <input id="linha"></input>
-
-
         </form>
         <br>
 
         <section id="cadastro">
-            <form>
+            <form class="form-cadastro">
                 <h2 class="title">Comece agora a viver o melhor do mundo dos vinhos!</h2>
                 <h3 class="titulo">Aqui você encontra os melhores vinhos!</h3><br>
                 <h4>Faça seu cadastro.</h4>
@@ -123,27 +126,33 @@
                         <div>
                             <label for="name"><strong>Nome</strong></label>
                             <input type="text" id="nome" name="name" placeholder="Digite seu nome">
+                            <div class="err-register-name invisible red">Você precisa digitar seu nome!</div>
                         </div>
                         <div>
                             <label for="cpf"><strong>Cpf ou Cnpj</strong></label>
-                            <input type="" id="cpf" name="cpf" >
+                            <input type="" id="cpf" name="cpf">
+                            <div class="err-register-cpf invisible red">Digite seu cpf ou Cnpj.</div>
                         </div>
                         <div>
                             <label for="email"><strong>E-mail</strong></label>
                             <input type="e-mail" id="email" name="e-mail" placeholder="winehouse@gmail.com">
+                            <div class="err-register-e-mail invisible red">Digite um email válido!</div>
                         </div>
                         <div>
                             <label for="date"><strong>Data de nascimento</strong></label>
-                            <input type="date" id="idade" name="date">
+                            <input type="date" id="date" name="nascimento">
+                            <div class="err-register-nascimento invisible red" >Digite a data do seu nascimento!</div>
                         </div>
 
+                        <!--<div class="instruction-senha">
+                            <h3>Atenção!</h3>
+                            <p>Sua senha deve ser maior ou igual a 6 caracteres.<br></p>
+                        </div>-->
 
-                        <h3>Atenção!</h3>
-                        <p>Sua senha deve conter entre 6 e 8 caracteres,<br>
-                            uma letra maiúscula.</p>
                         <div class="password">
                             <label for="senha">Senha</label>
-                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                            <input type="password" id="password-two" name="senha" placeholder="Digite sua senha">
+                            <div class="err-register-senha invisible red">Digite sua senha!</div>
                         </div>
 
                         <p><strong>Não esqueça</strong></p>
@@ -158,7 +167,7 @@
                             <input id="maiorque18" type="checkbox" name="maiorque18">
                             "Estou ciente com o tratamento de meus dados pessoais, conforme
                             descrito na Política de Privacidade".</label>
-                        <button type="submit" class="btn-submit">CADASTRAR</button>
+                        <button type="submit" class="btn-submit">Cadastrar</button>
                     </div>
 
                     <div>
