@@ -526,6 +526,10 @@ main {
     #search-icon {    
         padding: 3px 3px 0px 5px;
     }
+
+    .link-top {
+        font-size: calc(1.5rem + .5vw);
+    }
 }
 
 @media(max-width: 350px) {
