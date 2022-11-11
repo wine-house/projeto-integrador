@@ -27,7 +27,7 @@ let registerInputs = document.querySelectorAll('.form-cadastro input')
 registerForm.addEventListener('submit', function (event) {
 
     registerInputs.forEach(input => {
-
+        if(input.type !='checkbox')
         if (input.value == '') {
             event.preventDefault();
             document.querySelector('.err-register-' + input.name).classList.remove('invisible')
