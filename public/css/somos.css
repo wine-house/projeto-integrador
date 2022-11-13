@@ -352,6 +352,8 @@
     transform: translateY(-100%);
     border: 3px solid var(--cor-branca);
     border-top: 0px;
+    display: flex;
+    align-items: center;
     transition: all .5s;
 }
 .change-manager .emphasis__contact {
@@ -360,7 +362,7 @@
 
 .emphasis__contact h4 {
     font-family: 'Open Sans', sans-serif;
-    font-size: calc(.95rem + .3vw);
+    font-size: calc(1rem + .3vw);
     font-weight: 500;
     text-transform: uppercase;
     text-shadow: 0 0.1rem .2rem rgba(0, 0, 0, .3);
@@ -370,6 +372,29 @@
 }
 .change-manager .emphasis__contact h4 {
     transform: scale(1);
+}
+
+.emphasis__contact .like-icon {
+    font-size: calc(1.44rem + .3vw);
+    margin-left: 1rem;
+    cursor: pointer;
+    color: var(--cor-branca);
+    transform: scale(0);
+    transform-origin: left;
+    transition: all 1s;
+}
+.change-manager .emphasis__contact .like-icon {
+    transform: scale(1);
+}
+
+.emphasis__contact .like-icon.blue-color {
+    color: var(--cor-vinho-verde);
+    animation: move-thumb .5s;
+}
+@keyframes move-thumb {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(-45deg);}
+    100% {transform: rotate(0deg);}
 }
 
 .emphasis__social {
@@ -438,10 +463,6 @@
         padding: calc(1.5rem + .3vw) calc(1rem + .3vw) calc(1rem + .3vw) calc(1.8rem + .3vw);
     }
 
-    .emphasis__contact {
-        padding: 1.2rem 2rem;
-    }
-
     .emphasis__bio__btn {
         width: calc(12rem + .3vw);
         bottom: -1.4rem;
@@ -486,10 +507,6 @@
         padding: calc(1rem + .3vw) calc(.7rem + .3vw) calc(.5rem + .3vw) calc(1rem + .3vw);
     }
 
-    .emphasis__contact {
-        padding: 1rem 1.5rem;
-    }
-
     .emphasis__bio__btn {
         padding: .5rem 0;
         font-size: calc(.85rem + .3vw);
@@ -502,8 +519,6 @@
 }
 
 @media(max-width: 360px) {
-    .emphasis__contact h4 {font-size: calc(.85rem + .3vw);}
-
     .emphasis__bio__btn {
         width: calc(11rem + .3vw);
         padding: .45rem 0;
@@ -515,7 +530,7 @@
 @media(max-width: 330px) {
     .emphasis__bio {padding: calc(.7rem + .3vw) calc(.5rem + .3vw) calc(.4rem + .3vw) calc(.5rem + .3vw);}
 
-    .emphasis__contact {padding: .85rem 1rem;}
+    .emphasis__contact {padding: .85rem 0 .85rem 1rem;}
 
     .emphasis__bio__btn {
         padding: .4rem 0;
