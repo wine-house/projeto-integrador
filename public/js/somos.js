@@ -50,11 +50,18 @@ function changeText() {
 }
 
 //Destaques
-const contactMeBtn = document.querySelectorAll(".emphasis__bio__btn");
+const contactMeBtns = document.querySelectorAll(".emphasis__bio__btn");
+const likeBtns = document.querySelectorAll(".like-icon");
 
-contactMeBtn.forEach(button => {
+contactMeBtns.forEach(button => {
     button.addEventListener("click", (e) => {
         const changeManager = e.currentTarget.parentElement.parentElement;
         changeManager.classList.toggle("change-manager");
+    });
+});
+
+likeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("blue-color");
     });
 });
