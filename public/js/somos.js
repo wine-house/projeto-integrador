@@ -39,29 +39,75 @@ function changeText() {
     if(counter % 2 == 0) {
         banner2Text.classList.add("active-text");
         setTimeout(() => banner2Text.classList.remove("active-text"), 1000);
+        banner2Text.style.borderRadius = "20px 5px 20px 5px";
     }
     else {
         banner2Text.classList.add("active-text2");
         setTimeout(() => banner2Text.classList.remove("active-text2"), 1000);
+        banner2Text.style.borderRadius = "5px 20px 5px 20px";
     }    
 
     if(counter > arrayText.length - 1) counter = 0;
     banner2Text.innerText = arrayText[counter];
 }
 
-//Destaques
-const contactMeBtns = document.querySelectorAll(".emphasis__bio__btn");
+//Sorteios
+const prizeBtns = document.querySelectorAll(".prize__bio__btn");
 const likeBtns = document.querySelectorAll(".like-icon");
+const likeNumber1 = document.getElementById("count-likes-1");
+const likeNumber2 = document.getElementById("count-likes-2");
 
-contactMeBtns.forEach(button => {
+let totalClicked1 = +(likeNumber1.getAttribute("value"));
+let totalClicked2 = +(likeNumber2.getAttribute("value"));
+
+likeNumber1.innerText = totalClicked1;
+likeNumber2.innerText = totalClicked2;
+
+prizeBtns.forEach(button => {
     button.addEventListener("click", (e) => {
-        const changeManager = e.currentTarget.parentElement.parentElement;
-        changeManager.classList.toggle("change-manager");
+        const prizeContainer = e.currentTarget.parentElement.parentElement;
+        prizeContainer.classList.toggle("select-container");
     });
 });
 
-likeBtns.forEach(btn => {
+likeBtns.forEach((btn) => {
+    let clicked = false;
+
     btn.addEventListener("click", () => {
-        btn.classList.toggle("blue-color");
+        if(btn.classList.contains("like-1")) {
+            if(!clicked) {
+                btn.classList.add("green-color");
+                clicked = true;
+                totalClicked1 = totalClicked1 + 1;
+            }
+            else {
+                btn.classList.remove("green-color");
+                clicked = false;
+                totalClicked1 = totalClicked1 - 1;
+            }
+
+            likeNumber1.innerText = totalClicked1;
+        }
+
+        if(btn.classList.contains("like-2")) {
+            if(!clicked) {
+                btn.classList.add("green-color");
+                clicked = true;
+                totalClicked2 = totalClicked2 + 1;
+            }
+            else {
+                btn.classList.remove("green-color");
+                clicked = false;
+                totalClicked2 = totalClicked2 - 1;
+            }
+
+            likeNumber2.innerText = totalClicked2;
+        }
     });
 });
+
+// likeBtns.forEach(btn => {
+//     btn.addEventListener("click", () => {
+//         btn.classList.toggle("green-color");
+//     });
+// });
