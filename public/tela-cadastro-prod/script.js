@@ -12,6 +12,8 @@ window.addEventListener('load', function() {
   const categoriaRose = document.getElementById('rose');
   const categoriaTinto = document.getElementById('tinto');
   const categoriaEspumante = document.getElementById('espumante');
+  const imgError = document.getElementById('imgError');
+  const imgProduto = document.querySelector('input.btn-cadastro-prod');
 
 
   let foto = document.getElementById('imgFoto');
@@ -72,28 +74,35 @@ window.addEventListener('load', function() {
     categoriaError.style.display = 'none';
   });
 
+  imgProduto.addEventListener("click", (e) => {
+    imgError.style.display = 'none';
+  })
+
   formulario.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    if (!nome.value) {
-     nameError.style.display = 'flex';
-     nome.style.marginBottom = '0px';
-    } 
-    
-    if(!descricao.value) {
-     descricaoError.style.display = 'flex';
-     descricao.style.marginBottom = '0px';
-    }
+      if (!nome.value) {
+        nameError.style.display = 'flex';
+        nome.style.marginBottom = '0px';
+      } 
+      
+      if(!descricao.value) {
+        descricaoError.style.display = 'flex';
+        descricao.style.marginBottom = '0px';
+      }
 
-    if (preco.value <= 0) {
-      precoError.style.display = 'flex';
-      preco.style.marginBottom = '0px';
-     } 
-     
-     if(!categoria.value) {
-      categoriaError.style.display = 'flex';
-     }
-    
+      if (preco.value <= 0) {
+        precoError.style.display = 'flex';
+        preco.style.marginBottom = '0px';
+      } 
+      
+      if(!categoria.value) {
+        categoriaError.style.display = 'flex';
+      }
+
+      if(imgProduto.files.length == 0) {
+        imgError.style.display = 'flex';
+      }
     
   })
   
