@@ -78,7 +78,7 @@
                 <em>
                     Nome do produto:
                 </em>
-                <input class="nome" type="text" placeholder="Digite aqui o nome do produto">
+                <input class="inpt nome" type="text" placeholder="Digite aqui o nome do produto">
                 <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
                 <em>
                     Descrição do produto:
@@ -93,31 +93,32 @@
                         Imagem do produto:
                     </em>
                     <img src="./img/btn-img-prod.png" alt="Selecione uma imagem" id="imgFoto">
-                    <input class="btn-cadastro-prod" type="file" id="file" name="file" accept="image/*">
+                    <input class="inpt btn-cadastro-prod" type="file" id="file" name="file" accept="image/*">
+                    <span role="alert" id="imgError" aria-hidden="true">O campo imagem não pode estar vazio</span>
                 </div>
                 <div class="div-container2 div-filha2">
                     <em>
                         Preço:
                     </em>
-                    <input class="preco" type="number" placeholder="R$ 00,00">
+                    <input class="inpt preco" type="number" placeholder="R$ 00,00">
                     <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
                     <em>
                         Categoria:
                     </em>
                     <div class="radio">
-                        <input class="radio" id='branco'type="radio" name="tipo-categorias" value="branco">
+                        <input class="inpt radio" id='branco'type="radio" name="tipo-categorias" value="branco">
                         <label for="branco">Branco</label>
                     </div>    
                     <div class="radio">
-                        <input class="radio" id='rose'type="radio" name="tipo-categorias" value="rose">
+                        <input class="inpt radio" id='rose'type="radio" name="tipo-categorias" value="rose">
                         <label for="rose">Rose</label>
                     </div>
                     <div class="radio">
-                        <input class="radio" id='tinto'type="radio" name="tipo-categorias" value="tinto">
+                        <input class="inpt radio" id='tinto'type="radio" name="tipo-categorias" value="tinto">
                         <label for="tinto">Tinto</label>
                     </div>
                     <div class="radio">
-                        <input class="radio" id='espumante'type="radio" name="tipo-categorias" value="espumante">
+                        <input class="inpt radio" id='espumante'type="radio" name="tipo-categorias" value="espumante">
                         <label for="espumante">Espumante</label>
                     </div>
                     <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
