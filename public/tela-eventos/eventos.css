@@ -1,11 +1,21 @@
-.img-uva {
-    margin-top: .5rem;
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-cachos-uva {
     width: 100%;
-    height: 30rem;
+    height: 100%;
+    margin-bottom: 2rem;
+
 }
 
 main {
     text-align: center;
+}
+
+main > section {
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -14,22 +24,32 @@ h1 {
     color: #6B081C;
     font-size: 2.8rem;
     font-weight: 900;
-    background-color: #DDC5C5;
+    /* background-color: #DDC5C5; */
     border-radius: .7rem;
-    text-align: center;
-    padding: auto;
-    margin-left: 60rem;
-    margin-right: 60rem;
+    padding: 0 1rem 0 1rem; 
+    /* width: 14vw; */
+    /* text-align: center; */
+    /* margin-left: 53rem;
+    margin-right: 53rem; */
 }
 
-h3, .janeiro {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.div-uva {
+    background-color: aqua;
+    height: 2rem;
 }
 
-h3, .fevereiro {
+.janeiro {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 6rem;
+    color: #6B081C
+}
+
+.fevereiro {
+    color:  #6B081C;
+    margin-top: 10rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
 }
 
 .contaier-filho {
