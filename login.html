@@ -79,7 +79,7 @@
             <div class="container">
 
                 <div>
-                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls autoplay></audio>
+                    <audio id="som" src="/public/midia/Where Am I - Text Me Records.mp3" controls ></audio>
                 </div>
                 <div class="card">
                     <div>
@@ -89,13 +89,14 @@
 
                     <div class="containerlabel">
                         <label for="email-login"><strong>E-mail </strong></label><br>
-                        <input type="email" id="email-login" name="email">
-                        <div class="err-login-email invisible" >Esse campo precisa ser preenchido!</div>
+                        <input type="email" id="email-login" name="email-login">
+                        <div class="err-login-email invisible">Esse campo precisa ser preenchido!</div>
                         <br>
                         <label for="senha"><strong>Senha</strong></label>
                         <br>
                         <input type="password" id="password" name="senha">
-                        <div class="err-login-password invisible">Sua senha deve ter pelo menos 6 caracteres!</div>
+                        <div class="err-login-password invisible">Esse campo precisa ser preenchido<br> e sua senha deve
+                            ter pelo menos 6 caracteres!</div>
 
                     </div>
 
@@ -124,50 +125,52 @@
                 <section class="form-body">
                     <div>
                         <div>
-                            <label for="name"><strong>Nome</strong></label>
-                            <input type="text" id="nome" name="name" placeholder="Digite seu nome">
-                            <div class="err-register-name invisible red">Você precisa digitar seu nome!</div>
+                            <label for="name-form"><strong>Nome</strong></label>
+                            <input type="text" id="nome-form" name="name-form" placeholder="Digite seu nome">
+                            <div class="err-register-name-form invisible red">Você precisa digitar seu nome!</div>
                         </div>
                         <div>
-                            <label for="cpf"><strong>Cpf ou Cnpj</strong></label>
-                            <input type="" id="cpf" name="cpf">
-                            <div class="err-register-cpf invisible red">Digite seu cpf ou Cnpj.</div>
+                            <label for="cpf-form"><strong>Cpf ou Cnpj</strong></label>
+                            <input type="num" id="cpf-form" name="cpf-form">
+                            <div class="err-register-cpf-form invisible red">Digite seu cpf ou Cnpj.</div>
                         </div>
                         <div>
-                            <label for="email"><strong>E-mail</strong></label>
-                            <input type="e-mail" id="email" name="e-mail" placeholder="winehouse@gmail.com">
-                            <div class="err-register-e-mail invisible red">Digite um email válido!</div>
+                            <label for="email-form"><strong>E-mail</strong></label>
+                            <input type="email" id="email-form" name="email-form" placeholder="winehouse@gmail.com">
+                            <div class="err-register-email-form invisible red">Digite um email válido!</div>
                         </div>
                         <div>
-                            <label for="date"><strong>Data de nascimento</strong></label>
-                            <input type="date" id="date" name="nascimento">
-                            <div class="err-register-nascimento invisible red" >Digite a data do seu nascimento!</div>
+                            <label for="date-form"><strong>Data de nascimento</strong></label>
+                            <input type="date" id="date-form" name="date-form">
+                            <div class="err-register-date-form invisible red">Digite a data do seu nascimento!</div>
                         </div>
-
-                        <!--<div class="instruction-senha">
-                            <h3>Atenção!</h3>
-                            <p>Sua senha deve ser maior ou igual a 6 caracteres.<br></p>
-                        </div>-->
 
                         <div class="password">
-                            <label for="senha">Senha</label>
-                            <input type="password" id="password-two" name="senha" placeholder="Digite sua senha">
-                            <div class="err-register-senha invisible red">Digite sua senha!</div>
+                            <label for="password-form">Senha</label>
+                            <input type="password" id="password-form" name="password-form" placeholder="Digite sua senha">
+                            <div class="err-register-password-form invisible red">Digite sua senha!</div>
                         </div>
 
-                        <p><strong>Não esqueça</strong></p>
+                        <p><strong>Não esqueça:</strong></p>
 
                         <label for="ciente">
-                            <input id="ciente" type="checkbox" name="ciente">
+                            <input type="checkbox" id="ciente"  name="ciente">
                             "Estou ciente da proibição legal
                             contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas
-                            para crianças e adolescentes menores de 18 anos de idade."</label><br>
-
+                            para crianças e adolescentes menores de 18 anos de idade."
+                        </label>
+                            <div class="err-register-ciente invisible red">Marque que está ciente!</div>
+                    <br>
                         <label for="maiorque18">
-                            <input id="maiorque18" type="checkbox" name="maiorque18">
+                            <input type="checkbox" id="maiorque18"  name="maiorque18">
                             "Estou ciente com o tratamento de meus dados pessoais, conforme
                             descrito na Política de Privacidade".</label>
+                        <div class="err-register-maiorque18 invisible red">Marque que está ciente!</div>
+
                         <button type="submit" class="btn-submit">Cadastrar</button>
+
+                       <span class="mensagem-cadastro">Cadastro efetuado com sucesso!</span>
+
                     </div>
 
                     <div>
