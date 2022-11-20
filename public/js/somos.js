@@ -3,7 +3,7 @@ const banner2Container = document.querySelector(".banner2");
 const banner2Images = document.querySelectorAll(".banner2__image");
 const banner2Bullets = document.querySelectorAll(".banner2__bullets figure");
 const banner2Text = document.querySelector(".banner2__text");
-const arrayText = ['Trabalhamos em parceria com diversas vinícolas', 'Disponibilizamos vinhos Tinto, Seco, Rose e Espumante', 'Sorteio mensal para participar de eventos gratuitamente', 'Oferecemos diariamente descontos em nossos vinhos', 'Cadastre-se em nosso site e concorra a vários prêmios', 'Ganhe um brinde em sua primeira compra', 'A cada 10 compras, ganhe um kit de vinhos', 'Sempre disponibilizamos vinhos de ótima qualidade'];
+const arrayText = ['Trabalhamos em parceria com diversas vinícolas', 'Disponibilizamos vinhos Tinto, Seco, Rose e Espumante', 'Sorteio mensal para participar de eventos gratuitamente', 'Oferecemos diariamente descontos em nossos vinhos', 'Cadastre-se em nosso site e concorra a vários prêmios', 'Ganhe um brinde em sua primeira compra', 'A partir de 10 compras, ganhe um kit de vinhos', 'Sempre disponibilizamos vinhos de ótima qualidade'];
 let counter = 0;
 
 banner2Text.innerText = arrayText[0];
@@ -31,7 +31,7 @@ banner2Bullets.forEach((bullet, idx) => {
     });
 });
 
-setInterval(changeText, 3700);
+setInterval(changeText, 3500);
 
 function changeText() {    
     counter++;

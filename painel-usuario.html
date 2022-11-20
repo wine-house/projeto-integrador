@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Whine House</title>
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="96x96" href="public/img/favicon.png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <!--Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="public/css/painel-usuario.css">
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+<body>
+    <!--HEADER-->
+    <header class="header">
+        <!--Logo-->
+        <div class="logo">
+            <figure class="logo__image">
+                <img src="public/img/logo.png" alt="Logomarca">
+            </figure>
+        </div>
+
+        <!--Menu-->
+        <nav>
+            <ul class="navbar">
+                <li class="navbar__link"><a href="index.html">Home</a></li>
+                <li class="navbar__link"><a href="somos.html">Quem Somos</a></li>
+                <li class="navbar__link"><a href="eventos.html">Eventos</a></li>
+                <li class="navbar__link"><a href="produtos.html">Produtos</a></li>
+                <li class="navbar__link"><a href="parceiros.html">Parceiros</a></li>
+            </ul>
+        </nav>
+
+        <!--Hamburger Menu-->
+        <div class="hamburger">
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+        </div>
+
+        <!--Login/Compras-->
+        <div class="icons">
+            <a href="login.html">
+                <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
+            </a>
+
+            <a href="carrinho.html">
+                <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
+            </a>            
+        </div>
+
+        <!--Procura-->
+        <div class="search">
+            <div class="search__input">
+                <input type="text" id="text" name="text" placeholder="buscar">
+            </div>
+            
+            <div class="search__glass">
+                <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+            </div>
+        </div>
+    </header>
+    <!--end HEADER-->
+
+    <!--MAIN-->
+    <main id="user-panel">
+        <section class="panel">
+            <aside class="panel__user">
+                <div class="panel__user-title">
+                    <img src="public/img/panel/glass-wine.png" alt="taça de vinho">
+                    <span class="panel__user__name">Bem vindo, João Carlos!</span>
+                </div>
+
+                <figure class="panel__user__image">
+                    <img src="public/img/panel/user-photo.png" alt="foto do usuário">
+                </figure>
+
+                <div class="panel__user__message">
+                    <p class="panel__user__para">
+                        Seja bem-vindo!
+                    </p>
+    
+                    <p class="panel__user__para">
+                        Este é seu ambiente exclusivo.
+                    </p>
+    
+                    <p class="panel__user__para">
+                        Aqui você pode visualizar seus pedidos, produtos favoritos e gerenciar seus dados pessoais.
+                    </p>
+                </div>
+
+                <div class="panel__user__purchases">
+                    <div class="panel__user__bar-outer">
+                        <div class="panel__user__bar-inner"></div>
+                    </div>
+                    
+                    <div class="panel__user__text"></div>
+                </div>
+
+                <article class="panel__user__card">
+                    <div class="panel__user__card-title">
+                        <span class="user-panel-icon"><i class="fa-solid fa-user"></i></span>
+                        <h3 class="panel__user__card-subtitle">MINHA CONTA</h3>
+                    </div>
+
+                    <div class="panel__user__card-body">
+                        <button class="panel__user__order active-link">Meus Pedidos</button>
+                        <a href="login.html" class="panel__user__registration">Alterar Cadastro</a>
+                    </div>
+                </article>
+
+                <article class="panel__user__card">
+                    <div class="panel__user__card-title">
+                        <span class="user-panel-icon"><i class="fa-solid fa-heart"></i></span>
+                        <h3 class="panel__user__card-subtitle">FAVORITOS</h3>
+                    </div>
+
+                    <div class="panel__user__card-body">
+                        <button class="panel__user__favorites">Produtos Favoritos</button>
+                    </div>
+                </article>
+
+                <a href="index.html" class="panel__user__exit">SAIR</a>
+            </aside>
+    
+            <!--Pedidos do usuário-->
+            <section class="panel__order">
+                <div class="panel__order-title">
+                    <span class="user-panel-icon"><i class="fa-solid fa-list"></i></span>
+                    <h3 class="panel__order__subtitle">MEUS PEDIDOS</h3>
+                </div>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">734920578</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 147,70</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Tinto</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">02/10/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">08:20</span>
+                    </div>
+                </article>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">734920597</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 144,80</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Rose</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">06/10/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">09:00</span>
+                    </div>
+                </article>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">73492708</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 130,70</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Tinto</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">08/10/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">16:20</span>
+                    </div>
+                </article>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">734920729</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 149,70</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Espumante</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">18/10/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">18:45</span>
+                    </div>
+                </article>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">734920810</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 127,70</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Seco</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">21/10/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">09:40</span>
+                    </div>
+                </article>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">734920845</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 155,70</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Tinto</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">27/10/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">20:35</span>
+                    </div>
+                </article>
+
+                <article class="panel__order__card">
+                    <div class="order-number">
+                        <span class="order-number__top">Número</span>
+                        <span class="order-number__bottom">734920882</span>
+                    </div>
+
+                    <div class="order-value">
+                        <span class="order-value__top">Valor</span>
+                        <span class="order-value__botom">R$ 134,80</span>
+                    </div>
+
+                    <div class="order-category">
+                        <span class="order-category__top">Categoria</span>
+                        <span class="order-category__bottom">Seco</span>
+                    </div>
+
+                    <div class="order-date">
+                        <span class="order-date__top">Data</span>
+                        <span class="order-date__bottom">02/11/2022</span>
+                    </div>
+
+                    <div class="order-hour">
+                        <span class="order-hour__top">Hora</span>
+                        <span class="order-hour__bottom">21:50</span>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <!--Link to Top-->
+        <a class="link-top" href="#user-panel"><i class="fas fa-arrow-up"></i></a>
+    </main>
+    <!--end MAIN-->
+
+    <!--MODAL-->
+    <div class="modal">
+        <div class="modal__content">
+            <div class="modal__content__message">
+                Prezado usuário, você possui um total de <span id="user-purchase"></span> compras. A partir de 10 compras, concorra aos sorteios do mês.
+            </div>
+
+            <div class="modal__content__images">
+                <figure class="modal__content__image">
+                    <img src="public/img/panel/sparkling-wine.png" alt="Uvas vermelhas">
+                </figure>
+
+                <figure class="modal__content__image">
+                    <img src="public/img/panel/red-wine.png" alt="Vinho tinto">
+                </figure>
+            </div>
+            
+            <div class="modal__content__close">Fechar</div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__top__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111504.06928210588!2d-51.5877516386636!3d-29.14987091181183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c3b525635c503%3A0x903e94cea10ccfe6!2sBento%20Gon%C3%A7alves%2C%20RS%2C%2095700-000!5e0!3m2!1spt-BR!2sbr!4v1665773995807!5m2!1spt-BR!2sbr" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="footer__top__details">
+                <div class="footer__details__contact">
+                    <h3>Contato</h3>
+                    <span>contato@loja.winehouse.com.br</span>
+                    <div class="footer__contact__whatsapp">
+                        <span class="pulse-phone">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </span>
+                        <span>(54) 99427-XXXX</span>
+                    </div>
+                </div>
+
+                <div class="footer__details__address">
+                    <h3>Endereço</h3>
+                    <span>Avenida dos Guianazes, 1340</span>
+                    <span>CEP: 95700-058 / Bento Gonçalves - RS</span>
+                </div>
+
+                <div class="footer__details__attendance">
+                    <h3>Horário de atendimento</h3>
+                    <span>De segunda a sexta das 09h às 18h.</span>
+                    <span>Exceto feriados.</span>
+                </div>
+
+                <div class="footer__details__social">
+                    <h3>Redes Sociais</h3>
+                    <img src="public/img/facebook.png" alt="Ícone Facebook">
+                    <img src="public/img/instagram.png" alt="Ícone Instagram">
+                    <img src="public/img/twitter.png" alt="Ícone Twitter">
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer__line">
+
+        <div class="footer__bottom">
+            <span>&copy;</span>
+            <strong>Loja Wine House</strong>
+            <p>Se beber, não dirija. A venda de bebidas alcoólicas é proibida para menores de 18 anos.</p>
+        </div>
+    </footer>
+    <!--end FOOTER-->
+
+    <!--JavaScript-->
+    <!--User Panel-->
+    <script src="public/js/user-panel.js"></script>
+
+    <!--Main-->
+    <script src="public/js/main.js"></script>
+    <!--end JavaScript-->
+</body>
+</html>

@@ -141,7 +141,7 @@ img {
 /*Icons*/
 .icons {
     align-self: flex-start;
-    margin: .2rem 2.5rem 0 0;
+    margin: .2rem 1.6rem 0 0;
 }
 
 .icons i, .search i {
@@ -465,7 +465,7 @@ main {
 
     .icons {
         align-self: center;
-        margin-right: 6rem;
+        margin-right: 5.5rem;        
     }
 
     .search {
@@ -496,7 +496,7 @@ main {
     }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 500px) {
     .logo__image img {
         width: calc(6.5rem + 1.2vw);
         height: calc(6.5rem + 1.2vw);
@@ -509,9 +509,9 @@ main {
     .icons {
         position: absolute;
         top: 25%;
-        left: 50%;
+        left: 52%;
         transform: translate(-50%, -50%);
-    }    
+    }
 
     .search {
         left: 50%;
@@ -520,7 +520,7 @@ main {
     }
 
     .search__input input {
-        padding: 4px 4px 5px 4px;
+        padding: 3px 4px 5px 4px;
     }
     
     #search-icon {    
