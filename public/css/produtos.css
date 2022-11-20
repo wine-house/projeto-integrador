@@ -140,7 +140,7 @@
     }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 500px) {
     .products {
         flex-wrap: wrap;
         justify-content: center;

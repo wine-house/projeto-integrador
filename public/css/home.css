@@ -577,7 +577,7 @@
     }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 500px) {
     /*Mission*/
     .mission__content__item {
         flex-basis: 96%;
