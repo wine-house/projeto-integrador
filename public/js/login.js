@@ -52,6 +52,7 @@ registerForm.addEventListener('submit', function (event) {
     if(state == true && registerCheckbox1.checked && registerCheckbox2.checked){
         registerForm.reset();
         document.querySelector('.mensagem-cadastro').style.display ='block';
+        setTimeout(() => document.querySelector('.mensagem-cadastro').style.display ='none',4000);
     }
 });
 
