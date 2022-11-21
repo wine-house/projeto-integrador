@@ -2,7 +2,7 @@
 :root {
     --cor-vinho-escuro: #530112;
     --cor-vinho-claro: #8C3555;
-    --cor-vinho-verde: #A0B200;
+    --cor-vinho-verde: rgb(160, 178, 0);
     --cor-rosa: #A66F83;
     --cor-dourada: #997C00;    
     --cor-branca: white;

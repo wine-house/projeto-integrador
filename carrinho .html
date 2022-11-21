@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/scss/_variables.scss">
+    
+    <link rel="stylesheet" href="public/css/carrinho.css">
     <title>Carrinho de Compras</title>
     <!--Favicon-->
     <link rel="icon" type="image/png" sizes="96x96" href="public/img/favicon.png">
@@ -99,18 +101,23 @@
                         </div>
                         <div
                             class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
-                            <div class="input-group">
-                                <button class="btn btn-outline-dark btn-sm" type="button">
-                                    <i class="bi-caret-down" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
-                                <input type="text" class="form-control text-center border-dark" value="1">
-                                <button class="btn btn-outline-dark btn-sm" type="button">
-                                    <i class="bi-caret-up" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
+                            <div class="css-rkgrxe">
+                                <div id="minus-button" class="css-e0dnmk">
+                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                        <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
+                                    </svg>
+                                </div>
+                                <div id="amount-1">01</div>
+                                <div id="plus-button" class="css-e0dnmk">
+                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
+                                    </svg>
+                                </div>
                                 <button class="btn btn-outline-danger border-dark btn-sm" type="button">
                                     <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
                                 </button>
                             </div>
+                        
                             <div class="text-end mt-2">
                                 
                                 <span class="text-dark">Valor Item: R$ 134,90</span>
@@ -138,18 +145,23 @@
                         </div>
                         <div
                             class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
-                            <div class="input-group">
-                                <button class="btn btn-outline-dark btn-sm" type="button">
-                                    <i class="bi-caret-down" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
-                                <input type="text" class="form-control text-center border-dark" value="1">
-                                <button class="btn btn-outline-dark btn-sm" type="button">
-                                    <i class="bi-caret-up" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
+                            <div class="css-rkgrxe">
+                                <div id="minus-button" class="css-e0dnmk">
+                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                        <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
+                                    </svg>
+                                </div>
+                                <div id="amount-1">01</div>
+                                <div id="plus-button" class="css-e0dnmk">
+                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
+                                    </svg>
+                                </div>
                                 <button class="btn btn-outline-danger border-dark btn-sm" type="button">
                                     <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
                                 </button>
                             </div>
+                        
                             <div class="text-end mt-2">
                                 
                                 <span class="text-dark">Valor Item: R$ 134,90</span>
@@ -169,7 +181,7 @@
                         <a href="/produtos.html" class="btn btn-outline-success btn-lg">
                             Continuar Comprando                            
                         </a>
-                        <a href="/confira_itens.html" class="btn btn-danger btn-lg ms-2 mt-xs-3">Fechar Compra</a>
+                        <a href="/confira_itens.html" class="btn btn-danger  btn-lg ms-2 mt-xs-3">Fechar Compra</a>
                     </div>
                 </li>
             </ul>
