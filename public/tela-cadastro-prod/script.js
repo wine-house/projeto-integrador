@@ -13,6 +13,7 @@ window.addEventListener('load', function() {
   const categoriaEspumante = document.getElementById('espumante');
   const imgError = document.getElementById('imgError');
   const imgProduto = document.querySelector('input.btn-cadastro-prod');
+  const descricaoSucess = document.getElementById('descricaoSucess');
 
 
   let foto = document.getElementById('imgFoto');
@@ -83,34 +84,38 @@ window.addEventListener('load', function() {
     const listCategorias = document.getElementsByName('tipos-categorias');
     const checkRadio = document.querySelector('input[name="tipos-categorias"]:checked');
 
-      if (!nome.value) {
-        nameError.style.display = 'flex';
-        nome.style.marginBottom = '0px';
-      } 
-      
-      if(!descricao.value) {
-        descricaoError.style.display = 'flex';
-        descricao.style.marginBottom = '0px';
-      }
+    if (!nome.value) {
+      nameError.style.display = 'flex';
+      nome.style.marginBottom = '0px';
+    } 
+    
+    if(!descricao.value) {
+      descricaoError.style.display = 'flex';
+      descricao.style.marginBottom = '0px';
+    }
 
-      if (preco.value <= 0) {
-        precoError.style.display = 'flex';
-        preco.style.marginBottom = '0px';
-      } 
-      
-      if(checkRadio != null) {
-        for(let i = 0; i < listCategorias.length; i++) {
-          if(listCategorias[i].checked) {
-            console.log('Escolheu: ' + listCategorias[i].value);
-            break;
-          } 
-        }
-      } else {
-        categoriaError.style.display = 'flex';
+    if (preco.value <= 0) {
+      precoError.style.display = 'flex';
+      preco.style.marginBottom = '0px';
+    } 
+    
+    if(checkRadio != null) {
+      for(let i = 0; i < listCategorias.length; i++) {
+        if(listCategorias[i].checked) {
+          console.log('Escolheu: ' + listCategorias[i].value);
+          break;
+        } 
       }
+    } else {
+      categoriaError.style.display = 'flex';
+    }
 
-      if(imgProduto.files.length == 0) {
-        imgError.style.display = 'flex';
-      }
+    if(imgProduto.files.length == 0) {
+      imgError.style.display = 'flex';
+    }
+
+    if(nome.value && descricao.value && preco.value > 0 && checkRadio != null && imgProduto.files.length > 0) {
+      descricaoSucess.style.display = 'flex';
+    }
   })
 });
