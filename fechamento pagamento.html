@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/css/carrinho.css">
-    <title>Confira Itens</title>
+    <link rel="stylesheet" href="public/css/estilo.css">
+    <title>Forma de Pagamento</title>
     <!--Favicon-->
     <link rel="icon" type="image/png" sizes="96x96" href="public/img/favicon.png">
 
@@ -37,7 +37,8 @@
         <!--Menu-->
         <nav>
             <ul class="navbar">
-                <li class="navbar__link"><a href="index.html">Home</a></li>
+               
+               
                 
             </ul>
         </nav>
@@ -52,9 +53,10 @@
         <!--Login/Compras-->
         <div class="icons">
             <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
+
             <a href="/carrinho .html">
-            <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
-            </a>    
+                <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
+            </a> 
 
         </div>
 
@@ -74,84 +76,86 @@
     <!--MAIN-->
     <main class="flex-fill">
         <div class="container">
-            <h1>Confira os Itens</h1>
-            <h3>Confira os itens e clique em <b>Continuar</b> para prosseguir para a <b>seleção do endereço de entrega</b>.</h3>
-            <ul class="list-group mb-3">
-                <li class="list-group-item py-3">
-                    <div class="row g-3">
-                        <div class="col-4 col-md-3 col-lg-2">
-                            <a href="#">
-                                <img src="public/img/white-wine/1-white-wine.jpg" class="img-thumbnail">
-                            </a>
-                        </div>
+            <h1>Selecione a Forma de Pagamento</h1>
+            <h3 class="mb-4">
+                Selecione a forma de pagamento e clique em <b>Continuar</b> para prosseguir para <b>concluir o
+                    pedido</b>.
+            </h3>
+            <div class="d-flex justify-content-between flex-wrap border rounded-top pt-4 px-2 border-dark">
 
-
-
-
-                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                            <h4>
-                                <b><a href="#" class="text-decoration-none text-danger">
-                                    Les Mougeottes Chardonnay, 2018</a></b>
-                            </h4>
-                            <h5>
-                                Vinho branco de Pays d'Oc, Vin de Pays, França Este vinho tem 35 menções sobre notas amadeirado (manteiga, carvalho).
-                                <br>
-                                <b>
-                                    1 unidade(s) <br>
-                                    R$ 134,90
-                                </b>
-                            </h5>
-                        </div>                            
-                    </div>
-                </li>
-
-
-
-                <ul class="list-group mb-3">
-                    <li class="list-group-item py-3">
-                        <div class="row g-3">
-                            <div class="col-4 col-md-3 col-lg-2">
-                                <a href="#">
-                                    <img src="public/img/white-wine/2-white-wine.jpg" class="img-thumbnail">
-                                </a>
+                <div class="mb-4 mx-2 flex-even ">
+                    <input type="radio" class="btn-check" name="pagamento" autocomplete="off" id="pag1">
+                    <label class="btn btn-outline-dark p-4 h-100 w-100" for="pag1">
+                        <h3>
+                            <b class="text-dark">Cartão de Crédito</b>
+                        </h3>
+                        <hr>
+                        <form action="">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="txtNome" class="form-control" placeholder=" " autofocus>
+                                <label for="txtNome" class="text-black-50">Nome Impresso no Cartão</label>
                             </div>
-    
-    
-    
-    
-                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                                <h4>
-                                    <b><a href="#" class="text-decoration-none text-danger">
-                                        Waitrose Pinot Grigio delle Venezie, 201</a></b>
-                                </h4>
-                                <h5>
-                                    Um vinho atraente e bem equilibrado com frutos de caroço e alguma mineralidade.
-                                    <br>
-                                    <b>
-                                        1 unidade(s) <br>
-                                        R$ 134,90
-                                    </b>
-                                </h5>
-                            </div>                            
-                        </div>
-                    </li>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" id="txtNumero" class="form-control" placeholder=" ">
+                                <label for="txtNumero" class="text-black-50">Número do Cartão</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" id="txtValidade" class="form-control" placeholder=" ">
+                                <label for="txtValidade" class="text-black-50">Validade (mm/aa)</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" id="txtCodigo" class="form-control" placeholder=" ">
+                                <label for="txtCodigo" class="text-black-50">Código de Segurança</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <select id="selParcelas" class="form-select">
+                                    <option value="1" selected>À vista</option>
+                                    <option value="2">2 x sem juros</option>
+                                    <option value="3">3 x sem juros</option>
+                                    <option value="4">4 x sem juros</option>
+                                    <option value="5">5 x sem juros</option>
+                                    <option value="6">6 x sem juros</option>
+                                </select>
+                                <label for="selParcelas" class="text-black-50">Parcelamento</label>
+                            </div>
+                        </form>
+
+                    </label>
+                </div>
+                <div>
+                    
+                </div>
+                
 
 
 
-                    <li class="list-group-item pt-3 pb-0">
-                        <div class="text-end">
-                            <h4 class="text-dark mb-3">
-                                Valor Total: R$ 269,80
-                            </h4>
-                            <a href="/carrinho .html" class="btn btn-outline-success btn-lg mb-3">
-                                Voltar ao Carrinho
-                            </a>
-                            <a href="/selecionar endereço.html" class="btn btn-danger btn-lg ms-2 mb-3">Continuar</a>
-                        </div>
-                    </li>
-                </ul>
+                <div class="mb-4 mx-2 flex-even">
+                    <input type="radio" class="btn-check" name="pagamento" autocomplete="off" id="pag2">
+                    <label class="btn btn-outline-dark p-4 h-100 w-100" for="pag2">
+                        <h3>
+                            <b class="text-dark">Dinheiro</b>
+                        </h3>
+                        <hr>
+                        <form action="">
+                            <h4>Valor da Compra: <b>R$ 269,80</b></h4>
+                            <br>
+                            <p>
+                                Se precisar de troco, informe no campo abaixo.
+                            </p>
+                            <div class="form-floating mb-3">
+                                <input type="text" id="txtTroco" class="form-control" placeholder=" ">
+                                <label for="txtTroco" class="text-black-50">Precisa de troco para quanto?</label>
+                            </div>
+                        </form>
+
+                    </label>
+                </div>
+
             </div>
-        </main>
 
 
 
@@ -161,12 +165,23 @@
 
 
 
-
+                <div class="text-end border border-top-0 rounded-bottom p-4 pb-0">
+                    <a href="/selecionar endereço.html" class="btn btn-outline-success btn-lg mb-4">
+                        Voltar aos Endereços
+                    </a>
+                    <a href="/fechamento -pedido.html" class="btn btn-danger btn-lg ms-2 mb-4">Finalizar</a>
+                </div>
+            </div>
 
 
 </main>
 
 
+
+
+
+
+    
     
     <!--end MAIN-->
 
