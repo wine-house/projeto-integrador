@@ -97,6 +97,12 @@
     bottom: 0px;
     transition: all .5s;
 }
+
+.products__item__buy > a {
+    text-decoration: none;
+    color: var(--cor-branca);
+}
+
 .products__item__buy:hover {
     background-color: var(--cor-vinho-claro);
     border-top: 3px solid var(--cor-vinho-escuro);
