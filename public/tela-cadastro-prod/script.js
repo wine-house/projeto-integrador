@@ -6,7 +6,6 @@ window.addEventListener('load', function() {
   const descricaoError = document.getElementById('descricaoError');
   const precoError = document.getElementById('precoError');
   const preco = document.querySelector('input.preco');
-  const categoria = document.querySelectorAll('radio');
   const categoriaError = document.getElementById('categoriaError');
   const categoriaBranco = document.getElementById('branco');
   const categoriaRose = document.getElementById('rose');
@@ -81,6 +80,9 @@ window.addEventListener('load', function() {
   formulario.addEventListener('submit', function(event) {
     event.preventDefault();
 
+    const listCategorias = document.getElementsByName('tipos-categorias');
+    const checkRadio = document.querySelector('input[name="tipos-categorias"]:checked');
+
       if (!nome.value) {
         nameError.style.display = 'flex';
         nome.style.marginBottom = '0px';
@@ -96,15 +98,19 @@ window.addEventListener('load', function() {
         preco.style.marginBottom = '0px';
       } 
       
-      if(!categoria.value) {
+      if(checkRadio != null) {
+        for(let i = 0; i < listCategorias.length; i++) {
+          if(listCategorias[i].checked) {
+            console.log('Escolheu: ' + listCategorias[i].value);
+            break;
+          } 
+        }
+      } else {
         categoriaError.style.display = 'flex';
       }
 
       if(imgProduto.files.length == 0) {
         imgError.style.display = 'flex';
       }
-    
   })
-  
-  
-})
+});
