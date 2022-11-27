@@ -258,7 +258,7 @@
 
 .promotion__item__btn {
     margin: .9rem 0;
-    padding: .4rem 2rem;
+    padding: .5rem 1.2rem;
     border-radius: 5px;
     background-color: var(--cor-vinho-verde);
     color: var(--cor-branca);
@@ -331,26 +331,31 @@
     bottom: 0px;
 }
 
-.release__item footer {
-    padding: .7rem 0;
-}
-
 .release__item__name {
+    display: block;
     padding: .7rem 1.2rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
     background: var(--cor-vinho-escuro);
-    border: 1px solid var(--cor-branca);
-    border-radius: 5px;
-    cursor: pointer;
     color: var(--cor-branca);
     text-shadow: -1px -1px 0 var(--cor-preta), 1px -1px 0 var(--cor-preta), -1px 1px 0 var(--cor-preta), 1px 1px 0 var(--cor-preta);
     transition: all .5s;
 }
-.release__item__name:hover {
-    color: var(--cor-preta);
-    text-shadow: none;
-    background: rgba(255, 255, 255, .5);
+
+.release__item__btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: .55rem 1.3rem;
+    background: var(--cor-vinho-escuro);
+    color: var(--cor-branca);
+    border: 1px solid var(--cor-branca);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: .7rem 0;
+    transition: all .5s;
+}
+.release__item__btn:hover {
+    background: rgb(153, 72, 103);
 }
 
 /**SECTION CURIOSITY**/
