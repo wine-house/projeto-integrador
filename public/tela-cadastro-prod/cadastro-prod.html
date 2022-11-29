@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Loja Whine House</title>
         <!--Favicon-->
-        <link rel="icon" type="image/png" sizes="96x96" href="public/img/favicon.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../public/img/favicon.png">
     
         <!--Google Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,11 +34,11 @@
         <!--Menu-->
         <nav>
             <ul class="navbar">
-                <li class="navbar__link"><a href="index.html" class="active-link">Home</a></li>
-                <li class="navbar__link"><a href="somos.html">Quem Somos</a></li>
-                <li class="navbar__link"><a href="eventos.html">Eventos</a></li>
-                <li class="navbar__link"><a href="produtos.html">Produtos</a></li>
-                <li class="navbar__link"><a href="parceiros.html">Parceiros</a></li>
+                <li class="navbar__link"><a href="../../index.html">Home</a></li>
+                <li class="navbar__link"><a href="../../somos.html">Quem Somos</a></li>
+                <li class="navbar__link"><a href="./public/tela-eventos/eventos.html">Eventos</a></li>
+                <li class="navbar__link"><a href="../../produtos.html">Produtos</a></li>
+                <li class="navbar__link"><a href="../../parceiros.html">Parceiros</a></li>
             </ul>
         </nav>
 
@@ -73,16 +73,18 @@
             CADASTRO DE PRODUTOS
         </h1>
         <hr>
-        <form class="form">
+        <form class="form" id="formulario">
             <section class="section-filha-form section-container1">
                 <em>
                     Nome do produto:
                 </em>
-                <input class="nome" type="text" placeholder="Digite aqui o nome do produto">
+                <input class="inpt nome" type="text" placeholder="Digite aqui o nome do produto">
+                <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
                 <em>
                     Descrição do produto:
                 </em>
                 <textarea class="descricao" type="text" placeholder="Digite a descrição aqui"></textarea>
+                <span role="alert" id="descricaoError" aria-hidden="true">O campo descrição não pode estar vazio</span>
             </section>
             <section class="section-filha-form section-container2">
                 
@@ -91,35 +93,39 @@
                         Imagem do produto:
                     </em>
                     <img src="./img/btn-img-prod.png" alt="Selecione uma imagem" id="imgFoto">
-                    <input class="btn-cadastro-prod" type="file" id="file" name="file" accept="image/*">
+                    <input class="inpt btn-cadastro-prod" type="file" id="file" name="file" accept="image/*">
+                    <span role="alert" id="imgError" aria-hidden="true">O campo imagem não pode estar vazio</span>
                 </div>
                 <div class="div-container2 div-filha2">
                     <em>
                         Preço:
                     </em>
-                    <input class="input-preco" type="number" placeholder="R$ 00,00">
+                    <input class="inpt preco" type="number" placeholder="R$ 00,00">
+                    <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
                     <em>
                         Categoria:
                     </em>
                     <div class="radio">
-                        <input class="input-radio" type="radio" name="tipo-categorias" value="branco">
+                        <input class="inpt radio" id='branco' type="radio" name="tipos-categorias" value="branco">
                         <label for="branco">Branco</label>
                     </div>    
                     <div class="radio">
-                        <input class="input-radio" type="radio" name="tipo-categorias" value="rose">
+                        <input class="inpt radio" id='rose' type="radio" name="tipos-categorias" value="rose">
                         <label for="rose">Rose</label>
                     </div>
                     <div class="radio">
-                        <input class="input-radio" type="radio" name="tipo-categorias" value="tinto">
+                        <input class="inpt radio" id='tinto' type="radio" name="tipos-categorias" value="tinto">
                         <label for="tinto">Tinto</label>
                     </div>
                     <div class="radio">
-                        <input class="input-radio" type="radio" name="tipo-categorias" value="espumante">
+                        <input class="inpt radio" id='espumante' type="radio" name="tipos-categorias" value="espumante">
                         <label for="espumante">Espumante</label>
                     </div>
+                    <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
                 </div>
             </section>
             <button id="btn-submit">Enviar</button>
+            <span role="alert" id="descricaoSucess" aria-hidden="true">Seu produto foi cadastrado com sucesso!</span>
         </form>
 
     </main>
@@ -175,7 +181,7 @@
     <!--end FOOTER-->
 
     <!--JavaScript-->
-    <script src="public/js/main.js"></script>
+    <script src="../js/main.js"></script>
     <script src="./script.js"></script>
     <!--end JavaScript-->
     

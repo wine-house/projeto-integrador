@@ -16,7 +16,6 @@
      font-weight: 600;
      font-size: 3rem;
      color: #997C00;
-     margin-left: 450px;
      margin-top: 20px;
      font-style: italic;
      text-align: center;
@@ -24,7 +23,7 @@
 
  .container h3 {
 
-     font-size: 2rem;
+     font-size: 3rem;
      margin-top: 5px;
      margin-left: 20px;
 
@@ -92,7 +91,7 @@
      
      padding-left: 5rem;
      padding-top: 50px;
-     padding-right: 50px;
+     padding-right:30px;
 
 
 
@@ -120,4 +119,22 @@
      text-align: center;
      margin-top: 10px;
     
+ }
+ @media (max-width:1080px) {
+    .second-div{
+        flex-direction: column-reverse;
+    
+    }
+ }
+ @media(max-width:1080px){
+    .third-div{
+        flex-direction: column-reverse;
+    }
+ }
+
+ @media(max-width: 1080px){
+    .container h3 {
+        font-size:2rem;
+        margin-left: 200px;
+ }
  }

@@ -1,9 +1,4 @@
-                        #PROJETO INTEGRADOR
-![produtos](./public/img/produtos.png)
-
-#Produto interno:
-
-![produto interno](./public/img/produto%20interno.png)
+                      #PROJETO INTEGRADOR
 
 ##**Instituição de Ensino**: Digital House; 
 
@@ -44,24 +39,18 @@
 ![Captura de tela 2022-10-23 155150](https://user-images.githubusercontent.com/107070197/197542097-8d8a1326-8b25-447f-a2cd-278647abaf09.png)
 
 
+#Página Login-cadastro
 
 
 
-#Produto interno:
 
 
- fbe319b25189545961ef1761506e6e4f8301a8a2
+![Captura de tela_20221116_074548](https://user-images.githubusercontent.com/107070197/202160970-cd994a66-1bb2-422f-a6cc-7c621a95fdcd.png);![Captura de tela_20221116_074715](https://user-images.githubusercontent.com/107070197/202161039-7edb4d75-654a-47dd-ba7f-cd0b193b76fd.png)
 
 
 
-##Colaboradores:
-Christian Bisacchi
-Jonatha Trajano
-Keyla Delpupo
-Márcio Montovani
-Pedro Henrique
-Rodrigo Potel
-     
+
+#Produto interno
 
 ![produto interno](https://user-images.githubusercontent.com/107070197/197542249-fed326b0-9ed3-49db-97d7-c250a40a35fa.png)
 
@@ -69,7 +58,6 @@ Rodrigo Potel
 ##Colaboradores:
 Christian Bisacchi, 
 Keyla Delpupo, 
-Márcio Montovani, 
 Pedro Henrique, 
 Rodrigo Potel.
      

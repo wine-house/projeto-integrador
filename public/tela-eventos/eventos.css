@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-cachos-uva {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+
+}
+
+main {
+    text-align: center;
+}
+
+main > section {
+    display: flex;
+    justify-content: center;
+}
+
+.div-uva {
+    background-color: aqua;
+    height: 2rem;
+}
+
+.janeiro {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 6rem;
+    color: #6B081C
+}
+
+.fevereiro {
+    color:  #6B081C;
+    margin-top: 10rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contaier-filho {
+    margin-top: 3rem;
+}
+
+hr {
+    margin-bottom: 10rem;
+    margin-top: 13rem;
+    height: 2.5px;
+    background-color: #997C00;
+}
+
+.img-janeiro {
+    border-radius: 2rem;
+}
+
+.img-fevereiro {
+    text-align: center;
+    border-radius: 2rem;
+    margin-bottom: 10rem;
+}
+
+.escolha-vinhos {
+    background-color: #6B081C;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+}
+
+.text-escolhas {
+    display: flex;
+    margin-top: 8rem;
+}
+
+.text-title {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 8rem;
+    color: white;
+}
+
+.text-subtitle {
+    font-size: 3rem;
+    color: #C8A922;
+    margin-top: 7rem;
+}
+
+.img-tres-tipos {
+    width: 57vw;
+    height: 56vh;
+    margin: 3rem 0 10rem 0;
+}
+
+.btns-vinhos {
+    width: 47vw;
+    margin: 52rem 20% 0 26%;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #FFDFAA;
+    border-radius: 5rem;
+    padding: .5rem;
+    font-weight: 700;
+    color: #6B081C;
+    border-style: none;
+    width: 4rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    transition: .5s;
+}
+
+.btn-2 {
+    margin-left: 3rem;
+}
+
+.btn-3 {
+    margin-left: 4rem;
+}
+
+.text-categorias {
+    color: white;
+    margin-bottom: 20rem;
+    width: 47.5vw;
+    margin: 0 20% 0 26%;
+    justify-content: space-between;
+    font-size: medium;
+    margin-bottom: 10rem;
+}
