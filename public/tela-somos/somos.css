@@ -195,7 +195,7 @@
 /**SECTION VALUES**/
 .values {
     padding: 2rem 0;
-    background: linear-gradient(to top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(../img/somos/bg.jpg) center no-repeat;
+    background: linear-gradient(to top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(img/bg.jpg) center no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
