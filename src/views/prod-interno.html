@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/css/estilo.css">
-    <title>Fechamento de Pedido</title>
+    <title>Loja Whine House</title>
     <!--Favicon-->
-    <link rel="icon" type="image/png" sizes="96x96" href="../../../public/menu-footer/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/images/menu-footer/favicon.png">
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,16 +17,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!--CSS-->
-    <link rel="stylesheet" href="../../../public/menu-footer/menu-footer.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="/public/stylesheets/menu-footer.css">
+    <link rel="stylesheet" href="/public/stylesheets/prod-interno.css">
 </head>
 <body>
-       <!--HEADER-->
-       <header class="header">
+    <!--HEADER-->
+    <header class="header">
         <!--Logo-->
         <div class="logo">
             <figure class="logo__image">
-                <img src="../../../public/menu-footer/img/logo.png" alt="Logomarca">
+                <img src="/public/images/menu-footer/logo.png" alt="Logomarca">
             </figure>
         </div>
 
@@ -72,31 +68,63 @@
     <!--end HEADER-->
 
     <!--MAIN-->
-    <main class="flex-fill">
-        <div class="container text-center">
-            <h1>Obrigado!</h1>
-            <hr>
-            <h3>Anote o número de seu pedido:</h3>
-            <h2 class="text-danger"><b>004571</b></h2>
-            <p>Em até 7 dias úteis, seu pedido será entregue. Qualquer dúvida sobre este pedido, entre em contato conosco e informe o número do pedido para que possamos te ajudar.</p>
-            <p>Tenha um ótimo dia!</p>
-            <p>
-                Atenciosamente,<br>
-                Equipe  wine House
-            </p>
-            <p>
-                <a href="/index.html" class="btn btn-danger btn-lg">Voltar à Página Principal</a>
-            </p>
-        </div>
-    
+    <main>
+        <section class="container-pai">
+            <header class="filho1">
+                <img src="/public/images/tela-prod-interno/tresvinhos.png" alt="">
+            </header>
 
+            <section class="filho2">
+                <h1>
+                    Kit Exclusivo - VIK <br>
+                    3 Itens, 750 ml. <br>
+                </h1>
+                <h2>15% OFF</h2>
+                <h3>R$ 2850,85</h3>
+                <section class="botao-verde">
+                    <div class="botoes">
+                        <button class="btn-subtrair">-</button>
+                        <p>1</p>
+                        <button class="btn-somar">+</button>
+                    </div>
+                    <div class="botao-add">
+                        <button>Adicionar</button>
+                    </div>
 
-
-
-
-
-    
-    
+                </section>
+            </section>
+        </section>
+        <p class="titulo-ficha-tec">Ficha Técnica</p>
+        <hr>
+        <section class="secao-ficha-tec">
+            <article class="card1">
+                <p><i>Uva</i><br>
+                   Chardonnay, Sauvignon Blanc e Torrontés
+                </p>
+                <br>
+                <p><i>Classificação</i><br>
+                   Seco
+                </p>
+                <br>
+                <p><i>Safra</i><br>
+                   2021
+                </p>
+            </article>
+            <article class="card2">
+                <p><i>Teor Alcoólico</i><br>
+                   12.50% ABV
+                </p>
+                <br>
+                <p><i>Temperatura de serviço</i><br>
+                   9 °C
+                </p>
+                <br>
+                <p><i>Potencial de guarda</i><br>
+                   3 anos
+                </p>
+            </article>
+        </section>
+    </main>
     <!--end MAIN-->
 
     <!--FOOTER-->
@@ -132,9 +160,9 @@
 
                 <div class="footer__details__social">
                     <h3>Redes Sociais</h3>
-                    <img src="../../../public/menu-footer/img/facebook.png" alt="Ícone Facebook">
-                    <img src="../../../public/menu-footer/img/instagram.png" alt="Ícone Instagram">
-                    <img src="../../../public/menu-footer/img/twitter.png" alt="Ícone Twitter">
+                    <img src="/public/images/menu-footer/facebook.png" alt="Ícone Facebook">
+                    <img src="/public/images/menu-footer/instagram.png" alt="Ícone Instagram">
+                    <img src="/public/images/menu-footer/twitter.png" alt="Ícone Twitter">
                 </div>
             </div>
         </div>
@@ -149,8 +177,5 @@
     </footer>
     <!--end FOOTER-->
 
-    <!--JavaScript-->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--end JavaScript-->
 </body>
 </html>
