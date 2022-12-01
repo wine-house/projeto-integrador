@@ -1,0 +1,112 @@
+main * {
+    font-family: Montserrat;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    color: #540606;
+}
+
+.form {
+    display: flex;
+    width: 60vw;
+    padding: 2rem;
+    flex-direction: column;
+    margin: 4rem auto 0 auto;
+}
+
+.section-container1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-container2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0rem 5rem 0rem;
+}
+
+.div-container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+#imgFoto {
+    cursor: pointer;
+    height: 300px;
+    width: 25vw;
+    border-radius: 2rem;
+}
+
+#imgFoto:hover {
+    transform: scale(1.2);
+}
+
+em {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.nome, .descricao, .preco {
+    margin-bottom: 2rem;
+}
+
+#nameError, #descricaoError, #precoError, #categoriaError, #imgError {
+    display: none;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+#descricaoSucess {
+    display: none;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.descricao {
+    resize: none;
+    height: 15rem;
+}
+
+ div > label {
+    font-size: 20px;
+ }
+
+.inpt, .descricao {
+    border-color: #9b9999;
+    border-radius: .6rem;
+    font-size: 22px;
+    background-color: #EEECEC;
+}
+
+button {
+    border: black;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    line-height: 1rem;
+    padding: 1rem;
+    width: 12rem;
+    height: 3rem;
+    background-color: #A0B200;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+
+
