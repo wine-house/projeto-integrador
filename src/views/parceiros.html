@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/css/carrinho.css">
-    <title>Selecionar Endereço</title>
+    <title>Loja Whine House</title>
     <!--Favicon-->
-    <link rel="icon" type="image/png" sizes="96x96" href="../../../public/menu-footer/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/images/menu-footer/favicon.png">
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
     <!--Awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!--CSS-->
-    <link rel="stylesheet" href="../../../public/menu-footer/menu-footer.css">
-    <link rel="stylesheet" href="public/css/somos.css">
+    <link rel="stylesheet" href="/public/stylesheets/parceiros.css">
+    <link rel="stylesheet" href="/public/stylesheets/menu-footer.css">
 </head>
+
 <body>
     <!--HEADER-->
     <header class="header">
         <!--Logo-->
         <div class="logo">
             <figure class="logo__image">
-                <img src="../../../public/menu-footer/img/logo.png" alt="Logomarca">
+                <img src="/public/images/menu-footer/logo.png" alt="Logomarca">
             </figure>
         </div>
 
@@ -41,7 +41,7 @@
                 <li class="navbar__link"><a href="../tela-somos/somos.html">Quem Somos</a></li>
                 <li class="navbar__link"><a href="../tela-eventos/eventos.html">Eventos</a></li>
                 <li class="navbar__link"><a href="../tela-produtos/produtos.html">Produtos</a></li>
-                <li class="navbar__link"><a href="../tela-parceiros/parceiros.html">Parceiros</a></li>
+                <li class="navbar__link"><a href="./parceiros.html" class="active-link">Parceiros</a></li>
             </ul>
         </nav>
 
@@ -72,64 +72,44 @@
     <!--end HEADER-->
 
     <!--MAIN-->
-    <main class="flex-fill">
-        <div class="container">
-            <h1>Selecione o Endereço de Entrega</h1>
-            <h3 class="mb-4">
-                Selecione o endereço de entrega e clique em <b>Continuar</b> para prosseguir para a <b>seleção da
-                    forma de pagamento</b>.
-            </h3>
-            <div class="d-flex justify-content-around flex-wrap border rounded-top pt-4 px-2">
-                <div class="mb-4 mx-2 flex-even">
-                    <input type="radio" class="btn-check" name="endereco" 
-                        autocomplete="off" id="end1">
-                    <label class="btn btn-outline-dark p-4 h-100 w-100" for="end1">
-                        <h3>
-                            <b class="text-dark">Minha Casa</b><br>
-                            <hr>
-                            <b>Ricardo Maroquio</b><br>
-                            Rua Caminho Virtual, 101<br>
-                            Compulândia/PC<br>
-                            CEP 01.010-101
-                        </h3>
-                    </label>
-                    </div>
+    <main>
+        <section class="container">
+            <img id="first-imag" src="/public/images/tela-parceiros/uvas.png" alt="parreiral">
+            <h1>Produtores parceiros</h1>
+            <h3>Região Vale do São Francisco</h3>
 
-                   
-                    </div>
+            <div class="first-div">
+             
+                <img src="/public/images/tela-parceiros/valecom uvas.png" alt="Vale do São Francisco">
+                <p>
+                   <strong>O Vale fica localizado entre Pernambuco e Bahia, com solos argilosos e arenosos pobres, mas
+                    ricos em minerais e clima semiárido. Nos anos 60, as primeiras videiras foram plantadas e nos anos
+                    80 surgiram os primeiros investimentos vinícolas.Em 2003, o Instituto do Vinho do Vale do São
+                    Francisco foi criado, a fim de fortalecer a viticultura local.</strong> 
+                </p>
+            </div>
 
-                    <div class="text-end border border-top-0 rounded-bottom p-4 pb-0">                    
-                        <a href="/confira_itens.html" class="btn btn-outline-success btn-lg mb-4">
-                            Voltar aos Itens
-                        </a>
-                        <a href="/fechamento pagamento.html" class="btn btn-danger btn-lg ms-2 mb-4">Continuar</a>
-                    </div>
-                </div>
+            <div class="second-div">
+               
+                 <img src="/public/images/tela-parceiros/rioSol.png" alt="Vínicula Rio sol"><br>
+                
+                    <p><strong>Vínicula Rio do Sol<br><br>O projeto do Rio Sol nasceu em 2002, da parceria entre a Dão Sul, <br>empresa da Global Wines, e a
+                    Expand. Localizada nas margens do rio São Francisco e com mais de 200 hectares de vinhas, é uma
+                    vinícola que contraria a lógica das uvas e<br> elabora até duas safras e meia por ano, graças à
+                    maneira
+                    única de irrigar os vinhedos.</p></strong>
 
-
-
-
-
-
-
-                    </main>
-
-    
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
+            </div>
+            <div class="third-div">
+           
+                <img src="/public/images/tela-parceiros/terraNova.png" alt="Vínicula Terra Nova">
+                <p><strong>Vínicula Terra Nova<br><br>Quando a Vinícola Miolo chegou na Bahia, em 2001, carregou consigo a mesma esperança que o imigrante
+                    Giuseppe Miolo, bisavô de Adriano Miolo, trouxe da Itália em 1897, que ao plantar as primeiras mudas
+                    de uvas deu origem ao emblemático Lote 43, no Vale dos Vinhedos. Nesses 20 anos no sertão brasileiro, a
+                    marca Terranova germinou e hoje é sinônimo de vida.</p></strong>
+            </div>
+        </section>
+    </main>
     <!--end MAIN-->
 
     <!--FOOTER-->
@@ -165,9 +145,9 @@
 
                 <div class="footer__details__social">
                     <h3>Redes Sociais</h3>
-                    <img src="../../../public/menu-footer/img/facebook.png" alt="Ícone Facebook">
-                    <img src="../../../public/menu-footer/img/instagram.png" alt="Ícone Instagram">
-                    <img src="../../../public/menu-footer/img/twitter.png" alt="Ícone Twitter">
+                    <img src="/public/images/menu-footer/facebook.png" alt="Ícone Facebook">
+                    <img src="/public/images/menu-footer/instagram.png" alt="Ícone Instagram">
+                    <img src="/public/images/menu-footer/twitter.png" alt="Ícone Twitter">
                 </div>
             </div>
         </div>
@@ -181,9 +161,9 @@
         </div>
     </footer>
     <!--end FOOTER-->
-
     <!--JavaScript-->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/menu-footer.js"></script>
     <!--end JavaScript-->
 </body>
+
 </html>

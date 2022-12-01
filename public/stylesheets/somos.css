@@ -195,7 +195,7 @@
 /**SECTION VALUES**/
 .values {
     padding: 2rem 0;
-    background: linear-gradient(to top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(../img/somos/bg.jpg) center no-repeat;
+    background: linear-gradient(to top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(/public/images/tela-somos/bg.jpg) center no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,7 +243,7 @@
 }
 
 .prize__bio {
-    background: url(../tela-somos/img/bg1-emphasis.jpg) no-repeat center;
+    background: url(/public/images/tela-somos/bg1-emphasis.jpg) no-repeat center;
     background-size: cover;
     border: 3px solid var(--cor-branca);
     background-color: #a3a195;
@@ -258,7 +258,7 @@
 }
 
 .prize__content__card:last-child .prize__bio {
-    background: url(../tela-somos/img/bg2-emphasis.jpg) no-repeat center;
+    background: url(/public/images/tela-somos/bg2-emphasis.jpg) no-repeat center;
     background-size: cover;
 }
 
