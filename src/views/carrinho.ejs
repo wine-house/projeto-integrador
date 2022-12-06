@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Loja Whine House</title>
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/images/menu-footer/favicon.png">
+
+    <!--module-bootstrap-->
+
+
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/node_modules/bootstrap/scss/_variables.scss">
     
-    <link rel="stylesheet" href="public/css/carrinho.css">
-    <title>Carrinho de Compras</title>
-    <!--Favicon-->
-    <link rel="icon" type="image/png" sizes="96x96" href="/public/images/menu-footer/favicon.png">
+
+   
+
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,12 +31,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!--CSS-->
+
+    <link rel="stylesheet" href="/public/stylesheets/carrinho.css">
+    <link rel="stylesheet" href="/public/stylesheets/home.css">
     <link rel="stylesheet" href="/public/stylesheets/menu-footer.css">
-    <link rel="stylesheet" href="public/css/somos.css">
 </head>
 <body>
-       <!--HEADER-->
-       <header class="header">
+    <!--HEADER-->
+    <header class="header">
+
+       
         <!--Logo-->
         <div class="logo">
             <figure class="logo__image">
@@ -39,37 +51,30 @@
         <!--Menu-->
         <nav>
             <ul class="navbar">
-                <li class="navbar__link"><a href="../tela-home/index.html">Home</a></li>
-                <li class="navbar__link"><a href="../tela-somos/somos.html">Quem Somos</a></li>
-                <li class="navbar__link"><a href="../tela-eventos/eventos.html">Eventos</a></li>
-                <li class="navbar__link"><a href="../tela-produtos/produtos.html">Produtos</a></li>
-                <li class="navbar__link"><a href="../tela-parceiros/parceiros.html">Parceiros</a></li>
+
+                <li class="navbar__link"><a href="./index.html" class="">Home</a></li>
+                <li class="navbar__link"><a href="./carrinho.html" class="active-link">Carrinho de Compras</a></li>
+
+
+
             </ul>
         </nav>
 
         <!--Hamburger Menu-->
         <div class="hamburger">
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
+         
         </div>
 
         <!--Login/Compras-->
         <div class="icons">
-            <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
-            <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
-        </div>
 
-        <!--Procura-->
-        <div class="search">
-            <div class="search__input">
-                <input type="text" id="text" name="text" placeholder="buscar">
-            </div>
-            
-            <div class="search__glass">
-                <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
-            </div>
         </div>
+        
+
+                  
+            
+        
+
     </header>
     <!--end HEADER-->
 
@@ -85,6 +90,9 @@
                         <div class="col-4 col-md-3 col-lg-2">
 
         
+
+ <!--Primeiro item-->
+
                 <li class="list-group-item py-3">
                     <div class="row g-3">
                         <div class="col-4 col-md-3 col-lg-2">
@@ -126,7 +134,6 @@
                             </div>
                         </div>
                     </div>
-                </li>
 
 
                 <li class="list-group-item py-3">
@@ -163,27 +170,57 @@
                                     <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
                                 </button>
                             </div>
-                        
-                            <div class="text-end mt-2">
-                                
-                                <span class="text-dark">Valor Item: R$ 134,90</span>
+                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                                <h4>
+                                    <b><a href="#" class="text-decoration-none text-danger">
+                                        Waitrose Pinot Grigio delle Venezie, 2018</a></b>
+                                </h4>
+                                <h5 class="tex-vinho">
+                                    Um vinho atraente e bem equilibrado com frutos de caroço e alguma mineralidade.
+                                </h5>
+                            </div>
+                            <div
+                                class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
+                                <div class="css-rkgrxe">
+                                    <div id="minus-button" class="css-e0dnmk">
+                                        <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                            <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="amount-1">01</div>
+                                    <div id="plus-button" class="css-e0dnmk">
+                                        <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                            <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
+                                        </svg>
+                                    </div>
+                                    <button class="btn btn-outline-danger border-dark btn-sm" type="button">
+                                        <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
+                                    </button>
+                                </div>
+                            
+                                <div class="text-end mt-2">
+                                    
+                                    <span class="text-dark">Valor Item: R$ 134,90</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+
+
+
                 </li>
                 <li class="list-group-item py-3">
                     <div class="text-end">
                         <h4 class="text-dark mb-3">
                             Valor Total: R$ 269,80 <br>
                             <small class="text-secondary">5 A 7 DIAS ÚTEIS <br> (FRETE GRÁTIS)</small><br>
-
                         </h4>
                        
                         
-                        <a href="/produtos.html" class="btn btn-outline-success btn-lg">
-                            Continuar Comprando                            
+
+                        <a href="/src/views/produtos.html" class="btn btn-outline-success btn-lg"> Continuar Comprando                            
                         </a>
-                        <a href="/confira_itens.html" class="btn btn-danger  btn-lg ms-2 mt-xs-3">Fechar Compra</a>
+                        <a href="/src/views/confira-itens.html" class="btn btn-danger  btn-lg ms-2 mt-xs-3">Fechar Compra</a>
                     </div>
                 </li>
             </ul>
@@ -224,9 +261,13 @@
 
                 <div class="footer__details__social">
                     <h3>Redes Sociais</h3>
-                    <img src="/public/images/menu-footer/facebook.png" alt="Ícone Facebook">
-                    <img src="/public/images/menu-footer/instagram.png" alt="Ícone Instagram">
-                    <img src="/public/images/menu-footer/twitter.png" alt="Ícone Twitter">
+
+                    <img src="public/img/facebook.png" alt="Ícone Facebook">
+                    <img src="public/img/instagram.png" alt="Ícone Instagram">
+                    <img src="public/img/twitter.png" alt="Ícone Twitter">
+                    
+                    
+
                 </div>
             </div>
         </div>
