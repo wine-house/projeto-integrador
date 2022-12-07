@@ -102,9 +102,9 @@
     transition: all .5s;
 }
 
-.products__item__buy > a {
-    text-decoration: none;
+.products__item__buy a {
     color: var(--cor-branca);
+    display: block;
 }
 
 .products__item__buy:hover {

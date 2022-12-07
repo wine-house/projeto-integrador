@@ -12,13 +12,6 @@ var router = express.Router();
 //   res.send(JSON.stringify(produtosModel.index()));
 //   // res.render('index');
 // });
-// router.get('/', function (req, res, next) {
-//   res.render('index',
-//     {
-//       css1: "/stylesheets/home.css",
-//       css2: "/stylesheets/menu-footer.css"
-//     })
-// });
 
 router.get('/', IndexController.index);
 
