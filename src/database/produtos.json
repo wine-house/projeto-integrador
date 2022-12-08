@@ -27,12 +27,12 @@
     },
     {
         "id": 3,
-        "nome": "Cierre Beaugrey",
+        "nome": "Saint-Pierre",
         "valor": "R$ 80,80",
         "tipo": "Vinho Tinto",
         "safra": 2020,
         "imagem": [
-            "3-cierre-beaugrey",
+            "3-saint-pierre",
             "3-red-wine"
         ],
         "novo": true,
@@ -41,7 +41,7 @@
     {
         "id": 4,
         "nome": "Poderi Nespoli",
-        "valor": "R$ 80,50",
+        "valor": "R$ 79,00",
         "tipo": "Vinho Tinto",
         "safra": 2018,
         "imagem": [
