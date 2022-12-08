@@ -3,7 +3,7 @@
     <!--MAIN-->
     <main class="flex-fill">
         <div class="container">
-            <h1 class="carrinho">Carrinho de Compras</h1>
+            <h1 class="carrinho" style="text-align: center; margin: 20px 0;">Carrinho de Compras</h1>
 
             <ul class="list-group mb-3">
                 <li class="list-group-item py-3">
@@ -11,25 +11,26 @@
                         <div class="col-4 col-md-3 col-lg-2">        
 
  <!--Primeiro item-->
-                <li class="list-group-item py-3">
-                    <div class="row g-3">
-                        <div class="col-4 col-md-3 col-lg-2">
-                            <a href="#">
-                                <img src="/images/tela-home/white-wine/1-white-wine.jpg" class="img-thumbnail">
-                            </a>
-                        </div>
+                <div class="flex-container">
+                    <div class="list-group-item py-3">
+                            <div class="col-4 col-md-3 col-lg-2">
+                                <a href="#">
+                                    <img src="/images/tela-home/white-wine/1-white-wine.jpg" class="img-thumbnail flex-image">
+                                </a>
+                            </div>
 
-                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                            <h4>
-                                <b><a href="#" class="text-decoration-none text-danger">
-                                    Vistamar Brisa, 2016</a></b>
-                            </h4>
-                            <h5 class="tex-vinho">
-                                Vinho branco de Pays. Este vinho tem 35 menções sobre notas amadeirado (manteiga, carvalho).
-                            </h5>
-                        </div>
+                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                                <h4>
+                                    <b><a href="#" class="text-decoration-none text-danger">
+                                        Vistamar Brisa, 2016</a></b>
+                                </h4>
+                                <h5 class="tex-vinho">
+                                    Vinho branco de Pays. Este vinho tem 35 menções sobre notas amadeirado (manteiga, carvalho).
+                                </h5>
+                            </div>
+                    </div>
 
-                        <div
+                    <div
                             class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
                             <div class="css-rkgrxe">
                                 <div id="minus-button" class="css-e0dnmk">
@@ -54,52 +55,55 @@
                                 
                                 <span class="text-dark">Valor Item: R$ 78,70</span>
                             </div>
-                        </div>
+                    </div>
+                </div>
+
+                <hr class="line" style="width: 100%; height: 10px; margin-bottom: 10px;">
+
+                <div class="flex-container">
+                    <div class="list-group-item py-3">                        
+                            <div class="col-4 col-md-3 col-lg-2">
+                                <a href="#">
+                                    <img src="/images/tela-home/red-wine/1-red-wine.jpg" class="img-thumbnail flex-image">
+                                </a>
+                            </div>
+                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                                <h4>
+                                    <b><a href="#" class="text-decoration-none text-danger">
+                                        Barone Montalto, 2021</a></b>
+                                </h4>
+                                <h5 class="tex-vinho">
+                                    Um vinho atraente e bem equilibrado com frutos de caroço e alguma mineralidade.
+                                </h5>
+                            </div>
                     </div>
 
-                <li class="list-group-item py-3">
-                    <div class="row g-3">
-                        <div class="col-4 col-md-3 col-lg-2">
-                            <a href="#">
-                                <img src="/images/tela-home/red-wine/1-red-wine.jpg" class="img-thumbnail"> class="img-thumbnail">
-                            </a>
-                        </div>
-                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                            <h4>
-                                <b><a href="#" class="text-decoration-none text-danger">
-                                    Barone Montalto, 2021</a></b>
-                            </h4>
-                            <h5 class="tex-vinho">
-                                Um vinho atraente e bem equilibrado com frutos de caroço e alguma mineralidade.
-                            </h5>
-                        </div>
+                    <div
+                                class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
+                                <div class="css-rkgrxe">
+                                    <div id="minus-button" class="css-e0dnmk">
+                                        <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                            <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
+                                        </svg>
+                                    </div>
 
-                        <div
-                            class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
-                            <div class="css-rkgrxe">
-                                <div id="minus-button" class="css-e0dnmk">
-                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
-                                        <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
-                                    </svg>
+                                    <div id="amount-1">01</div>
+                                    <div id="plus-button" class="css-e0dnmk">
+                                        <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
+                                            <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
+                                        </svg>
+                                    </div>
+                                    <button class="btn btn-outline-danger border-dark btn-sm" type="button">
+                                        <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
+                                    </button>
                                 </div>
-
-                                <div id="amount-1">01</div>
-                                <div id="plus-button" class="css-e0dnmk">
-                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
-                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
-                                    </svg>
-                                </div>
-                                <button class="btn btn-outline-danger border-dark btn-sm" type="button">
-                                    <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
-                            </div>
-                            
-                                <div class="text-end mt-2">                                    
-                                    <span class="text-dark">Valor Item: R$ 88,00</span>
-                                </div>
-                            </div>
+                                
+                                    <div class="text-end mt-2">                                    
+                                        <span class="text-dark">Valor Item: R$ 88,00</span>
+                                    </div>
                         </div>
-                </li>
+                    </div>
+                </div>
 
                 <li class="list-group-item py-3">
                     <div class="text-end">
