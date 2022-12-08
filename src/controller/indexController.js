@@ -5,8 +5,8 @@ module.exports = {
         // controller comunicando com o model
         const produtos = produtosModel.index();
         // controller comunicando com a view
-        return res.render('produtos', {produtos: produtos, 
-            css1: "/stylesheets/produtos.css", 
+        return res.render('index', {produtos: produtos,
+            css1: "/stylesheets/home.css", 
             css2: "/stylesheets/menu-footer.css"
         });
     }

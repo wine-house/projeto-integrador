@@ -1,5 +1,4 @@
-<%- include('partials/header') %> 
-
+<%- include('partials/header') %>
 
     <!--MAIN-->
     <main id="home">
@@ -138,30 +137,41 @@
         </section>
 
         <!--Link to Top-->
-        <a class="link-top" href="#home"><i class="fas fa-arrow-up"></i></a>
+        <a class="link-top" href="#home">
+            <i class="fas fa-arrow-up"></i>
+        </a>
 
         <!--Promoções-->
         <section class="promotion">
             <h2 class="promotion__title">&#9472 PROMOÇÕES &#9472</h2>
 
             <div class="promotion__content">
-                <article class="promotion__item">
-                    <header>
-                        <figure class="promotion__item__image">
-                            <img src="/images/tela-home/red-wine/1-red-wine.jpg" alt="Vinho Tinto">
-                        </figure>
-                        
+                <%for(const produto of produtos) { %>
+                    <%if(produto.promo == true) { %>
+                    <article class="promotion__item">
+                        <header>                            
+                            <figure class="promotion__item__image">
+                                <%if(produto.tipo == "Vinho Tinto") { %>
+                                <img src="/images/tela-home/red-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
 
-                        <span class="promotion__item__price">R$ 80,50</span>
-                    </header>
+                                <%if(produto.tipo == "Vinho Branco") { %>
+                                <img src="/images/tela-home/white-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
+                            </figure>
 
-                    <footer>
-                        <span class="promotion__item__name">Viña Ardanza</span>
-                        <button class="promotion__item__btn">Comprar</button>
-                    </footer>
-                </article>
+                            <span class="promotion__item__price"><%= produto.valor%></span>
+                        </header>
 
-                <article class="promotion__item">
+                        <footer>
+                            <span class="promotion__item__name"><%= produto.nome%></span>
+                            <button class="promotion__item__btn">Comprar</button>
+                        </footer>
+                    </article>
+                    <% } %>
+                <% } %>
+
+                <!-- <article class="promotion__item">
                     <header>
                         <figure class="promotion__item__image">
                             <img src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho Branco">
@@ -174,9 +184,9 @@
                         <span class="promotion__item__name">Chardennay</span>
                         <button class="promotion__item__btn">Comprar</button>
                     </footer>
-                </article>
+                </article> -->
 
-                <article class="promotion__item">
+                <!-- <article class="promotion__item">
                     <header>
                         <figure class="promotion__item__image">
                             <img src="/images/tela-home/red-wine/2-red-wine.jpg" alt="Vinho Tinto">
@@ -189,9 +199,9 @@
                         <span class="promotion__item__name">Grand Barossi</span>
                         <button class="promotion__item__btn">Comprar</button>
                     </footer>
-                </article>
+                </article> -->
 
-                <article class="promotion__item">
+                <!-- <article class="promotion__item">
                     <header>
                         <figure class="promotion__item__image">
                             <img src="/images/tela-home/white-wine/2-white-wine.jpg" alt="Vinho Branco">
@@ -204,7 +214,7 @@
                         <span class="promotion__item__name">Pinot Grigio</span>
                         <button class="promotion__item__btn">Comprar</button>
                     </footer>
-                </article>
+                </article> -->
             </div>
         </section>
 
@@ -213,22 +223,32 @@
             <h2 class="release__title">&#9472 LANÇAMENTOS &#9472</h2>
 
             <div class="release__content">
-                <article class="release__item">
-                    <header>
-                        <figure class="release__item__image">
-                            <img src="/images/tela-home/red-wine/3-red-wine.jpg" alt="Vinho Tinto">
-                        </figure>
+                <%for(const produto of produtos) { %>
+                    <%if(produto.novo == true) { %>
+                    <article class="release__item">
+                        <header>
+                            <figure class="release__item__image">
+                                <%if(produto.tipo == "Vinho Tinto") { %>
+                                <img src="/images/tela-home/red-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
 
-                        <span class="release__item__price">R$ 88,00</span>
-                    </header>
+                                <%if(produto.tipo == "Vinho Branco") { %>
+                                    <img src="/images/tela-home/white-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
+                            </figure>
 
-                    <footer>
-                        <span class="release__item__name">Trois Pierres</span>
-                        <button class="release__item__btn">Comprar</button>
-                    </footer>
-                </article>
+                            <span class="release__item__price"><%= produto.valor%></span>
+                        </header>
 
-                <article class="release__item">
+                        <footer>
+                            <span class="release__item__name"><%= produto.nome%></span>
+                            <button class="release__item__btn">Comprar</button>
+                        </footer>
+                    </article>
+                    <% } %>
+                <% } %>
+
+                <!-- <article class="release__item">
                     <header>
                         <figure class="release__item__image">
                             <img src="/images/tela-home/white-wine/3-white-wine.jpg" alt="Vinho Branco">
@@ -241,9 +261,9 @@
                         <span class="release__item__name">Pinot Grigio</span>
                         <button class="release__item__btn">Comprar</button>
                     </footer>
-                </article>
+                </article> -->
 
-                <article class="release__item">
+                <!-- <article class="release__item">
                     <header>
                         <figure class="release__item__image">
                             <img src="/images/tela-home/red-wine/4-red-wine.jpg" alt="Vinho Tinto">
@@ -256,9 +276,9 @@
                         <span class="release__item__name">Kai Simone</span>
                         <button class="release__item__btn">Comprar</button>
                     </footer>
-                </article>
+                </article> -->
 
-                <article class="release__item">
+                <!-- <article class="release__item">
                     <header>
                         <figure class="release__item__image">
                             <img src="/images/tela-home/white-wine/4-white-wine.jpg" alt="Vinho Branco">
@@ -271,7 +291,7 @@
                         <span class="release__item__name">Ned Blanc</span>
                         <button class="release__item__btn">Comprar</button>
                     </footer>
-                </article>
+                </article> -->
             </div>
         </section>
 
@@ -387,9 +407,7 @@
             </div>
         </section>
     </main>
-    <!--end MAIN-->
-
-    
+    <!--end MAIN-->    
 
     <!--JAVASCRIPT-->
     <!--Curiosity-->
@@ -404,4 +422,4 @@
 </body>
 </html>
 
-<%- include('partials/footer') %> 
+<%- include('partials/footer') %>

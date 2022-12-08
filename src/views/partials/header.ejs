@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Loja Whine House</title>
+        
         <!--Favicon-->
         <link rel="icon" type="image/png" sizes="96x96" href="/images/menu-footer/favicon.png">
     
@@ -20,7 +21,6 @@
         <link rel="stylesheet" href=<%=css1%>>
         <link rel="stylesheet" href=<%=css2%>>
     </head>
-
 <body>
        <!--HEADER-->
        <header class="header">
@@ -51,8 +51,17 @@
 
         <!--Login/Compras-->
         <div class="icons">
-            <i class="fa-solid fa-user" id="user-icon" title="cadastrar"></i>
-            <i class="fa-solid fa-cart-shopping" id="cart-icon" title="carrinho"></i>
+            <a href="/login">
+                <i class="fa-solid fa-user" id="user-icon" title="Login"></i>
+            </a>
+
+            <a href="/carrinho">
+                <i class="fa-solid fa-cart-shopping" id="cart-icon" title="Carrinho"></i>
+            </a>
+
+            <a href="/painel-usuario">
+                <i class="fa-solid fa-table-columns" id="panel-icon" title="Painel do usuário"></i>
+            </a>
         </div>
 
         <!--Procura-->

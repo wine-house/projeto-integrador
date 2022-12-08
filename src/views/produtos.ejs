@@ -17,264 +17,84 @@
 
             <div class="products__wines">
                 <div class="products__content">
+                    <% for(produto of produtos) { %>
                     <article class="products__item">
                         <header>
                             <figure class="products__item__image">
-                                <img src="/images/tela-produtos/1-barone-montalto.png" alt="Vinho Tinto">
+                                <img src="/images/tela-produtos/<%= produto.imagem[0]%>.png" alt="Vinho Tinto">
                             </figure>
                             
 
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
+                            <button class="products__item__buy">
+                                <a href="/produto-interno">Comprar</a>
+                            </button>
                         </header>
 
                         <footer>
-                            <span class="products__item__name">Barone Montalto</span>
-                            <span class="products__item__size">R$ 77,80</span>
+                            <span class="products__item__name"><%= produto.nome%></span>
+                            <span class="products__item__price"><%= produto.valor%></span>
                         </footer>
                     </article>
+                    <% } %>
 
-                    <article class="products__item">
+                    <!-- <article class="products__item">
                         <header>
                             <figure class="products__item__image">
                                 <img src="/images/tela-produtos/2-corralillo.png" alt="Vinho Tinto">
                             </figure>
 
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
+                            <button class="products__item__buy">
+                                <a href="/produto-interno">Comprar</a>
+                            </button>
                         </header>
 
                         <footer>
                             <span class="products__item__name">Matetic Corralillo</span>
-                            <span class="products__item__size">R$ 75,50</span>
+                            <span class="products__item__price">R$ 75,50</span>
                         </footer>
-                    </article>
+                    </article> -->
 
-                    <article class="products__item">
+                    <!-- <article class="products__item">
                         <header>
                             <figure class="products__item__image">
-                                <img src="/images/tela-produtos/3-vistamar-brisa.png" alt="Vinho Branco">
+                                <img src="/images/tela-produtos/3-cierre-beaugrey.png" alt="Vinho Branco">
                             </figure>
 
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
+                            <button class="products__item__buy">
+                                <a href="/produto-interno">Comprar</a>
+                            </button>
                         </header>
 
                         <footer>
                             <span class="products__item__name">Vistamar Brisa</span>
-                            <span class="products__item__size">R$ 85,80</span>
+                            <span class="products__item__price">R$ 85,80</span>
                         </footer>
-                    </article>
+                    </article> -->
 
-                    <article class="products__item">
+                    <!-- <article class="products__item">
                         <header>
                             <figure class="products__item__image">
-                                <img src="/images/tela-produtos/4-rio-flor.png" alt="Vinho Branco">
+                                <img src="/images/tela-produtos/4-poderi-nespoli.png" alt="Vinho Branco">
                             </figure>
 
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
+                            <button class="products__item__buy"><a href="/produto-interno">Comprar</a></button>
                         </header>
 
                         <footer>
                             <span class="products__item__name">Rio Flor Douro</span>
-                            <span class="products__item__size">R$ 80,50</span>
+                            <span class="products__item__price">R$ 80,50</span>
                         </footer>
-                    </article>
-                </div>
-
-                <div class="products__content">
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/5-estandon.png" alt="Vinho Rose">
-                            </figure>
-                            
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Estandon Heritage</span>
-                            <span class="products__item__size">R$ 92,80</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/6-tramari.png" alt="Vinho Rose">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Tramari</span>
-                            <span class="products__item__size">R$ 95,50</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/7-victoria-geisse.png" alt="Espumante">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Victoria Geisse</span>
-                            <span class="products__item__size">R$ 75,00</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/8-gramona-cuvee.png" alt="Espumante">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Gramona Cuvee</span>
-                            <span class="products__item__size">R$ 75,80</span>
-                        </footer>
-                    </article>
-                </div>
-
-                <div class="products__content">
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/9-patrick-clerget.png" alt="Vinho Tinto">
-                            </figure>
-                            
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Patrick Clerget</span>
-                            <span class="products__item__size">R$ 80,50</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/10-barone-montalto.png" alt="Vinho Tinto">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Barone Montalto</span>
-                            <span class="products__item__size">R$ 95,00</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/11-valladodouro.png" alt="Vinho Branco">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Vallado Douro</span>
-                            <span class="products__item__size">R$ 82,50</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/12-leyda-reserva.png" alt="Vinho Branco">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Leyda Chardonnay</span>
-                            <span class="products__item__size">R$ 78,00</span>
-                        </footer>
-                    </article>
-                </div>
-
-                <div class="products__content">
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/13-henri-leblanc.png" alt="Espumante">
-                            </figure>
-                            
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Henri Leblanc</span>
-                            <span class="products__item__size">R$ 77,00</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/14-gramona-imperial.png" alt="Espumante">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Gramona Imperial</span>
-                            <span class="products__item__size">R$ 93,50</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/15-stardust.png" alt="Vinho Rose">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Stardust</span>
-                            <span class="products__item__size">R$ 85,50</span>
-                        </footer>
-                    </article>
-
-                    <article class="products__item">
-                        <header>
-                            <figure class="products__item__image">
-                                <img src="/images/tela-produtos/16-lumière.png" alt="Vinho Rose">
-                            </figure>
-
-                            <button class="products__item__buy"><a href="../tela-prod-interno/prod-interno.html">Comprar</a></button>
-                        </header>
-
-                        <footer>
-                            <span class="products__item__name">Lumière</span>
-                            <span class="products__item__size">R$ 88,00</span>
-                        </footer>
-                    </article>
+                    </article> -->
                 </div>
             </div>
         </section>
 
         <!--Link to Top-->
-        <a class="link-top" href="#products"><i class="fas fa-arrow-up"></i></a>
+        <a class="link-top" href="#products">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </main>
     <!--end MAIN-->
-
 
     <!--JavaScript-->
     <script src="/js/menu-footer.js"></script>
