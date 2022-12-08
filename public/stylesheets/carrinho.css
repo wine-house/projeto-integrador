@@ -72,3 +72,25 @@
     --bs-btn-color:#530112 ;
     
 }
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px 10px;
+}
+
+.flex-container .flex-image {
+    width: 270px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.flex-container .css-rkgrxe {
+    border: 2px solid black;
+    margin-bottom: 5px;
+}
+
+.flex-container .text-end span.text-dark {
+    font-size: 11px;
+}
