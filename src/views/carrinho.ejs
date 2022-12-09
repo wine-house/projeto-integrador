@@ -1,135 +1,66 @@
 <%- include('partials/header') %>
 
     <!--MAIN-->
-    <main class="flex-fill">
-        <div class="container">
-            <h1 class="carrinho" style="text-align: center; margin: 20px 0;">Carrinho de Compras</h1>
+    <main id="carrinho">
+        <h1 class="titulo">Carrinho de Compras</h1>
 
-            <ul class="list-group mb-3">
-                <li class="list-group-item py-3">
-                    <div class="row g-3">
-                        <div class="col-4 col-md-3 col-lg-2">        
+        <section class="carrinho">
+            <article class="carrinho__item">
+                <div class="carrinho__item_esquerda">
+                    <figure class="carrinho__item__imagem">
+                        <img src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho">
+                    </figure>
 
- <!--Primeiro item-->
-                <div class="flex-container">
-                    <div class="list-group-item py-3">
-                            <div class="col-4 col-md-3 col-lg-2">
-                                <a href="#">
-                                    <img src="/images/tela-home/white-wine/1-white-wine.jpg" class="img-thumbnail flex-image">
-                                </a>
-                            </div>
-
-                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                                <h4>
-                                    <b><a href="#" class="text-decoration-none text-danger">
-                                        Vistamar Brisa, 2016</a></b>
-                                </h4>
-                                <h5 class="tex-vinho">
-                                    Vinho branco de Pays. Este vinho tem 35 menções sobre notas amadeirado (manteiga, carvalho).
-                                </h5>
-                            </div>
-                    </div>
-
-                    <div
-                            class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
-                            <div class="css-rkgrxe">
-                                <div id="minus-button" class="css-e0dnmk">
-                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
-                                        <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
-                                    </svg>
-                                </div>
-
-                                <div id="amount-1">01</div>
-                                <div id="plus-button" class="css-e0dnmk">
-                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
-                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
-                                    </svg>
-                                </div>
-
-                                <button class="btn btn-outline-danger border-dark btn-sm" type="button">
-                                    <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
-                            </div>
-                        
-                            <div class="text-end mt-2">
-                                
-                                <span class="text-dark">Valor Item: R$ 78,70</span>
-                            </div>
-                    </div>
+                    <h2 class="carrinho__item__nome">Vistamar Brisa, 2016</h2>
                 </div>
-
-                <hr class="line" style="width: 100%; height: 10px; margin-bottom: 10px;">
-
-                <div class="flex-container">
-                    <div class="list-group-item py-3">
-                            <div class="col-4 col-md-3 col-lg-2">
-                                <a href="#">
-                                    <img src="/images/tela-home/red-wine/1-red-wine.jpg" class="img-thumbnail flex-image">
-                                </a>
-                            </div>
-
-                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                                <h4>
-                                    <b><a href="#" class="text-decoration-none text-danger">
-                                        Vistamar Brisa, 2016</a></b>
-                                </h4>
-                                <h5 class="tex-vinho">
-                                    Vinho branco de Pays. Este vinho tem 35 menções sobre notas amadeirado (manteiga, carvalho).
-                                </h5>
-                            </div>
-                    </div>
-
-                    <div
-                            class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
-                            <div class="css-rkgrxe">
-                                <div id="minus-button" class="css-e0dnmk">
-                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
-                                        <path d="M19,13H5V11H19V13Z" style="fill: rgb(153, 153, 153);"></path>
-                                    </svg>
-                                </div>
-
-                                <div id="amount-1">01</div>
-                                <div id="plus-button" class="css-e0dnmk">
-                                    <svg viewBox="0 0 24 24" role="presentation" style="width: 24px; height: 24px;">
-                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" style="fill: rgb(160, 178, 0);"></path>
-                                    </svg>
-                                </div>
-
-                                <button class="btn btn-outline-danger border-dark btn-sm" type="button">
-                                    <i class="bi-trash" style="font-size: 16px; line-height: 16px;"></i>
-                                </button>
-                            </div>
-                        
-                            <div class="text-end mt-2">
-                                
-                                <span class="text-dark">Valor Item: R$ R$ 88,00</span>
-                            </div>
-                    </div>
-                </div>
-
                 
-                </div>
+                <div class="carrinho__item_direita">
+                    <div class="carrinho__item__info">
+                        <div class="carrinho__item__botoes">
+                            <span id="botao-subtrai" class="carrino__botao subtrai">
+                                <i class="fa-solid fa-minus fa-2x"></i>
+                            </span>     
 
-                <li class="list-group-item py-3">
-                    <div class="text-end">
-                        <h4 class="text-dark mb-3">
-                            Valor Total: R$ 166,70 <br>
-                            <small class="text-secondary">5 A 7 DIAS ÚTEIS <br> (FRETE GRÁTIS)</small><br>
-                        </h4>   
+                            <span id="quantidade-item">1</span>
 
-                        <a href="/produtos" class="btn btn-outline-success btn-lg"> Continuar Comprando                            
-                        </a>
-                        <a href="/confira-itens" class="btn btn-danger  btn-lg ms-2 mt-xs-3">Fechar Compra</a>
+                            <span id="botao-adiciona" class="carrino__botao adiciona">
+                                <i class="fa-solid fa-plus fa-2x"></i>
+                            </span>                            
+                        </div>
+
+                        <h3 class="carrinho__item__valor">Valor: R$<span id="valor-item">78,70</span></h3>
                     </div>
+                </div>
+            </article>
+
+            <hr class="linha-divisoria">            
+
+            <h3 class="carrinho__valor-total">Valor Total: R$<span id="valor-total-itens">78,70</span></h3>
+            
+            <h4 class="carrinho__tempo">5 A 7 DIAS ÚTEIS</h4>
+
+            <h4 class="carrinho__frete">(FRETE GRÁTIS)</h4>
+
+            <ul class="carrinho__nav">
+                <li class="carrinho__nav__link">
+                    <a href="/produtos">Continuar Compra</a>
+                </li>
+
+                <li class="carrinho__nav__link">
+                    <a href="/confira-itens">Fechar Compra</a>
                 </li>
             </ul>
-        </div>
-    </main>
+        </section>
+
+        <!--Link to Top-->
+        <a class="link-top" href="#carrinho"><i class="fas fa-arrow-up"></i></a>        
+    </main>    
     <!--end MAIN-->    
 
-    <!--JavaScript-->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--end JavaScript-->
+    <!--JAVASCRIPT-->
+    <script src="/js/menu-footer.js"></script>
+    <script src="/js/carrinho.js"></script>
+    <!--end JAVASCRIPT-->
 </body>
 </html>
 
