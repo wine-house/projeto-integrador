@@ -1,11 +1,425 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<%- include('partials/header') %>
+
+    <!--MAIN-->
+    <main id="home">
+        <!--Banner-->
+        <section class="banner">
+            <!--Banner Imagens-->
+            <div class="banner__images">
+                <article class="banner__item show-item">
+                    <figure class="banner__image">
+                        <img src="/images/tela-home/carousel/1-winery.jpg" alt="Vinícola Bento Gonçalves - RS">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="/images/tela-home/carousel/2-winery.jpg" alt="Vinícola TerraNova - BA">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="/images/tela-home/carousel/3-winery.jpg" alt="Vinícola Santa Teresa - ES">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="/images/tela-home/carousel/4-winery.jpg" alt="Vinícola Rio Sol - PE">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+
+                <article class="banner__item">
+                    <figure class="banner__image">
+                        <img src="/images/tela-home/carousel/5-winery.jpg" alt="Vinícola Vale do Vinho - SP">
+                    </figure>
+
+                    <div class="banner__description styling"></div>
+
+                    <div class="banner__numbers styling">
+                        <span class="banner__current-number"></span>
+                        <span>&#x2f;</span>
+                        <span class="banner__total-number"></span>
+                    </div>
+                </article>
+            </div>
+
+            <!--Banner Botões-->
+            <div class="banner__buttons">
+                <span class="banner__btn-left">
+                    <i class="fas fa-arrow-circle-left"></i>
+                </span>
+
+                <span class="banner__btn-right">
+                    <i class="fas fa-arrow-circle-right"></i>
+                </span>
+            </div>
+        </section>
+
+        <!--Missão-->
+        <section class="mission">
+            <h2 class="mission__title">&#9472 MISSÃO &#9472</h2>
+
+            <div class="mission__content">
+                <article class="mission__content__item">
+                    <i class="fa-solid fa-wallet fa-5x"></i>
+                    
+                    <h3 class="mission__content__subtitle">Preço justo</h3>
+                    
+                    <p class="mission__content__paragraph">
+                        Buscar em vinícolas de todo Brasil oportunidades para oferecer um portfólio variado e com preços justos.
+                    </p>
+                </article>
+
+                <article class="mission__content__item">
+                    <i class="fa-solid fa-truck-fast fa-5x"></i>
+                    
+                    <h3 class="mission__content__subtitle">Da vinícola para sua casa</h3>                    
+                    
+                    <p class="mission__content__paragraph">
+                        Negociar diretamente com produtores e entregar o vinho na sua residência, sem burocracias.
+                    </p>
+                </article>
+
+                <article class="mission__content__item">
+                    <i class="fa-solid fa-wine-glass-empty fa-5x"></i>
+                    
+                    <h3 class="mission__content__subtitle">Doses diárias</h3>                    
+                    
+                    <p class="mission__content__paragraph">
+                        Disponibilizar ofertas e descontos especiais todos os dias, para que você tenha uma adega sempre abastecida.
+                    </p>
+                </article>
+
+                <article class="mission__content__item">
+                    <i class="fa-solid fa-handshake fa-5x"></i>
+                    
+                    <h3 class="mission__content__subtitle">Novidades</h3>                    
+                    
+                    <p class="mission__content__paragraph">
+                        A Whine House está sempre de olho nas novas tendências. Aqui, você sempre encontrará como inovar no consumo da sua bebida favorita.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!--Link to Top-->
+        <a class="link-top" href="#home">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <!--Promoções-->
+        <section class="promotion">
+            <h2 class="promotion__title">&#9472 PROMOÇÕES &#9472</h2>
+
+            <div class="promotion__content">
+                <%for(const produto of produtos) { %>
+                    <%if(produto.promo == true) { %>
+                    <article class="promotion__item">
+                        <header>                            
+                            <figure class="promotion__item__image">
+                                <%if(produto.tipo == "Vinho Tinto") { %>
+                                <img src="/images/tela-home/red-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
+
+                                <%if(produto.tipo == "Vinho Branco") { %>
+                                <img src="/images/tela-home/white-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
+                            </figure>
+
+                            <span class="promotion__item__price"><%= produto.valor%></span>
+                        </header>
+
+                        <footer>
+                            <span class="promotion__item__name"><%= produto.nome%></span>
+                            <button class="promotion__item__btn">Comprar</button>
+                        </footer>
+                    </article>
+                    <% } %>
+                <% } %>
+
+                <!-- <article class="promotion__item">
+                    <header>
+                        <figure class="promotion__item__image">
+                            <img src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho Branco">
+                        </figure>
+
+                        <span class="promotion__item__price">R$ 85,00</span>
+                    </header>
+
+                    <footer>
+                        <span class="promotion__item__name">Chardennay</span>
+                        <button class="promotion__item__btn">Comprar</button>
+                    </footer>
+                </article> -->
+
+                <!-- <article class="promotion__item">
+                    <header>
+                        <figure class="promotion__item__image">
+                            <img src="/images/tela-home/red-wine/2-red-wine.jpg" alt="Vinho Tinto">
+                        </figure>
+
+                        <span class="promotion__item__price">R$ 75,80</span>
+                    </header>
+
+                    <footer>
+                        <span class="promotion__item__name">Grand Barossi</span>
+                        <button class="promotion__item__btn">Comprar</button>
+                    </footer>
+                </article> -->
+
+                <!-- <article class="promotion__item">
+                    <header>
+                        <figure class="promotion__item__image">
+                            <img src="/images/tela-home/white-wine/2-white-wine.jpg" alt="Vinho Branco">
+                        </figure>
+
+                        <span class="promotion__item__price">R$ 95,00</span>
+                    </header>
+
+                    <footer>
+                        <span class="promotion__item__name">Pinot Grigio</span>
+                        <button class="promotion__item__btn">Comprar</button>
+                    </footer>
+                </article> -->
+            </div>
+        </section>
+
+        <!--Lançamentos-->
+        <section class="release">
+            <h2 class="release__title">&#9472 LANÇAMENTOS &#9472</h2>
+
+            <div class="release__content">
+                <%for(const produto of produtos) { %>
+                    <%if(produto.novo == true) { %>
+                    <article class="release__item">
+                        <header>
+                            <figure class="release__item__image">
+                                <%if(produto.tipo == "Vinho Tinto") { %>
+                                <img src="/images/tela-home/red-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
+
+                                <%if(produto.tipo == "Vinho Branco") { %>
+                                    <img src="/images/tela-home/white-wine/<%= produto.imagem[1]%>.jpg" alt="Vinho Tinto">
+                                <% } %>
+                            </figure>
+
+                            <span class="release__item__price"><%= produto.valor%></span>
+                        </header>
+
+                        <footer>
+                            <span class="release__item__name"><%= produto.nome%></span>
+                            <button class="release__item__btn">Comprar</button>
+                        </footer>
+                    </article>
+                    <% } %>
+                <% } %>
+
+                <!-- <article class="release__item">
+                    <header>
+                        <figure class="release__item__image">
+                            <img src="/images/tela-home/white-wine/3-white-wine.jpg" alt="Vinho Branco">
+                        </figure>
+
+                        <span class="release__item__price">R$ 90,70</span>
+                    </header>
+
+                    <footer>
+                        <span class="release__item__name">Pinot Grigio</span>
+                        <button class="release__item__btn">Comprar</button>
+                    </footer>
+                </article> -->
+
+                <!-- <article class="release__item">
+                    <header>
+                        <figure class="release__item__image">
+                            <img src="/images/tela-home/red-wine/4-red-wine.jpg" alt="Vinho Tinto">
+                        </figure>
+
+                        <span class="release__item__price">R$ 75,00</span>
+                    </header>
+
+                    <footer>
+                        <span class="release__item__name">Kai Simone</span>
+                        <button class="release__item__btn">Comprar</button>
+                    </footer>
+                </article> -->
+
+                <!-- <article class="release__item">
+                    <header>
+                        <figure class="release__item__image">
+                            <img src="/images/tela-home/white-wine/4-white-wine.jpg" alt="Vinho Branco">
+                        </figure>
+
+                        <span class="release__item__price">R$ 95,50</span>
+                    </header>
+
+                    <footer>
+                        <span class="release__item__name">Ned Blanc</span>
+                        <button class="release__item__btn">Comprar</button>
+                    </footer>
+                </article> -->
+            </div>
+        </section>
+
+        <!--Curiosidades-->
+        <section class="curiosity">            
+            <h2 class="curiosity__title">&#9472 CURIOSIDADES &#9472</h2>
+    
+            <div class="curiosity__content">
+                <article class="curiosity-wrapper">
+                    <div class="curiosity-item">
+                        <div class="curiosity-item__front">
+                            <h2 class="curiosity-item__title">Produtores</h2>
+    
+                            <div class="curiosity-item__image-front">
+                                <img src="/images/tela-home/curiosities/produtores-vinhos.jpg" alt="Front-end">
+                            </div>
+    
+                            <button class="curiosity-item__check">Saiba Mais</button>
+                        </div>
+    
+                        <div class="curiosity-item__back">
+                            <div class="curiosity-item__image-back">
+                                <img src="/images/tela-home/curiosities/uva-verde.png" class="curiosity-item__back__img" alt="Front-end">
+                            </div>
+                            
+                            <p class="curiosity-item__description">                                
+                                O vale do Rio São Francisco fica entre Pernambuco e Bahia, com solos ricos em minerais.
+                                Em 2003 o instituto do Vinho do Vale de São Francisco foi criado para fortalecer a viticultura local.
+                            </p>
+    
+                            <button class="curiosity-item__close">Fechar</button>
+                        </div>
+                    </div>
+                </article>
+    
+                <article class="curiosity-wrapper">
+                    <div class="curiosity-item">
+                        <div class="curiosity-item__front">
+                            <h2 class="curiosity-item__title">Surgimento</h2>
+    
+                            <div class="curiosity-item__image-front">
+                                <img src="/images/tela-home/curiosities/vinho-brasil.jpg" alt="Back-end">
+                            </div>
+    
+                            <button class="curiosity-item__check">Saiba Mais</button>
+                        </div>
+    
+                        <div class="curiosity-item__back">
+                            <div class="curiosity-item__image-back">
+                                <img src="/images/tela-home/curiosities/uva-escura.png" class="curiosity-item__back__img" alt="Back-end">
+                            </div>
+                            
+                            <p class="curiosity-item__description">
+                                Com a chegada dos portugueses, os vinhos chegaram junto. Nas caravelas, milhares de litros de vinho eram embarcados para cozinhar, hidratar e higienizar alimentos durante a travessia do oceano.
+                            </p>
+    
+                            <button class="curiosity-item__close">Fechar</button>
+                        </div>
+                    </div>
+                </article>            
+    
+                <article class="curiosity-wrapper">
+                    <div class="curiosity-item">
+                        <div class="curiosity-item__front">
+                            <h2 class="curiosity-item__title">Produção</h2>
+    
+                            <div class="curiosity-item__image-front">
+                                <img src="/images/tela-home/curiosities/produz-vinhos.jpg" alt="Full-stack">
+                            </div>
+    
+                            <button class="curiosity-item__check">Saiba Mais</button>
+                        </div>
+    
+                        <div class="curiosity-item__back">
+                            <div class="curiosity-item__image-back">
+                                <img src="/images/tela-home/curiosities/uva-vermelha.png" class="curiosity-item__back__img" alt="Full-stack">
+                            </div>
+    
+                            <p class="curiosity-item__description">
+                                Uvas tintas também podem dar origem a vinhos brancos e rosés. Isso acontece porque o pigmento dos vinhos é proporcionado por substâncias encontradas principalmente na casca da fruta.
+                            </p>
+    
+                            <button class="curiosity-item__close">Fechar</button>
+                        </div>
+                    </div>
+                </article>
+    
+                <article class="curiosity-wrapper">
+                    <div class="curiosity-item">
+                        <div class="curiosity-item__front">
+                            <h2 class="curiosity-item__title">Dia do Vinho</h2>
+    
+                            <div class="curiosity-item__image-front">
+                                <img src="/images/tela-home/curiosities/dia-vinho.jpg" alt="Full-stack">
+                            </div>
+    
+                            <button class="curiosity-item__check">Saiba Mais</button>
+                        </div>
+    
+                        <div class="curiosity-item__back">
+                            <div class="curiosity-item__image-back">
+                                <img src="/images/tela-home/curiosities/uva-rosa.png" class="curiosity-item__back__img" alt="Full-stack">
+                            </div>
+    
+                            <p class="curiosity-item__description">
+                                O Dia Nacional do Vinho é comemorado todo primeiro domingo de junho. Com o objetivo de celebrar o universo dos vinhos, destacando a produção vinícola no país, e promover o turismo nas regiões produtoras.
+                            </p>
+    
+                            <button class="curiosity-item__close">Fechar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!--end MAIN-->    
+
+    <!--JAVASCRIPT-->
+    <!--Curiosity-->
+    <script src="/js/curiosities.js"></script>
+
+    <!--Banner-->
+    <script src="/js/banner.js"></script>
+
+    <!--Main-->
+    <script src="/js/menu-footer.js"></script>
+    <!--end JAVASCRIPT-->
+</body>
 </html>
+
+<%- include('partials/footer') %>
