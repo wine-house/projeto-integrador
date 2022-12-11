@@ -4,57 +4,79 @@
     <main id="carrinho">
         <h1 class="titulo">Carrinho de Compras</h1>
 
-        <section class="carrinho">
-            <article class="carrinho__item">
-                <div class="carrinho__item_esquerda">
-                    <figure class="carrinho__item__imagem">
-                        <img src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho">
-                    </figure>
-
-                    <h2 class="carrinho__item__nome">Vistamar Brisa, 2016</h2>
-                </div>
-                
-                <div class="carrinho__item_direita">
-                    <div class="carrinho__item__info">
-                        <div class="carrinho__item__botoes">
-                            <span id="botao-subtrai" class="carrino__botao subtrai">
-                                <i class="fa-solid fa-minus fa-2x"></i>
-                            </span>     
-
-                            <span id="quantidade-item">1</span>
-
-                            <span id="botao-adiciona" class="carrino__botao adiciona">
-                                <i class="fa-solid fa-plus fa-2x"></i>
-                            </span>                            
-                        </div>
-
-                        <h3 class="carrinho__item__valor">Valor: R$<span id="valor-item">78,70</span></h3>
-                    </div>
-                </div>
-            </article>
-
-            <hr class="linha-divisoria">            
-
-            <h3 class="carrinho__valor-total">Valor Total: R$<span id="valor-total-itens">78,70</span></h3>
+        <section class="container">
+            <section class="container__carrinho">
+                <table class="container__carrinho__table_produtos">
+                    <tr>
+                        <th class="container__tabela_coluna_img">Vinho</th>
+                        <th class="container__tabela_coluna_nome">Nome</th>
+                        <th class="container__tabela_coluna_subtotal">Subtotal</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="container__imagem" src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho">
+                        </td>
+                        <td>
+                            <h2 class="container__nome">Vistamar Brisa, 2016</h2>
+                        </td>
+                        <td>
+                            <section class="container__tabela_coluna_sub">
+                                <div>
+                                    <div class="container__botoes">
+                                        <button id="botao-subtrai" class="carrino__botao subtrai">
+                                            <i class="fa-solid fa-minus fa-2x"></i>
+                                        </button>     
             
-            <h4 class="carrinho__tempo">5 A 7 DIAS ÚTEIS</h4>
+                                        <span id="quantidade-item">1</span>
+            
+                                        <button id="botao-adiciona" class="carrino__botao adiciona">
+                                            <i class="fa-solid fa-plus fa-2x"></i>
+                                        </button>
+                                    </div>
+                                    <p class="container__valor">R$<span id="valor-item">78,70</span></p>
+                                </div>
+                                <div >
+                                    <button id="botao-remove" class="carrino__botao remove">
+                                        <i class="fa-solid fa-trash fa-2x"></i>
+                                    </button>         
+                                </div>
+                            </section>
+                        </td>
+                    </tr>
+                    
+                </table>         
+            </section>
+            <section class="container__resume">
+                <table class="table_resume">
 
-            <h4 class="carrinho__frete">(FRETE GRÁTIS)</h4>
-
-            <ul class="carrinho__nav">
-                <li class="carrinho__nav__link">
-                    <a href="/produtos">Continuar Compra</a>
-                </li>
-
-                <li class="carrinho__nav__link">
-                    <a href="/confira-itens">Fechar Compra</a>
-                </li>
-            </ul>
+                    <tr>
+                        <td class="">Prazo de entrega</td>
+                        <td class="carrinho__tempo">5 a 7 dias úteis</td>
+                    </tr>
+                    <tr>
+                        <td class="">Valor do frete</td>
+                        <td class="carrinho__frete">Grátis</td>
+                    </tr>
+                    <tr>
+                        <td class="carrinho__valor-total">Valor total</td>
+                        <td class="">R$<span id="valor-total-itens">78,70</span></td>
+                    </tr>
+    
+                </table>
+                <section class="btns_rotas">
+                    <button class="carrinho__button__back_prod btn" onclick="window.location.href='/produtos'">
+                        Voltar para produtos
+                    </button>
+                    <button class="carrinho__button__finish btn" onclick="window.location.href='/confira-itens'">
+                        Finalizar a compra
+                    </button>
+                </section>
+            </section>
         </section>
 
         <!--Link to Top-->
         <a class="link-top" href="#carrinho"><i class="fas fa-arrow-up"></i></a>        
-    </main>    
+    </main>
     <!--end MAIN-->    
 
     <!--JAVASCRIPT-->
