@@ -5,7 +5,7 @@
         <h1 class="titulo">Carrinho de Compras</h1>
 
         <section class="container">
-            <section class="container__carrinho">
+            <article class="container__carrinho">
                 <table class="container__carrinho__table_produtos">
                     <tr>
                         <th class="container__tabela_coluna_img">Vinho</th>
@@ -13,7 +13,7 @@
                         <th class="container__tabela_coluna_subtotal">Subtotal</th>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="container__img">
                             <img class="container__imagem" src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho">
                         </td>
                         <td>
@@ -35,6 +35,7 @@
                                     </div>
                                     <p class="container__valor">R$<span id="valor-item">78,70</span></p>
                                 </div>
+
                                 <div >
                                     <button id="botao-remove" class="carrino__botao remove">
                                         <i class="fa-solid fa-trash fa-2x"></i>
@@ -45,10 +46,10 @@
                     </tr>
                     
                 </table>         
-            </section>
-            <section class="container__resume">
-                <table class="table_resume">
+            </article>
 
+            <article class="container__resume">
+                <table class="table_resume">
                     <tr>
                         <td class="">Prazo de entrega</td>
                         <td class="carrinho__tempo">5 a 7 dias úteis</td>
@@ -63,15 +64,17 @@
                     </tr>
     
                 </table>
+
                 <section class="btns_rotas">
                     <button class="carrinho__button__back_prod btn" onclick="window.location.href='/produtos'">
                         Voltar para produtos
                     </button>
+
                     <button class="carrinho__button__finish btn" onclick="window.location.href='/confira-itens'">
                         Finalizar a compra
                     </button>
                 </section>
-            </section>
+            </article>
         </section>
 
         <!--Link to Top-->
