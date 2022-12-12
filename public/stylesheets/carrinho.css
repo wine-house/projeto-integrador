@@ -4,23 +4,16 @@ h1.titulo {
     margin: 2rem 0;
 }
 
-<<<<<<< HEAD
 section.container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-=======
-.container {
-    display: flex;
-    justify-content: space-evenly;
->>>>>>> develop
 }
 
 .container__carrinho {
     padding: .5rem 0 2rem 0;
     display: flex;
     justify-content: space-around;
-<<<<<<< HEAD
     /* width: 65vw; */
     flex-basis: 60%;
 }
@@ -64,38 +57,6 @@ td, th {
 }
 
 /* .container__imagem img {
-=======
-    width: 65vw;
-}
-
-.container__carrinho__table_produtos {
-    border-collapse: collapse;
-    height: 20vh;
-    width: 65vw;
-}
-
-th {
-    background-color: var(--cor-vinho-escuro);
-    color: rgb(238, 237, 237);
-    font-size: 16px;
-}
-
-td {
-    background-color: #f8f4f4;
-}
-
-td, th {
-    border: 1px solid var(--cor-vinho-verde);
-    text-align: left;
-    padding: 8px;
-}
-
-.container__imagem {
-    width: 6vw;
-}
-
-.container__imagem img {
->>>>>>> develop
     width: 270px;
     height: 390px;
     border: 2px solid var(--cor-preta);
@@ -109,7 +70,6 @@ td, th {
 }
 
 .container__tabela_coluna_img {
-<<<<<<< HEAD
     /* width: 5vw; */
     width: 20%;
 }
@@ -122,17 +82,6 @@ td, th {
 .container__tabela_coluna_subtotal {
     /* width: 17vw; */
     width: 30%;
-=======
-    width: 2vw;
-}
-
-.container__tabela_coluna_nome {
-    width: 30vw;
-}
-
-.container__tabela_coluna_subtotal {
-    width: 17vw;
->>>>>>> develop
 }
 
 .container__botoes {
@@ -154,7 +103,6 @@ td, th {
     background-color: Transparent;
 }
 
-<<<<<<< HEAD
 button#botao-subtrai,
  button#botao-remove {
     color: var(--cor-vinho-escuro);
@@ -164,12 +112,6 @@ button#botao-remove {
     margin-top: 8px;
 }
 
-=======
-button#botao-subtrai, button#botao-remove {
-    color: var(--cor-vinho-escuro);
-}
-
->>>>>>> develop
 button#botao-adiciona {
     color: var(--cor-vinho-verde);
 }
@@ -180,11 +122,7 @@ button#botao-adiciona {
 }
 
 .container__valor {
-<<<<<<< HEAD
     font-size: 1.8rem;
-=======
-    font-size: 2rem;
->>>>>>> develop
     margin-top: 1rem;
     text-align: center;
     font-weight: 500;
@@ -197,24 +135,17 @@ button#botao-adiciona {
 }
 
 .table_resume {
-<<<<<<< HEAD
     /* width: 25vw; */
     width: 100%;
-=======
-    width: 25vw;
->>>>>>> develop
     margin-top: 1rem;
     font-size: 1.4rem;
     border-collapse: collapse;
     font-weight: 500;
-<<<<<<< HEAD
 }
 
 .table_resume td {
     padding: 18px 5px 18px 8px;
     font-size: 1.5rem;
-=======
->>>>>>> develop
 }
 
 .carrinho__tempo {
@@ -269,7 +200,6 @@ button#botao-adiciona {
 }
 
 /*Media Queries*/
-<<<<<<< HEAD
 @media(max-width: 800px) {
     section.container {
         flex-wrap: wrap;
@@ -331,12 +261,6 @@ button#botao-adiciona {
 }
 
 /* @media(max-width: 600px) {
-=======
-/* @media(max-width: 600px) {
-    .container__carrinho {
-    }
-
->>>>>>> develop
     .container {
         flex-wrap: wrap;
         justify-content: center;
