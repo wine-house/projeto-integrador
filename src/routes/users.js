@@ -1,4 +1,5 @@
 var express = require('express');
+//variavel para configurar rota
 var router = express.Router();
 
 /* GET users listing. */

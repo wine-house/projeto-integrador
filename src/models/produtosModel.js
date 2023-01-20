@@ -134,5 +134,10 @@ module.exports = {
       // ]
 
       return produtosJSON;
-    }
+
+    },
+
+    
 }
+
+

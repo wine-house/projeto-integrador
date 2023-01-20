@@ -2,6 +2,8 @@ var express = require('express');
 const IndexController = require('../controller/indexController');
 const produtosController = require('../controller/produtosController');
 
+
+
 var router = express.Router();
 
 /* GET home page. */
@@ -9,6 +11,9 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 //   // res.send(JSON.stringify(servicoModel));
 // });
+
+
+//router.get("/:id", produtosController.show);
 
 router.get('/', IndexController.index);
 
@@ -29,10 +34,25 @@ router.get('/eventos', function(req, res, next) {
     })
 });
 
+
+/*página painel admonistrativo*/
+router.get('/painelAdmin', function(req,res,next){
+  res.render('painelAdmin',
+  {
+    css1: "/stylesheets/menu-footer.css",
+    css2: "/stylesheets/eventos.css"
+  })
+})
+;
+
 /*página produtos*/
 router.get('/produtos', produtosController.index);
+/*p[agina tipo de produtos*/
 
+router.get('/produtos/:tipo', produtosController.show);
 /* pagina Parceiros*/
+
+
 router.get('/parceiros', function(req, res, next) {
   res.render('parceiros', {
     css1: "/stylesheets/parceiros.css",
@@ -111,5 +131,11 @@ router.get('/fechamento-pedido', (req, res) => {
     css2: "/stylesheets/carrinho.css",
   });
 });
+
+/*página não encontrada*/
+router.get("*",(req,res) =>{
+  res.send ("404 - página não encontrada")
+});
+
 
 module.exports = router;
