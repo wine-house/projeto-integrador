@@ -56,9 +56,8 @@
 
 
 ##Colaboradores:
-Christian Bisacchi, 
+
 Keyla Delpupo, 
-Pedro Henrique, 
 Rodrigo Potel.
      
 

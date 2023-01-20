@@ -1,4 +1,5 @@
 const produtosModel = require('../models/produtosModel');
+const produtoDataBase = require("../database/produtos.json");
 
 module.exports = {
     index: (req, res) => {
@@ -9,5 +10,18 @@ module.exports = {
             css1: "/stylesheets/produtos.css", 
             css2: "/stylesheets/menu-footer.css"
         });
-    }
+    },
+
+
+    show: (req, res) => {
+        const { tipo } = req.params;
+        var vinhoTipo = produtoDataBase.filter((prod) => prod.tipo == tipo)
+
+        return res.render('produto-listar', {
+            vinhoTipo,
+            css1: "/stylesheets/produtos.css",
+            css2: "/stylesheets/menu-footer.css"
+        });
+
+}
 }
