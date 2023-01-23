@@ -13,7 +13,7 @@ var router = express.Router();
 // });
 
 
-//router.get("/:id", produtosController.show);
+
 
 router.get('/', IndexController.index);
 
@@ -36,23 +36,24 @@ router.get('/eventos', function(req, res, next) {
 
 
 /*página painel admonistrativo*/
-router.get('/painelAdmin', function(req,res,next){
-  res.render('painelAdmin',
-  {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/eventos.css"
-  })
-})
-;
+// router.get('/painelAdmin', function(req,res,next){
+//   res.render('painelAdmin',
+//   {
+//     css1: "/stylesheets/menu-footer.css",
+//     css2: "/stylesheets/eventos.css"
+//   })
+// })
+// ;
 
 /*página produtos*/
 router.get('/produtos', produtosController.index);
-/*p[agina tipo de produtos*/
+/*pagina tipo de produtos*/
 
 router.get('/produtos/:tipo', produtosController.show);
+router.get('/produtos/teste/:id', produtosController.mostrarporId);
+
+
 /* pagina Parceiros*/
-
-
 router.get('/parceiros', function(req, res, next) {
   res.render('parceiros', {
     css1: "/stylesheets/parceiros.css",
