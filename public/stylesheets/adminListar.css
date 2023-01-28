@@ -1,0 +1,182 @@
+main * {
+    font-family: Montserrat;
+    }
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    color: #540606;
+  
+}
+.titulo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    display: flex;
+    width: 90vw;
+    padding: 2rem;
+    flex-direction: column;
+    margin: 4rem auto 0 auto;
+    font-size: 14px;
+}
+
+.section-container1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-flat:hover{
+    margin-bottom: 5px;
+}
+
+.section-container2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0rem 5rem 0rem;
+}
+
+.div-container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#div-button{
+    margin-top: 30px;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+#imgFoto {
+    cursor: pointer;
+    height: 300px;
+    width: 25vw;
+    border-radius: 2rem;
+}
+
+#imgFoto:hover {
+    transform: scale(1.2);
+}
+
+em {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.nome, .descricao, .preco {
+    margin-bottom: 2rem;
+}
+.teste{
+    margin-bottom: 50px;
+}
+.error-alert {
+    flex-direction: row;
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    margin-top: 30px;
+}
+table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    border-color: gray;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background: rgb(239, 236, 236)
+}
+
+tr {
+    border-bottom: 1px solid darkgray;
+
+}
+th{
+    text-align: left;
+}
+th:first-child{
+    text-align: center;
+}
+
+td {
+    height: 30px;
+    text-align: left;
+}
+
+td:first-child {
+    width: 10%;
+    text-align: center;
+
+}
+
+#nameError, #descricaoError, #precoError, #categoriaError, #imgError {
+    display: none;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+#descricaoSucess {
+    display: none;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.descricao {
+    resize: none;
+    height: 15rem;
+}
+
+ div > label {
+    font-size: 20px;
+ }
+
+.inpt, .descricao {
+    border-color: #9b9999;
+    border-radius: .6rem;
+    font-size: 22px;
+    background-color: #EEECEC;
+}
+#btn-flat {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-right: 20px;
+
+}
+
+button {
+    border: black;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    line-height: 1rem;
+    padding: 1rem;
+    width: 12rem;
+    height: 3rem;
+    background-color: #A0B200;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .th-hide {
+        display: none;
+
+    }
+
+}

@@ -4,7 +4,7 @@
         <div class="titulo">
 
                 <h1>
-                    CADASTRO DE PRODUTOS
+                    PAINEL ADMINISTRATIVO
                 </h1>
 
 
@@ -35,7 +35,7 @@
                                         <td><%= produto.valor %></td>
                                         <td class="th-hide"><%= produto.tipo %></td>
                                         <td class="th-hide"><%= produto.promo %></td>
-                                        <td> <a href="/admin/produto/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> <a href="#"><img src="/images/tela-admin/delete.png" /></a></td>
+                                        <td> <a href="/admin/produto/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> <a href="/admin/produto/deletar/<%= produto.id%> "><img src="/images/tela-admin/delete.png" /></a></td>
                                     </tr>
                                 <% } %>
                             </tbody>
