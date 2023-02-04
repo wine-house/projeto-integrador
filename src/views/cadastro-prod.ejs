@@ -5,18 +5,13 @@
             CADASTRO DE PRODUTOS
         </h1>
         <hr>
-        <form class="form" id="formulario">
+        <form method="post" action="admin/produto/novo" class="form" id="formulario" enctype="multipart/form-data">
             <section class="section-filha-form section-container1">
                 <em>
                     Nome do produto:
                 </em>
                 <input class="inpt nome" type="text" placeholder="Digite aqui o nome do produto">
                 <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
-                <em>
-                    Descrição do produto:
-                </em>
-                <textarea class="descricao" type="text" placeholder="Digite a descrição aqui"></textarea>
-                <span role="alert" id="descricaoError" aria-hidden="true">O campo descrição não pode estar vazio</span>
             </section>
             <section class="section-filha-form section-container2">
                 
@@ -25,7 +20,7 @@
                         Imagem do produto:
                     </em>
                     <img src="/images/tela-cadastro-prod/btn-img-prod.png" alt="Selecione uma imagem" id="imgFoto">
-                    <input class="inpt btn-cadastro-prod" type="file" id="file" name="file" accept="image/*">
+                    <input class="inpt btn-cadastro-prod" type="file" id="file" name="inptImageProd" accept="image/*">
                     <span role="alert" id="imgError" aria-hidden="true">O campo imagem não pode estar vazio</span>
                 </div>
                 <div class="div-container2 div-filha2">
@@ -56,7 +51,7 @@
                     <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
                 </div>
             </section>
-            <button id="btn-submit">Enviar</button>
+            <button type="submit" id="btn-submit">Enviar</button>
             <span role="alert" id="descricaoSucess" aria-hidden="true">Seu produto foi cadastrado com sucesso!</span>
         </form>
 

@@ -2,8 +2,6 @@ window.addEventListener('load', function() {
   let formulario = document.querySelector('form.form');
   const nome = document.querySelector('input.nome');
   const nameError = document.getElementById('nameError');
-  const descricao = this.document.querySelector('textarea.descricao');
-  const descricaoError = document.getElementById('descricaoError');
   const precoError = document.getElementById('precoError');
   const preco = document.querySelector('input.preco');
   const categoriaError = document.getElementById('categoriaError');
@@ -15,7 +13,6 @@ window.addEventListener('load', function() {
   const imgProduto = document.querySelector('input.btn-cadastro-prod');
   const descricaoSucess = document.getElementById('descricaoSucess');
 
-
   let foto = document.getElementById('imgFoto');
   let inputFoto = document.getElementById('file');
 
@@ -25,7 +22,6 @@ window.addEventListener('load', function() {
   
   inputFoto.addEventListener('change', (e) => {
     e.preventDefault();
-    console.log(e);
     let reader = new FileReader();
   
     reader.onload = () => {
@@ -46,11 +42,6 @@ window.addEventListener('load', function() {
       this.alert("não é permitido números")
       errorsMessages.push("não é permitido números");
     }
-  })
-    // Validação campo descrição
-  descricao.addEventListener("keypress", (e) => {
-    descricaoError.style.display = 'none';
-    descricao.style.marginBottom = '2rem';
   })
 
   preco.addEventListener("keypress", (e) => {
@@ -88,11 +79,6 @@ window.addEventListener('load', function() {
       nameError.style.display = 'flex';
       nome.style.marginBottom = '0px';
     } 
-    
-    if(!descricao.value) {
-      descricaoError.style.display = 'flex';
-      descricao.style.marginBottom = '0px';
-    }
 
     if (preco.value <= 0) {
       precoError.style.display = 'flex';
@@ -114,7 +100,7 @@ window.addEventListener('load', function() {
       imgError.style.display = 'flex';
     }
 
-    if(nome.value && descricao.value && preco.value > 0 && checkRadio != null && imgProduto.files.length > 0) {
+    if(nome.value && preco.value > 0 && checkRadio != null && imgProduto.files.length > 0) {
       descricaoSucess.style.display = 'flex';
     }
   })

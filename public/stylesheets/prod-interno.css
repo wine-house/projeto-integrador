@@ -56,47 +56,10 @@ main {
 
 .botao-verde {
     background-color: #A0B200;
-    line-height: 8vh;
     font-weight: 600;
-    font-size: 2rem;
-    color: rgb(255, 255, 255);
-    border-radius: 1rem;
-    width: 20vw;
-    height: 8vh;
-    cursor: pointer;
-}
-
-hr {
-    margin: 10px;
-}
-
-.titulo-ficha-tec {
     font-size: 3rem;
-    text-align: center;
-    color: #540606;
-    font-weight: 500;
-    margin-top: 4rem;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
 }
-
-.secao-ficha-tec {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-}
-
-.card2 {
-    font-size: medium;
-}
-
-.card1 {
-    font-size: medium;
-}
-
-.card1 i {
-    color:gray
-}
-
-.card2 i {
-    color: gray;
-}
-

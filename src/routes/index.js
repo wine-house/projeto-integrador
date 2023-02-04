@@ -82,10 +82,9 @@ router.get('/produto-interno/:id', function (req, res, next) {
 });
 
 /* pagina cadastro-prod*/
-router.get('/cadastro-produto', function(req, res, next) {
+router.get('/cadastro-prod', function(req, res, next) {
     var produto = new Object();
     produto = {};
-    console.log(produto)
     res.render('cadastro-prod', { produto,
     css1: "/stylesheets/menu-footer.css",
     css2: "/stylesheets/cadastro-prod.css",
