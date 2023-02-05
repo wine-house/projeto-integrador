@@ -5,7 +5,7 @@
 				<h1>
 					PAINEL ADMINISTRATIVO
 				</h1>
-				<a id="btn-flat" href="/admin/produto/novo"><img src="/images/tela-admin/add.png" /> </a>
+				<a id="btn-flat" href="/admin/produtos/criar"><img src="/images/tela-admin/add.png" /> </a>
 
 		</div>
 		<hr>
@@ -30,7 +30,7 @@
 										<td><%= produto.nome %></td>
 										<td><%= produto.valor %></td>
 										<td class="th-hide"><%= produto.tipo %></td>
-										<td> <a href="/admin/produto/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> <a href="/admin/produto/deletar/<%= produto.id%> "><img src="/images/tela-admin/delete.png" /></a></td>
+										<td> <a href="/admin/produtos/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> <a href="/admin/produtos/deletar/<%= produto.id%> "><img src="/images/tela-admin/delete.png" /></a></td>
 									</tr>
 								<% } %>
 							</tbody>

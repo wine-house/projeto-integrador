@@ -3,8 +3,6 @@ const IndexController = require('../controller/indexController');
 const produtosController = require('../controller/produtosController');
 const produtos = require('../database/produtos.json');
 
-
-
 var router = express.Router();
 
 router.get('/', IndexController.index);
@@ -26,14 +24,12 @@ router.get('/eventos', function(req, res, next) {
     })
 });
 
-
 /*página produtos*/
 router.get('/produtos', produtosController.index);
-/*pagina tipo de produtos*/
 
+/*pagina tipo de produtos*/
 router.get('/produtos/:tipo', produtosController.show);
 router.get('/produtos/teste/:id', produtosController.mostrarporId);
-
 
 /* pagina Parceiros*/
 router.get('/parceiros', function(req, res, next) {
@@ -81,16 +77,6 @@ router.get('/produto-interno/:id', function (req, res, next) {
   });
 });
 
-/* pagina cadastro-prod*/
-router.get('/cadastro-prod', function(req, res, next) {
-    var produto = new Object();
-    produto = {};
-    res.render('cadastro-prod', { produto,
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/cadastro-prod.css",
-  });
-});
-
 /* pagina carrinho*/
 router.get('/carrinho', (req, res) => {
   res.render('carrinho', {
@@ -130,7 +116,5 @@ router.get('/fechamento-pedido', (req, res) => {
     css2: "/stylesheets/carrinho.css",
   });
 });
-
-
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const produtos = require("../database/produtos.json");
+const { validationResult } = require('express-validator');
 
-
-module.exports = {
+let AdminController = {
     index: (req, res) => {
         return res.render("adminListar", {
             produtos,
@@ -11,17 +11,29 @@ module.exports = {
     },
     
     //exibir tela de criação
-    create:(req, res)=>{
-        res.render('cadastro-prod', { produto:null,
+    viewForm:(req, res)=>{
+        res.render('cadastrar', { produto:null,
             css1: "/stylesheets/menu-footer.css",
             css2: "/stylesheets/adminListar.css",
         });
     },
 
     //Criar novo produto
-    store:(req, res)=>{
-        //virá a lógica
-        res.redirect("/admin/produto");
+    salvarForm:(req, res)=>{
+        let { nome } = req.body;
+        const errors = validationResult(req);
+
+        if(!errors.isEmpty()){
+            return console.log(errors.mapped())
+        } 
+
+        if(!req.file) {
+            return res.send("Você deve enviar uma imagem.")
+        }
+
+        res.send('O produto ' + nome + ' foi cadastrado com sucesso!');
+        res.redirect('/admin/produtos');
+        
     },
 
     edit: (req, res) => {
@@ -31,16 +43,16 @@ module.exports = {
         var arrayImg = produto.imagem;
         var img = arrayImg[0]
         produto.imagem = img
-       return res.render('cadastro-prod', {
+       return res.render('cadastrar', {
             produto,
             css1: "/stylesheets/menu-footer.css",
-            css2: "/stylesheets/cadastro-prod.css",
+            css2: "/stylesheets/cadastrar.css",
         });
     },
 
     update:(req, res)=>{
         //logica para atualizar
-        res.redirect("/admin/produto")
+        res.redirect("/admin/produtos")
     },
 
     //exibir a tela para mostrar o produto
@@ -54,7 +66,7 @@ module.exports = {
        return res.render('deletar-prod', {
             produto, 
             css1: "/stylesheets/menu-footer.css",
-            css2: "/stylesheets/cadastro-prod.css",
+            css2: "/stylesheets/cadastrar.css",
         });
     },
 
@@ -66,6 +78,8 @@ module.exports = {
         fs.writeFileSync('produtos.json', stringifyData)
 
         //depois que implentar faz redirect
-        res.redirect("/admin/produto");
+        res.redirect("/admin/produtos");
     },
 }
+
+module.exports = AdminController;

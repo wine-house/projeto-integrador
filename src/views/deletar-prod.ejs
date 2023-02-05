@@ -8,7 +8,7 @@
         </h1>
         <hr>
 
-            <form class="form" id="formulario" action="/admin/produto/deletar/<%=produto.id%>?_method=delete" method="post">
+            <form class="form" id="formulario" action="/admin/produtos/deletar/<%=produto.id%>?_method=delete" method="post">
 
             <section class="section-filha-form section-container1">
                 <em>
@@ -34,7 +34,7 @@
 
                         <img src="/images/tela-produtos/<%=produto.imagem%>.png" alt="Selecione uma imagem" id="imgFoto">
 
-                        <input class="inpt btn-cadastro-prod" type="file" id="file" name="file"  accept="image/*">
+                        <input class="inpt btn-cadastrar" type="file" id="file" name="file"  accept="image/*">
                         <span role="alert" id="imgError" aria-hidden="true">O campo imagem não pode estar vazio</span>
                 </div>
 
@@ -50,25 +50,25 @@
 
 
                             <div class="radio">
-                                <input class="inpt radio" id='branco' type="radio" name="tipos-categorias" value="branco"
+                                <input class="inpt radio" id='branco' type="radio" name="categoria" value="branco"
                                     <%=produto.tipo=="Vinho Branco" ? "checked" :"" %>>
                                 <label for="branco">Branco</label>
                             </div>
 
                             <div class="radio">
-                                <input class="inpt radio" id='rose' type="radio" name="tipos-categorias" value="rose" <%=produto.tipo=="Vinho Rose"
+                                <input class="inpt radio" id='rose' type="radio" name="categoria" value="rose" <%=produto.tipo=="Vinho Rose"
                                     ? "checked" :"" %>>
                                 <label for="rose">Rose</label>
                             </div>
 
                             <div class="radio">
-                                <input class="inpt radio" id='tinto' type="radio" name="tipos-categorias" value="tinto"
+                                <input class="inpt radio" id='tinto' type="radio" name="categoria" value="tinto"
                                     <%=produto.tipo=="Vinho Tinto" ? "checked" :"" %>>
                                 <label for="tinto">Tinto</label>
                             </div>
 
                             <div class="radio">
-                                <input class="inpt radio" id='espumante' type="radio" name="tipos-categorias" value="espumante"
+                                <input class="inpt radio" id='espumante' type="radio" name="categoria" value="espumante"
                                     <%=produto.tipo=="Espumante" ? "checked" :"" %>>
                                 <label for="espumante">Espumante</label>
                             </div>
@@ -86,7 +86,7 @@
 
     <!--JavaScript-->
     <script src="/js/menu-footer.js"></script>
-    <script src="/js/cadastro-prod.js"></script>
+    <script src="/js/cadastrar.js"></script>
     <!--end JavaScript-->
 
     <%-include("partials/footer")%>

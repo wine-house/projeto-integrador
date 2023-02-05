@@ -28,7 +28,7 @@ app.use('/users', usersRouter);
 
 app.use(indexRouter);
 app.use(usersRouter);
-app.use('/admin', adminRouter)
+app.use('/admin/produtos', adminRouter)
 
 
 // catch 404 and forward to error handler
