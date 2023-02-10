@@ -3,7 +3,7 @@ const produtoDataBase = require("../database/produtos.json");
 
 
 module.exports = {
-    index: (req, res) => {
+    index:  (req, res) => {
         // controller comunicando com o model
         const produtos = produtosModel.index();
         // controller comunicando com a view
