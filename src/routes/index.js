@@ -1,6 +1,5 @@
 var express = require('express');
 const IndexController = require('../controller/indexController');
-const produtosController = require('../controller/produtosController');
 const produtos = require('../database/produtos.json');
 
 var router = express.Router();
@@ -23,13 +22,6 @@ router.get('/eventos', function(req, res, next) {
       css2: "/stylesheets/eventos.css"
     })
 });
-
-/*página produtos*/
-router.get('/produtos', produtosController.index);
-
-/*pagina tipo de produtos*/
-router.get('/produtos/:tipo', produtosController.show);
-router.get('/produtos/teste/:id', produtosController.mostrarporId);
 
 /* pagina Parceiros*/
 router.get('/parceiros', function(req, res, next) {
