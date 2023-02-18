@@ -53,6 +53,6 @@ VALUES
 ('Barone Montalto',88.00,'Vinho Tinto','1-barone-montalto',1);
 
 INSERT INTO pedidos(data_criacao,valor_unitario,quantidade,clientes_id,produtos_id)
-VALUES ('2023-02-06',88.00,1 ,1,4);
+VALUES ('2023-02-06',88.00,1,1,4);
 
 
