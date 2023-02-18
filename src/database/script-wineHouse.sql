@@ -36,10 +36,11 @@ FOREIGN KEY (produtos_id) REFERENCES produtos(id)
 );
 
 SELECT * FROM clientes;
-INSERT INTO clientes( nome, email, senha)
+INSERT INTO clientes(nome, email, senha)
 VALUES
 ('Keyla', 'keyla@gmail.com', 123456),
-('Rodrigo', 'rodrigo@gmail.com', 003456);
+('Rodrigo', 'rodrigo@gmail.com', 003456),
+('Guilherme', 'guilherme@gmail.com', 123456);
 
 
 INSERT INTO fornecedores( nome, email, senha)
