@@ -18,10 +18,13 @@
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.1.2",
     "on-headers": "^1.0.2",
-    "popper.js": "^1.14.3"
+    "popper.js": "^1.14.3",
+    "sequelize": "^6.28.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.6.0"
   }
 }
