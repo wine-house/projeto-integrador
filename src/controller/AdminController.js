@@ -1,8 +1,12 @@
-const produtos = require("../database/produtos.json");
+const { Produtos } = require('../../models');
 const { validationResult } = require('express-validator');
 
 let AdminController = {
-    index: (req, res) => {
+    index: async (req, res) => {
+        // controller comunicando com o model
+        const produtos = await Produtos.findAll();
+        console.log(produtos)
+        res.render('produtos', { produtos })
         return res.render("adminListar", {
             produtos,
             css1: "/stylesheets/menu-footer.css",

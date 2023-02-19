@@ -4,7 +4,6 @@ let router = express.Router();
 const path = require('path');
 const AdminController = require("../controller/AdminController")
 // const authAdminController = require("../controller/authAdminController");
-const produtos = require("../database/produtos.json");
 const multer = require('multer');
 
 const multerDiskStorage = multer.diskStorage({
