@@ -6,8 +6,7 @@ module.exports = {
         const produtos = produtosModel.index();
         // controller comunicando com a view
         return res.render('index', {produtos: produtos,
-            css1: "/stylesheets/home.css", 
-            css2: "/stylesheets/menu-footer.css"
+            css: ['/stylesheets/home.css', '/stylesheets/menu-footer.css']
         });
     }
 }

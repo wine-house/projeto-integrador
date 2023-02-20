@@ -7,18 +7,16 @@ let AdminController = {
         const produtos = await Produtos.findAll();
         console.log(produtos)
         res.render('produtos', { produtos })
-        return res.render("adminListar", {
+        return res.render('adminListar', {
             produtos,
-            css1: "/stylesheets/menu-footer.css",
-            css2: "/stylesheets/adminListar.css",
+            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
         })
     },
     
     //exibir tela de criação
     viewForm:(req, res)=>{
         res.render('cadastrar', { produto:null,
-            css1: "/stylesheets/menu-footer.css",
-            css2: "/stylesheets/adminListar.css",
+            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
         });
     },
 
@@ -32,7 +30,7 @@ let AdminController = {
         } 
 
         if(!req.file) {
-            return res.send("Você deve enviar uma imagem.")
+            return res.send('Você deve enviar uma imagem.')
         }
 
         res.send('O produto ' + nome + ' foi cadastrado com sucesso!');
@@ -49,14 +47,13 @@ let AdminController = {
         produto.imagem = img
        return res.render('cadastrar', {
             produto,
-            css1: "/stylesheets/menu-footer.css",
-            css2: "/stylesheets/cadastrar.css",
+            css1: ['/stylesheets/menu-footer.css','/stylesheets/cadastrar.css']
         });
     },
 
     update:(req, res)=>{
         //logica para atualizar
-        res.redirect("/admin/produtos")
+        res.redirect('/admin/produtos')
     },
 
     //exibir a tela para mostrar o produto
@@ -69,8 +66,7 @@ let AdminController = {
         produto.imagem = img
        return res.render('deletar-prod', {
             produto, 
-            css1: "/stylesheets/menu-footer.css",
-            css2: "/stylesheets/cadastrar.css",
+            css: ['/stylesheets/menu-footer.css','/stylesheets/cadastrar.css']
         });
     },
 
@@ -82,7 +78,7 @@ let AdminController = {
         fs.writeFileSync('produtos.json', stringifyData)
 
         //depois que implentar faz redirect
-        res.redirect("/admin/produtos");
+        res.redirect('/admin/produtos');
     },
 }
 

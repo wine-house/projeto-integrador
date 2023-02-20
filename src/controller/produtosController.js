@@ -9,8 +9,7 @@ module.exports = {
         // controller comunicando com a view
         return res.render('produtos', {
             produtos: produtos,
-            css1: "/stylesheets/produtos.css",
-            css2: "/stylesheets/menu-footer.css"
+            css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
     },
 
@@ -21,8 +20,7 @@ module.exports = {
 
         return res.render('produto-listar', {
             vinhoTipo,
-            css1: "/stylesheets/produtos.css",
-            css2: "/stylesheets/menu-footer.css"
+            css:["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
     },
 
@@ -34,8 +32,7 @@ module.exports = {
         return res.render('produto-listar', {
 
             vinhoTipo,
-            css1: "/stylesheets/produtos.css",
-            css2: "/stylesheets/menu-footer.css"
+            css:["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
        
     
