@@ -58,7 +58,6 @@
 ##Colaboradores:
 
 Keyla Delpupo, 
-Rodrigo Potel,
-Guilherme Januário.
+Rodrigo Potel.
      
 
