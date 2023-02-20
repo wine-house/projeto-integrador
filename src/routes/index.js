@@ -73,7 +73,7 @@ router.get('/produto-interno/:id', function (req, res, next) {
 /* pagina carrinho*/
 router.get('/carrinho', (req, res) => {
   res.render('carrinho', {
-    css: ['menu-footer.css','carrinho.css']
+    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
   });
 });
 
