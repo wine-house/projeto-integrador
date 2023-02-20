@@ -1,14 +1,9 @@
 var express = require('express');
 const IndexController = require('../controller/indexController');
 const produtosController = require('../controller/produtosController');
+const produtos = require('../database/produtos.json');
 
 var router = express.Router();
-
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-//   // res.send(JSON.stringify(servicoModel));
-// });
 
 router.get('/', IndexController.index);
 
@@ -31,6 +26,10 @@ router.get('/eventos', function(req, res, next) {
 
 /*página produtos*/
 router.get('/produtos', produtosController.index);
+
+/*pagina tipo de produtos*/
+router.get('/produtos/:tipo', produtosController.show);
+router.get('/produtos/teste/:id', produtosController.mostrarporId);
 
 /* pagina Parceiros*/
 router.get('/parceiros', function(req, res, next) {
@@ -64,11 +63,17 @@ router.get('/produto-interno', function(req, res, next) {
   });
 });
 
-/* pagina cadastro-prod*/
-router.get('/cadastro-produto', function(req, res, next) {
-  res.render('cadastro-prod', {
+router.get('/produto-interno/:id', function (req, res, next) {
+  const { id } = req.params;
+  var produto = produtos.filter((prod) => prod.id == id);
+  produto = produto[0]
+  var arrayImg = produto.imagem;
+  var img = arrayImg[0]
+  console.log(produto)
+  produto.imagem = img
+  res.render('prod-interno', {produto,
     css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/cadastro-prod.css",
+    css2: "/stylesheets/prod-interno.css",
   });
 });
 

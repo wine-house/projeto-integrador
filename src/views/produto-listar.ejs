@@ -11,27 +11,26 @@
                     <li class="products__categories__link"><a href="/produtos/Vinho Tinto">Tinto</a></li>
                     <li class="products__categories__link"><a href="/produtos/Vinho Branco">Branco</a></li>
                     <li class="products__categories__link"><a href="/produtos/Vinho Rose">Rose</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Espumante">Espumante</a></li>
+                    <li class="products__categories__link"><a href="/produtos/Espumante">Espumante</a></li>
+                    <li class="products__categories__link"><a href="/produtos">Todos </a></li>
                 </ul>
             </aside>
 
             <div class="products__wines">
                 <div class="products__content">
-                    <% for(produto of produtos) { %>
+                    <% for(produto of vinhoTipo) { %>
                     <article class="products__item">
                         <header>
                             <figure class="products__item__image">
                                 <img src="/images/tela-produtos/<%= produto.imagem %>.png" alt="Vinho Tinto">
                             </figure>
                             
-
                             <button class="products__item__buy" id="<%= produto.id %>">
-                                <a href="/produto-interno"> Comprar</a>
+                                <a href="/produto-interno">Comprar</a>
                             </button>
                         </header>
-
                         <footer>
-                            <span class="products__item__name"><%= produto.nome%></span>
+                            <span class="products__item__name"><%= produto.nome%> (<%= produto.tipo%>)</span>
                             <span class="products__item__price"><%= produto.valor%></span>
                         </footer>
                     </article>

@@ -1,0 +1,50 @@
+<%- include('partials/headerAdm') %> 
+
+	<main>
+		<div class="titulo">
+				<h1>
+					PAINEL ADMINISTRATIVO
+				</h1>
+				<a id="btn-flat" href="/admin/produtos/criar"><img src="/images/tela-admin/add.png" /> </a>
+
+		</div>
+		<hr>
+		<div class="teste">
+			<% if(produtos.length> 0){ %>
+				<form class="form" id="formulario">
+					<div class="table-container">
+						<table id="tbl-01">
+							<thead>
+								<tr>
+									<th> ID</th>
+									<th> Nome</th>
+									<th> Valor</th>
+									<th class="th-hide">Categoria</th>
+									<th> Opções</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for(let produto of produtos) { %>
+									<tr>
+										<td> <%= produto.id %></td>
+										<td><%= produto.nome %></td>
+										<td><%= produto.valor %></td>
+										<td class="th-hide"><%= produto.tipo %></td>
+										<td> <a href="/admin/produtos/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> <a href="/admin/produtos/deletar/<%= produto.id%> "><img src="/images/tela-admin/delete.png" /></a></td>
+									</tr>
+								<% } %>
+							</tbody>
+	
+						</table>
+					</div>
+				</form>
+				<% } else { %>
+					<h2 class="error-alert">NENHUM PRODUTO FOI ENCONTRADO :(</h2>
+				<%} %>
+		</div>
+	</main>
+	<!--JavaScript-->
+	<script src="/js/menu-footer.js"></script>
+	<script src="/js/cadastro-prod.js"></script>
+	<!--end JavaScript-->
+	<!-- <%-include("partials/footer")%>  -->
