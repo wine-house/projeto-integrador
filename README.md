@@ -58,7 +58,6 @@
 ##Colaboradores:
 
 Keyla Delpupo, 
-Rodrigo Potel,
-Maryelen Amaral.
+Rodrigo Potel.
      
 
