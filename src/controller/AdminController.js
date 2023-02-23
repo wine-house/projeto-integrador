@@ -1,4 +1,4 @@
-const { Produtos } = require('../../models');
+const { Produtos } = require('../models');
 const { validationResult } = require('express-validator');
 
 let AdminController = {
@@ -45,7 +45,7 @@ let AdminController = {
         var arrayImg = produto.imagem;
         var img = arrayImg[0]
         produto.imagem = img
-       return res.render('cadastrar', {
+        return res.render('cadastrar', {
             produto,
             css1: ['/stylesheets/menu-footer.css','/stylesheets/cadastrar.css']
         });

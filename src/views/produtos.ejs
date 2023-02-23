@@ -2,16 +2,16 @@
 
 <!--MAIN-->
     <main id="products">
-        <!--Prdutos-->
+        <!--Produtos-->
         <section class="products">
             <aside class="products__categories">                
                 <h2 class="products__categories__title">Categorias</h2>                
 
                 <ul class="products__categories__links">
-                    <li class="products__categories__link"><a href="/produtos/Vinho Tinto">Tinto</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Branco">Branco</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Rose">Rose</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Espumante">Espumante</a></li>
+                    <li class="products__categories__link"><a href="/produtos/vinhoTinto">Tinto</a></li>
+                    <li class="products__categories__link"><a href="/produtos/vinhoBranco">Branco</a></li>
+                    <li class="products__categories__link"><a href="/produtos/vinhoRose">Rose</a></li>
+                    <li class="products__categories__link"><a href="/produtos/vinhoEspumante">Espumante</a></li>
                 </ul>
             </aside>
 
@@ -26,7 +26,7 @@
                             
 
                             <button class="products__item__buy" id="<%= produto.id %>">
-                                <a href="/produto-interno"> Comprar</a>
+                                <a href="/produtos/produto-interno/<%= produto.id %>"> Comprar</a>
                             </button>
                         </header>
 
