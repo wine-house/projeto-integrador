@@ -9,8 +9,7 @@ router.get('/', IndexController.index);
 /* pagina quem somos*/
 router.get('/somos', function(req, res, next) {
   res.render('somos', {
-    css1: "/stylesheets/somos.css", 
-    css2: "/stylesheets/menu-footer.css",
+    css: ['/stylesheets/somos.css', '/stylesheets/menu-footer.css']
   });
 });
 
@@ -18,40 +17,35 @@ router.get('/somos', function(req, res, next) {
 router.get('/eventos', function(req, res, next) {
   res.render('eventos',
     {
-      css1: "/stylesheets/menu-footer.css",
-      css2: "/stylesheets/eventos.css"
+      css: ['/stylesheets/menu-footer.css', '/stylesheets/eventos.css']
     })
 });
 
 /* pagina Parceiros*/
 router.get('/parceiros', function(req, res, next) {
   res.render('parceiros', {
-    css1: "/stylesheets/parceiros.css",
-    css2: "/stylesheets/menu-footer.css",
+    css: ['/stylesheets/parceiros.css', '/stylesheets/menu-footer.css']
   });
 });
 
 /* pagina login*/
 router.get('/login', function(req, res, next) {
   res.render('login', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/login.css",
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
   });
 });
 
 /* pagina painel de usuário*/
 router.get('/painel-usuario', (req, res, next) => {
   res.render('painel-usuario', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/painel-usuario.css",
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
   });
 });
 
 /* pagina produto interno*/
 router.get('/produto-interno', function(req, res, next) {
   res.render('prod-interno', {
-    css1: "/stylesheets/menu-footer.css",
-     css2: "/stylesheets/prod-interno.css",
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
   });
 });
 
@@ -64,48 +58,42 @@ router.get('/produto-interno/:id', function (req, res, next) {
   console.log(produto)
   produto.imagem = img
   res.render('prod-interno', {produto,
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/prod-interno.css",
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
   });
 });
 
 /* pagina carrinho*/
 router.get('/carrinho', (req, res) => {
   res.render('carrinho', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/carrinho.css",
+    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
   });
 });
 
 /* pagina confira itens*/
 router.get('/confira-itens', (req, res) => {
   res.render('confira-itens', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/carrinho.css",
+    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
   });
 });
 
 /* pagina selecionar endereço*/
 router.get('/selecionar-endereco', (req, res) => {
   res.render('selecionar-endereco', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/carrinho.css",
+    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css'],
   });
 });
 
 /* pagina fechamento pagamento*/
 router.get('/fechamento-pagamento', (req, res) => {
   res.render('fechamento-pagamento', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/carrinho.css",
+    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
   });
 });
 
 /* pagina fechamento pedido*/
 router.get('/fechamento-pedido', (req, res) => {
   res.render('fechamento-pedido', {
-    css1: "/stylesheets/menu-footer.css",
-    css2: "/stylesheets/carrinho.css",
+    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
   });
 });
 

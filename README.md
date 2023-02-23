@@ -57,7 +57,10 @@
 
 ##Colaboradores:
 
-Keyla Delpupo, 
-Rodrigo Potel.
+Guilherme Januário
+Keyla Delpupo 
+Rodrigo Potel
+Maryelen Amaral
+Matheus Oliveira
      
 
