@@ -1,4 +1,4 @@
-const { Produtos } = require('../../models');
+const { Produtos } = require('../models');
 const { validationResult } = require('express-validator');
 
 let AdminController = {
