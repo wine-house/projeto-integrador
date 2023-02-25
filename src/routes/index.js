@@ -24,7 +24,7 @@ router.get('/carrinho', carrinho);
 /* pagina painel de usuário*/
 router.get('/painel-usuario', (req, res, next) => {
   res.render('painel-usuario', {
-    css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
   });
 });
 
