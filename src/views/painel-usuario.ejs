@@ -1,297 +1,163 @@
-<%- include('partials/header') %>
+<%- include('./partials/header') %>
 
-<!--MAIN-->
-    <main id="user-panel">
-        <section class="panel">
-            <aside class="panel__user">
-                <div class="panel__user-title">
-                    <img src="/images/tela-painel-usuario/glass-wine.png" alt="taça de vinho">
-                    <span class="panel__user__name">Bem vindo, João Carlos!</span>
+    <main>
+            <div class="conteiner-painel-pedidos">
+                <div class="painel-vertical">
+                    <div class="foto-cliente">
+                        <a href="#"><img src="/images/tela-painel-usuario/user-photo.png" width="300px" alt=""></a>
+                        <h3>Perfil Wine</h3>
+                    </div>
+                    <div class="nav-painel">
+                        <div>
+                            <a href=""><h5>MEU CADASTRO</h5></a>
+                        </div>
+                        <div>
+                            <a href=""><h5>MEUS PEDIDOS</h5></a>
+                        </div>
+                        <div>
+                            <a href=""><h5>MEUS CARTÕES</h5></a>
+                        </div>
+                        <div>
+                            <a href=""><h5>ARREPENDIMENTOS</h5></a>
+                        </div>
+                    </div>
+                    <div class="atendimento-painel">
+                        <div id="contatos">
+                            <p>E-mail: contato@winehouse.com.br<br>
+                                Telefone: (44) 99866-2398</p>
+                        </div>
+                        <div id="chat-link">
+                            <p><a href="https://tawk.to/chat/6361aaa1b0d6371309ccc776/1ggqo5293"> Atendimento via Chat</a></p>
+                        </div>
+                    </div>
                 </div>
-
-                <figure class="panel__user__image">
-                    <img src="/images/tela-painel-usuario/user-photo.png" alt="foto do usuário">
-                </figure>
-
-                <div class="panel__user__message">
-                    <p class="panel__user__para">
-                        Seja bem-vindo!
-                    </p>
-    
-                    <p class="panel__user__para">
-                        Este é seu ambiente exclusivo.
-                    </p>
-    
-                    <p class="panel__user__para">
-                        Aqui você pode visualizar seus pedidos, produtos favoritos e gerenciar seus dados pessoais.
-                    </p>
+                <div class="tabela-pedidos">
+                    <div class="meus-pedidos-titulo">
+                        <h1>Meus pedidos</h1>
+                        <p>Aqui você encontra todos os seus pedidos.</p>
+                    </div>
+                    <div class="cabecalho-pedido">
+                        <div class="txt-nro-pedido">
+                            <h3>Número do pedido</h3>
+                        </div>
+                        <div class="txt-data-compra">
+                            <h3>Data</h3>
+                        </div>
+                        <div class="txt-status-pagamento">
+                            <h3>Pagamento</h3>
+                        </div>
+                        <div class="txt-andamento-compra">
+                            <h3>Posição</h3>
+                        </div>
+                        <div class="txt-nota-fiscal">
+                            <h3>Nota Fiscal</h3>
+                        </div>  
+                    </div>
+                        <div class="pedidos-clientes">
+                            <div class="nro-pedido-cliente">
+                                <h4>15268941</h4>
+                            </div>
+                            <div class="data-compra-cliente">
+                                <h4>30/10/2022</h4>
+                            </div>
+                            <div class="status-pagamento-cliente">
+                                <h4>Aprovado</h4>
+                            </div>
+                            <div class="andamento-compra-cliente">
+                                <h4>Entregue</h4>
+                            </div>
+                            <div class="nota-fiscal-cliente">
+                                <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="pedidos-clientes">
+                            <div class="nro-pedido-cliente">
+                                <h4>15268941</h4>
+                            </div>
+                            <div class="data-compra-cliente">
+                                <h4>30/10/2022</h4>
+                            </div>
+                            <div class="status-pagamento-cliente">
+                                <h4>Aprovado</h4>
+                            </div>
+                            <div class="andamento-compra-cliente">
+                                <h4>Entregue</h4>
+                            </div>
+                            <div class="nota-fiscal-cliente">
+                                <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="pedidos-clientes">
+                            <div class="nro-pedido-cliente">
+                                <h4>15268941</h4>
+                            </div>
+                            <div class="data-compra-cliente">
+                                <h4>30/10/2022</h4>
+                            </div>
+                            <div class="status-pagamento-cliente">
+                                <h4>Aprovado</h4>
+                            </div>
+                            <div class="andamento-compra-cliente">
+                                <h4>Entregue</h4>
+                            </div>
+                            <div class="nota-fiscal-cliente">
+                                <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="pedidos-clientes">
+                            <div class="nro-pedido-cliente">
+                                <h4>15268941</h4>
+                            </div>
+                            <div class="data-compra-cliente">
+                                <h4>30/10/2022</h4>
+                            </div>
+                            <div class="status-pagamento-cliente">
+                                <h4>Aprovado</h4>
+                            </div>
+                            <div class="andamento-compra-cliente">
+                                <h4>Entregue</h4>
+                            </div>
+                            <div class="nota-fiscal-cliente">
+                                <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
+                            </div>
+                    </div>
+                    <div class="pedidos-clientes">
+                        <div class="nro-pedido-cliente">
+                            <h4>15268941</h4>
+                        </div>
+                        <div class="data-compra-cliente">
+                            <h4>30/10/2022</h4>
+                        </div>
+                        <div class="status-pagamento-cliente">
+                            <h4>Aprovado</h4>
+                        </div>
+                        <div class="andamento-compra-cliente">
+                            <h4>Entregue</h4>
+                        </div>
+                        <div class="nota-fiscal-cliente">
+                            <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
+                        </div>
                 </div>
-
-                <div class="panel__user__purchases">
-                    <div class="panel__user__bar-outer">
-                        <div class="panel__user__bar-inner"></div>
+                <div class="pedidos-clientes">
+                    <div class="nro-pedido-cliente">
+                        <h4>15268941</h4>
                     </div>
-                    
-                    <div class="panel__user__text"></div>
-                </div>
-
-                <article class="panel__user__card">
-                    <div class="panel__user__card-title">
-                        <span class="user-panel-icon"><i class="fa-solid fa-user"></i></span>
-                        <h3 class="panel__user__card-subtitle">MINHA CONTA</h3>
+                    <div class="data-compra-cliente">
+                        <h4>30/10/2022</h4>
                     </div>
-
-                    <div class="panel__user__card-body">
-                        <button class="panel__user__order active-link">Meus Pedidos</button>
-                        <a href="../tela-login/login.html" class="panel__user__registration">Alterar Cadastro</a>
+                    <div class="status-pagamento-cliente">
+                        <h4>Aprovado</h4>
                     </div>
-                </article>
-
-                <article class="panel__user__card">
-                    <div class="panel__user__card-title">
-                        <span class="user-panel-icon"><i class="fa-solid fa-heart"></i></span>
-                        <h3 class="panel__user__card-subtitle">FAVORITOS</h3>
+                    <div class="andamento-compra-cliente">
+                        <h4>Entregue</h4>
                     </div>
-
-                    <div class="panel__user__card-body">
-                        <button class="panel__user__favorites">Produtos Favoritos</button>
+                    <div class="nota-fiscal-cliente">
+                        <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
                     </div>
-                </article>
-
-                <a href="../tela-home/index.html" class="panel__user__exit">SAIR</a>
-            </aside>
-    
-            <!--Pedidos do usuário-->
-            <section class="panel__order">
-                <div class="panel__order-title">
-                    <span class="user-panel-icon"><i class="fa-solid fa-list"></i></span>
-                    <h3 class="panel__order__subtitle">MEUS PEDIDOS</h3>
-                </div>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">734920578</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 147,70</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Tinto</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">02/10/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">08:20</span>
-                    </div>
-                </article>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">734920597</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 144,80</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Rose</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">06/10/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">09:00</span>
-                    </div>
-                </article>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">73492708</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 130,70</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Tinto</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">08/10/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">16:20</span>
-                    </div>
-                </article>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">734920729</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 149,70</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Espumante</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">18/10/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">18:45</span>
-                    </div>
-                </article>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">734920810</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 127,70</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Seco</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">21/10/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">09:40</span>
-                    </div>
-                </article>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">734920845</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 155,70</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Tinto</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">27/10/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">20:35</span>
-                    </div>
-                </article>
-
-                <article class="panel__order__card">
-                    <div class="order-number">
-                        <span class="order-number__top">Número</span>
-                        <span class="order-number__bottom">734920882</span>
-                    </div>
-
-                    <div class="order-value">
-                        <span class="order-value__top">Valor</span>
-                        <span class="order-value__botom">R$ 134,80</span>
-                    </div>
-
-                    <div class="order-category">
-                        <span class="order-category__top">Categoria</span>
-                        <span class="order-category__bottom">Seco</span>
-                    </div>
-
-                    <div class="order-date">
-                        <span class="order-date__top">Data</span>
-                        <span class="order-date__bottom">02/11/2022</span>
-                    </div>
-
-                    <div class="order-hour">
-                        <span class="order-hour__top">Hora</span>
-                        <span class="order-hour__bottom">21:50</span>
-                    </div>
-                </article>
-            </section>
-        </section>
-
-        <!--Link to Top-->
-        <a class="link-top" href="#user-panel"><i class="fas fa-arrow-up"></i></a>
-    </main>
-    <!--end MAIN-->
-
-    <!--Modal-->
-    <div class="modal">
-        <div class="modal__content">
-            <div class="modal__content__message">
-                Prezado usuário, você possui um total de <span id="user-purchase"></span> compras. A partir de 10 compras, concorra aos sorteios do mês.
             </div>
-
-            <div class="modal__content__images">
-                <figure class="modal__content__image">
-                    <img src="/images/tela-painel-usuario/sparkling-wine.png" alt="Uvas vermelhas">
-                </figure>
-
-                <figure class="modal__content__image">
-                    <img src="/images/tela-painel-usuario/red-wine.png" alt="Vinho tinto">
-                </figure>
-            </div>
-            
-            <div class="modal__content__close">Fechar</div>
-        </div>
-    </div>
-
-    <!--JAVASCRIPT-->
-    <!--User Panel-->
-    <script src="/js/user-panel.js"></script>
-
-    <!--Main-->
-    <script src="/js/menu-footer.js"></script>
-    <!--end JAVASCRIPT-->
-    
+                </div>
+            </div>       
+    </main>    
+</body>
 
 <%- include('partials/footer') %> 
