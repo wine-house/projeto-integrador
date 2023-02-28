@@ -4,15 +4,14 @@
     <main>
         <section class="container">
             <header class="container__img_prod">
-                <img src="/images/tela-prod-interno/tresvinhos.png" alt="">
+                <img src="/images/tela-produtos/<%=produto.imagem%>.png" alt="">
             </header>
             <section class="container__desc_prod">
                 <h1>
-                    Kit Exclusivo - VIK <br>
-                    3 Itens, 750 ml. <br>
+                    <%= produto.nome %>
                 </h1>
                 <h2>15% OFF</h2>
-                <p>R$ 2850,85</p>
+                <p>R$<%= produto.valor %>,00</p>
                 <a class="botao-verde" href="/carrinho">Adicionar</a>
             </section>
         </section>

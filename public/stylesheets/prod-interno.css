@@ -7,6 +7,7 @@
 main {
     display: flex;    
     flex-direction: column;
+    margin: 2rem;
 }
 
 .container {
@@ -16,10 +17,7 @@ main {
 }
 
 .container__img_prod {
-    background-color: #A66F83;
-    display: flex;
-    border-radius: 2rem;
-    border: solid 1.1px black;
+    
 }
 
 .container__img_prod:hover img {

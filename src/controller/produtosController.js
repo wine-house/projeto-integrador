@@ -37,7 +37,7 @@ module.exports = {
     },
     getProductById: async(req, res, next) => {
         const { id } = req.params;
-        const produto = Produto.findByPk(id);
+        const produto = await Produto.findByPk(id);
         // var produto = produtos.filter((prod) => prod.id == id);
         // produto = produto[0]
         // var arrayImg = produto.imagem;

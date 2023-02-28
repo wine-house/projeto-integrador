@@ -39,6 +39,7 @@ img {
     width: 100%;
     max-width: 1380px;
     margin: 0 auto;
+
     z-index: 5;
     height: 8rem;
     padding: .8rem;
