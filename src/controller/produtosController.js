@@ -7,8 +7,8 @@ module.exports = {
         // controller comunicando com o model
         const produtos = await Produto.findAll();
         // controller comunicando com a view
-        return res.render('produtos', {
-            produtos: produtos,
+        console.log(produtos)
+        return res.render('produtos', {  produtos,
             css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
     },
@@ -48,5 +48,10 @@ module.exports = {
         res.render('prod-interno', { produto: produto,
           css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
         });
+      },
+      deletar: async(req, res) => {
+        const { id } = req.params;
+        await Produto.destroy(id);
+        
       }
 }

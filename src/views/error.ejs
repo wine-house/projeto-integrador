@@ -1,11 +1,3 @@
-<%- include("partials/header") %> 
-
-    <main>
-        <h1>Ocorreu um erro</h1>
-    </main>
-
-    <!--JavaScript-->
-    <script src="../js/main.js"></script>
-    <!--end JavaScript-->
-
-<%-include("partials/footer")%> 
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>

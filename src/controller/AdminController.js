@@ -1,12 +1,10 @@
-const { Produtos } = require('../models');
+const { Produto } = require('../models');
 const { validationResult } = require('express-validator');
 
 let AdminController = {
     index: async (req, res) => {
         // controller comunicando com o model
-        const produtos = await Produtos.findAll();
-        console.log(produtos)
-        res.render('produtos', { produtos })
+        const produtos = await Produto.findAll();
         return res.render('adminListar', {
             produtos,
             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
@@ -57,17 +55,20 @@ let AdminController = {
     },
 
     //exibir a tela para mostrar o produto
-    delete:(req, res)=>{
+    delete: async (req, res)=>{
         const { id } = req.params;
-        var produto = produtos.filter((prod) => prod.id == id);
-        produto = produto[0]
-        var arrayImg = produto.imagem;
-        var img = arrayImg[0]
-        produto.imagem = img
-       return res.render('deletar-prod', {
-            produto, 
-            css: ['/stylesheets/menu-footer.css','/stylesheets/cadastrar.css']
-        });
+        await Produto.destroy(
+            { where:  id }
+        );
+        // var produto = produtos.filter((prod) => prod.id == id);
+        // produto = produto[0]
+        // var arrayImg = produto.imagem;
+        // var img = arrayImg[0]
+        // produto.imagem = img
+    //    return res.render('deletar-prod', {
+    //         css: ['/stylesheets/menu-footer.css','/stylesheets/cadastrar.css']
+    //     });
+    res.redirect('/admin/produtos')
     },
 
     //apagar o item do banco

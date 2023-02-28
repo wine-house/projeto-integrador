@@ -30,7 +30,11 @@
 										<td><%= produto.nome %></td>
 										<td><%= produto.valor %></td>
 										<td class="th-hide"><%= produto.tipo %></td>
-										<td> <a href="/admin/produtos/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> <a href="/admin/produtos/deletar/<%= produto.id%> "><img src="/images/tela-admin/delete.png" /></a></td>
+										<td> <a href="/admin/produtos/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> 
+											<form action="/admin/produtos/<%= produto.id%>?_method=DELETE" method="post">
+												<button type="submit"><img src="/images/tela-admin/delete.png" /></button>
+											</form>	
+										</td>
 									</tr>
 								<% } %>
 							</tbody>
@@ -45,6 +49,5 @@
 	</main>
 	<!--JavaScript-->
 	<script src="/js/menu-footer.js"></script>
-	<script src="/js/cadastro-prod.js"></script>
 	<!--end JavaScript-->
-	<!-- <%-include("partials/footer")%>  -->
+	<%-include("partials/footer")%>

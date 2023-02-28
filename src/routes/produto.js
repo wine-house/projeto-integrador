@@ -8,6 +8,7 @@ router.get('/', produtosController.index);
 /*pagina tipo de produtos*/
 router.get('/:tipo', produtosController.show);
 router.get('/teste/:id', produtosController.mostrarporId);
+router.delete('/:id', produtosController.deletar)
 
 /* pagina produto interno*/
 router.get('/produto-interno', function(req, res, next) {

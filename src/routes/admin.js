@@ -35,8 +35,8 @@ const validacoes = [
 router.get("/", AdminController.index);
 router.get("/editar/:id",AdminController.edit);
 router.post("/editar/:id", upload.single("imagem"), AdminController.update);
-router.get("/deletar/:id", AdminController.delete);
-router.delete("/deletar/:id", AdminController.destroy);
+router.delete("/:id", AdminController.delete);
+// router.delete("/deletar/:id", AdminController.destroy);
 router.get ("/criar", AdminController.viewForm);
 router.post(
   "/criar", 
