@@ -17,6 +17,7 @@
 							<thead>
 								<tr>
 									<th> ID</th>
+									<th> Foto</th>
 									<th> Nome</th>
 									<th> Valor</th>
 									<th class="th-hide">Categoria</th>
@@ -27,6 +28,7 @@
 								<% for(let produto of produtos) { %>
 									<tr>
 										<td> <%= produto.id %></td>
+										<td> <img id="img-lista-produto-admin" src="/images/tela-produtos/<%= produto.imagem%>.png"</td>
 										<td><%= produto.nome %></td>
 										<td>R$<%= produto.valor %>,00</td>
 										<td class="th-hide"><%= produto.tipo %></td>
