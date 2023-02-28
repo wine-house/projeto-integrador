@@ -5,13 +5,13 @@
 				<h1>
 					PAINEL ADMINISTRATIVO
 				</h1>
-				<a id="btn-flat" href="/admin/criar"><img src="/images/tela-admin/add.png" /> </a>
+				<a id="btn-flat" href="/admin/produtos/criar"><img src="/images/tela-admin/add.png" /> </a>
 
 		</div>
 		<hr>
 		<div class="teste">
 			<% if(produtos.length> 0){ %>
-				<form class="form" id="formulario">
+				<div class="form" id="formulario">
 					<div class="table-container">
 						<table id="tbl-01">
 							<thead>
@@ -28,12 +28,12 @@
 									<tr>
 										<td> <%= produto.id %></td>
 										<td><%= produto.nome %></td>
-										<td>R$  <%= produto.valor %></td>
+										<td>R$<%= produto.valor %>,00</td>
 										<td class="th-hide"><%= produto.tipo %></td>
 										<td> <a href="/admin/produtos/editar/<%= produto.id%>"><img src="/images/tela-admin/edit.png" /></a> 
-											<form action="/admin/produtos/<%= produto.id%>?_method=DELETE" method="post">
-												<button type="submit"><img src="/images/tela-admin/delete.png" /></button>
-											</form>	
+											<form action="/admin/produtos/<%= produto.id %>?_method=DELETE" method="post">
+												<button type="submit">Deletar</button>
+											</form>
 										</td>
 									</tr>
 								<% } %>
@@ -41,7 +41,7 @@
 	
 						</table>
 					</div>
-				</form>
+				</div>
 				<% } else { %>
 					<h2 class="error-alert">NENHUM PRODUTO FOI ENCONTRADO :(</h2>
 				<%} %>
