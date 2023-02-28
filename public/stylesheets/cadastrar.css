@@ -1,5 +1,6 @@
 main * {
     font-family: Montserrat;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -23,7 +24,7 @@ h1 {
 
 .section-container2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 3rem 0rem 5rem 0rem;
 }
 

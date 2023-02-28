@@ -5,7 +5,7 @@
             CADASTRO DE PRODUTOS
         </h1>
         <hr>
-        <form action="/admin/produtos/criar" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+        <form action="/admin/criar" method="POST" class="form" id="formulario" enctype="multipart/form-data">
             <section class="section-filha-form section-container1">
                 <!-- Nome -->
                 <em>
@@ -21,8 +21,8 @@
                     <em>
                         Imagem do produto:
                     </em>
-                    <img src="/images/tela-cadastrar/btn-img-prod.png" alt="Selecione uma imagem" id="imgFoto">
-                    <input class="inpt btn-cadastrar" type="file" id="inputFoto" name="imagem" accept="image/*">
+                    <label for="avatar">Choose a profile picture:</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
                     <span role="alert" id="imgError" aria-hidden="true">O campo imagem não pode estar vazio</span>
                 </div>
                 <div class="div-container2 div-filha2">
@@ -52,10 +52,11 @@
                         <input class="inpt radio" id='espumante' type="radio" name="categoria" value="espumante">
                         <label for="espumante">Espumante</label>
                     </div>
+
                     <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
                 </div>
             </section>
-            <button type="submit" id="btn-submit">Enviar</button>
+            <button type="submit" id="btn-submit" >Enviar</button>
             <span role="alert" id="descricaoSucess" aria-hidden="true">Seu produto foi cadastrado com sucesso!</span>
         </form>
 

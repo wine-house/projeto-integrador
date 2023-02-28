@@ -2,7 +2,7 @@ let express = require("express");
 const { body } = require("express-validator");
 let router = express.Router();
 const path = require('path');
-const AdminController = require("../controller/AdminController")
+const AdminController = require("../controller/AdminController");
 // const authAdminController = require("../controller/authAdminController");
 const multer = require('multer');
 
@@ -42,7 +42,7 @@ router.post(
   "/criar", 
   validacoes,
   upload.single("imagem"),
-  AdminController.salvarForm
+  AdminController.createProduct
 );
 
 module.exports = router;
