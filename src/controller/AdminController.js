@@ -5,7 +5,7 @@ const AdminController = {
     index: async (req, res) => {
         // controller comunicando com o model
         const produtos = await Produto.findAll();
-        console.log(produtos);
+
         return res.render('adminListar', {
             produtos: produtos,
             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
@@ -14,30 +14,28 @@ const AdminController = {
     
     //exibir tela de criação
     viewForm: async (req, res)=>{
-        const produtos = await Produto.findAll();
 
-        res.render('cadastrar', { produtos: produtos,
+        res.render('cadastrar', {
             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
         });
     },
 
     //Criar novo produto
     createProduct: async (req, res)=>{
-        const { nome, preco, categoria } = req.body;
-        console.log(categoria);
+        const { nome, valor, tipo} = req.body;
+
+        const avatar = req.files[0].originalname;
+        const imagem = avatar.substring(0, avatar.indexOf('.'));
+        
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            return console.log(errors.mapped())
-        } 
+            console.log(errors.mapped());
+        };
 
-        if(!req.file) {
-            return res.send('Você deve enviar uma imagem.')
-        }
+        await Produto.create({ nome: nome, valor: valor, tipo: tipo, imagem: imagem });
 
-        await Produto.create({ nome: nome, preco: preco, categoria: categoria});
-
-        res.redirect('/admin/');
+        res.redirect('/admin/produtos/');
     },
 
     edit: (req, res) => {

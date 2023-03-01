@@ -1,7 +1,7 @@
 let express = require("express");
 
 let router = express.Router();
-const path = require('path');
+
 const AdminController = require("../controller/AdminController");
 // const authAdminController = require("../controller/authAdminController");
 const multer = require('multer');
@@ -22,7 +22,7 @@ router.get ("/criar", AdminController.viewForm);
 router.post(
   "/criar", 
   validacoes,
-  upload.single("imagem"),
+  upload.any("imagem"),
   AdminController.createProduct
 );
 
