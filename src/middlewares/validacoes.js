@@ -6,9 +6,9 @@ const validacoes = [
     .isNumeric().withMessage('Não é permitido caracteres numéricos.'),
   body('imagem')
     .notEmpty().withMessage('Você deve inserir uma imagem para o produto.'),
-  body('preco')
+  body('valor')
     .notEmpty().withMessage('Você deve preencher o campo do preço.'),
-  body('categoria')
+  body('tipo')
     .notEmpty().withMessage('Você deve selecionar o campo tipo.')
 ];
 

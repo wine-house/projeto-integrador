@@ -16,13 +16,14 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             type: dataTypes.FLOAT,
             allowNull: false
         },
-        imagem: {
-            type:dataTypes.STRING,
-            allowNull: false
-        },
-
+        
         tipo: {
             type: dataTypes.STRING,
+            allowNull: false
+        },
+        
+        imagem: {
+            type:dataTypes.STRING,
             allowNull: false
         },
     };
