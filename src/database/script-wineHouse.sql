@@ -2,21 +2,21 @@ CREATE DATABASE wine_house;
 
 USE wine_house;
 
-CREATE TABLE cliente(
+CREATE TABLE clientes(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(90) NOT NULL,
 email VARCHAR(45) NOT NULL UNIQUE,
 senha VARCHAR(10) NOT NULL
 );
 
-CREATE TABLE fornecedor(
+CREATE TABLE fornecedores(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 email VARCHAR(45) NOT NULL UNIQUE,
 senha VARCHAR(10) NOT NULL
 );
 
-CREATE TABLE produto(
+CREATE TABLE produtos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 valor FLOAT NOT NULL,
@@ -24,28 +24,28 @@ categoria VARCHAR(150) NOT NULL,
 imagem VARCHAR(150) NOT NULL,
 safra VARCHAR(4) NOT NULL,
 fornecedor_id INT UNSIGNED NOT NULL,
-FOREIGN KEY(fornecedor_id) REFERENCES fornecedor(id)
+FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id)
 );
 
-CREATE TABLE pedido(
+CREATE TABLE pedidos(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 data_criacao DATE NOT NULL,
 valor_unitario FLOAT NOT NULL,
 quantidade INT NOT NULL,
 cliente_id INT UNSIGNED NOT NULL,
 produto_id INT UNSIGNED NOT NULL,
-FOREIGN KEY (cliente_id) REFERENCES cliente(id),
-FOREIGN KEY (produto_id) REFERENCES produto(id)
+FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
 
-INSERT INTO fornecedor( nome, email, senha)
+INSERT INTO fornecedores( nome, email, senha)
 VALUES
 	('Vínicula Rio do Sol', 'rioSol@gmail.com', 999999),
 	('Vínicula Terra Nova', 'terraNova@gmail.com', 333333),
     ('Vínicula Alves', 'viniculaAlves@gmail.com', 985484);
 
 
-INSERT INTO produto(nome,valor,categoria,imagem,fornecedor_id,safra)
+INSERT INTO produtos(nome,valor,categoria,imagem,fornecedor_id,safra)
 VALUES
 ('Barone Montalto',88.00,'Vinho Tinto','1-barone-montalto',1,2021),
 ('Matetic Corralillo',75.50,'Vinho Tinto','2-corralillo',1,2016),
@@ -64,7 +64,7 @@ VALUES
 ('Stardust',82.50,'Vinho Rose','15-stardust',1,2018),
 ('Lumière',88.00,'Vinho Rose','16-lumière',1,2020);
 
-INSERT INTO cliente(nome, email, senha)
+INSERT INTO clientes(nome, email, senha)
 VALUES
 ('Keyla', 'keyla@gmail.com', 13456),
 ('Rodrigo', 'rodrigo@gmail.com', 003456),
@@ -76,5 +76,8 @@ VALUES
 ('Rodrigo', 'rodrigo_cardoso@gmail.com', 0034446),
 ('Matheus', 'matheus_oliveira@gmail.com', 4584034);
 
-INSERT INTO pedido(data_criacao,valor_unitario,quantidade,cliente_id,produto_id)
+INSERT INTO pedidos(data_criacao,valor_unitario,quantidades,clientes_id,produtos_id)
 VALUES ('2023-02-06',88.00,1,1,22);
+
+SELECT * FROM produtos AS Produto;
+
