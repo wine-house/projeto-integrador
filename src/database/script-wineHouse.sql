@@ -76,8 +76,8 @@ VALUES
 ('Rodrigo', 'rodrigo_cardoso@gmail.com', 0034446),
 ('Matheus', 'matheus_oliveira@gmail.com', 4584034);
 
-INSERT INTO pedidos(data_criacao,valor_unitario,quantidades,clientes_id,produtos_id)
-VALUES ('2023-02-06',88.00,1,1,22);
+INSERT INTO pedidos(data_criacao,valor_unitario,quantidade,cliente_id,produto_id)
+VALUES ('2023-02-06',88.00,1,1,8);
 
 SELECT * FROM produtos AS Produto;
 
