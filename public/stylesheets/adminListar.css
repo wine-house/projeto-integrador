@@ -161,17 +161,51 @@ td:first-child {
 
 }
 
-button {
+.opcoes-crud {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+
+#btn-flat {
     border: black;
     border-radius: 1rem;
-    font-size: 2.5rem;
+    font-size: 1rem;
     line-height: 1rem;
     padding: 1rem;
     width: 12rem;
     height: 3rem;
-    background-color: #A0B200;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: #28a745;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#editar-button{
+    border: black;
+    border-radius: 1rem;
+    font-size: 1rem;
+    line-height: 0.5rem;
+    padding: 1rem;
+    width: 6rem;
+    height: 2.5rem;
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button {
+    border: black;
+    border-radius: 1rem;
+    font-size: 1rem;
+    line-height: 0.5rem;
+    padding: 1rem;
+    width: 6rem;
+    height: 2.5rem;
+    background-color: #dc3545;
     color: white;
     font-weight: 500;
     cursor: pointer;
