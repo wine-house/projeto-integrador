@@ -15,23 +15,23 @@ module.exports = {
 
 
     show: (req, res) => {
-        const { tipo } = req.params;
-        var vinhoTipo = produtoDataBase.filter((prod) => prod.tipo == tipo)
+        const { categoria } = req.params;
+        var vinhoCategoria = produtoDataBase.filter((prod) => prod.categoria == categoria)
 
         return res.render('produto-listar', {
-            vinhoTipo,
+            vinhoCategoria,
             css:["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
     },
 
      mostrarporId: (req, res) => {
         const { id } = req.params;
-        var vinhoTipo = produtoDataBase.filter((prod) => prod.id == id)
-        console.log(vinhoTipo)
+        var vinhoCategoria = produtoDataBase.filter((prod) => prod.id == id)
+        console.log(vinhoCategoria)
 
         return res.render('produto-listar', {
 
-            vinhoTipo,
+            vinhoCategoria,
             css:["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
     },

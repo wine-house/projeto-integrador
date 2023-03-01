@@ -22,7 +22,7 @@ const AdminController = {
 
     //Criar novo produto
     createProduct: async (req, res)=>{
-        const { nome, valor, tipo} = req.body;
+        const { nome, valor, categoria} = req.body;
 
         const avatar = req.files[0].originalname;
         const imagem = avatar.substring(0, avatar.indexOf('.'));
@@ -33,7 +33,7 @@ const AdminController = {
             console.log(errors.mapped());
         };
 
-        await Produto.create({ nome: nome, valor: valor, tipo: tipo, imagem: imagem });
+        await Produto.create({ nome: nome, valor: valor, categoria: categoria, imagem: imagem });
 
         res.redirect('/admin/produtos/');
     },

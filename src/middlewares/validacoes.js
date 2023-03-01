@@ -8,8 +8,8 @@ const validacoes = [
     .notEmpty().withMessage('Você deve inserir uma imagem para o produto.'),
   body('valor')
     .notEmpty().withMessage('Você deve preencher o campo do preço.'),
-  body('tipo')
-    .notEmpty().withMessage('Você deve selecionar o campo tipo.')
+  body('categoria')
+    .notEmpty().withMessage('Você deve selecionar o campo categoria.')
 ];
 
 module.exports = validacoes;

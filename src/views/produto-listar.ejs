@@ -18,7 +18,7 @@
 
             <div class="products__wines">
                 <div class="products__content">
-                    <% for(produto of vinhoTipo) { %>
+                    <% for(produto of vinhoCategoria) { %>
                     <article class="products__item">
                         <header>
                             <figure class="products__item__image">
@@ -30,7 +30,7 @@
                             </button>
                         </header>
                         <footer>
-                            <span class="products__item__name"><%= produto.nome%> (<%= produto.tipo%>)</span>
+                            <span class="products__item__name"><%= produto.nome%> (<%= produto.categoria%>)</span>
                             <span class="products__item__price"><%= produto.valor%></span>
                         </footer>
                     </article>

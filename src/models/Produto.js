@@ -16,11 +16,6 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             type: dataTypes.FLOAT,
             allowNull: false
         },
-        
-        tipo: {
-            type: dataTypes.STRING,
-            allowNull: false
-        },
 
         imagem: {
             type:dataTypes.STRING,
@@ -29,6 +24,11 @@ const criarProdutoModel = (sequelize, dataTypes) => {
 
         fornecedores_id: {
             type: dataTypes.INTEGER,
+            allowNull: false
+        },
+
+        categoria: {
+            type: dataTypes.STRING,
             allowNull: false
         },
 

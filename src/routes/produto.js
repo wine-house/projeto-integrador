@@ -5,8 +5,8 @@ const produtosController = require('../controller/produtosController');
 /*página produtos*/
 router.get('/', produtosController.index);
 
-/*pagina tipo de produtos*/
-router.get('/:tipo', produtosController.show);
+/*pagina categoria de produtos*/
+router.get('/:categoria', produtosController.show);
 router.get('/teste/:id', produtosController.mostrarporId);
 router.delete('/:id', produtosController.deletar)
 
