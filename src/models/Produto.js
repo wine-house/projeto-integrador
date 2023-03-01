@@ -21,11 +21,21 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        
+
         imagem: {
             type:dataTypes.STRING,
             allowNull: false
         },
+
+        fornecedores_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+
+        safra: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        }
     };
 
     const opcoes = {
