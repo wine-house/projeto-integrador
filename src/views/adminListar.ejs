@@ -35,7 +35,7 @@
 										<td class="th-hide"><%= produto.categoria %></td>
 										<td><%= produto.safra %></td>
 										<td class="opcoes-crud"> 
-											<a id="editar-button" href="/admin/produtos/editar/<%= produto.id%>">Editar</a> 
+											<a id="editar-button" href="/admin/produtos/editar/<%= produto.id %>">Editar</a> 
 											<form action="/admin/produtos/<%= produto.id %>?_method=DELETE" method="post">
 												<button type="submit">Deletar</button>
 											</form>

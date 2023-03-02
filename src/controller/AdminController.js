@@ -27,7 +27,6 @@ const AdminController = {
     createProduct: async (req, res)=>{
         const { nome, valor, categoria, fornecedor, safra} = req.body;
 
-        
         const avatar = req.files[0].originalname;
         const imagem = avatar.substring(0, avatar.indexOf('.'));
         
@@ -42,22 +41,40 @@ const AdminController = {
         res.redirect('/admin/produtos/');
     },
 
-    edit: (req, res) => {
+    edit: async (req, res) => {
         const { id } = req.params;
-        var produto = produtos.filter((prod) => prod.id == id);
-        produto = produto[0]
-        var arrayImg = produto.imagem;
-        var img = arrayImg[0]
-        produto.imagem = img
-        return res.render('cadastrar', {
-            produto,
-            css1: ['/stylesheets/menu-footer.css','/stylesheets/cadastrar.css']
+
+        const produto = await Produto.findByPk(id);
+        const fornecedores = await Fornecedor.findAll();
+
+        return res.render('editar', {
+            produto: produto,
+            fornecedores: fornecedores,
+            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
         });
     },
 
-    update:(req, res)=>{
-        //logica para atualizar
-        res.redirect('/admin/produtos')
+    update: async (req, res) => {
+        const { id } = req.params;
+        const { nome, valor, fornecedor, categoria, safra } = req.body;
+        
+        const avatar = req.files[0].originalname;
+        const imagem = avatar.substring(0, avatar.indexOf('.'));
+
+        await Produto.update({
+            nome: nome,
+            valor: valor,
+            imagem: imagem,
+            fornecedor_id: fornecedor,
+            categoria: categoria,
+            safra: safra
+        },
+        {
+            where: { id: id }
+        }
+        );
+
+        res.redirect('/admin/produtos/')
     },
 
     //exibir a tela para mostrar o produto
