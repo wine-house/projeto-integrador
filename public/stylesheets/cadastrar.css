@@ -11,20 +11,30 @@ h1 {
 
 .form {
     display: flex;
-    width: 60vw;
+    width: 80vw;
     padding: 2rem;
     flex-direction: column;
     margin: 4rem auto 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 2.5rem 9rem;
+    width: 100%;
+    /*box-shadow: .1rem .1rem .6rem .1rem gray;*/
+    border-radius: 90px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1.3rem 2.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 3rem;
 }
 
 .section-container1 {
     display: flex;
     flex-direction: column;
+   
 }
 
 .div-container2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 
 em {
@@ -63,26 +73,81 @@ em {
     font-size: 20px;
  }
 
-.inpt, .descricao {
-    border-color: #9b9999;
-    border-radius: .6rem;
-    font-size: 22px;
-    background-color: #EEECEC;
+.inpt .descricao {
+    background-color:transparent;
+    align-self: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-style:italic;
+    margin-right: 0.5rem;
+    font-size:18px;
+    border: 1px solid gray;  
+    border-radius: 0.6rem;     
+    height:3.5rem;
+    width: 99%;
 }
 
+.inptPreco {
+    background-color:transparent;
+    align-self: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-style:italic;
+    margin-right: 0.5rem;
+    font-size:18px;
+    border: 1px solid gray;  
+    border-radius: 0.6rem;     
+    height:3rem;
+    width: 65%;
+    margin-left: 1rem;
+}
+
+#imagem{
+    border-radius: 2rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#labelFile {
+    padding: 2rem;
+    width: 30rem;
+    background-color: #530112;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
 button {
-    border: black;
     border-radius: 1rem;
     font-size: 2.5rem;
     line-height: 1rem;
-    padding: 1rem;
-    width: 12rem;
-    height: 3rem;
-    background-color: #A0B200;
+    padding: rem;
+    width: 15rem;
+    height: 6rem;
+    background-color: rgb(160, 178, 0);
     margin-left: auto;
     margin-right: auto;
     color: white;
     font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    color: black;
+    font-weight: 500;
+    background-color: #997C00;
+    opacity: 0.7;
+    border-radius: 1rem;
     cursor: pointer;
 }
 

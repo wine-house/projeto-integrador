@@ -18,18 +18,20 @@
                 
                 
                 <div class="div-container2 div-filha2">
-                    <label for="imagem">Choose a profile picture:</label>
+                    <label id="labelFile" for="imagem">Inserir aqui a foto</label>
                     <input type="file" id="imagem" name="imagem" accept="image/png, image/jpeg"/>
                 </div>
                 <div class="div-container2 div-filha2">
                     <!-- Preço -->
-                    <em>
-                        Preço:
-                    </em>
-                    <input class="inpt preco" type="number" placeholder="R$ 00,00" name="valor">
-                    <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
-                    <!-- Categorias -->
-                    <em>
+                    <div>
+                        <em>
+                            Preço:
+                        </em>
+                            <input class="preco inptPreco" type="number" placeholder="R$ 00,00" name="valor">
+                            <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
+                            <!-- Categorias -->
+                        <em>
+                    </div>
                         Categoria:
                     </em>
                     <div class="radio">

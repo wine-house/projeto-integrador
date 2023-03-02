@@ -141,12 +141,11 @@ td:first-child {
     font-size: 20px;
  }
 
-.inpt, .descricao {
-    border-color: #9b9999;
+.inpt, .descricao {  
     border-radius: .6rem;
-    font-size: 22px;
-    background-color: #EEECEC;
+    font-size: 1.5rem;
 }
+
 #btn-flat {
     background-color: Transparent;
     background-repeat: no-repeat;

@@ -16,7 +16,7 @@ const AdminController = {
     viewForm: async (req, res)=>{
 
         res.render('cadastrar', {
-            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
+            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
         });
     },
 
