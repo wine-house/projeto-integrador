@@ -1,29 +1,23 @@
-let express = require("express");
+const express = require("express");
+const router = express.Router();
 
-let router = express.Router();
-
-const AdminController = require("../controller/AdminController");
 // const authAdminController = require("../controller/authAdminController");
 const multer = require('multer');
 const multerDiskStorage = require('../middlewares/configDisk');
 const validacoes = require('../middlewares/validacoes');
 
+const { index, editProduct, updateProduct, createProduct, viewForm, deleteProduct } = require("../controller/AdminController");
+
 const upload = multer({ storage: multerDiskStorage });
 
-// router.get("/", authAdminController.index);
-router.get("/", AdminController.index);
+// router.get("/", authindex);
+router.get("/", index);
 
-router.get("/editar/:id",AdminController.edit);
-router.post("/editar/:id", upload.single("imagem"), AdminController.update);
+router.get("/editar/:id", editProduct);
+router.put("/editar/:id", validacoes, upload.any("imagem"), updateProduct);
 
-router.delete("/:id", AdminController.delete);
-
-router.get ("/criar", AdminController.viewForm);
-router.post(
-  "/criar", 
-  validacoes,
-  upload.any("imagem"),
-  AdminController.createProduct
-);
-
+router.get ("/criar", viewForm);
+router.post("/criar", validacoes, upload.any("imagem"), createProduct);
+  
+  router.delete("/:id", deleteProduct);
 module.exports = router;

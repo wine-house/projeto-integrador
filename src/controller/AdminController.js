@@ -41,7 +41,7 @@ const AdminController = {
         res.redirect('/admin/produtos/');
     },
 
-    edit: async (req, res) => {
+    editProduct: async (req, res) => {
         const { id } = req.params;
 
         const produto = await Produto.findByPk(id);
@@ -54,7 +54,7 @@ const AdminController = {
         });
     },
 
-    update: async (req, res) => {
+    updateProduct: async (req, res) => {
         const { id } = req.params;
         const { nome, valor, fornecedor, categoria, safra } = req.body;
         
@@ -78,7 +78,7 @@ const AdminController = {
     },
 
     //exibir a tela para mostrar o produto
-    delete: async (req, res)=>{
+    deleteProduct: async (req, res)=>{
         const { id } = req.params;
         await Produto.destroy({
             where: {
