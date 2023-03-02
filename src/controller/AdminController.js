@@ -1,4 +1,4 @@
-const { Produto } = require('../models');
+const { Produto, Fornecedor } = require('../models');
 const { validationResult } = require('express-validator');
 
 const AdminController = {
@@ -15,15 +15,19 @@ const AdminController = {
     //exibir tela de criação
     viewForm: async (req, res)=>{
 
+        const fornecedores = await Fornecedor.findAll();
+
         res.render('cadastrar', {
-            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
+            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
+            fornecedores: fornecedores
         });
     },
 
     //Criar novo produto
     createProduct: async (req, res)=>{
-        const { nome, valor, categoria} = req.body;
+        const { nome, valor, categoria, fornecedor, safra} = req.body;
 
+        
         const avatar = req.files[0].originalname;
         const imagem = avatar.substring(0, avatar.indexOf('.'));
         
@@ -33,7 +37,7 @@ const AdminController = {
             console.log(errors.mapped());
         };
 
-        await Produto.create({ nome: nome, valor: valor, categoria: categoria, imagem: imagem });
+        await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categoria: categoria, safra: safra});
 
         res.redirect('/admin/produtos/');
     },

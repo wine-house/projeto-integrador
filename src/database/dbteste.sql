@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `Wine_House`.`produtos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Wine_House`.`produtos` (
+CREATE TABLE IF NOT EXISTS `Wine_House`.`produto` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `valor` INT NOT NULL,
