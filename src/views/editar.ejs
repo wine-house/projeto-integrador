@@ -1,0 +1,90 @@
+<%- include("partials/header") %>
+
+    <main>
+        <h1>
+            Editar Produto
+        </h1>
+        <hr>
+        <form action="/admin/produtos/editar/<%= produto.id %>?_method=PUT" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+            <section class="section-filha-form section-container1">
+                <!-- Nome -->
+                <em>
+                    Nome do produto:
+                </em>
+                <input class="inpt nome" type="text" placeholder="Digite aqui o nome do produto" name="nome" value="<%= produto.nome %>">
+                <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
+            </section>
+            <section class="section-filha-form section-container2">
+                
+                
+                <div class="div-container2 div-filha2">
+                    <label id="labelFile" for="imagem">Inserir aqui a foto</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/png, image/jpeg"/>
+                </div>
+                <div class="div-container2 div-filha2">
+                    <!-- Preço -->
+                    <div>
+                    <em>
+                        Preço:
+                    </em>
+                        <input class="preco inptPreco" type="number" placeholder="R$ 00,00" name="valor" value="<%= produto.valor %>">
+                        <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
+                    </div>
+                        <!-- Categorias -->
+                    <em>
+                        Categoria:
+                    </em>
+                    <div class="radio">
+                        <input class="inpt radio" id='branco' type="radio" name="categoria" value="Vinho Branco">
+                        <label for="branco">Branco</label>
+                    </div>    
+                    <div class="radio">
+                        <input class="inpt radio" id='rose' type="radio" name="categoria" value="Vinho Rose">
+                        <label for="rose">Rose</label>
+                    </div>
+                    <div class="radio">
+                        <input class="inpt radio" id='tinto' type="radio" name="categoria" value="Vinho Tinto">
+                        <label for="tinto">Tinto</label>
+                    </div>
+                    <div class="radio">
+                        <input class="inpt radio" id='espumante' type="radio" name="categoria" value="Champanhe Espumante">
+                        <label for="espumante">Espumante</label>
+                    </div>  
+                    
+                    <em id="fornecedores">
+                        Fornecedores:
+                    </em>
+
+                    <select name="fornecedor">
+                        <% for(let fornecedor of fornecedores){ %>
+                        <option value="<%= fornecedor.id %>"><%= fornecedor.nome %></option>
+                        <% } %>
+                    </select>
+
+                    <em id="safra">
+                        Safra:
+                    </em>
+
+                    <select name="safra">
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                    
+
+                    <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
+                </div>
+            </section>
+            <button type="submit" id="btn-submit" >Enviar</button>
+        </form>
+
+    </main>
+
+    <!--JavaScript-->
+    <!-- <script src="/js/menu-footer.js"></script> -->
+    <!-- <script src="/js/cadastrar.js"></script> -->
+    <!--end JavaScript-->
+    
+<%-include("partials/footer")%> 
