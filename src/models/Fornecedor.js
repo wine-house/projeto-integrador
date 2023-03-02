@@ -29,7 +29,14 @@ const criarFornecedorModel = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Fornecedor = sequelize.define('Fornecedor', colunas, opcoes)
+    const Fornecedor = sequelize.define('Fornecedor', colunas, opcoes);
+
+    Fornecedor.associate = (models) => {
+        Fornecedor.hasMany(models.Produto, {
+            as: "produtos",
+            foreignKey: "fornecedor_id"
+        })
+    };
     
     return Fornecedor;
 };

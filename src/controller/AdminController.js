@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 const AdminController = {
     index: async (req, res) => {
         // controller comunicando com o model
-        const produtos = await Produto.findAll();
+        const produtos = await Produto.findAll({ include: "fornecedor" });
 
         return res.render('adminListar', {
             produtos: produtos,

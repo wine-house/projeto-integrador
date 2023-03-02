@@ -44,7 +44,16 @@ const criarProdutoModel = (sequelize, dataTypes) => {
     };
 
 
-    const Produto = sequelize.define('Produto', colunas, opcoes)
+    const Produto = sequelize.define('Produto', colunas, opcoes);
+
+    Produto.associate = models => {
+        
+        Produto.belongsTo(models.Fornecedor, {
+            as: "fornecedor",
+            foreignKey: "fornecedor_id"
+        });
+
+    };
     
     return Produto;
 };
