@@ -1,5 +1,5 @@
 const express = require('express');
-const { index, somos, eventos, parceiros, login, carrinho } = require('../controller/indexController');
+const { index, somos, eventos, parceiros, login, viewCarrinho } = require('../controller/indexController');
 const produtos = require('../database/produtos.json');
 
 const router = express.Router();
@@ -19,7 +19,7 @@ router.get('/parceiros', parceiros);
 router.get('/login', login);
 
 /* pagina carrinho*/
-router.get('/carrinho', carrinho);
+router.get('/carrinho', viewCarrinho);
 
 /* pagina painel de usuário*/
 router.get('/painel-usuario', (req, res, next) => {
