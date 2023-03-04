@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+
+    <!--MAIN-->
+    <main id="carrinho">
+        <h1 class="titulo">Carrinho de Compras</h1>
+
+        <section class="container">
+            <article class="container__carrinho">
+                <table class="container__carrinho__table_produtos">
+                    <tr>
+                        <th class="container__tabela_coluna_img">Vinho</th>
+                        <th class="container__tabela_coluna_nome">Nome</th>
+                        <th class="container__tabela_coluna_subtotal">Subtotal</th>
+                    </tr>
+                    <tr>
+                        <td class="container__img">
+                            <img class="container__imagem" src="/images/tela-home/white-wine/1-white-wine.jpg" alt="Vinho">
+                        </td>
+                        <td>
+                            <h2 class="container__nome">Vistamar Brisa, 2016</h2>
+                        </td>
+                        <td>
+                            <section class="container__tabela_coluna_sub">
+                                <div>
+                                    <div class="container__botoes">
+                                        <button id="botao-subtrai" class="carrino__botao subtrai">
+                                            <i class="fa-solid fa-minus fa-2x"></i>
+                                        </button>     
+            
+                                        <span id="quantidade-item">1</span>
+            
+                                        <button id="botao-adiciona" class="carrino__botao adiciona">
+                                            <i class="fa-solid fa-plus fa-2x"></i>
+                                        </button>
+                                    </div>
+                                    <p class="container__valor">R$<span id="valor-item">78,70</span></p>
+                                </div>
+
+                                <div >
+                                    <button id="botao-remove" class="carrino__botao remove">
+                                        <i class="fa-solid fa-trash fa-2x"></i>
+                                    </button>         
+                                </div>
+                            </section>
+                        </td>
+                    </tr>
+                    
+                </table>         
+            </article>
+
+            <article class="container__resume">
+                <table class="table_resume">
+                    <tr>
+                        <td class="">Prazo de entrega</td>
+                        <td class="carrinho__tempo">5 a 7 dias úteis</td>
+                    </tr>
+                    <tr>
+                        <td class="">Valor do frete</td>
+                        <td class="carrinho__frete">Grátis</td>
+                    </tr>
+                    <tr>
+                        <td class="carrinho__valor-total">Valor total</td>
+                        <td class="">R$<span id="valor-total-itens">78,70</span></td>
+                    </tr>
+    
+                </table>
+
+                <section class="btns_rotas">
+                    <button class="carrinho__button__back_prod btn" onclick="window.location.href='/produtos'">
+                        Voltar para produtos
+                    </button>
+
+                    <button class="carrinho__button__finish btn" onclick="window.location.href='/confira-itens'">
+                        Finalizar a compra
+                    </button>
+                </section>
+            </article>
+        </section>
+
+        <!--Link to Top-->
+        <a class="link-top" href="#carrinho"><i class="fas fa-arrow-up"></i></a>        
+    </main>
+    <!--end MAIN-->    
+
+    <!--JAVASCRIPT-->
+    <script src="/js/menu-footer.js"></script>
+    <script src="/js/carrinho.js"></script>
+    <!--end JAVASCRIPT-->
+</body>
+</html>
+
+<%- include('partials/footer') %> 

@@ -1,0 +1,85 @@
+<%- include('partials/header') %> 
+
+    <!--MAIN-->
+    <main class="flex-fill">
+        <div class="container">
+            <h1>Confira os Itens</h1>
+            <h3>Confira os itens e clique em <b>Continuar</b> para prosseguir para a <b>seleção do endereço de entrega</b>.</h3>
+
+            <ul class="list-group mb-3">
+                <li class="list-group-item py-3">
+                    <div class="row g-3">
+                        <div class="col-4 col-md-3 col-lg-2">
+                            <a href="#">
+                                <img src="/images/tela-home/white-wine/1-white-wine.jpg" class="img-thumbnail">
+                            </a>
+                        </div>
+
+                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                            <h4>
+                                <b><a href="#" class="text-decoration-none text-danger">
+                                    Vistamar Brisa, 2016</a></b>
+                            </h4>
+
+                            <h5>
+                                Vinho branco de Pays. Este vinho tem 35 menções sobre notas amadeirado (manteiga, carvalho).
+                                <br>
+                                <b>
+                                    1 unidade(s) <br>
+                                    78,70
+                                </b>
+                            </h5>
+                        </div>                            
+                    </div>
+                </li>
+
+                <ul class="list-group mb-3">
+                    <li class="list-group-item py-3">
+                        <div class="row g-3">
+                            <div class="col-4 col-md-3 col-lg-2">
+                                <a href="#">
+                                    <img src="/images/tela-home/red-wine/1-red-wine.jpg" class="img-thumbnail">
+                                </a>
+                            </div>
+    
+                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                                <h4>
+                                    <b><a href="#" class="text-decoration-none text-danger">
+                                        Barone Montalto, 2021</a></b>
+                                </h4>
+
+                                <h5>
+                                    Um vinho atraente e bem equilibrado com frutos de caroço e alguma mineralidade.
+                                    <br>
+                                    <b>
+                                        1 unidade(s) <br>
+                                        R$ 88,00
+                                    </b>
+                                </h5>
+                            </div>                            
+                        </div>
+                    </li>
+
+                    <li class="list-group-item pt-3 pb-0">
+                        <div class="text-end">
+                            <h4 class="text-dark mb-3">
+                                Valor Total: R$ 166,70
+                            </h4>
+                            <a href="/carrinho" class="btn btn-outline-success btn-lg mb-3">
+                                Voltar ao Carrinho
+                            </a>
+                            <a href="/selecionar-endereco" class="btn btn-danger btn-lg ms-2 mb-3">Continuar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>    
+    <!--end MAIN-->
+    
+    <!--JAVASCRIPT-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--end JAVASCRIPT-->
+</body>
+</html>
+
+<%- include('partials/footer') %>

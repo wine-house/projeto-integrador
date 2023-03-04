@@ -1,0 +1,188 @@
+main * {
+    font-family: Montserrat;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    color: #540606;
+}
+
+.form {
+    display: flex;
+    width: 80vw;
+    padding: 2rem;
+    flex-direction: column;
+    margin: 4rem auto 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 2.5rem 9rem;
+    width: 100%;
+    /*box-shadow: .1rem .1rem .6rem .1rem gray;*/
+    border-radius: 90px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1.3rem 2.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 3rem;
+}
+
+.section-container1 {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.div-container2 {
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+.radio label {
+    display: flex;
+    flex-direction: column;
+}
+
+em {
+    font-size: 1.7rem;
+   
+}
+
+.nome, .descricao, .preco {
+    margin-bottom: 2rem;
+}
+
+#nameError, #descricaoError, #precoError, #categoriaError, #imgError {
+    display: none;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+#descricaoSucess {
+    display: none;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.select-cadastro{
+    background-color:transparent;
+    align-self: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-style:italic;
+    margin-right: 0.5rem;
+    font-size:1.2rem;
+    border: 1px solid gray;  
+    border-radius: 0.6rem;     
+    height:3.5rem;
+    width: 99%;
+}
+.descricao {
+    resize: none;
+    height: 15rem;
+}
+
+ div > label {
+    font-size: 20px;
+ }
+
+.inpt .descricao {
+    background-color:transparent;
+    align-self: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-style:italic;
+    margin-right: 0.5rem;
+    font-size:0.8rem;
+    border: 1px solid gray;  
+    border-radius: 0.6rem;     
+    height:3.5rem;
+    width: 99%;
+}
+
+.emPrecoClass{
+    margin-left: 6rem;
+}
+
+.inptPreco {
+    background-color:transparent;
+    align-self: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-style:italic;
+    margin-right: 0.5rem;
+    font-size:18px;
+    border: 1px solid gray;  
+    border-radius: 0.6rem;     
+    height:3rem;
+    width: 50%;
+    margin-left: 1rem;
+}
+
+#imagem{
+    border-radius: 2rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.section-nome-preco{
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+}
+
+#labelFile {
+    padding: 2rem;
+    width: 30rem;
+    font-size: 2rem;
+    background-color: #530112;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+button {
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    line-height: 1rem;
+    padding: rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: rgb(160, 178, 0);
+    margin-left: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    color: black;
+    font-weight: 500;
+    background-color: #997C00;
+    opacity: 0.7;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#fornecedores{
+    margin-top: 0.4rem;
+}
+
+
+
