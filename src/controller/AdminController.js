@@ -1,10 +1,19 @@
 const { Produto, Fornecedor } = require('../models');
 const { validationResult } = require('express-validator');
+const { Op } = require('sequelize');
 
 const AdminController = {
     index: async (req, res) => {
         // controller comunicando com o model
-        const produtos = await Produto.findAll({ include: "fornecedor" });
+        const { search } = req.params;
+
+        const produtos = await Produto.findAll({ 
+            where: search ? {
+                nome: {
+                    [Op.like]: `%${search}%`
+                }} : null,
+            include: "fornecedor"
+        });
 
         return res.render('adminListar', {
             produtos: produtos,

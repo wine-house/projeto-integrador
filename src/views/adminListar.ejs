@@ -8,6 +8,10 @@
 				<a id="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
 
 		</div>
+		<form method="get">
+			<input type="search" name="search" id="search">
+			<button type="submit">Search</button>
+		</form>
 		<hr>
 		<div class="teste">
 			<% if(produtos.length> 0){ %>
@@ -21,6 +25,7 @@
 									<th> Nome</th>
 									<th> Valor</th>
 									<th class="th-hide">Categoria</th>
+									<th>Fornecedor</th>
 									<th>Safra</th>
 									<th> Opções</th>
 								</tr>
@@ -33,6 +38,7 @@
 										<td><%= produto.nome %></td>
 										<td>R$<%= produto.valor %>,00</td>
 										<td class="th-hide"><%= produto.categoria %></td>
+										<td><%= produto.fornecedor.nome %></td>
 										<td><%= produto.safra %></td>
 										<td class="opcoes-crud"> 
 											<a id="editar-button" href="/admin/produtos/editar/<%= produto.id %>">Editar</a> 
