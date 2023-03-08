@@ -1,95 +1,124 @@
-const { Produto, Fornecedor } = require('../models');
-const { validationResult } = require('express-validator');
+const {
+  Produto,
+  Fornecedor
+} = require('../models');
+const {
+  validationResult
+} = require('express-validator');
 
 const AdminController = {
-    index: async (req, res) => {
-        // controller comunicando com o model
-        const produtos = await Produto.findAll();
+  index: async (req, res) => {
+    const produtos = await Produto.findAll();
 
-        return res.render('adminListar', {
-            produtos: produtos,
-            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
-        });
-    },
-    
-    //exibir tela de criação
-    viewForm: async (req, res)=>{
+    return res.render('adminListar', {
+      produtos: produtos,
+      css: ['/stylesheets/menu-footer.css', '/stylesheets/adminListar.css']
+    });
+  },
 
-        const fornecedores = await Fornecedor.findAll();
+  //exibir tela de criação
+  viewForm: async (req, res) => {
 
-        res.render('cadastrar', {
-            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
-            fornecedores: fornecedores
-        });
-    },
+    const fornecedores = await Fornecedor.findAll();
 
-    //Criar novo produto
-    createProduct: async (req, res)=>{
-        const { nome, valor, categoria, fornecedor, safra} = req.body;
+    res.render('cadastrar', {
+      css: ['/stylesheets/menu-footer.css', '/stylesheets/adminListar.css', '/stylesheets/cadastrar.css'],
+      fornecedores: fornecedores
+    });
+  },
 
-        const avatar = req.files[0].originalname;
-        const imagem = avatar.substring(0, avatar.indexOf('.'));
-        
-        const errors = validationResult(req);
+  //Criar novo produto
+  createProduct: async (req, res) => {
+    const {
+      nome,
+      valor,
+      categoria,
+      fornecedor,
+      safra
+    } = req.body;
 
-        if(errors.isEmpty()){
-            console.log(errors.mapped());
-        };
+    const avatar = req.files[0].originalname;
+    const imagem = avatar.substring(0, avatar.indexOf('.'));
 
-        await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categoria: categoria, safra: safra});
+    const errors = validationResult(req);
 
-        res.redirect('/admin/produtos/');
-    },
+    if (errors.isEmpty()) {
+      console.log(errors.mapped());
+    };
 
-    editProduct: async (req, res) => {
-        const { id } = req.params;
+    await Produto.create({
+      nome: nome,
+      valor: valor,
+      imagem: imagem,
+      fornecedor_id: fornecedor,
+      categoria: categoria,
+      safra: safra
+    });
 
-        const produto = await Produto.findByPk(id);
-        const fornecedores = await Fornecedor.findAll();
+    res.redirect('/admin/produtos/');
+  },
 
-        return res.render('editar', {
-            produto: produto,
-            fornecedores: fornecedores,
-            css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
-        });
-    },
+  editProduct: async (req, res) => {
+    const {
+      id
+    } = req.params;
 
-    updateProduct: async (req, res) => {
-        const { id } = req.params;
-        const { nome, valor, fornecedor, categoria, safra } = req.body;
-        
-        const avatar = req.files[0].originalname;
-        const imagem = avatar.substring(0, avatar.indexOf('.'));
+    const produto = await Produto.findByPk(id);
+    const fornecedores = await Fornecedor.findAll();
 
-        await Produto.update({
-            nome: nome,
-            valor: valor,
-            imagem: imagem,
-            fornecedor_id: fornecedor,
-            categoria: categoria,
-            safra: safra
-        },
-        {
-            where: { id: id }
-        }
-        );
+    return res.render('editar', {
+      produto: produto,
+      fornecedores: fornecedores,
+      css: ['/stylesheets/menu-footer.css', '/stylesheets/adminListar.css', '/stylesheets/cadastrar.css']
+    });
+  },
 
-        res.redirect('/admin/produtos/')
-    },
+  updateProduct: async (req, res) => {
+    const {
+      id
+    } = req.params;
+    const {
+      nome,
+      valor,
+      fornecedor,
+      categoria,
+      safra
+    } = req.body;
 
-    //exibir a tela para mostrar o produto
-    deleteProduct: async (req, res)=>{
-        const { id } = req.params;
-        await Produto.destroy({
-            where: {
-                id: id
-            }
-        });
-        
+    const avatar = req.files[0].originalname;
+    const imagem = avatar.substring(0, avatar.indexOf('.'));
+
+    await Produto.update({
+      nome: nome,
+      valor: valor,
+      imagem: imagem,
+      fornecedor_id: fornecedor,
+      categoria: categoria,
+      safra: safra
+    }, {
+      where: {
+        id: id
+      }
+    });
+
+    res.redirect('/admin/produtos/')
+  },
+
+  //exibir a tela para mostrar o produto
+  deleteProduct: async (req, res) => {
+    const {
+      id
+    } = req.params;
+    await Produto.destroy({
+      where: {
+        id: id
+      }
+    });
+
     res.redirect('/admin/produtos');
-    },
+  },
 
-    
+
 }
 
 module.exports = AdminController;

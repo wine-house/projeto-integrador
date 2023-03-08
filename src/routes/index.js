@@ -1,5 +1,14 @@
 const express = require('express');
-const { index, somos, eventos, parceiros, login, viewCarrinho } = require('../controller/indexController');
+const {
+  index,
+  somos,
+  eventos,
+  parceiros,
+  login,
+  viewCarrinho,
+  atualizaQtdItemCarrinho,
+  deletaItemCarrinho
+} = require('../controller/indexController');
 const produtos = require('../database/produtos.json');
 
 const router = express.Router();
@@ -20,6 +29,8 @@ router.get('/login', login);
 
 /* pagina carrinho*/
 router.get('/carrinho', viewCarrinho);
+router.put("/carrinho/:id", atualizaQtdItemCarrinho);
+router.delete("carrinho/:id", deletaItemCarrinho);
 
 /* pagina painel de usuário*/
 router.get('/painel-usuario', (req, res, next) => {
@@ -31,28 +42,28 @@ router.get('/painel-usuario', (req, res, next) => {
 /* pagina confira itens*/
 router.get('/confira-itens', (req, res) => {
   res.render('confira-itens', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/carrinho.css']
   });
 });
 
 /* pagina selecionar endereço*/
 router.get('/selecionar-endereco', (req, res) => {
   res.render('selecionar-endereco', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css'],
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/carrinho.css'],
   });
 });
 
 /* pagina fechamento pagamento*/
 router.get('/fechamento-pagamento', (req, res) => {
   res.render('fechamento-pagamento', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/carrinho.css']
   });
 });
 
 /* pagina fechamento pedido*/
 router.get('/fechamento-pedido', (req, res) => {
   res.render('fechamento-pedido', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+    css: ['/stylesheets/menu-footer.css', '/stylesheets/carrinho.css']
   });
 });
 
