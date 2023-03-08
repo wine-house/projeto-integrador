@@ -60,7 +60,7 @@ h1 {
 }
 
 #img-lista-produto-admin {
-    width: 10%;
+    width: 19%;
 }
 
 em {
@@ -98,11 +98,17 @@ tr {
     border-bottom: 1px solid darkgray;
 
 }
+
 th{
     text-align: left;
 }
 th:first-child{
     text-align: center;
+}
+
+th.fotos {
+    width: 10%;
+
 }
 
 td {
