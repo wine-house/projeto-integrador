@@ -5,14 +5,14 @@ const { Op } = require('sequelize');
 const AdminController = {
     index: async (req, res) => {
         // controller comunicando com o model
-        const { search } = req.params;
+        const { search } = req.query;
 
         const produtos = await Produto.findAll({ 
             where: search ? {
                 nome: {
                     [Op.like]: `%${search}%`
                 }} : null,
-            include: "fornecedor"
+            include: ["fornecedor"]
         });
 
         return res.render('adminListar', {
@@ -34,10 +34,12 @@ const AdminController = {
 
     //Criar novo produto
     createProduct: async (req, res)=>{
-        const { nome, valor, categoria, fornecedor, safra} = req.body;
+        const { nome, valor, categoria, fornecedor, safra } = req.body;
 
         const avatar = req.files[0].originalname;
+        console.log(avatar);
         const imagem = avatar.substring(0, avatar.indexOf('.'));
+        console.log(imagem);
         
         const errors = validationResult(req);
 
@@ -69,6 +71,7 @@ const AdminController = {
         
         const avatar = req.files[0].originalname;
         const imagem = avatar.substring(0, avatar.indexOf('.'));
+
 
         await Produto.update({
             nome: nome,

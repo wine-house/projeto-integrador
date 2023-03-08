@@ -10,14 +10,18 @@ const { index, editProduct, updateProduct, createProduct, viewForm, deleteProduc
 
 const upload = multer({ storage: multerDiskStorage });
 
-// router.get("/", authindex);
+// listar
 router.get("/", index);
 
+// editar
 router.get("/editar/:id", editProduct);
 router.put("/editar/:id", validacoes, upload.any("imagem"), updateProduct);
 
+// criar
 router.get ("/criar", viewForm);
 router.post("/criar", validacoes, upload.any("imagem"), createProduct);
-  
-  router.delete("/:id", deleteProduct);
+
+// delete
+router.delete("/:id", deleteProduct);
+
 module.exports = router;

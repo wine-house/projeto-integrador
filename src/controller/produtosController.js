@@ -7,7 +7,6 @@ module.exports = {
         // controller comunicando com o model
         const produtos = await Produto.findAll();
         // controller comunicando com a view
-        console.log(produtos)
         return res.render('produtos', {  produtos,
             css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
         });
@@ -16,7 +15,7 @@ module.exports = {
 
     show: (req, res) => {
         const { categoria } = req.params;
-        var vinhoCategoria = produtoDataBase.filter((prod) => prod.categoria == categoria)
+        const vinhoCategoria = produtoDataBase.filter((prod) => prod.categoria == categoria)
 
         return res.render('produto-listar', {
             vinhoCategoria,

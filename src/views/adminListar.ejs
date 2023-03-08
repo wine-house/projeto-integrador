@@ -6,13 +6,12 @@
 					PAINEL ADMINISTRATIVO
 				</h1>
 				<a id="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
-
 		</div>
+		<hr>
 		<form method="get">
 			<input type="search" name="search" id="search">
 			<button type="submit">Search</button>
 		</form>
-		<hr>
 		<div class="teste">
 			<% if(produtos.length> 0){ %>
 				<div class="form" id="formulario">
@@ -20,10 +19,10 @@
 						<table id="tbl-01">
 							<thead>
 								<tr>
-									<th> ID</th>
-									<th> Foto</th>
-									<th> Nome</th>
-									<th> Valor</th>
+									<th>ID</th>
+									<th>Foto</th>
+									<th>Nome</th>
+									<th>Valor</th>
 									<th class="th-hide">Categoria</th>
 									<th>Fornecedor</th>
 									<th>Safra</th>
