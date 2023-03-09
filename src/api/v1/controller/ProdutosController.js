@@ -1,9 +1,9 @@
-const { Produto, Fornecedor } = require('../models');
+const { Produto, Fornecedor } = require('../../../models');
 
 const apiController = {
   getWines: async (req, res) => {
     const produtos = await Produto.findAll({
-      attributes: ['id', 'nome', 'valor', 'categoria', 'safra'],
+      attributes: ['id', 'nome', 'valor', 'categoria', 'safra', 'fornecedor_id'],
       include: [{
         attributes: ['nome', 'email'],
         model: Fornecedor, 
@@ -16,9 +16,7 @@ const apiController = {
      * 
     */
     res.status(200).json({
-      data: 
-      produtos  
-    ,
+      data: produtos,
       status: 200
     });
     },
@@ -26,7 +24,7 @@ const apiController = {
   getWine: async (req, res) => {
     const { id } = req.params;
     const produto = await Produto.findOne({
-      attributes: ['id', 'nome', 'valor', 'categoria', 'safra'],
+      attributes: ['id', 'nome', 'valor', 'categoria', 'safra', 'fornecedor_id'],
       include: [{
         attributes: ['nome', 'email'],
         model: Fornecedor,
