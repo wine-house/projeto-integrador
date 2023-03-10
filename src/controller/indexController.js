@@ -67,5 +67,35 @@ module.exports = {
       } catch (error){
         console.log(error);
       };
+    },
+
+    painelUsuario: (req, res, next) => {
+      res.render('painel-usuario', {
+        css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
+      });
+    },
+
+    conferirItens: (req, res) => {
+      res.render('confira-itens', {
+        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+      });
+    },
+
+    selecionarEndereco:  (req, res) => {
+      res.render('selecionar-endereco', {
+        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css'],
+      });
+    },
+
+    fechamentoPagamento: (req, res) => {
+      res.render('fechamento-pagamento', {
+        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+      });
+    },
+
+    fechamentoPedido: (req, res) => {
+      res.render('fechamento-pedido', {
+        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+      });
     }
 }

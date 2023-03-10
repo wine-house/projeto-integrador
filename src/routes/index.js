@@ -1,6 +1,5 @@
 const express = require('express');
-const { index, somos, eventos, parceiros, login, carrinho } = require('../controller/indexController');
-const produtos = require('../database/produtos.json');
+const { index, somos, eventos, parceiros, login, carrinho, painelUsuario, conferirItens, selecionarEndereco, fechamentoPagamento, fechamentoPedido } = require('../controller/indexController');
 
 const router = express.Router();
 
@@ -22,38 +21,18 @@ router.get('/login', login);
 router.get('/carrinho', carrinho);
 
 /* pagina painel de usuário*/
-router.get('/painel-usuario', (req, res, next) => {
-  res.render('painel-usuario', {
-    css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
-  });
-});
+router.get('/painel-usuario', painelUsuario);
 
 /* pagina confira itens*/
-router.get('/confira-itens', (req, res) => {
-  res.render('confira-itens', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-  });
-});
+router.get('/confira-itens', conferirItens);
 
 /* pagina selecionar endereço*/
-router.get('/selecionar-endereco', (req, res) => {
-  res.render('selecionar-endereco', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css'],
-  });
-});
+router.get('/selecionar-endereco', selecionarEndereco);
 
 /* pagina fechamento pagamento*/
-router.get('/fechamento-pagamento', (req, res) => {
-  res.render('fechamento-pagamento', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-  });
-});
+router.get('/fechamento-pagamento', fechamentoPagamento);
 
 /* pagina fechamento pedido*/
-router.get('/fechamento-pedido', (req, res) => {
-  res.render('fechamento-pedido', {
-    css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-  });
-});
+router.get('/fechamento-pedido', fechamentoPedido);
 
 module.exports = router;
