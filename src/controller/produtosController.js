@@ -1,8 +1,6 @@
 const { Produto } = require('../models');
 const { Sequelize, Op } = require('sequelize');
 
-
-
 module.exports = {
     index: async (req, res) => {
         try
