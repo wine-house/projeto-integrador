@@ -10,6 +10,7 @@ const UserController = {
     },
     //Criar um novo usuário
     createUser: async (req, res)=>{
+        
         const { nome, email, cpf, dataNascimento, senha} = req.body;
         
         const errors = validationResult(req);
@@ -20,9 +21,10 @@ const UserController = {
 
         await Cliente.create({ nome: nome, email: email, cpf: cpf, dataNascimento: dataNascimento, senha: senha});
 
-        console.log("Usuário criado no banco com sucesso")
-        res.redirect('/admin/produtos/');
+        console.log('Usuário criado no banco com sucesso')
+        res.alert('Usuário criado no banco com sucesso');
     }
+    
 }
 
 module.exports = UserController;
