@@ -5,7 +5,7 @@
 				<h1>
 					PAINEL ADMINISTRATIVO
 				</h1>
-				<a id="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
+				<a id="btn-flat" href="/admin/produtos/categoria/criar">Adicionar Categorias</a>
 		</div>
 		
 		
@@ -22,12 +22,7 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th class="fotos">Foto</th>
 									<th>Nome</th>
-									<th>Valor</th>
-									<th class="th-hide">Categoria</th>
-									<th>Fornecedor</th>
-									<th>Safra</th>
 									<th> Opções</th>
 								</tr>
 							</thead>
@@ -35,12 +30,7 @@
 								<% for(let produto of produtos) { %>
 									<tr>
 										<td> <%= produto.id %></td>
-										<td> <img id="img-lista-produto-admin" src="/images/imageProd/<%= produto.imagem%>.png"</td>
-										<td><%= produto.nome %></td>
-										<td>R$<%= produto.valor %>,00</td>
-										<td class="th-hide"><%= produto.categoria %></td>
-										<td><%= produto.fornecedor.nome %></td>
-										<td><%= produto.safra %></td>
+										<td><%= produto.categoria %></td>
 										<td class="opcoes-crud"> 
 											<a id="editar-button" href="/admin/produtos/editar/<%= produto.id %>">Editar</a> 
 											<form action="/admin/produtos/<%= produto.id %>?_method=DELETE" method="post">
@@ -55,7 +45,7 @@
 					</div>
 				</div>
 				<% } else { %>
-					<h2 class="error-alert">NENHUM PRODUTO FOI ENCONTRADO :(</h2>
+					<h2 class="error-alert">NENHUMA CATEGORIA FOI ENCONTRADA :(</h2>
 				<%} %>
 		</div>
 	</main>
