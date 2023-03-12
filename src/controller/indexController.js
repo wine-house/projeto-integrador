@@ -46,18 +46,11 @@ module.exports = {
         console.log(error);
       }
     },
-
     login: (req, res, next) => {
-      try
-      {
         res.render('login', {
           css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
         });
-      } catch (error){
-        console.log(error);
-      };
     },
-
     carrinho: (req, res) => {
       try
       {

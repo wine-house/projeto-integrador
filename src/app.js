@@ -26,7 +26,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/api', apiProdutosRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter);
 app.use('/admin/produtos', adminRouter);

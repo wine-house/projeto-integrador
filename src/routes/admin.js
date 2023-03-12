@@ -20,8 +20,6 @@ router.put("/editar/:id", validacoes, upload.any("imagem"), updateProduct);
 // criar
 router.get ("/criar", viewForm);
 router.post("/criar", validacoes, upload.any("imagem"), createProduct);
-
-// delete
-router.delete("/:id", deleteProduct);
-
+  
+  router.delete("/:id", deleteProduct);
 module.exports = router;
