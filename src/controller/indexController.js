@@ -24,11 +24,6 @@ module.exports = {
           css: ['/stylesheets/parceiros.css', '/stylesheets/menu-footer.css']
         });
     },
-    login: (req, res, next) => {
-        res.render('login', {
-          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
-        });
-    },
     carrinho: (req, res) => {
         res.render('carrinho', {
           css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
