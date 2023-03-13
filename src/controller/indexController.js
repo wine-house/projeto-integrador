@@ -90,5 +90,16 @@ module.exports = {
       res.render('fechamento-pedido', {
         css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
       });
+    },
+    
+    login: (req, res, next) => {
+      try
+      {
+        res.render('login', {
+          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
+        });
+      } catch (error){
+        console.log(error);
+      };
     }
 }
