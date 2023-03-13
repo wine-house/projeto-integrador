@@ -105,8 +105,8 @@ module.exports = {
         const { id } = req.params;
         const item = await ItensCarrinho.findByPk(id);
   
-        if (item.quantidade <= 0) {
-          return
+        if (item.quantidade < 2) {
+          await item.destroy();
         } else {
           item.quantidade -= 1;
   
