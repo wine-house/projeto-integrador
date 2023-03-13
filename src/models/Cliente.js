@@ -21,6 +21,11 @@ const criarClienteModel = (sequelize, dataTypes) => {
         senha: {
             type: dataTypes.STRING,
             allowNull: false
+        },
+
+        dataDeNascimento: {
+            type: dataTypes.DATE,
+            allowNull: false
         }
 };
 

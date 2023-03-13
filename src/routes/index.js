@@ -8,14 +8,14 @@ router.get('/', index);
 /* pagina quem somos*/
 router.get('/somos', somos);
 
+/* página de login */
+router.get('/login', login);
+
 /* pagina eventos*/
 router.get('/eventos', eventos);
 
 /* pagina Parceiros*/
 router.get('/parceiros', parceiros);
-
-/* pagina login*/
-router.get('/login', login);
 
 /* pagina carrinho*/
 router.get('/carrinho', carrinho);
