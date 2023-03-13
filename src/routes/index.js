@@ -12,7 +12,8 @@ const {
     conferirItens, 
     selecionarEndereco, 
     fechamentoPagamento, 
-    fechamentoPedido
+    fechamentoPedido,
+    login
 } = require('../controller/indexController');
 
 const router = express.Router();
