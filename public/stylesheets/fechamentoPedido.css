@@ -1,0 +1,26 @@
+h1, h3 {
+    font-size: 25px;
+}
+
+.text-danger {
+    font-size: 20px;
+}
+
+p {
+    font-size: 15px;
+}
+
+
+.btn-beginning {
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: #530112;
+    color: white;
+    border: none;
+}
+
+.btn-beginning:hover {
+    background-color:#997C00;
+    border: none;
+}

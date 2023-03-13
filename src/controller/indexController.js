@@ -177,5 +177,15 @@ module.exports = {
       } catch (error){
         console.log(error);
       };
+    },
+
+    fechamentoPedido: (req, res, next) => {
+      try{
+        res.render('fechamentoPedido', {
+          css: ['/stylesheets/fechamentoPedido.css', '/stylesheets/menu-footer.css']
+        });
+      } catch (error){
+        console.log(error);
+      }
     }
 }
