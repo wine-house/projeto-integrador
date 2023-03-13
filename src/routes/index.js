@@ -6,7 +6,8 @@ const {
   parceiros,
   login,
   viewCarrinho,
-  atualizaQtdItemCarrinho,
+  adicionaQtdDoItemCarrinho,
+  subtraiQtdDoItemCarrinho,
   deletaItemCarrinho
 } = require('../controller/indexController');
 const produtos = require('../database/produtos.json');
@@ -29,8 +30,9 @@ router.get('/login', login);
 
 /* pagina carrinho*/
 router.get('/carrinho', viewCarrinho);
-router.put("/carrinho/:id", atualizaQtdItemCarrinho);
-router.delete("carrinho/:id", deletaItemCarrinho);
+router.put('/carrinho/adiciona/:id', adicionaQtdDoItemCarrinho);
+router.put('/carrinho/subtrai/:id', subtraiQtdDoItemCarrinho);
+router.delete('/carrinho/:id', deletaItemCarrinho);
 
 /* pagina painel de usuário*/
 router.get('/painel-usuario', (req, res, next) => {

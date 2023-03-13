@@ -32,18 +32,27 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
             allowNull: false,
         },
 
-        produto_id: {
+        produtos_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'produtos', //nome da tabela que será referenciada pela chave estrangeira
                 key: 'id' //nome da coluna que será referenciada pela chave estrangeira
             }
+        },
+
+        clientes_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'clientes', //nome da tabela que será referenciada pela chave estrangeira
+                key: 'id' //nome da coluna que será referenciada pela chave estrangeira
+            }
         }
     };
 
     const opcoes = {
-        tableName: 'Itenscarrinhos',
+        tableName: 'ItensCarrinhos',
         timestamps: false
     };
 

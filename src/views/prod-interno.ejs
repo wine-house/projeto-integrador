@@ -12,7 +12,10 @@
                 </h1>
                 <h2>15% OFF</h2>
                 <p>R$<%= produto.valor %>,00</p>
-                <a class="botao-adiciona" href="/carrinho">Adicionar</a>
+                <form action="/produtos/produto-interno/<%= produto.id %>" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+                    <button type="submit" id="btn-submit" class="botao-adiciona" >Adicionar no carrinho</button>
+                </form>
+
             </section>
         </section>
     </main>

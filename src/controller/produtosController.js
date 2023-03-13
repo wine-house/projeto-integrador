@@ -69,13 +69,19 @@ module.exports = {
             id
         } = req.params;
         const qtdInicial = 1;
+        const clienteMock = 1;
+
+        const produto = await Produto.findByPk(id);
 
         await ItensCarrinho.create({
-            nome: id.nome,
-            valor_unitario: id.valor_unitario,
-            valor_total: id.valor_total,
-            imagem: id.imagem,
-            quantidade: qtdInicial
+            nome: produto.nome,
+            valor_unitario: produto.valor,
+            valor_total: produto.valor,
+            imagem: produto.imagem,
+            quantidade: qtdInicial,
+            produtos_id: id,
+            clientes_id: clienteMock
+
         });
 
         res.redirect('/carrinho/');

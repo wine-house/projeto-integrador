@@ -23,8 +23,8 @@ valor FLOAT NOT NULL,
 categoria VARCHAR(150) NOT NULL,
 imagem VARCHAR(150) NOT NULL,
 safra VARCHAR(4) NOT NULL,
-fornecedor_id INT UNSIGNED NOT NULL,
-FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id)
+fornecedores_id INT UNSIGNED NOT NULL,
+FOREIGN KEY(fornecedores_id) REFERENCES fornecedores(id)
 );
 
 CREATE TABLE pedidos(
@@ -45,7 +45,7 @@ VALUES
     ('Vínicula Alves', 'viniculaAlves@gmail.com', 985484);
 
 
-INSERT INTO produtos(nome,valor,categoria,imagem,fornecedor_id,safra)
+INSERT INTO produtos(nome,valor,categoria,imagem,fornecedores_id,safra)
 VALUES
 ('Barone Montalto',88.00,'Vinho Tinto','1-barone-montalto',1,2021),
 ('Matetic Corralillo',75.50,'Vinho Tinto','2-corralillo',1,2016),

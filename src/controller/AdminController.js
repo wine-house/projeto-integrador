@@ -50,7 +50,7 @@ const AdminController = {
       nome: nome,
       valor: valor,
       imagem: imagem,
-      fornecedor_id: fornecedor,
+      fornecedores_id: fornecedor,
       categoria: categoria,
       safra: safra
     });
@@ -92,7 +92,7 @@ const AdminController = {
       nome: nome,
       valor: valor,
       imagem: imagem,
-      fornecedor_id: fornecedor,
+      fornecedores_id: fornecedor,
       categoria: categoria,
       safra: safra
     }, {
@@ -104,11 +104,11 @@ const AdminController = {
     res.redirect('/admin/produtos/')
   },
 
-  //exibir a tela para mostrar o produto
   deleteProduct: async (req, res) => {
     const {
       id
     } = req.params;
+
     await Produto.destroy({
       where: {
         id: id

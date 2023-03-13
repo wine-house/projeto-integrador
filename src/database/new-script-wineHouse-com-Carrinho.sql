@@ -28,8 +28,14 @@ fornecedores_id INT UNSIGNED NOT NULL,
 FOREIGN KEY(fornecedores_id) REFERENCES fornecedores(id)
 );
 
-CREATE TABLE carrinhos(
+
+CREATE TABLE itenscarrinhos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nome VARCHAR(45) NOT NULL,
+imagem VARCHAR(150) NOT NULL,
+valor_unitario FLOAT NOT NULL,
+quantidade INT NOT NULL,
+valor_total FLOAT NOT NULL,
 clientes_id INT UNSIGNED NOT NULL,
 produtos_id INT UNSIGNED NOT NULL,
 FOREIGN KEY (produtos_id) REFERENCES produtos(id),
@@ -42,9 +48,9 @@ data_criacao DATE NOT NULL,
 valor_total FLOAT NOT NULL,
 quantidade INT NOT NULL,
 clientes_id INT UNSIGNED NOT NULL,
-carrinhos_id INT UNSIGNED NOT NULL,
+itenscarrinhos_id INT UNSIGNED NOT NULL,
 FOREIGN KEY (clientes_id) REFERENCES clientes(id),
-FOREIGN KEY (carrinhos_id) REFERENCES carrinhos(id)
+FOREIGN KEY (itenscarrinhos_id) REFERENCES itenscarrinhos(id)
 );
 
 -- populando as tabelas

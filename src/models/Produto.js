@@ -22,7 +22,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        fornecedor_id: {
+        fornecedores_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },

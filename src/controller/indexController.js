@@ -41,7 +41,6 @@ module.exports = {
   viewCarrinho: async (req, res) => {
 
     const itensCarrinho = await ItensCarrinho.findAll();
-
     res.render('carrinho', {
       itensCarrinho: itensCarrinho,
       css: [
@@ -51,30 +50,39 @@ module.exports = {
     });
   },
 
-  atualizaQtdItemCarrinho: async (req, res) => {
-    const {
-      id
-    } = req.params;
-    const {
-      quantidade
-    } = req.body;
+  adicionaQtdDoItemCarrinho: async (req, res) => {
+    const { id } = req.params;
+    const item = await ItensCarrinho.findByPk(id);
+    item.quantidade += 1;
 
-    await ItensCarrinho.update({
-      quantidade: quantidade
-    }, {
-      where: {
-        id: id
-      }
-    });
+    const valorTotal = item.valor_unitario * item.quantidade;
+    item.valor_total = valorTotal;
 
-    res.redirect('/carrinhos/')
+    await item.save();
+    res.redirect('/carrinho');
   },
 
+  subtraiQtdDoItemCarrinho: async (req, res) => {
+    const { id } = req.params;
+
+    const item = await ItensCarrinho.findByPk(id);
+
+    if (item.quantidade <= 0) {
+      return
+    } else {
+      item.quantidade -= 1;
+
+      const valorTotal = item.valor_unitario * item.quantidade;
+      item.valor_total = valorTotal;
+    }
+
+    await item.save();
+
+    res.redirect('/carrinho/')
+  },
 
   deletaItemCarrinho: async (req, res) => {
-    const {
-      id
-    } = req.params;
+    const { id } = req.params;
 
     await ItensCarrinho.destroy({
       where: {
@@ -83,7 +91,5 @@ module.exports = {
     });
 
     res.redirect('/carrinho/');
-  },
-
-
+  }
 }
