@@ -141,7 +141,73 @@ const AdminController = {
                 data: error
             });
         }
+    }, 
+    exibirCategorias: async (req, res) => {
+        try
+        {
+            // controller comunicando com o model
+            const { search } = req.query;
+
+            const produtos = await Produto.findAll({ 
+                where: search ? {
+                    categoria: {
+                        [Op.like]: `%${search}%`
+                    }} : null,
+                    categoria: 'categoria',
+                    distinct: true,
+            });
+
+            return res.render('adminCategorias', {
+                produtos: produtos,
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
+            });
+        } 
+        catch (error){
+            return res.status(500).json({
+                mensagem: error,
+                status: 500
+            });
+        };
     },
+    //exibir tela de criação de categoria
+    viewFormCategoria: async (req, res)=>{
+        try
+        {
+            const fornecedores = await Fornecedor.findAll();
+
+            res.render('cadastrarCategorias', {
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
+                fornecedores: fornecedores
+            });
+        } catch (error){
+            return res.status(500).json({
+                mensagem: "Não foi possível carregar essa página, tente novamente"
+            })
+        };
+    },
+    //Criar nova categoria
+    createCategoria: async (req, res)=>{
+        try
+        {
+            const { nome } = req.body;
+
+            const errors = validationResult(req);
+
+            if(errors.isEmpty()){
+                console.log(errors.mapped());
+            };
+
+            await Produto.create({ categoria: nome});
+
+            res.redirect('/admin/produtos/categorias');
+        } 
+        catch (error) {
+            return res.status(500).json({
+                mensagem: "Não foi póssivel criar a categoria",
+                data: error
+            });
+        };
+    }
 
     
 }
