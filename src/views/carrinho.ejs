@@ -1,0 +1,116 @@
+<%- include('partials/header') %>
+
+<!--MAIN-->
+<main id="carrinho">
+  <h1 class="titulo">Carrinho de Compras</h1>
+
+  <section class="container">
+    <article class="container__carrinho">
+      <table class="container__carrinho__table_produtos">
+        <thead>
+          <tr>
+            <th class="container__tabela_coluna_img">Vinho</th>
+            <th class="container__tabela_coluna_nome">Nome</th>
+            <th class="container__tabela_coluna_subtotal">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let total = 0 %>
+          <% for(let item of itensCarrinho) { %>
+          <tr>
+            <td class="container__img">
+              <img class="container__imagem" src="/images/tela-produtos/<%= item.imagem%>.png" alt="Vinho" width="30%">
+            </td>
+            <td>
+              <h2 class="container__nome"><%= item.nome%></h2>
+            </td>
+            <td>
+              <section class="container__tabela_coluna_sub">
+                <section>
+                  <div class="container__botoes">
+                    <!-- botao subtrai -->
+                    <form action="/carrinho/subtrai/<%= item.id %>?_method=PUT" method="post">
+                      <input type="hidden" name="quantidade" value="<%= item.quantidade %>">
+                      <button type="submit" id="botao-subtrai" class="carrino__botao subtrai">
+                        <i class="fa-solid fa-minus fa-2x"></i>
+                      </button>
+                    </form>
+
+                    <!-- Exibe a quantidade atual do item -->
+                    <span id="quantidade-item">
+                      <%= item.quantidade%>
+                    </span>
+
+                    <!-- botao add -->
+                    <form action="/carrinho/adiciona/<%= item.id %>?_method=PUT" method="post">
+                      <input type="hidden" name="quantidade" value="<%= item.quantidade %>">
+                      <button type="submit" id="botao-adiciona" class="carrino__botao adiciona">
+                        <i class="fa-solid fa-plus fa-2x"></i>
+                      </button>
+                    </form>
+                  </div>
+
+                  <p class="container__valor">
+                    R$
+                    <span id="valor-item" name="valorTotalDoProduto">
+                      <%= (item.valor_unitario * item.quantidade).toFixed(2)%>
+                    </span>
+                  </p>
+                </section>
+                <% total += item.valor_unitario * item.quantidade %>
+                <form action="/carrinho/<%= item.id %>?_method=DELETE" method="post">
+                  <button type="submit" id="botao-remove" class="carrino__botao remove">
+                    <i class="fa-solid fa-trash fa-2x"></i>
+                  </button>
+                </form>
+              </section>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="container__resume">
+      <table class="table_resume">
+        <tr>
+          <td class="">Prazo de entrega</td>
+          <td class="carrinho__tempo">5 a 7 dias úteis</td>
+        </tr>
+        <tr>
+          <td class="">Valor do frete</td>
+          <td class="carrinho__frete">Grátis</td>
+        </tr>
+        <tr>
+          <td class="carrinho__valor-total">Valor total</td>
+          <td class="">R$<span id="valor-total-itens"><%= total.toFixed(2) %></span></td>
+        </tr>
+
+      </table>
+
+      <section class="btns_rotas">
+        <button class="carrinho__button__back_prod btn" onclick="window.location.href='/produtos'">
+          Voltar para produtos
+        </button>
+
+        <button class="carrinho__button__finish btn" onclick="window.location.href='/confira-itens'">
+          Finalizar a compra
+        </button>
+      </section>
+    </article>
+  </section>
+
+  <!--Link to Top-->
+  <a class="link-top" href="#carrinho"><i class="fas fa-arrow-up"></i></a>
+</main>
+<!--end MAIN-->
+
+<!--JAVASCRIPT-->
+<script src="/js/menu-footer.js"></script>
+<script src="/js/carrinho.js"></script>
+<!--end JAVASCRIPT-->
+</body>
+
+</html>
+
+<%- include('partials/footer') %>

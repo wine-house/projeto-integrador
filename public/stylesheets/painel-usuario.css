@@ -1,0 +1,262 @@
+main {
+    font-size: 12px;
+}
+
+
+div.conteiner-painel-pedidos {
+    display: flex;
+    gap: 5rem;
+}
+
+div.painel-vertical {
+    padding: 2rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1.4px;
+    margin-left: -20rem;
+    opacity: 1;
+}
+
+div.foto-cliente img {
+    border-radius: 100%;
+    width: 60%;
+}
+
+div.foto-cliente h3 {
+    text-align: center;
+
+}
+
+div.nav-painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+div.nav-painel > div{
+    width: 80%;
+    margin: 0.2rem auto;
+    padding: 0.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #530112, #b87086);
+    background-image: -moz-linear-gradient(top, #530112, #b87086);
+    background-image: -ms-linear-gradient(top, #530112, #b87086);
+    background-image: -o-linear-gradient(top, #530112, #b87086);
+    background-image: -webkit-gradient(to bottom, #530112, #b87086);
+    
+}
+
+div.nav-painel > div:hover{
+    background-image: -webkit-linear-gradient(top, #b87086, #530112);
+    background-image: -moz-linear-gradient(top, #b87086, #530112);
+    background-image: -ms-linear-gradient(top, #b87086, #530112);
+    background-image: -o-linear-gradient(top, #b87086, #530112);
+    background-image: -webkit-gradient(to bottom, #b87086, #530112);
+}
+
+div.nav-painel > div h5 {
+    margin: 0.3rem;
+    text-align: center;
+    color: white;
+   
+}
+
+div.nav-painel > div a {
+    text-decoration: none;
+}
+
+div.atendimento-painel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 1.5rem
+}
+
+div#contatos {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 7.5rem;
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+div#contatos p {
+    font-size: 14px;
+}
+
+div#chat-link {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0.2rem auto;
+    padding: 0.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #b87086, #530112);
+    background-image: -moz-linear-gradient(top, #b87086, #530112);
+    background-image: -ms-linear-gradient(top, #b87086, #530112);
+    background-image: -o-linear-gradient(top, #b87086, #530112);
+    background-image: -webkit-gradient(to bottom, #b87086, #530112);
+}
+
+div#chat-link:hover {
+    background-image: -webkit-linear-gradient(top, #530112, #b87086);
+    background-image: -moz-linear-gradient(top, #530112, #b87086);
+    background-image: -ms-linear-gradient(top, #530112, #b87086);
+    background-image: -o-linear-gradient(top, #530112, #b87086);
+    background-image: -webkit-gradient(to bottom, #530112, #b87086);
+}
+
+div#chat-link a {
+    text-decoration: none;
+    color: white;
+
+}
+
+
+
+div.tabela-pedidos {
+    padding: 2rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1.4px;
+    opacity: 1;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+    gap: 3rem;
+   
+}
+
+div.cabecalho-pedido > div > h3 {
+    margin: 0 auto;
+}
+
+
+
+div.txt-nro-pedido {
+    width: 30%;
+    padding: 1rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+div.txt-data-compra {
+    width: 20%;
+    padding: 1rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+div.txt-status-pagamento {
+    width: 20%;
+    padding: 1rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+div.txt-andamento-compra {
+    width: 20%;
+    padding: 1rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+div.txt-nota-fiscal {
+    width: 10%;
+    padding: 1rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #2426721C;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+}
+
+div.nro-pedido-cliente {
+    width: 30%;
+    padding: 1rem;
+    align-self: center;
+    
+}
+
+div.nro-pedido-cliente h4 {
+    margin: 0 auto;
+
+}
+
+div.data-compra-cliente {
+    width: 20%;
+    padding: 1rem;
+    align-self: center;
+}
+
+div.data-compra-cliente h4 {
+    margin: 0 auto;
+}
+
+div.status-pagamento-cliente {
+    width: 20%;
+    padding: 1rem;
+    align-self: center;
+}
+
+div.status-pagamento-cliente h4 {
+    margin: 0 auto;
+}
+
+div.andamento-compra-cliente {
+    width: 20%;
+    padding: 1rem;
+    align-self: center;
+
+}
+
+div.andamento-compra-cliente h4 {
+    margin: 0 auto;
+}
+
+div.nota-fiscal-cliente {
+    width: 10%;
+    padding: 1rem;
+}
+
+div.nota-fiscal-cliente img{
+    width: 2rem;
+}
+
+
+
+

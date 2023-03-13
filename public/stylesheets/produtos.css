@@ -1,0 +1,195 @@
+/**SECTION PRODUCTS**/
+.products {
+    padding: 3rem 2rem 2rem 2rem;
+    display: flex;
+}
+
+.products__categories {
+    flex-basis: 8%;
+    margin-right: 2rem;
+}
+
+.products__categories__title {
+    font-size: 1.65rem;
+    margin-bottom: 1.4rem;
+}
+
+.products__categories__link {
+    margin-bottom: 1rem;
+}
+
+.products__categories__link a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-rosa);
+    transition: all .5s;
+}
+.products__categories__link a:hover {
+    color: var(--cor-vinho-escuro);
+}
+
+.products__wines {
+    flex-basis: 92%;
+}
+
+.products__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.products__content:last-child {
+    margin-bottom: 0;
+}
+
+.products__item {
+    /* flex-basis: 23%; */
+    border: 3px solid var(--cor-vinho-escuro);
+    box-shadow: 0 0 8px var(--cor-rosa), 0 0 0 4px var(--cor-rosa), 0 0 0 4px var(--cor-rosa);
+    border-radius: 10px;
+    background-color: var(--cor-rosa);
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 55px;
+}
+
+.products__item header {
+    position: relative;
+    overflow: hidden;
+}
+
+.products__item__image img {
+    display: block;
+    width: calc(60px + 2vw);
+    max-height: 390px;
+    margin: 0 auto;
+    border-radius: 7px 7px 0 0;
+    transition: all .5s;
+}
+
+.products__item:hover .products__item__image img {
+    transform: scale(1.2);
+}
+
+.products__item footer {
+    background-color: rgba(255, 255, 255, .3);
+    height: 100%;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.products__item__buy {
+    display: block;
+    width: 100%;
+    background-color: var(--cor-vinho-escuro);
+    color: var(--cor-branca);
+    padding: .7rem 0;
+    font-size: 1.6rem;
+    border: none;
+    border-top: 3px solid var(--cor-vinho-claro);
+    border-bottom: 3px solid var(--cor-vinho-claro);
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    transition: all .5s;
+}
+
+.products__item__buy a {
+    color: var(--cor-branca);
+    display: block;
+}
+
+.products__item__buy:hover {
+    background-color: var(--cor-vinho-claro);
+    border-top: 3px solid var(--cor-vinho-escuro);
+    border-bottom: 3px solid var(--cor-vinho-escuro);
+}
+
+.products__item__name {
+    display: block;
+    width: 100%;
+    padding: .7rem 0 .1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.products__item__price {
+    padding: .4rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    display: block;
+    width: 100%;
+    transition: all .5s;
+}
+
+@media(max-width: 900px) {
+    .products__item {
+        grid-template-rows: 1fr 70px;
+    }
+}
+
+/**MEDIA QUERIES**/
+@media(max-width: 800px) {
+    .products__content {
+        /* flex-wrap: wrap; */
+        grid-template-columns: repeat(2, 1fr);
+        /* gap: 3rem 1.8rem; */
+    }
+}
+
+@media(max-width: 500px) {
+    .products {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .products__categories {
+        flex-basis: 100%;
+    }
+
+    .products__categories__title {
+        text-align: center;
+    }
+
+    .products__categories__links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+    }
+
+    .products__categories__link {
+        margin-right: 1rem;
+    }
+    .products__categories__link:last-child {
+        margin-right: 0;
+    }
+    
+    .products__wines {
+        flex-basis: 100%;
+    }
+
+    .products__content {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .products__item {
+        /* flex-basis: 85%; */
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .products__item__image img {
+        width: calc(80px + 2vw);
+    }
+}

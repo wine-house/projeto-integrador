@@ -1,0 +1,120 @@
+<%- include('partials/header') %> 
+
+<!--MAIN-->
+    <main id="us">
+        <!--inicio do formulário-->
+
+        <form class="login" action="#" method="get">
+            <div class="container">
+
+                <div>
+                    <audio id="som" src="/midia/Where Am I - Text Me Records.mp3" controls ></audio>
+                </div>
+                <div class="card">
+                    <div>
+                        <h2 class="title">Bem-vindo à Wine House!</h2>
+                        <p>Antes de continuar, faça seu login.</p><br>
+                    </div>
+
+                    <div class="containerlabel">
+                        <label for="email-login"><strong>E-mail </strong></label><br>
+                        <input type="email" id="email-login" name="email-login">
+                        <div class="err-login-email invisible">Esse campo precisa ser preenchido!</div>
+                        <br>
+                        <label for="senha"><strong>Senha</strong></label>
+                        <br>
+                        <input type="password" id="password" name="senha">
+                        <div class="err-login-password invisible">Esse campo precisa ser preenchido<br> e sua senha deve
+                            ter pelo menos 6 caracteres!</div>
+                    </div>
+
+                    <div>
+                        <a class="link" href="">Esqueceu sua senha?</a><br><br>
+                        <input type="submit" id="enviar" name="Enviar"><br>
+                        <a class="link" href="#cadastro">
+                            <span>Faça seu cadastro</span></a>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+
+            <hr>
+            <input id="linha"></input>
+        </form>
+        <br>
+
+        <section id="cadastro">
+            <form class="form-cadastro">
+                <h2 class="title">Comece agora a viver o melhor do mundo dos vinhos!</h2>
+                <h3 class="titulo">Aqui você encontra os melhores vinhos!</h3><br>
+                <h4>Faça seu cadastro.</h4>
+
+                <section class="form-body">
+                    <div>
+                        <div>
+                            <label for="name-form"><strong>Nome</strong></label>
+                            <input type="text" id="nome-form" name="name-form" placeholder="Digite seu nome">
+                            <div class="err-register-name-form invisible red">Você precisa digitar seu nome!</div>
+                        </div>
+                        <div>
+                            <label for="cpf-form"><strong>Cpf ou Cnpj</strong></label>
+                            <input type="text" id="cpf-form" name="cpf-form">
+                            <div class="err-register-cpf-form invisible red">Digite seu cpf ou Cnpj.</div>
+                        </div>
+                        <div>
+                            <label for="email-form"><strong>E-mail</strong></label>
+                            <input type="email" id="email-form" name="email-form" placeholder="winehouse@gmail.com">
+                            <div class="err-register-email-form invisible red">Digite um email válido!</div>
+                        </div>
+                        <div>
+                            <label for="date-form"><strong>Data de nascimento</strong></label>
+                            <input type="date" id="date-form" name="date-form">
+                            <div class="err-register-date-form invisible red">Digite a data do seu nascimento!</div>
+                        </div>
+
+                        <div class="password">
+                            <label for="password-form">Senha</label>
+                            <input type="password" id="password-form" name="password-form" placeholder="Digite sua senha">
+                            <div class="err-register-password-form invisible red">Digite sua senha!</div>
+                        </div>
+
+                        <p><strong>Não esqueça:</strong></p>
+
+                        <label for="ciente">
+                            <input type="checkbox" id="ciente"  name="ciente">
+                            "Estou ciente da proibição legal
+                            contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas
+                            para crianças e adolescentes menores de 18 anos de idade."
+                        </label>
+                            <div class="err-register-ciente invisible red">Marque que está ciente!</div>
+                    <br>
+                        <label for="maiorque18">
+                            <input type="checkbox" id="maiorque18"  name="maiorque18">
+                            "Estou ciente com o tratamento de meus dados pessoais, conforme
+                            descrito na Política de Privacidade".</label>
+                        <div class="err-register-maiorque18 invisible red">Marque que está ciente!</div>
+
+                        <button type="submit" class="btn-submit">Cadastrar</button>
+
+                       <span class="mensagem-cadastro">Cadastro efetuado com sucesso!</span>
+                    </div>
+
+                    <div>
+                        <img class="imagem" src="/images/tela-login/garrafa.png" alt="garrafas de vinho">
+                    </div>
+                </section>
+            </form>
+
+        </section>
+        <!--fim do formulário-->
+        <a class="link-top" href="#us"> <i class="fas fa-arrow-up"></i></a>
+    </main>
+    <!--end MAIN-->
+
+  <!--JavaScript-->
+  <script src="/js/menu-footer.js"></script>
+  <script src="/js/login.js"></script>
+  <!--end JavaScript-->
+    
+  <%- include('partials/footer') %> 
