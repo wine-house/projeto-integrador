@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
-const fs = require('fs');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const clienteRouter = require('./routes/cliente');
@@ -18,6 +18,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({secret: "hiyou", resave: true, saveUninitialized: true}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
