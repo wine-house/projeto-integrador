@@ -1,5 +1,19 @@
 const express = require('express');
-const { index, somos, eventos, parceiros, login, carrinho, painelUsuario, conferirItens, selecionarEndereco, fechamentoPagamento, fechamentoPedido } = require('../controller/indexController');
+const {
+    index,
+    somos,
+    eventos,
+    parceiros,
+    viewCarrinho,
+    adicionaQtdDoItemCarrinho,
+    subtraiQtdDoItemCarrinho,
+    deletaItemCarrinho,
+    painelUsuario, 
+    conferirItens, 
+    selecionarEndereco, 
+    fechamentoPagamento, 
+    fechamentoPedido
+} = require('../controller/indexController');
 
 const router = express.Router();
 
@@ -15,7 +29,10 @@ router.get('/eventos', eventos);
 router.get('/parceiros', parceiros);
 
 /* pagina carrinho*/
-router.get('/carrinho', carrinho);
+router.get('/carrinho', viewCarrinho);
+router.put('/carrinho/adiciona/:id', adicionaQtdDoItemCarrinho);
+router.put('/carrinho/subtrai/:id', subtraiQtdDoItemCarrinho);
+router.delete('/carrinho/:id', deletaItemCarrinho);
 
 /* pagina painel de usuário*/
 router.get('/painel-usuario', painelUsuario);
