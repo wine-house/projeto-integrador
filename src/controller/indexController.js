@@ -33,5 +33,11 @@ module.exports = {
         res.render('carrinho', {
           css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
         });
-    }
+    },
+
+    fechamentoPedido: (req, res) => {
+      res.render('fechamentoPedido', {
+        css: ['/stylesheets/fechamentoPedido.css','/stylesheets/menu-footer.css']
+      });
+  }
 }
