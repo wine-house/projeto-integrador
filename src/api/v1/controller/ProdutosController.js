@@ -3,7 +3,7 @@ const { Produto, Fornecedor } = require('../../../models');
 const apiController = {
   getWines: async (req, res) => {
     const produtos = await Produto.findAll({
-      attributes: ['id', 'nome', 'valor', 'categoria', 'safra', 'fornecedor_id'],
+      attributes: ['id', 'nome', 'valor', 'categoria', 'safra', 'fornecedores_id'],
       include: [{
         attributes: ['nome', 'email'],
         model: Fornecedor, 
@@ -24,7 +24,7 @@ const apiController = {
   getWine: async (req, res) => {
     const { id } = req.params;
     const produto = await Produto.findOne({
-      attributes: ['id', 'nome', 'valor', 'categoria', 'safra', 'fornecedor_id'],
+      attributes: ['id', 'nome', 'valor', 'categoria', 'safra', 'fornecedores_id'],
       include: [{
         attributes: ['nome', 'email'],
         model: Fornecedor,

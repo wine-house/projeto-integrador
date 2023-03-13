@@ -6,7 +6,6 @@ const AdminController = {
     index: async (req, res) => {
         try
         {
-            // controller comunicando com o model
             const { search } = req.query;
 
             const produtos = await Produto.findAll({ 
@@ -64,7 +63,7 @@ const AdminController = {
                 console.log(errors.mapped());
             };
 
-            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categoria: categoria, safra: safra});
+            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedores_id: fornecedor, categoria: categoria, safra: safra});
 
             res.redirect('/admin/produtos/');
         } 
@@ -111,7 +110,7 @@ const AdminController = {
                 nome: nome,
                 valor: valor,
                 imagem: imagem,
-                fornecedor_id: fornecedor,
+                fornecedores_id: fornecedor,
                 categoria: categoria,
                 safra: safra
             },
@@ -126,7 +125,6 @@ const AdminController = {
         }
     },
 
-    //exibir a tela para mostrar o produto
     deleteProduct: async (req, res)=>{
         try
         {    
