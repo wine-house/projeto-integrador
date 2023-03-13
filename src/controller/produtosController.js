@@ -7,6 +7,7 @@ module.exports = {
         {
             const { categoria } = req.query;
             // controller comunicando com o model
+
             const produtos = await Produto.findAll({
                 where: categoria ? {
                     categoria: {
