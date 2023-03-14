@@ -5,14 +5,14 @@
         <!--Produtos-->
         <section class="products">
             <aside class="products__categories">                
-                <h2 class="products__categories__title">Categorias</h2>                
+                <h2 class="products__categories__title">Categorias</h2>         
+                
+                <% for(categoria of categorias){ %>
+                    <form class="products__categories__links" method="get">
+                        <button class="products__categories__link" type="submit" name="categoria" value="<%=categoria.categoria%>"><%= categoria.categoria %></button>
+                    </form>
+                <% } %>
 
-                <ul class="products__categories__links">
-                    <li class="products__categories__link"><a href="/produtos/Vinho Tinto">Tinto</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Branco">Branco</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Rose">Rose</a></li>
-                    <li class="products__categories__link"><a href="/produtos/Vinho Espumante">Espumante</a></li>
-                </ul>
             </aside>
 
             <div class="products__wines">

@@ -1,56 +1,72 @@
-const { Produto } = require('../models');
-const produtoDataBase = require("../database/produtos.json");
-
+const {
+    Produto,
+    ItensCarrinho
+} = require('../models');
+const { Sequelize, Op } = require('sequelize');
 
 module.exports = {
     index: async (req, res) => {
-        // controller comunicando com o model
-        const produtos = await Produto.findAll();
-        // controller comunicando com a view
-        return res.render('produtos', {  produtos,
-            css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
-        });
+        try
+        {
+            const { categoria } = req.query;
+            const produtos = await Produto.findAll({
+                where: categoria ? {
+                    categoria: {
+                        [Op.like]: `${categoria}`
+                    }
+                } : null
+            });
+
+            const categorias = await Produto.findAll({
+                attributes: [[
+                    Sequelize.fn('DISTINCT', Sequelize.col('categoria')), 'categoria'
+                ]]
+            });
+
+            return res.render('produtos', {  produtos, categorias,
+                css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
+            });
+        } catch (err) {
+            console.log(err);
+        }
     },
 
-
-    show: (req, res) => {
-        const { categoria } = req.params;
-        const vinhoCategoria = produtoDataBase.filter((prod) => prod.categoria == categoria)
-
-        return res.render('produto-listar', {
-            vinhoCategoria,
-            css:["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
-        });
+    viewProdInternoById: async(req, res, next) => {
+        try
+        {
+            const { id } = req.params;
+            const produto = await Produto.findByPk(id);
+    
+            res.render('prod-interno', { produto: produto,
+                css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
+            });
+        } catch (err){
+            console.log(err);
+        }
     },
 
-     mostrarporId: (req, res) => {
-        const { id } = req.params;
-        var vinhoCategoria = produtoDataBase.filter((prod) => prod.id == id)
-        console.log(vinhoCategoria)
-
-        return res.render('produto-listar', {
-
-            vinhoCategoria,
-            css:["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
-        });
-    },
-    getProductById: async(req, res, next) => {
-        const { id } = req.params;
-        const produto = await Produto.findByPk(id);
-        // var produto = produtos.filter((prod) => prod.id == id);
-        // produto = produto[0]
-        // var arrayImg = produto.imagem;
-        // var img = arrayImg[0]
-        // console.log(produto)
-        // produto.imagem = img
-
-        res.render('prod-interno', { produto: produto,
-          css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
-        });
-      },
-      deletar: async(req, res) => {
-        const { id } = req.params;
-        await Produto.destroy(id);
-        
-      }
+    adicionaItemNoCarrinho: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const qtdInicial = 1;
+            const clienteMock = 1;
+    
+            const produto = await Produto.findByPk(id);
+    
+            await ItensCarrinho.create({
+                nome: produto.nome,
+                valor_unitario: produto.valor,
+                valor_total: produto.valor,
+                imagem: produto.imagem,
+                quantidade: qtdInicial,
+                produtos_id: id,
+                clientes_id: clienteMock
+            });
+    
+            res.redirect('/carrinho/');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Erro ao adicionar o item ao carrinho');
+        }
+    }
 }

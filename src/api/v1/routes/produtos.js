@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getWines, getWine } = require('../controller/apiController');
+const { getWines, getWine } = require('../controller/ProdutosController');
 
 // /api/wines GET ALL WINES
 router.get('/wines', getWines);

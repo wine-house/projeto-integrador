@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// const authAdminController = require("../controller/authAdminController");
 const multer = require('multer');
 const multerDiskStorage = require('../middlewares/configDisk');
 const validacoes = require('../middlewares/validacoes');
@@ -20,8 +19,6 @@ router.put("/editar/:id", validacoes, upload.any("imagem"), updateProduct);
 // criar
 router.get ("/criar", viewForm);
 router.post("/criar", validacoes, upload.any("imagem"), createProduct);
-
-// delete
 router.delete("/:id", deleteProduct);
 
 module.exports = router;

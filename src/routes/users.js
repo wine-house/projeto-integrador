@@ -1,13 +1,14 @@
-var express = require('express');
-//variavel para configurar rota
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// const authAdminController = require("../controller/authAdminController");
+const validacoes = require('../middlewares/validacoes');
 
+const {login, createUser} = require("../controller/userController");
 
+/* pagina login*/
+router.get('/', login);
 
+router.post("/criar", validacoes, createUser);
 
 module.exports = router;

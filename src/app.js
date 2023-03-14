@@ -7,10 +7,10 @@ const methodOverride = require('method-override');
 const fs = require('fs');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const clienteRouter = require('./routes/cliente');
 const adminRouter = require('./routes/admin');
 const produtosRouter = require('./routes/produto');
-const apiRouter = require('./routes/api');
+const apiProdutosRouter = require('./api/v1/routes/produtos');
 
 const app = express();
 
@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/api', apiRouter);
-app.use('/users', usersRouter);
+app.use('/api', apiProdutosRouter);
+app.use('/cliente', clienteRouter);
 app.use('/produtos', produtosRouter);
 app.use('/admin/produtos', adminRouter);
 

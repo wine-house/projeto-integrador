@@ -14,7 +14,6 @@ section.container {
     padding: .5rem 0 2rem 0;
     display: flex;
     justify-content: space-around;
-    /* width: 65vw; */
     flex-basis: 60%;
 }
 
@@ -25,7 +24,6 @@ section.container {
 .container__carrinho__table_produtos {
     border-collapse: collapse;
     height: 20vh;
-    /* width: 65vw; */
     width: 100%;
 }
 
@@ -47,40 +45,24 @@ td, th {
 
 .container__img {
     padding: .5rem .5rem .3rem .5rem;
+    display: flex;
+    justify-content: center;
 }
 
-.container__imagem {
-    /* width: 16vw; */
-    width: 100%;
-    min-height: 230px;
-    border-radius: 5px;
-}
-
-/* .container__imagem img {
-    width: 270px;
-    height: 390px;
+.container__imagem img {
     border: 2px solid var(--cor-preta);
     border-radius: 5px;
-} */
+} 
 
 .container__nome {
-    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
     color: var(--cor-vinho-escuro);
     margin-top: .4rem;
 }
 
-.container__tabela_coluna_img {
-    /* width: 5vw; */
-    width: 20%;
-}
-
-.container__tabela_coluna_nome {
-    /* width: 20vw; */
-    width: 30%;
-}
-
 .container__tabela_coluna_subtotal {
-    /* width: 17vw; */
     width: 30%;
 }
 
@@ -135,7 +117,6 @@ button#botao-adiciona {
 }
 
 .table_resume {
-    /* width: 25vw; */
     width: 100%;
     margin-top: 1rem;
     font-size: 1.4rem;
@@ -259,37 +240,3 @@ button#botao-adiciona {
         min-height: 160px;
     }
 }
-
-/* @media(max-width: 600px) {
-    .container {
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .container_direita {
-        margin: 1.2rem 0rem 0 0;
-    }
-}
-
-@media(max-width: 360px) {
-    .container__imagem img {
-        width: 250px;
-        height: 370px;
-    }
-}
-
-@media(max-width: 300px) {
-    .container__imagem img {
-        width: 200px;
-        height: 300px;
-    }
-
-    .carrinho__nav {
-        flex-wrap: wrap;
-    }
-
-    .carrinho__nav__link:first-child {
-        margin-bottom: 2rem;
-    }
-} */

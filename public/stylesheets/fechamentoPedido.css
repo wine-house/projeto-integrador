@@ -17,7 +17,11 @@ p {
     border-radius: 10px;
     background-color: #530112;
     color: white;
+<<<<<<< HEAD
     
+=======
+    border: none;
+>>>>>>> develop
 }
 
 .btn-beginning:hover {
