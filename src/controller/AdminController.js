@@ -1,4 +1,4 @@
-const { Produto, Fornecedor } = require('../models');
+const { Produto, Fornecedor, Categoria } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
 
@@ -6,7 +6,6 @@ const AdminController = {
     index: async (req, res) => {
         try
         {
-            // controller comunicando com o model
             const { search } = req.query;
 
             const produtos = await Produto.findAll({ 
@@ -14,7 +13,7 @@ const AdminController = {
                     nome: {
                         [Op.like]: `%${search}%`
                     }} : null,
-                include: ["fornecedor"]
+                include: ["fornecedor", 'categoria']
             });
 
             return res.render('adminListar', {
@@ -23,6 +22,7 @@ const AdminController = {
             });
         } 
         catch (error){
+            console.log(error)
             return res.status(500).json({
                 mensagem: error,
                 status: 500
@@ -64,7 +64,7 @@ const AdminController = {
                 console.log(errors.mapped());
             };
 
-            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categoria: categoria, safra: safra});
+            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedores_id: fornecedor, categoria: categoria, safra: safra});
 
             res.redirect('/admin/produtos/');
         } 
@@ -111,7 +111,7 @@ const AdminController = {
                 nome: nome,
                 valor: valor,
                 imagem: imagem,
-                fornecedor_id: fornecedor,
+                fornecedores_id: fornecedor,
                 categoria: categoria,
                 safra: safra
             },
@@ -126,7 +126,6 @@ const AdminController = {
         }
     },
 
-    //exibir a tela para mostrar o produto
     deleteProduct: async (req, res)=>{
         try
         {    
@@ -143,7 +142,71 @@ const AdminController = {
                 data: error
             });
         }
+    }, 
+    exibirCategorias: async (req, res) => {
+        try
+        {
+            // controller comunicando com o model
+            const { search } = req.query;
+
+            const categorias = await Categoria.findAll({ 
+                where: search ? {
+                    nome: {
+                        [Op.like]: `%${search}%`
+                    }} : null,
+            });
+
+            return res.render('adminCategorias', {
+                categorias: categorias,
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
+            });
+        } 
+        catch (error){
+            return res.status(500).json({
+                mensagem: error,
+                status: 500
+            });
+        };
     },
+    //exibir tela de criação de categoria
+    viewFormCategoria: async (req, res)=>{
+        try
+        {
+            const fornecedores = await Fornecedor.findAll();
+
+            res.render('cadastrarCategorias', {
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
+                fornecedores: fornecedores
+            });
+        } catch (error){
+            return res.status(500).json({
+                mensagem: "Não foi possível carregar essa página, tente novamente"
+            })
+        };
+    },
+    //Criar nova categoria
+    createCategoria: async (req, res)=>{
+        try
+        {
+            const { nome } = req.body;
+
+            const errors = validationResult(req);
+
+            if(errors.isEmpty()){
+                console.log(errors.mapped());
+            };
+
+            await Produto.create({ categoria: nome});
+
+            res.redirect('/admin/produtos/categorias');
+        } 
+        catch (error) {
+            return res.status(500).json({
+                mensagem: "Não foi póssivel criar a categoria",
+                data: error
+            });
+        };
+    }
 
     
 }

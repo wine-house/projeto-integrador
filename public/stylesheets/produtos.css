@@ -16,15 +16,17 @@
 
 .products__categories__link {
     margin-bottom: 1rem;
-}
-
-.products__categories__link a {
+    padding: 0.8rem;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--cor-rosa);
-    transition: all .5s;
+    color: white;
+    background-color: var(--cor-rosa);;
+    border-radius: 0.3rem;
+    transition: all .3s;
+    border: none;
 }
-.products__categories__link a:hover {
+
+.products__categories__link:hover {
     color: var(--cor-vinho-escuro);
 }
 

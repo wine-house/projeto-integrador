@@ -22,13 +22,13 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        fornecedor_id: {
+        fornecedores_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
 
-        categoria: {
-            type: dataTypes.STRING,
+        categoria_id: {
+            type: dataTypes.INTEGER,
             allowNull: false
         },
 
@@ -50,11 +50,16 @@ const criarProdutoModel = (sequelize, dataTypes) => {
         
         Produto.belongsTo(models.Fornecedor, {
             as: "fornecedor",
-            foreignKey: "fornecedor_id"
+            foreignKey: "fornecedores_id"
         });
-
+        
+        Produto.belongsTo(models.Categoria, {
+            as: "categoria",
+            foreignKey: "categoria_id"
+        });
     };
-    
+
+  
     return Produto;
 };
 

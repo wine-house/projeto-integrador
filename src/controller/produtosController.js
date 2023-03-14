@@ -1,4 +1,7 @@
-const { Produto } = require('../models');
+const {
+    Produto,
+    ItensCarrinho
+} = require('../models');
 const { Sequelize, Op } = require('sequelize');
 
 module.exports = {
@@ -7,6 +10,7 @@ module.exports = {
         {
             const { categoria } = req.query;
             // controller comunicando com o model
+
             const produtos = await Produto.findAll({
                 where: categoria ? {
                     categoria: {
@@ -14,7 +18,6 @@ module.exports = {
                     }
                 } : null
             });
-            // controller comunicando com a view
 
             const categorias = await Produto.findAll({
                 attributes: [[
@@ -29,7 +32,8 @@ module.exports = {
             console.log(err);
         }
     },
-    getProductById: async(req, res, next) => {
+
+    viewProdInternoById: async(req, res, next) => {
         try
         {
             const { id } = req.params;
@@ -41,5 +45,30 @@ module.exports = {
         } catch (err){
             console.log(err);
         }
-      }
+    },
+
+    adicionaItemNoCarrinho: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const qtdInicial = 1;
+            const clienteMock = 1;
+    
+            const produto = await Produto.findByPk(id);
+    
+            await ItensCarrinho.create({
+                nome: produto.nome,
+                valor_unitario: produto.valor,
+                valor_total: produto.valor,
+                imagem: produto.imagem,
+                quantidade: qtdInicial,
+                produtos_id: id,
+                clientes_id: clienteMock
+            });
+    
+            res.redirect('/carrinho/');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Erro ao adicionar o item ao carrinho');
+        }
+    }
 }

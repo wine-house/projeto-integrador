@@ -17,7 +17,15 @@ const criarClienteModel = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-
+        cpf:{
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        data_nascimento:{
+            type: dataTypes.DATEONLY,
+            allowNull: false,
+        },
         senha: {
             type: dataTypes.STRING,
             allowNull: false

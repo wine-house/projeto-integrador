@@ -12,8 +12,8 @@ const criarPedidoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        valor_unitario: {
-            type: dataTypes.INTEGER,
+        valor_total: {
+            type: dataTypes.FLOAT,
             allowNull: false,
         },
 
