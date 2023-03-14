@@ -187,5 +187,15 @@ module.exports = {
       } catch (error){
         console.log(error);
       }
+    },
+
+    confiraItens: (req, res, next) => {
+      try{
+        res.render('confiraItens', {
+          css: ['/stylesheets/confiraItens.css', '/stylesheets/menu-footer.css']
+        });
+      } catch (error){
+        console.log(error);
+      }
     }
 }
