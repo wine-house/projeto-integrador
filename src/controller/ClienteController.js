@@ -35,7 +35,7 @@ const ClienteController = {
         dataDeNascimento: date
       });
 
-      window.localStorage.setItem('user', cliente.name);
+      req.session.usuario = cliente;
 
       return res.redirect('/painel-usuario');
     

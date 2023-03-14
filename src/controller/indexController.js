@@ -139,7 +139,8 @@ module.exports = {
     },
 
     painelUsuario: (req, res, next) => {
-      res.render('painel-usuario', {
+      res.render('painel-usuario',  {
+        usuario: req.session.usuario,
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
       });
     },

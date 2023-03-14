@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 
-const multerDiskStorage = multer.diskStorage({
+const multerProductStorage = multer.diskStorage({
   destination: (req, file, callback) => {
     const folder = path.join(__dirname, "../../public/images/imageProd");
     callback(null, folder);
@@ -12,4 +12,16 @@ const multerDiskStorage = multer.diskStorage({
   },
 });
 
-module.exports = multerDiskStorage;
+const multerUserStorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    const folder = path.join(__dirname, "../public/images/userProfile");
+    callback(null, folder);
+  },
+
+  filename: (req, file, callback) => {
+    const userImage = file.originalname;
+    callback(null, userImage);
+  }
+});
+
+module.exports = multerProductStorage , multerUserStorage;
