@@ -7,6 +7,8 @@
 				</h1>
 				<a id="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
 		</div>
+		
+		
 		<hr>
 		<form method="get">
 			<input type="search" name="search" id="search">
@@ -36,7 +38,7 @@
 										<td> <img id="img-lista-produto-admin" src="/images/imageProd/<%= produto.imagem%>.png"</td>
 										<td><%= produto.nome %></td>
 										<td>R$<%= produto.valor %>,00</td>
-										<td class="th-hide"><%= produto.categoria %></td>
+										<td class="th-hide"><%= produto.categoria.nome%></td>
 										<td><%= produto.fornecedor.nome %></td>
 										<td><%= produto.safra %></td>
 										<td class="opcoes-crud"> 

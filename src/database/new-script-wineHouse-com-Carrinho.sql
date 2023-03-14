@@ -19,19 +19,23 @@ email VARCHAR(45) NOT NULL UNIQUE,
 senha VARCHAR(10) NOT NULL
 );
 
+CREATE TABLE categorias(
+id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nome VARCHAR(45) NOT NULL
+);
+
 CREATE TABLE produtos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 valor FLOAT NOT NULL,
-categoria VARCHAR(150) NOT NULL,
 imagem VARCHAR(150) NOT NULL,
 safra VARCHAR(4) NOT NULL,
-fornecedores_id INT UNSIGNED NOT NULL,
-FOREIGN KEY(fornecedores_id) REFERENCES fornecedores(id)
+fornecedor_id INT UNSIGNED NOT NULL,
+FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id)
 );
 
 
-CREATE TABLE itenscarrinhos(
+CREATE TABLE carrinhos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 imagem VARCHAR(150) NOT NULL,
@@ -55,26 +59,15 @@ FOREIGN KEY (clientes_id) REFERENCES clientes(id),
 FOREIGN KEY (itenscarrinhos_id) REFERENCES itenscarrinhos(id)
 );
 
--- populando as tabelas
-INSERT INTO clientes(nome, email, senha)
-VALUES
-('Keyla', 'keyla@gmail.com', 13456),
-('Rodrigo', 'rodrigo@gmail.com', 003456),
-('Matheus', 'matheus@gmail.com', 48456),
-('Catia', 'catia@gmail.com', 124456),
-('Sandra', 'sandra@gmail.com', 003456),
-('Keyla', 'keyla_santos@gmail.com', 4803456),
-('Pedro', 'pedro@gmail.com', 123486),
-('Rodrigo', 'rodrigo_cardoso@gmail.com', 0034446),
-('Matheus', 'matheus_oliveira@gmail.com', 4584034);
 
-INSERT INTO fornecedores(nome, email, senha)
+INSERT INTO fornecedores( nome, email, senha)
 VALUES
 	('Vínicula Rio do Sol', 'rioSol@gmail.com', 999999),
 	('Vínicula Terra Nova', 'terraNova@gmail.com', 333333),
     ('Vínicula Alves', 'viniculaAlves@gmail.com', 985484);
 
-INSERT INTO produtos(nome,valor,categoria,imagem,fornecedores_id,safra)
+
+INSERT INTO produtos(nome,valor,categoria,imagem,fornecedor_id,safra)
 VALUES
 ('Barone Montalto',88.00,'Vinho Tinto','1-barone-montalto',1,2021),
 ('Matetic Corralillo',75.50,'Vinho Tinto','2-corralillo',1,2016),
@@ -93,6 +86,20 @@ VALUES
 ('Stardust',82.50,'Vinho Rose','15-stardust',1,2018),
 ('Lumière',88.00,'Vinho Rose','16-lumière',1,2020);
 
--- bucas nas tabelas
+INSERT INTO clientes(nome, email, senha)
+VALUES
+('Keyla', 'keyla@gmail.com', 13456),
+('Rodrigo', 'rodrigo@gmail.com', 003456),
+('Matheus', 'matheus@gmail.com', 48456),
+('Catia', 'catia@gmail.com', 124456),
+('Sandra', 'sandra@gmail.com', 003456),
+('Keyla', 'keyla_santos@gmail.com', 4803456),
+('Pedro', 'pedro@gmail.com', 123486),
+('Rodrigo', 'rodrigo_cardoso@gmail.com', 0034446),
+('Matheus', 'matheus_oliveira@gmail.com', 4584034);
+
+INSERT INTO pedidos(data_criacao,valor_unitario,quantidade,cliente_id,produto_id)
+VALUES ('2023-02-06',88.00,1,1,8);
+
 SELECT * FROM produtos AS Produto;
 
