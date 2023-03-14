@@ -165,7 +165,7 @@ module.exports = {
 
     fechamentoPedido: (req, res) => {
       res.render('fechamento-pedido', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+        css: ['/stylesheets/menu-footer.css','/stylesheets/fechamento-pedido.css']
       });
     },
     
