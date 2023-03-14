@@ -14,7 +14,7 @@ const criarCategoriaModel = (sequelize, dataTypes) => {
 };
 
     const opcoes = {
-        tableName: 'categoria',
+        tableName: 'categorias',
         timestamps: false
     };
 

@@ -1,4 +1,4 @@
-const { Produto, Fornecedor } = require('../models');
+const { Produto, Fornecedor, Categoria } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
 
@@ -14,7 +14,7 @@ const AdminController = {
                     nome: {
                         [Op.like]: `%${search}%`
                     }} : null,
-                include: ["fornecedor"]
+                include: ["fornecedor", 'categoria']
             });
 
             return res.render('adminListar', {
@@ -23,6 +23,7 @@ const AdminController = {
             });
         } 
         catch (error){
+            console.log(error)
             return res.status(500).json({
                 mensagem: error,
                 status: 500
@@ -150,17 +151,15 @@ const AdminController = {
             // controller comunicando com o model
             const { search } = req.query;
 
-            const produtos = await Produto.findAll({ 
+            const categorias = await Categoria.findAll({ 
                 where: search ? {
-                    categoria: {
+                    nome: {
                         [Op.like]: `%${search}%`
                     }} : null,
-                    categoria: 'categoria',
-                    distinct: true,
             });
 
             return res.render('adminCategorias', {
-                produtos: produtos,
+                categorias: categorias,
                 css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
             });
         } 
