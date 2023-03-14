@@ -147,7 +147,7 @@ module.exports = {
 
     conferirItens: (req, res) => {
       res.render('confira-itens', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+        css: ['/stylesheets/menu-footer.css','/stylesheets/confira-itens.css']
       });
     },
 

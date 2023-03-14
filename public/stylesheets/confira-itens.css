@@ -1,0 +1,46 @@
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 17px;
+    text-align: center;
+    
+}
+
+img {
+    width: 30rem;
+    height: 30rem;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.list-group-item{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: justify;
+}
+
+h4 {
+    font-size: 20px;
+    text-align: justify;
+}
+
+h5 {
+    font-size: 13px;
+    text-align: justify;
+}
+
+.text-end {
+    
+}
