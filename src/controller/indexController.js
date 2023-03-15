@@ -153,7 +153,7 @@ module.exports = {
 
     selecionarEndereco:  (req, res) => {
       res.render('selecionar-endereco', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css'],
+        css: ['/stylesheets/menu-footer.css','/stylesheets/selecionar-endereco.css'],
       });
     },
 

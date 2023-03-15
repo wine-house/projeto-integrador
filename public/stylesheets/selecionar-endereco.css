@@ -1,0 +1,23 @@
+h1 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 13px;
+}
+
+.end-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.end-menu a {
+    font-size: 17px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.end-menu a:hover {
+    color:#8C3555;
+}
