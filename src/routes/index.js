@@ -23,9 +23,6 @@ router.get('/', index);
 /* pagina quem somos*/
 router.get('/somos', somos);
 
-/* página de login */
-router.get('/login', login);
-
 /* pagina eventos*/
 router.get('/eventos', eventos);
 

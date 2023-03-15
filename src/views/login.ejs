@@ -4,43 +4,28 @@
     <main id="us">
         <!--inicio do formulário-->
 
-        <form class="login" method="get">
+        <form action="/cliente/login" method="POST">
             <div class="container">
 
-                <div>
-                    <audio id="som" src="/midia/Where Am I - Text Me Records.mp3" controls ></audio>
-                </div>
                 <div class="card">
                     <div>
                         <h2 class="title">Bem-vindo à Wine House!</h2>
                         <p>Antes de continuar, faça seu login.</p><br>
                     </div>
 
-                    <div class="containerlabel">
-                        <label for="email-login"><strong>E-mail </strong></label><br>
+                    
+                        <label for="email">E-mail</label>
                         <input type="email" id="email" name="email">
-                        <div class="err-login-email invisible">Esse campo precisa ser preenchido!</div>
-                        <br>
-                        <label for="senha"><strong>Senha</strong></label>
-                        <br>
+                       
+                      
+                        <label for="senha">Senha</label>
                         <input type="password" id="password" name="senha">
-                        <div class="err-login-password invisible">Esse campo precisa ser preenchido<br> e sua senha deve
-                            ter pelo menos 6 caracteres!</div>
-                    </div>
-
-                    <div>
-                        <a class="link" href="">Esqueceu sua senha?</a><br><br>
-                        <input type="submit" id="enviar" name="Enviar"><br>
-                        <a class="link" href="/cliente/cadastrar-conta">
-                            <span>Faça seu cadastro</span></a>
-                    </div>
+                        
                 </div>
-                <br>
-                <br>
+                    <button type="submit" id="enviar">Fazer Login</button>    
             </div>
-
-            
-            <input id="linha"></input>
+            <a class="link" href="/cliente/cadastrar-conta">
+                <span>Faça seu cadastro</span></a>
         </form>
         
         <!--fim do formulário-->
