@@ -32,7 +32,7 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
             allowNull: false,
         },
 
-        produtos_id: {
+        produto_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -41,7 +41,7 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
             }
         },
 
-        clientes_id: {
+        cliente_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -52,7 +52,7 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
     };
 
     const opcoes = {
-        tableName: 'ItensCarrinhos',
+        tableName: 'ItensCarrinho',
         timestamps: false
     };
 

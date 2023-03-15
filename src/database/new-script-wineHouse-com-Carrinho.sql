@@ -1,28 +1,65 @@
+-- criando e usando o banco de dados
 CREATE DATABASE wine_house;
-
 USE wine_house;
 
+-- criando as tabelas
 CREATE TABLE clientes(
-id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(90) NOT NULL,
-email VARCHAR(45) NOT NULL UNIQUE,
-cpf VARCHAR(11) NOT NULL UNIQUE,
-data_nascimento DATE NOT NULL,
-senha VARCHAR(10) NOT NULL
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(90) NOT NULL,
+	email VARCHAR(45) NOT NULL UNIQUE,
+	cpf VARCHAR(11) NOT NULL UNIQUE,
+	data_nascimento DATE NOT NULL,
+	senha VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE fornecedores(
-id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nome VARCHAR(45) NOT NULL,
-email VARCHAR(45) NOT NULL UNIQUE,
-senha VARCHAR(10) NOT NULL
+	id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL UNIQUE,
+	senha VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE categorias(
-id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nome VARCHAR(45) NOT NULL
+	id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL
 );
 
+CREATE TABLE produtos(
+	id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	valor FLOAT NOT NULL,
+	imagem VARCHAR(150) NOT NULL,
+	safra VARCHAR(4) NOT NULL,
+	fornecedor_id INT UNSIGNED NOT NULL,
+	categoria_id INT UNSIGNED NOT NULL,
+	FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id),
+	FOREIGN KEY(categoria_id) REFERENCES categorias(id)
+);
+
+CREATE TABLE itenscarrinho(
+	id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	imagem VARCHAR(150) NOT NULL,
+	valor_unitario FLOAT NOT NULL,
+	quantidade INT NOT NULL,
+	valor_total FLOAT NOT NULL,
+	cliente_id INT UNSIGNED NOT NULL,
+	produto_id INT UNSIGNED NOT NULL,
+	FOREIGN KEY (produto_id) REFERENCES produtos(id),
+	FOREIGN KEY(cliente_id) REFERENCES clientes(id)
+);
+
+CREATE TABLE pedidos(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	data_criacao DATE NOT NULL,
+	valor_total FLOAT NOT NULL,
+	cliente_id INT UNSIGNED NOT NULL,
+	itemcarrinho_id INT UNSIGNED NOT NULL,
+	FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+	FOREIGN KEY (itemcarrinho_id) REFERENCES itenscarrinho(id)
+);
+
+-- populando as tabelas
 INSERT INTO categorias(nome)
 VALUES
 	('Vinho Tinto'),
@@ -30,43 +67,12 @@ VALUES
     ('Vinho Rose'),
     ('Espumante');
 
-
-CREATE TABLE produtos(
-id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nome VARCHAR(45) NOT NULL,
-valor FLOAT NOT NULL,
-imagem VARCHAR(150) NOT NULL,
-safra VARCHAR(4) NOT NULL,
-fornecedor_id INT UNSIGNED NOT NULL,
-categoria_id INT UNSIGNED NOT NULL,
-FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id),
-FOREIGN KEY(categoria_id) REFERENCES categorias(id)
-);
-
-
-
-CREATE TABLE carrinhos(
-id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-clientes_id INT UNSIGNED NOT NULL,
-FOREIGN KEY(clientes_id) REFERENCES clientes(id)
-);
-
-
-CREATE TABLE compras(
-id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-clientes_id INT UNSIGNED NOT NULL,
-FOREIGN KEY(clientes_id) REFERENCES clientes(id)
-);
-
-
 INSERT INTO fornecedores( nome, email, senha)
 VALUES
 	('Vínicula Rio do Sol', 'rioSol@gmail.com', 999999),
 	('Vínicula Terra Nova', 'terraNova@gmail.com', 333333),
     ('Vínicula Alves', 'viniculaAlves@gmail.com', 985484);
     
-
-
 INSERT INTO produtos(nome,valor,categoria_id,imagem,fornecedor_id,safra)
 VALUES
 ('Barone Montalto',88.00,1,'1-barone-montalto',1,2021),
@@ -91,8 +97,3 @@ VALUES
 ('Keyla', 'keyla@gmail.com', 13456, '10236589578', '2002-12-10'),
 ('Rodrigo', 'rodrigo@gmail.com', 003456, '145265891', '1998-05-28'),
 ('Matheus', 'matheus@gmail.com', 48456, '15489545698', '1994-02-20');
-
-INSERT INTO pedidos(data_criacao,valor_unitario,quantidade,cliente_id,produto_id)
-VALUES ('2023-02-06',88.00,1,1,8);
-
-SELECT * FROM produtos AS Produto;
