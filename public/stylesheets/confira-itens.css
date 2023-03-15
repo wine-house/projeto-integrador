@@ -49,7 +49,6 @@ h5 {
 .text-end {
     display: flex;
     flex-direction: column;
-    flex-grow: 50px;
     align-items: center;
     margin-left: 14rem;
     margin-top: 14rem;
