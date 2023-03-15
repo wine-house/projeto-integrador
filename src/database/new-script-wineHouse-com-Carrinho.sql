@@ -2,7 +2,6 @@ CREATE DATABASE wine_house;
 
 USE wine_house;
 
--- criando as tabelas
 CREATE TABLE clientes(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(90) NOT NULL,
@@ -44,51 +43,34 @@ FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 
 
 
-CREATE TABLE itenscarrinhos(
+CREATE TABLE carrinhos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nome VARCHAR(45) NOT NULL,
-imagem VARCHAR(150) NOT NULL,
-valor_unitario FLOAT NOT NULL,
-quantidade INT NOT NULL,
-valor_total FLOAT NOT NULL,
 clientes_id INT UNSIGNED NOT NULL,
-produtos_id INT UNSIGNED NOT NULL,
-FOREIGN KEY (produtos_id) REFERENCES produtos(id),
 FOREIGN KEY(clientes_id) REFERENCES clientes(id)
 );
 
-CREATE TABLE pedidos(
-id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-data_criacao DATE NOT NULL,
-valor_total FLOAT NOT NULL,
-quantidade INT NOT NULL,
+
+CREATE TABLE compras(
+id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 clientes_id INT UNSIGNED NOT NULL,
-itenscarrinhos_id INT UNSIGNED NOT NULL,
-FOREIGN KEY (clientes_id) REFERENCES clientes(id),
-FOREIGN KEY (itenscarrinhos_id) REFERENCES itenscarrinhos(id)
+FOREIGN KEY(clientes_id) REFERENCES clientes(id)
 );
 
--- populando as tabelas
-INSERT INTO clientes(nome, email, senha)
-VALUES
-('Keyla', 'keyla@gmail.com', 13456),
-('Rodrigo', 'rodrigo@gmail.com', 003456),
-('Matheus', 'matheus@gmail.com', 48456),
-('Catia', 'catia@gmail.com', 124456),
-('Sandra', 'sandra@gmail.com', 003456),
-('Keyla', 'keyla_santos@gmail.com', 4803456),
-('Pedro', 'pedro@gmail.com', 123486),
-('Rodrigo', 'rodrigo_cardoso@gmail.com', 0034446),
-('Matheus', 'matheus_oliveira@gmail.com', 4584034);
 
-INSERT INTO fornecedores(nome, email, senha)
+INSERT INTO fornecedores( nome, email, senha)
 VALUES
 	('Vínicula Rio do Sol', 'rioSol@gmail.com', 999999),
 	('Vínicula Terra Nova', 'terraNova@gmail.com', 333333),
     ('Vínicula Alves', 'viniculaAlves@gmail.com', 985484);
+    
+INSERT INTO categorias(nome)
+VALUES
+	('Vinho Tinto'),
+	('Vinho Seco'),
+    ('Vinho Rose'),
+    ('Espumante');
 
-
-INSERT INTO produtos(nome,valor,categoria,imagem,fornecedor_id,safra)
+INSERT INTO produtos(nome,valor,categoria_id,imagem,fornecedor_id,safra)
 VALUES
 ('Barone Montalto',88.00,1,'1-barone-montalto',1,2021),
 ('Matetic Corralillo',75.50,1,'2-corralillo',1,2016),
@@ -107,17 +89,11 @@ VALUES
 ('Stardust',82.50,3,'15-stardust',1,2018),
 ('Lumière',88.00,3,'16-lumière',1,2020);
 
-INSERT INTO clientes(nome, email, senha)
+INSERT INTO clientes(nome, email, senha, cpf, data_nascimento)
 VALUES
-('Keyla', 'keyla@gmail.com', 13456),
-('Rodrigo', 'rodrigo@gmail.com', 003456),
-('Matheus', 'matheus@gmail.com', 48456),
-('Catia', 'catia@gmail.com', 124456),
-('Sandra', 'sandra@gmail.com', 003456),
-('Keyla', 'keyla_santos@gmail.com', 4803456),
-('Pedro', 'pedro@gmail.com', 123486),
-('Rodrigo', 'rodrigo_cardoso@gmail.com', 0034446),
-('Matheus', 'matheus_oliveira@gmail.com', 4584034);
+('Keyla', 'keyla@gmail.com', 13456, '10236589578', '2002-12-10'),
+('Rodrigo', 'rodrigo@gmail.com', 003456, '145265891', '1998-05-28'),
+('Matheus', 'matheus@gmail.com', 48456, '15489545698', '1994-02-20');
 
 INSERT INTO pedidos(data_criacao,valor_unitario,quantidade,cliente_id,produto_id)
 VALUES ('2023-02-06',88.00,1,1,8);
