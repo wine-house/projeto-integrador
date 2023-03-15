@@ -1,6 +1,7 @@
 const {
   Produto,
-  ItensCarrinho
+  ItensCarrinho,
+  Pedido
 } = require('../models');
 
 module.exports = {
@@ -138,11 +139,19 @@ module.exports = {
       }
     },
 
-    painelUsuario: (req, res, next) => {
-      res.render('painel-usuario',  {
-        usuario: req.session.usuario,
-        css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
-      });
+    painelUsuario: async(req, res, next) => {
+      try {
+        const pedidos = await Pedido.findAll();
+
+        res.render('painel-usuario',  {
+          pedidos: pedidos,
+          usuario: req.session.usuario,
+          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
+        });
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Erro ao exibir a listagem dos pedidos');
+      }
     },
 
     conferirItens: (req, res) => {

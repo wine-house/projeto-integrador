@@ -17,6 +17,10 @@ div.painel-vertical {
     opacity: 1;
 }
 
+.foto-cliente {
+    width: 24vw;
+}
+
 div.foto-cliente img {
     border-radius: 100%;
     width: 60%;
@@ -117,6 +121,34 @@ div#chat-link a {
     text-decoration: none;
     color: white;
 
+}
+
+.sec-sem-prod {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec-sem-prod > img {
+    width: 27vw;
+}
+
+.btn-go-prod {
+    background-color: var(--cor-vinho-verde);
+    font-size: 1.4rem;
+    margin-top: 3rem;
+    padding: 1.7rem 2rem;
+    min-width: 120px;
+    transition: all .5s;
+    color: white;
+    border-radius: 9px;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-go-prod:hover {
+    background-color: #849207;
+    cursor: pointer;
 }
 
 
