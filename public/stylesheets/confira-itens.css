@@ -1,12 +1,17 @@
-h1 {
-    font-size: 30px;
-    text-align: center;
+.title-page {
+margin-top: 3rem;
 }
+
 
 .subtitle {
     font-size: 17px;
     text-align: center;
-    
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
 }
 
 img {
@@ -17,7 +22,7 @@ img {
 
 .item {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     
 }
 
@@ -44,6 +49,7 @@ h5 {
 .text-end {
     display: flex;
     flex-direction: column;
+    flex-grow: 50px;
     align-items: center;
     margin-left: 14rem;
     margin-top: 14rem;
@@ -59,12 +65,13 @@ h5 {
 }
 
 .container {
-    border:#530112 .2rem solid;
+    border:#530112 .1rem solid;
 }
 
 .adress {
     font-size: 20px;
     text-align: justify;
+    border-top: #530112 .1rem solid;
 }
 
 .text-dark-adress {

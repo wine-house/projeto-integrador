@@ -2,11 +2,42 @@
 
     <!--MAIN-->
     <main class="flex-fill">
+        <h1 class="title-page">CONFIRA OS VINHOS ESCOLHIDOS POR VOCÊ</h1>
+        <h3 class="subtitle">Confirme os itens do carrinho e insira o endereço de entrega</b>.</h3>
+        <div class="container">
+            <h1 class="adress">SELECIONE O ENDEREÇO DE ENTREGA</h1>
+            <h3 class="mb-4">
+                Selecione o endereço de entrega e clique em <b>Continuar</b> para prosseguir para a <b>seleção da
+                    forma de pagamento</b>.
+            </h3>
+            
+            <div class="d-flex justify-content-around flex-wrap border rounded-top pt-4 px-2">
+                <div class="mb-4 mx-2 flex-even">
+                    <input type="radio" class="btn-check" name="endereco" 
+                        autocomplete="off" id="end1">
+                    <label class="btn btn-outline-dark p-4 h-100 w-100" for="end1">
+                        <h3 class="text-dark-adress">
+                            <b>Minha Casa</b><br>
+                            <hr>
+                            <b >Ricardo Maroquio</b><br>
+                            Rua Caminho Virtual, 101<br>
+                            Compulândia/PC<br>
+                            CEP 01.010-101
+                        </h3>
+                    </label>
+                    </div>                   
+                    </div>
+
+                    <div class="end-menu">                    
+                        <a href="/selecionar-endereco" class="btn btn-outline-success btn-lg mb-4">
+                            Adicionar novo endereço de entrega
+                        </a>
+                        <a href="/fechamento-pagamento" class="btn btn-danger btn-lg ms-2 mb-4">Continuar para Forma de Pagamento</a>
+                    </div>
+                </div>
+
 
         <div class="container">
-            <h1>CONFIRA OS VINHOS ESCOLHIDOS POR VOCÊ</h1>
-            <h3 class="subtitle">Confirme os itens do carrinho e insira o endereço de entrega</b>.</h3>
-
             <ul class="item">
                 <li class="list-group-item py-3">
                     <div class="row g-3">
@@ -34,6 +65,8 @@
                     </div>
                 </li>
 
+                
+                
                 <ul class="item">
                     <li class="list-group-item py-3">
                         <div class="row g-3">
@@ -74,38 +107,6 @@
                     </li>
                 </ul>
             </div>
-
-        <div class="container">
-            <h1 class="adress">SELECIONE O ENDEREÇO DE ENTREGA</h1>
-            <h3 class="mb-4">
-                Selecione o endereço de entrega e clique em <b>Continuar</b> para prosseguir para a <b>seleção da
-                    forma de pagamento</b>.
-            </h3>
-            
-            <div class="d-flex justify-content-around flex-wrap border rounded-top pt-4 px-2">
-                <div class="mb-4 mx-2 flex-even">
-                    <input type="radio" class="btn-check" name="endereco" 
-                        autocomplete="off" id="end1">
-                    <label class="btn btn-outline-dark p-4 h-100 w-100" for="end1">
-                        <h3 class="text-dark-adress">
-                            <b>Minha Casa</b><br>
-                            <hr>
-                            <b >Ricardo Maroquio</b><br>
-                            Rua Caminho Virtual, 101<br>
-                            Compulândia/PC<br>
-                            CEP 01.010-101
-                        </h3>
-                    </label>
-                    </div>                   
-                    </div>
-
-                    <div class="end-menu">                    
-                        <a href="/selecionar-endereco" class="btn btn-outline-success btn-lg mb-4">
-                            Adicionar novo endereço de entrega
-                        </a>
-                        <a href="/fechamento-pagamento" class="btn btn-danger btn-lg ms-2 mb-4">Continuar para Forma de Pagamento</a>
-                    </div>
-                </div>
             </main>    
     <!--end MAIN-->
 
