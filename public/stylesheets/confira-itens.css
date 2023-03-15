@@ -1,0 +1,98 @@
+.title-page {
+margin-top: 3rem;
+}
+
+
+.subtitle {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+img {
+    width: 30rem;
+    height: 30rem;
+}
+
+
+.item {
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.list-group-item{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: justify;
+}
+
+h4 {
+    font-size: 20px;
+    text-align: justify;
+}
+
+h5 {
+    font-size: 13px;
+    text-align: justify;
+}
+
+.text-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 14rem;
+    margin-top: 14rem;
+}
+
+.text-end a {
+    color: black;
+    font-size: 17px;
+}
+
+.text-end a:hover {
+    color:#8C3555;
+}
+
+.container {
+    border:#530112 .1rem solid;
+}
+
+.adress {
+    font-size: 20px;
+    text-align: justify;
+    border-top: #530112 .1rem solid;
+}
+
+.text-dark-adress {
+    font-size: 15px;
+}
+
+.mb-4 {
+    font-size: 15px;
+}
+
+.end-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.end-menu a {
+    font-size: 17px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.end-menu a:hover {
+    color:#8C3555;
+}

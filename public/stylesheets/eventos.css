@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-cachos-uva {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+
+}
+
+main {
+    text-align: center;
+}
+
+main > section {
+    display: flex;
+    justify-content: center;
+}
+
+.div-uva {
+    background-color: aqua;
+    height: 2rem;
+}
+
+.janeiro {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 6rem;
+    color: #6B081C
+}
+
+.fevereiro {
+    color:  #6B081C;
+    margin-top: 10rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contaier-filho {
+    margin-top: 3rem;
+}
+
+hr {
+    margin-bottom: 10rem;
+    margin-top: 13rem;
+    height: 2.5px;
+    background-color: #997C00;
+}
+
+.img-janeiro {
+    border-radius: 2rem;
+}
+
+.img-fevereiro {
+    text-align: center;
+    border-radius: 2rem;
+    margin-bottom: 10rem;
+}
+
+.escolha-vinhos {
+    background-color: #6B081C;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.text-escolhas {
+    display: flex;
+    margin-top: 8rem;
+}
+
+.text-title {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 8rem;
+    color: white;
+}
+
+.text-subtitle {
+    font-size: 3rem;
+    color: #C8A922;
+    margin-top: 7rem;
+}
+
+.img-tres-categorias {
+    width: 57vw;
+    height: 56vh;
+    margin: 3rem 0 10rem 0;
+}
+

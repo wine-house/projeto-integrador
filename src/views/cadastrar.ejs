@@ -1,0 +1,87 @@
+<%- include("partials/header") %>
+
+    <main>
+        <h1>
+            CADASTRO DE PRODUTOS
+        </h1>
+        <hr>
+        <form action="/admin/produtos/criar" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+            <section class="section-filha-form section-container1 section-nome-preco">
+                <!-- Nome -->
+                <em class="emNome-Preco">
+                    Nome do produto:
+                </em>
+                <input class="inpt nome inptPreco" type="text" placeholder="Digite aqui o nome do produto" name="nome">
+                <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
+                <!-- Preço -->
+                <div class="emPrecoClass">
+                    <em class="emNome-Preco">
+                        Preço:
+                    </em>
+                        <input class="preco inptPreco" type="number" placeholder="R$ 00,00" name="valor">
+                        <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
+                </div>
+            </section>
+            <section class="section-filha-form section-container2">
+                
+                
+                
+                <div class="div-container2 div-filha2">
+                       
+                    <div>
+                        <!-- Categorias -->
+                        <em>
+                            Categoria:
+                        </em>
+                        <select class="select-cadastro" name="categoria">
+                            <option value="Vinho Branco">Vinho Branco</option>
+                            <option value="Vinho Rose">Vinho Rose</option>
+                            <option value="Vinho Tinto">Vinho Tinto</option>
+                            <option value="Champanhe Espumante">Champanhe Espumante</option>
+                        </select>
+                     </div>
+                    <div>
+                        <em id="fornecedores">
+                            Fornecedores:
+                        </em>
+
+                        <select  class="select-cadastro" name="fornecedor">
+                            <% for(let fornecedor of fornecedores){ %>
+                            <option value="<%= fornecedor.id %>"><%= fornecedor.nome %></option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <div>
+                        <em id="safra">
+                            Safra:
+                        </em>
+
+                        <select class="select-cadastro" name="safra">
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+                    
+
+                    <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
+                </div>
+                <div class="div-container2 div-filha2">
+                    <label id="labelFile" for="imagem">Inserir aqui a foto</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/png, image/jpeg"/>
+                </div>
+            </section>
+            <button type="submit" id="btn-submit" >Enviar</button>
+        </form>
+
+    </main>
+
+    <!--JavaScript-->
+    <!-- <script src="/js/menu-footer.js"></script> -->
+    <!-- <script src="/js/cadastrar.js"></script> -->
+    <!--end JavaScript-->
+    
+<%-include("partials/footer")%> 

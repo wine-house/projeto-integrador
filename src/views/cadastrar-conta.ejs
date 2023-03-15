@@ -1,0 +1,86 @@
+<%- include('partials/header') %> 
+
+<!--MAIN-->
+    <main id="us">
+        <!--inicio do formulário-->
+
+        <section id="cadastro">
+            <div class="form-cadastro">
+                <h2 class="title">Comece agora a viver o melhor do mundo dos vinhos!</h2>
+                <h3 class="titulo">Aqui você encontra os melhores vinhos!</h3><br>
+                <h4>Faça seu cadastro.</h4>
+
+                <form action="/cliente/cadastrar-conta" method="post" class="form-body">
+                    <div>
+                        <div>
+                            <label for="imageProfile">Imagem de Perfil</label>
+                            <input type="file" name="imageProfile" accept="image/*">
+                        </div>
+                        <div>
+                            <label for="name-form"><strong>Nome</strong></label>
+                            <input type="text" id="nome-form" name="name" placeholder="Digite seu nome">
+                            <div class="err-register-name-form invisible red">Você precisa digitar seu nome!</div>
+                        </div>
+                        
+                        <div>
+                            <label for="email-form"><strong>E-mail</strong></label>
+                            <input type="email" id="email-form" name="email" placeholder="winehouse@gmail.com">
+                            <div class="err-register-email-form invisible red">Digite um email válido!</div>
+                        </div>
+                        <div>
+                            <label for="date-form"><strong>Data de nascimento</strong></label>
+                            <input type="date" id="date-form" name="date">
+                            <div class="err-register-date-form invisible red">Digite a data do seu nascimento!</div>
+                        </div>
+
+                        <div class="password">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password-form" name="password" placeholder="Digite sua senha">
+                            <div class="err-register-password-form invisible red">Digite sua senha!</div>
+                        </div>
+
+                        <div class="password">
+                            <label for="passwordConfirmation">Senha</label>
+                            <input type="password" id="password-form" name="passwordConfirmation" placeholder="Digite sua senha">
+                            <div class="err-register-password-form invisible red">Digite sua senha!</div>
+                        </div>
+
+                        <p><strong>Não esqueça:</strong></p>
+
+                        <label for="ciente">
+                            <input type="checkbox" id="ciente" value="true" name="ciente">
+                            "Estou ciente da proibição legal
+                            contida no artigo 81, II da Lei nº 8.069/90 de venda de bebidas alcoólicas
+                            para crianças e adolescentes menores de 18 anos de idade."
+                        </label>
+                            <div class="err-register-ciente invisible red">Marque que está ciente!</div>
+                    <br>
+                        <label for="maiorque18">
+                            <input type="checkbox" id="maiorque18" value="true" name="maiorque18">
+                            "Estou ciente com o tratamento de meus dados pessoais, conforme
+                            descrito na Política de Privacidade".</label>
+                        <div class="err-register-maiorque18 invisible red">Marque que está ciente!</div>
+
+                        <button type="submit" class="btn-submit">Cadastrar</button>
+
+                       <span class="mensagem-cadastro">Cadastro efetuado com sucesso!</span>
+                    </div>
+
+                    <div>
+                        <img class="imagem" src="/images/tela-login/garrafa.png" alt="garrafas de vinho">
+                    </div>
+                </form>
+            </div>
+
+        </section>
+        <!--fim do formulário-->
+        <a class="link-top" href="#us"> <i class="fas fa-arrow-up"></i></a>
+    </main>
+    <!--end MAIN-->
+
+  <!--JavaScript-->
+  <script src="/js/menu-footer.js"></script>
+  <script src="/js/login.js"></script>
+  <!--end JavaScript-->
+    
+  <%- include('partials/footer') %> 

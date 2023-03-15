@@ -1,0 +1,92 @@
+<%- include("partials/header") %>
+
+    <main>
+        <h1>
+
+                DELETAR PRODUTO
+
+        </h1>
+        <hr>
+
+            <form class="form" id="formulario" action="/admin/produtos/deletar/<%=produto.id%>?_method=delete" method="post">
+
+            <section class="section-filha-form section-container1">
+                <em>
+
+                    Nome do produto:
+                </em>
+                <input class="inpt nome" type="text" value="<%=produto.nome%>"
+                    placeholder="Digite aqui o nome do produto">
+                <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
+                <em>
+                    Descrição do produto:
+                </em>
+                <textarea class="descricao" type="text" placeholder="Digite a descrição aqui"></textarea>
+                <span role="alert" id="descricaoError" aria-hidden="true">O campo descrição não pode estar vazio</span>
+            </section>
+            <section class="section-filha-form section-container2">
+
+
+                <div class="div-container2 div-filha1">
+                    <em>
+                        Imagem do produto:
+                    </em>
+
+                        <img src="/images/tela-produtos/<%=produto.imagem%>.png" alt="Selecione uma imagem" id="imgFoto">
+
+                        <input class="inpt btn-cadastrar" type="file" id="file" name="file"  accept="image/*">
+                        <span role="alert" id="imgError" aria-hidden="true">O campo imagem não pode estar vazio</span>
+                </div>
+
+                <div class="div-container2 div-filha2">
+                    <em>
+                        Preço:
+                    </em>
+                    <input class="inpt preco" type="text" value="<%=produto.valor%>" placeholder="R$ 00,00">
+                    <span role="alert" id="precoError" aria-hidden="true">O campo preço não pode estar vazio</span>
+                    <em>
+                        Categoria:
+                    </em>
+
+
+                            <div class="radio">
+                                <input class="inpt radio" id='branco' type="radio" name="categoria" value="branco"
+                                    <%=produto.categoria=="Vinho Branco" ? "checked" :"" %>>
+                                <label for="branco">Branco</label>
+                            </div>
+
+                            <div class="radio">
+                                <input class="inpt radio" id='rose' type="radio" name="categoria" value="rose" <%=produto.categoria=="Vinho Rose"
+                                    ? "checked" :"" %>>
+                                <label for="rose">Rose</label>
+                            </div>
+
+                            <div class="radio">
+                                <input class="inpt radio" id='tinto' type="radio" name="categoria" value="tinto"
+                                    <%=produto.categoria=="Vinho Tinto" ? "checked" :"" %>>
+                                <label for="tinto">Tinto</label>
+                            </div>
+
+                            <div class="radio">
+                                <input class="inpt radio" id='espumante' type="radio" name="categoria" value="espumante"
+                                    <%=produto.categoria=="Espumante" ? "checked" :"" %>>
+                                <label for="espumante">Espumante</label>
+                            </div>
+
+                            <span role="alert" id="categoriaError" aria-hidden="true">O campo categoria não pode estar vazio</span>
+
+
+                </div>
+            </section>
+            <button id="btn-submit" type="submit">Deletar</button>
+            <span role="alert" id="descricaoSucess" aria-hidden="true">Seu produto foi cadastrado com sucesso!</span>
+        </form>
+
+    </main>
+
+    <!--JavaScript-->
+    <script src="/js/menu-footer.js"></script>
+    <script src="/js/cadastrar.js"></script>
+    <!--end JavaScript-->
+
+    <%-include("partials/footer")%>

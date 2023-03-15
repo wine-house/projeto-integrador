@@ -1,0 +1,75 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    display: flex;    
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.container {
+    display: flex;    
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.container__img_prod {
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 20px 10px 20px 10px;
+    width: 30%;
+    padding: 4rem;
+    align-items: center;
+
+}
+
+.container__img_prod img {
+    align-items: center;
+
+}
+
+
+.container__img_prod:hover img {
+    transform: scale(1.2); 
+}
+
+.container__desc_prod {
+    flex-direction: column;
+    width: 60rem;
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.container__desc_prod > h1 {
+    font-size: 3rem;
+}
+
+.container__desc_prod > h2 {
+    background-color: red;
+    height: 2.5rem;
+    border-radius: .5rem;
+    margin: 5rem 24rem 2rem 24rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    color: white;
+    border: solid 1.1px black;
+}
+
+.container__desc_prod > p {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8rem;
+}
+
+.botao-adiciona {
+    background-color: #A0B200;
+    font-weight: 600;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}

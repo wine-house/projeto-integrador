@@ -1,0 +1,24 @@
+<%- include('partials/header') %> 
+
+    <!--MAIN-->
+    <main>
+        <section class="container">
+            <header class="container__img_prod">
+                <img src="/images/tela-produtos/<%=produto.imagem%>.png" alt="">
+            </header>
+            <section class="container__desc_prod">
+                <h1>
+                    <%= produto.nome %>
+                </h1>
+                <h2>15% OFF</h2>
+                <p>R$<%= produto.valor %>,00</p>
+                <form action="/produtos/produto-interno/<%= produto.id %>" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+                    <button type="submit" id="btn-submit" class="botao-adiciona" >Adicionar no carrinho</button>
+                </form>
+
+            </section>
+        </section>
+    </main>
+    <!--end MAIN-->
+
+<%- include('partials/footer') %> 

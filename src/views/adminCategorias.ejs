@@ -1,0 +1,55 @@
+<%- include('partials/headerAdm') %> 
+
+	<main>
+		<div class="titulo">
+				<h1>
+					PAINEL ADMINISTRATIVO
+				</h1>
+				<a id="btn-flat" href="/admin/produtos/categoria/criar">Adicionar Categorias</a>
+		</div>
+		
+		
+		<hr>
+		<form method="get">
+			<input type="search" name="search" id="search">
+			<button type="submit">Search</button>
+		</form>
+		<div class="teste">
+			<% if(categorias.length> 0){ %>
+				<div class="form" id="formulario">
+					<div class="table-container">
+						<table id="tbl-01">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Nome</th>
+									<th> Opções</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for(let categoria of categorias) { %>
+									<tr>
+										<td> <%= categoria.id %></td>
+										<td><%= categoria.nome %></td>
+										<td class="opcoes-crud"> 
+											<a id="editar-button" href="/admin/produtos/editar/<%= categoria.id %>">Editar</a> 
+											<form action="/admin/produtos/<%= categoria.id %>?_method=DELETE" method="post">
+												<button type="submit">Deletar</button>
+											</form>
+										</td>
+									</tr>
+								<% } %>
+							</tbody>
+	
+						</table>
+					</div>
+				</div>
+				<% } else { %>
+					<h2 class="error-alert">NENHUMA CATEGORIA FOI ENCONTRADA :(</h2>
+				<%} %>
+		</div>
+	</main>
+	<!--JavaScript-->
+	<script src="/js/menu-footer.js"></script>
+	<!--end JavaScript-->
+	<%-include("partials/footer")%>

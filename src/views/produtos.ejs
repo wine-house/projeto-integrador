@@ -1,0 +1,55 @@
+<%- include('partials/header') %> 
+
+<!--MAIN-->
+    <main id="products">
+        <!--Produtos-->
+        <section class="products">
+            <aside class="products__categories">                
+                <h2 class="products__categories__title">Categorias</h2>         
+                
+                <% for(categoria of categorias){ %>
+                    <form action="/produtos/<%= categoria.nome %>" class="products__categories__links" method="get">
+                        <button class="products__categories__link" type="submit"><%= categoria.nome %></button>
+                    </form>
+                <% } %>
+
+            </aside>
+
+            <div class="products__wines">
+                <div class="products__content">
+                    <% for(produto of produtos) { %>
+                    <article class="products__item">
+                        <header>
+                            <figure class="products__item__image">
+                                <img src="/images/tela-produtos/<%= produto.imagem%>.png" alt="Vinho Tinto">
+                            </figure>
+                            
+
+                            <button class="products__item__buy" id="<%= produto.id%>">
+                                <a href="/produtos/produto-interno/<%= produto.id%>"> Comprar</a>
+                            </button>
+                            
+                        </header>
+
+                        <footer>
+                            <span class="products__item__name"><%= produto.nome%></span>
+                            <span class="products__item__price"><%= produto.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%></span>
+                        </footer>
+                    </article>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+
+        <!--Link to Top-->
+        <a class="link-top" href="#products">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </main>
+    <!--end MAIN-->
+
+    <!--JavaScript-->
+    <script src="/js/menu-footer.js"></script>
+    <!--end JavaScript-->
+
+<%- include('partials/footer') %> 
