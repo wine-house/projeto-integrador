@@ -1,6 +1,7 @@
 const {
   Produto,
-  ItensCarrinho
+  ItensCarrinho,
+  Pedido
 } = require('../models');
 
 module.exports = {
@@ -55,17 +56,6 @@ module.exports = {
         });
     },
 
-    carrinho: (req, res) => {
-      try
-      {
-        res.render('carrinho', {
-          css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-        });
-      } catch (error){
-        console.log(error);
-      };
-    },
-
     viewCarrinho: async (req, res) => {
       try {
         const itensCarrinho = await ItensCarrinho.findAll();
@@ -80,6 +70,31 @@ module.exports = {
         console.error(error);
         res.status(500).send('Erro ao exibir o carrinho');
       }
+    },
+
+    adicionaItemNoCarrinho: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const qtdInicial = 1;
+            const clienteMock = 1;
+    
+            const produto = await Produto.findByPk(id);
+    
+            await ItensCarrinho.create({
+                nome: produto.nome,
+                valor_unitario: produto.valor,
+                valor_total: produto.valor,
+                imagem: produto.imagem,
+                quantidade: qtdInicial,
+                produtos_id: id,
+                clientes_id: clienteMock
+            });
+    
+            res.redirect('/carrinho/');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Erro ao adicionar o item ao carrinho');
+        }
     },
  
     adicionaQtdDoItemCarrinho: async (req, res) => {
@@ -105,6 +120,7 @@ module.exports = {
         const { id } = req.params;
         const item = await ItensCarrinho.findByPk(id);
   
+        // caso a quantidade chegue a zero, ele deleta o item do banco automaticamente
         if (item.quantidade < 2) {
           await item.destroy();
         } else {
@@ -149,6 +165,28 @@ module.exports = {
       res.render('confira-itens', {
         css: ['/stylesheets/menu-footer.css','/stylesheets/confira-itens.css']
       });
+    },
+
+    criaPedidoDeCompra: async(req, res) => {
+      try {
+        const clienteId = 1;
+        const itensCarrinho = await ItensCarrinho.findAll({
+          where: { clientes_id: clienteId },
+          include: { model: Produto, as: 'produto' }
+        });
+        const produtos = itensCarrinho.map(item => item.produto);
+        const total = itensCarrinho.reduce((acc, item) => acc + item.valor_total, 0);
+        const pedido = await Pedido.create({
+          clientes_id: clienteId,
+          valor_total: total,
+          data_criacao: new Date()
+        });
+        await pedido.addProdutos(produtos);
+        await ItensCarrinho.destroy({ where: { clientes_id: clienteId } });
+        res.render('compraFinalizada', { total: total });
+      } catch (error) {
+        console.log(error);
+      }
     },
 
     selecionarEndereco:  (req, res) => {

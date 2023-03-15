@@ -6,6 +6,5 @@ const produtosController = require('../controller/produtosController');
 router.get('/:categoria?', produtosController.index);
 
 router.get('/produto-interno/:id', produtosController.viewProdInternoById);
-router.post('/produto-interno/:id', produtosController.adicionaItemNoCarrinho);
 
 module.exports = router;

@@ -1,3 +1,5 @@
+// const Produto = require('./index');
+
 const criarPedidoModel = (sequelize, dataTypes) => {
     const colunas = {
         id: {
@@ -15,6 +17,15 @@ const criarPedidoModel = (sequelize, dataTypes) => {
         valor_total: {
             type: dataTypes.FLOAT,
             allowNull: false,
+        },
+
+        clientes_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'clientes', //nome da tabela que será referenciada pela chave estrangeira
+                key: 'id' //nome da coluna que será referenciada pela chave estrangeira
+            }
         }
 };
 
@@ -23,7 +34,19 @@ const criarPedidoModel = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Pedido = sequelize.define('Pedido', colunas, opcoes)
+    // Define Pedido model
+    const Pedido = sequelize.define('Pedido', colunas, opcoes);
+
+    // Define association between Pedido and Produto models
+    Pedido.associate = function(models) {
+        Pedido.belongsToMany(models.Produto, {
+            through: 'pedidos_produtos',
+            foreignKey: 'pedido_id',
+            otherKey: 'produto_id',
+            as: 'produtos',
+            onDelete: 'CASCADE'
+        });
+    }
     
     return Pedido;
 };

@@ -46,7 +46,9 @@ const criarProdutoModel = (sequelize, dataTypes) => {
 
 
     const Produto = sequelize.define('Produto', colunas, opcoes);
-
+    Produto.associate = function(models) {
+        Produto.hasMany(models.ItensCarrinho, {as: 'itensCarrinho', foreignKey: 'produtos_id'});
+      };
     Produto.associate = models => {
         
         Produto.belongsTo(models.Fornecedor, {

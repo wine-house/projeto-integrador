@@ -93,9 +93,12 @@
           Voltar para produtos
         </button>
 
-        <button class="carrinho__button__finish btn" onclick="window.location.href='/confira-itens'">
-          Finalizar a compra
-        </button>
+        <form action="/confira-itens" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="total" value="<%= total %>">
+          <% console.log('TOTAL PASSANDOOOOO:   ',total) %>
+          <button type="submit" id="btn-submit" class="carrinho__button__finish btn">Finalizar a compra</button>
+        </form>
+        
       </section>
     </article>
   </section>

@@ -1,3 +1,5 @@
+
+
 const criarItensCarrinhoModel = (sequelize, dataTypes) => {
     const colunas = {
         id: {
@@ -58,6 +60,10 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
 
 
     const ItensCarrinho = sequelize.define('ItensCarrinho', colunas, opcoes)
+    
+    ItensCarrinho.associate = function(models) {
+        ItensCarrinho.belongsTo(models.Produto, {as: 'produto', foreignKey: 'produtos_id'});
+      };
 
     return ItensCarrinho;
 };

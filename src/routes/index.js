@@ -5,6 +5,7 @@ const {
     eventos,
     parceiros,
     viewCarrinho,
+    adicionaItemNoCarrinho,
     adicionaQtdDoItemCarrinho,
     subtraiQtdDoItemCarrinho,
     deletaItemCarrinho,
@@ -13,7 +14,8 @@ const {
     selecionarEndereco, 
     fechamentoPagamento, 
     fechamentoPedido,
-    login
+    login,
+    criaPedidoDeCompra
 } = require('../controller/indexController');
 
 const router = express.Router();
@@ -34,6 +36,7 @@ router.get('/parceiros', parceiros);
 
 /* pagina carrinho*/
 router.get('/carrinho', viewCarrinho);
+router.post('/produtos/produto-interno/:id', adicionaItemNoCarrinho);
 router.put('/carrinho/adiciona/:id', adicionaQtdDoItemCarrinho);
 router.put('/carrinho/subtrai/:id', subtraiQtdDoItemCarrinho);
 router.delete('/carrinho/:id', deletaItemCarrinho);
@@ -43,6 +46,7 @@ router.get('/painel-usuario', painelUsuario);
 
 /* pagina confira itens*/
 router.get('/confira-itens', conferirItens);
+router.post('/confira-itens', criaPedidoDeCompra)
 
 /* pagina selecionar endereço*/
 router.get('/selecionar-endereco', selecionarEndereco);
