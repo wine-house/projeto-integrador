@@ -15,11 +15,6 @@ const criarPedidoModel = (sequelize, dataTypes) => {
         valor_total: {
             type: dataTypes.FLOAT,
             allowNull: false,
-        },
-
-        quantidade: {
-            type: dataTypes.INTEGER,
-            allowNull: false
         }
 };
 

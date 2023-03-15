@@ -69,8 +69,8 @@ module.exports = {
                 valor_total: produto.valor,
                 imagem: produto.imagem,
                 quantidade: qtdInicial,
-                produtos_id: id,
-                clientes_id: clienteMock
+                produto_id: id,
+                cliente_id: clienteMock
             });
     
             res.redirect('/carrinho/');

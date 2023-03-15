@@ -32,7 +32,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        categorias_id: {
+        categoria_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
@@ -56,7 +56,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
         
         Produto.belongsTo(models.Categoria, {
             as: "categoria",
-            foreignKey: "categorias_id"
+            foreignKey: "categoria_id"
         });
     };
 
