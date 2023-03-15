@@ -15,6 +15,7 @@ module.exports = {
           });
         } catch (error) {
           console.log(error);
+          res.status(500).send('Erro ao exibir a tela inicial.');
         };
     },
 
@@ -25,6 +26,7 @@ module.exports = {
         });
         } catch (error) {
           console.log(error);
+          res.status(500).send('Erro ao exibir a tela somos.');
         } 
     },
 
@@ -36,6 +38,7 @@ module.exports = {
           });
         } catch (error){
           console.log(error);
+          res.status(500).send('Erro ao exibir a tela de eventos.');
         }
     },
 
@@ -47,18 +50,8 @@ module.exports = {
         });
       } catch (error){
         console.log(error);
+        res.status(500).send('Erro ao exibir a tela parceiros.');
       }
-    },
-
-    carrinho: (req, res) => {
-      try
-      {
-        res.render('carrinho', {
-          css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-        });
-      } catch (error){
-        console.log(error);
-      };
     },
 
     viewCarrinho: async (req, res) => {
@@ -90,7 +83,7 @@ module.exports = {
         res.redirect('/carrinho');
       } catch (error) {
         console.error(error);
-        res.status(500).send('Erro ao adicionar o item ao carrinho');
+        res.status(500).send('Erro ao aumentar a quantidade do item no carrinho.');
       }
       
     },
@@ -143,43 +136,52 @@ module.exports = {
           css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
         });
       } catch (error) {
-        console.error(error);
-        res.status(500).send('Erro ao exibir a listagem dos pedidos');
+        console.log(error);
+        res.status(500).send('Erro ao exibir o painel do usuário.');
       }
     },
 
     conferirItens: (req, res) => {
-      res.render('confira-itens', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/confira-itens.css']
-      });
+      try {
+        res.render('confira-itens', {
+          css: ['/stylesheets/menu-footer.css','/stylesheets/confira-itens.css']
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao exibir a tela de conferir os itens.');
+      }
     },
 
     selecionarEndereco:  (req, res) => {
-      res.render('selecionar-endereco', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/selecionar-endereco.css'],
-      });
+      try {
+        res.render('selecionar-endereco', {
+          css: ['/stylesheets/menu-footer.css','/stylesheets/selecionar-endereco.css'],
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao exibir a tela de endereços.');
+      }
     },
 
     fechamentoPagamento: (req, res) => {
-      res.render('fechamento-pagamento', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-      });
+      try {
+        res.render('fechamento-pagamento', {
+          css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao exibir a tela de pagamentos.');
+      }
     },
 
     fechamentoPedido: (req, res) => {
-      res.render('fechamento-pedido', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/fechamento-pedido.css']
-      });
-    },
-    
-    login: (req, res, next) => {
-      try
-      {
-        res.render('login', {
-          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
+      try {
+        res.render('fechamento-pedido', {
+          css: ['/stylesheets/menu-footer.css','/stylesheets/fechamento-pedido.css']
         });
-      } catch (error){
+      } catch (error) {
         console.log(error);
-      };
+        res.status(500).send('Erro ao exibir a tela de finalização de pedidos.');
+      }
     }
 }

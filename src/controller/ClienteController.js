@@ -6,16 +6,13 @@ const { Op } = require('sequelize');
 const ClienteController = {
   getForm: async (req, res) => {
     try{
-
       return res.render('cadastrarCliente', {
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
       });
 
     } catch (err) {
       console.log(err);
-      return res.render('error', {
-        css: ['/stylesheets/menu-footer.css']
-      });
+      res.status(500).send('Erro ao exibir a tela de cadastro do cliente.');
     }
   },
 
@@ -49,13 +46,19 @@ const ClienteController = {
     
     } catch (error) {
       console.log(error);
+      res.status(500).send('Erro ao criar o usuário.');
     }
   },
 
   getFormLogin: (req, res) => {
-    return res.render('login', {
-      css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
-    });
+    try {
+      return res.render('login', {
+        css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Erro exibir a tela de login.');
+    }
   },
 
   login: async (req, res) => {
@@ -79,18 +82,14 @@ const ClienteController = {
         req.session.usuario = cliente[0];
         return res.redirect('/painel-usuario');
       } else {
-        return res.render('error', {
-          message: "O usuário não está cadastrado no banco de dados"
-        });
+        res.status(500).send('Ops, você ainda não possui um cadastro no no site.');
       }
       
 
-    } catch (err) {
-      return res.render('error', {
-        message: err
-      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Erro ao tentar logar.');
     }
-
   }
 };
 
