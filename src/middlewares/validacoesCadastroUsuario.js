@@ -3,6 +3,8 @@ const { body } = require("express-validator");
 const validacoesCadastroUsuario = [
   body('name')
     .notEmpty().withMessage('Você deve preencher o campo do nome.').bail(),
+  body('imageProfile')
+    .notEmpty().withMessage('Você deve inserir uma imagem'),
   body('email')
   .isEmail().withMessage('Você deve preencher o campo email com um email')
   .notEmpty().withMessage('O campo email está vazio!'),
