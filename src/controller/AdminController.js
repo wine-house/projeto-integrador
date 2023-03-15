@@ -22,11 +22,8 @@ const AdminController = {
             });
         } 
         catch (error){
-            console.log(error)
-            return res.status(500).json({
-                mensagem: error,
-                status: 500
-            });
+            console.log(error);
+            res.status(500).send('Erro ao exibir a tela painel administrativo.');
         };
     },
     
@@ -37,16 +34,14 @@ const AdminController = {
             const fornecedores = await Fornecedor.findAll();
             const categorias = await Categoria.findAll();
             
-
             res.render('cadastrar', {
                 css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
                 fornecedores: fornecedores,
                 categorias: categorias
             });
         } catch (error){
-            return res.status(500).json({
-                mensagem: "Não foi possível carregar essa página, tente novamente"
-            })
+            console.log(error);
+            res.status(500).send('Erro ao exibir a tela cadastro do produto.');
         };
     },
 
@@ -74,10 +69,8 @@ const AdminController = {
             res.redirect('/admin/produtos/');
         } 
         catch (error) {
-            return res.status(500).json({
-                mensagem: "Não foi póssivel criar um usuário",
-                data: error
-            });
+            console.log(error);
+            res.status(500).send('Erro ao criar o produto.');
         };
     },
 
@@ -98,9 +91,8 @@ const AdminController = {
         });
         }
         catch (error) {
-            return res.status(500).json({
-                data: error
-            });
+            console.log(error);
+            res.status(500).send('Erro ao editar o produto.');
         };
     },
 
@@ -127,9 +119,8 @@ const AdminController = {
             });
             res.redirect('/admin/produtos/');
         } catch (error){
-            return res.status(500).json({
-                data: error
-            });
+            console.log(error);
+            res.status(500).send('Erro ao atualizar o produto.');
         }
     },
 
@@ -145,15 +136,14 @@ const AdminController = {
             
             res.redirect('/admin/produtos');
         } catch (error){
-            return res.status(500).json({
-                data: error
-            });
+            console.log(error);
+            res.status(500).send('Erro ao deletar o produto.');
         }
-    }, 
+    },
+
     exibirCategorias: async (req, res) => {
         try
         {
-            // controller comunicando com o model
             const { search } = req.query;
 
             const categorias = await Categoria.findAll({ 
@@ -169,12 +159,11 @@ const AdminController = {
             });
         } 
         catch (error){
-            return res.status(500).json({
-                mensagem: error,
-                status: 500
-            });
+            console.log(error);
+            res.status(500).send('Erro ao filtrar a categoria.');
         };
     },
+    
     //exibir tela de criação de categoria
     viewFormCategoria: async (req, res)=>{
         try
@@ -186,9 +175,8 @@ const AdminController = {
                 fornecedores: fornecedores
             });
         } catch (error){
-            return res.status(500).json({
-                mensagem: "Não foi possível carregar essa página, tente novamente"
-            })
+            console.log(error);
+            res.status(500).send('Erro ao exibir o formulário para criar categoria.');
         };
     },
     //Criar nova categoria
@@ -208,10 +196,8 @@ const AdminController = {
             res.redirect('/admin/produtos/categorias');
         } 
         catch (error) {
-            return res.status(500).json({
-                mensagem: "Não foi póssivel criar a categoria",
-                data: error
-            });
+            console.log(error);
+            res.status(500).send('Erro ao criar a categoria.');
         };
     }
 

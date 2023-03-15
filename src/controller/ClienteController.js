@@ -4,16 +4,13 @@ const { validationResult } = require('express-validator');
 const ClienteController = {
   getForm: async (req, res) => {
     try{
-
       return res.render('cadastrarCliente', {
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
       });
 
     } catch (err) {
       console.log(err);
-      return res.render('error', {
-        css: ['/stylesheets/menu-footer.css']
-      });
+      res.status(500).send('Erro ao exibir a tela de cadastro do cliente.');
     }
   },
 
@@ -45,8 +42,8 @@ const ClienteController = {
     
     } catch (error) {
       console.log(error);
+      res.status(500).send('Erro ao criar o usuário.');
     }
-
   }
 };
 

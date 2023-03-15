@@ -10,7 +10,6 @@ module.exports = {
         try
         {
             const { categoria } = req.params;
-            // controller comunicando com o model
 
             const produtos = await Produto.findAll({
                 include: [{
@@ -36,8 +35,9 @@ module.exports = {
             return res.render('produtos', {  produtos, categorias,
                 css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
             });
-        } catch (err) {
-            console.log(err);
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Erro ao exibir a listagem dos produtos.');
         }
     },
 
@@ -50,8 +50,9 @@ module.exports = {
             res.render('prod-interno', { produto: produto,
                 css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
             });
-        } catch (err){
-            console.log(err);
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao exibir a tela do produto selecionado.');
         }
     },
 
@@ -76,7 +77,7 @@ module.exports = {
             res.redirect('/carrinho/');
         } catch (error) {
             console.error(error);
-            res.status(500).send('Erro ao adicionar o item ao carrinho');
+            res.status(500).send('Erro ao adicionar o item ao carrinho.');
         }
     }
 }
