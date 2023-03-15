@@ -24,10 +24,12 @@ nome VARCHAR(45) NOT NULL
 );
 
 INSERT INTO categorias(nome)
-VALUES 
-	("Tinto"),
-	("Rose")
-	("Espumante");
+VALUES
+	('Vinho Tinto'),
+	('Vinho Seco'),
+    ('Vinho Rose'),
+    ('Espumante');
+
 
 CREATE TABLE produtos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -36,7 +38,7 @@ valor FLOAT NOT NULL,
 imagem VARCHAR(150) NOT NULL,
 safra VARCHAR(4) NOT NULL,
 fornecedor_id INT UNSIGNED NOT NULL,
-categorias_id INT UNSIGNED NOT NULL,
+categoria_id INT UNSIGNED NOT NULL,
 FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id),
 FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 );
@@ -63,12 +65,7 @@ VALUES
 	('Vínicula Terra Nova', 'terraNova@gmail.com', 333333),
     ('Vínicula Alves', 'viniculaAlves@gmail.com', 985484);
     
-INSERT INTO categorias(nome)
-VALUES
-	('Vinho Tinto'),
-	('Vinho Seco'),
-    ('Vinho Rose'),
-    ('Espumante');
+
 
 INSERT INTO produtos(nome,valor,categoria_id,imagem,fornecedor_id,safra)
 VALUES
@@ -99,4 +96,3 @@ INSERT INTO pedidos(data_criacao,valor_unitario,quantidade,cliente_id,produto_id
 VALUES ('2023-02-06',88.00,1,1,8);
 
 SELECT * FROM produtos AS Produto;
-
