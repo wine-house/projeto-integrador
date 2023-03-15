@@ -5,7 +5,7 @@ const ClienteController = {
   getForm: async (req, res) => {
     try{
 
-      return res.render('cadastrar-conta', {
+      return res.render('cadastrarCliente', {
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
       });
 
@@ -20,8 +20,10 @@ const ClienteController = {
   createUser: async (req, res) => {
     try
     {
-      const { name, email, date, password, ciente, maiorque18 } = req.body;
+      const { name, email, CPF, date, password } = req.body;
     
+      const imageProfile = req.files[0].originalname;
+
       const errors = validationResult(req);
 
       if(!errors.isEmpty()){
@@ -30,9 +32,11 @@ const ClienteController = {
 
       const cliente = await Cliente.create({
         nome: name,
+        imageProfile: imageProfile,
         email: email,
+        cpf: CPF,
         senha: password,
-        dataDeNascimento: date
+        data_nascimento: date
       });
 
       req.session.usuario = cliente;

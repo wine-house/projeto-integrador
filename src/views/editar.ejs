@@ -35,21 +35,12 @@
                         Categoria:
                     </em>
                     <div class="radio">
-                        <input class="inpt radio" id='branco' type="radio" name="categoria" value="Vinho Branco">
-                        <label for="branco">Branco</label>
+                       <% for(let categoria of categorias){ %>
+                        <input class="inpt radio" id='branco' type="radio" name="categoria" value="<%= categoria.nome %>">
+                        <label for="branco"><%= categoria.nome %>></label>
+                       <% } %>
                     </div>    
-                    <div class="radio">
-                        <input class="inpt radio" id='rose' type="radio" name="categoria" value="Vinho Rose">
-                        <label for="rose">Rose</label>
-                    </div>
-                    <div class="radio">
-                        <input class="inpt radio" id='tinto' type="radio" name="categoria" value="Vinho Tinto">
-                        <label for="tinto">Tinto</label>
-                    </div>
-                    <div class="radio">
-                        <input class="inpt radio" id='espumante' type="radio" name="categoria" value="Champanhe Espumante">
-                        <label for="espumante">Espumante</label>
-                    </div>  
+                    
                     
                     <em id="fornecedores">
                         Fornecedores:

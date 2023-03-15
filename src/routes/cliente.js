@@ -12,6 +12,6 @@ const upload = multer({ storage: multerUserStorage });
 /* GET users listing. */
 router.get('/cadastrar-conta', getForm );
 /* CREATE USER */
-router.post('/cadastrar-conta', validacoes, upload.any('imgUser'), createUser);
+router.post('/cadastrar-conta', validacoes, upload.any("imageProfile"), createUser);
 
 module.exports = router;

@@ -35,10 +35,13 @@ const AdminController = {
         try
         {
             const fornecedores = await Fornecedor.findAll();
+            const categorias = await Categoria.findAll();
+            
 
             res.render('cadastrar', {
                 css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
-                fornecedores: fornecedores
+                fornecedores: fornecedores,
+                categorias: categorias
             });
         } catch (error){
             return res.status(500).json({
@@ -51,12 +54,14 @@ const AdminController = {
     createProduct: async (req, res)=>{
         try
         {
-            const { nome, valor, categoria, fornecedor, safra } = req.body;
+            const { nome, valor, fornecedor, safra, categoria } = req.body;
 
             const avatar = req.files[0].originalname;
-            console.log(avatar);
+            
             const imagem = avatar.substring(0, avatar.indexOf('.'));
-            console.log(imagem);
+
+            console.log(fornecedor, categoria);
+            
         
             const errors = validationResult(req);
 
@@ -64,7 +69,7 @@ const AdminController = {
                 console.log(errors.mapped());
             };
 
-            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedores_id: fornecedor, categoria: categoria, safra: safra});
+            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categorias_id: categoria, safra: safra});
 
             res.redirect('/admin/produtos/');
         } 
@@ -83,10 +88,12 @@ const AdminController = {
         const { id } = req.params;
         const produto = await Produto.findByPk(id);
         const fornecedores = await Fornecedor.findAll();
+        const categorias = await Categoria.findAll();
 
         return res.render('editar', {
             produto: produto,
             fornecedores: fornecedores,
+            categorias: categorias,
             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
         });
         }
