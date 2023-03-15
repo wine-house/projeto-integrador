@@ -8,8 +8,8 @@
                 <h2 class="products__categories__title">Categorias</h2>         
                 
                 <% for(categoria of categorias){ %>
-                    <form class="products__categories__links" method="get">
-                        <button class="products__categories__link" type="submit" name="categoria" value="<%=categoria.categoria%>"><%= categoria.categoria %></button>
+                    <form action="/produtos/<%= categoria.nome %>" class="products__categories__links" method="get">
+                        <button class="products__categories__link" type="submit"><%= categoria.nome %></button>
                     </form>
                 <% } %>
 

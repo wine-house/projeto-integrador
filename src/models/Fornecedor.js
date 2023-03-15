@@ -34,7 +34,7 @@ const criarFornecedorModel = (sequelize, dataTypes) => {
     Fornecedor.associate = (models) => {
         Fornecedor.hasMany(models.Produto, {
             as: "produtos",
-            foreignKey: "fornecedores_id"
+            foreignKey: "fornecedor_id"
         })
     };
     

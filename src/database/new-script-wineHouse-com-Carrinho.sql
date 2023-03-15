@@ -24,6 +24,12 @@ id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL
 );
 
+INSERT INTO categorias(nome)
+VALUES 
+	("Tinto"),
+	("Rose")
+	("Espumante");
+
 CREATE TABLE produtos(
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
@@ -31,7 +37,7 @@ valor FLOAT NOT NULL,
 imagem VARCHAR(150) NOT NULL,
 safra VARCHAR(4) NOT NULL,
 fornecedor_id INT UNSIGNED NOT NULL,
-categoria_id INT UNSIGNED NOT NULL,
+categorias_id INT UNSIGNED NOT NULL,
 FOREIGN KEY(fornecedor_id) REFERENCES fornecedores(id),
 FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 );

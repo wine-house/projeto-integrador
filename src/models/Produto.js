@@ -22,20 +22,21 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        fornecedores_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
-
-        categoria_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
-
         safra: {
             type: dataTypes.INTEGER,
             allowNull: false
-        }
+        },
+
+        fornecedor_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+
+        categorias_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+
     };
 
     const opcoes = {
@@ -50,12 +51,12 @@ const criarProdutoModel = (sequelize, dataTypes) => {
         
         Produto.belongsTo(models.Fornecedor, {
             as: "fornecedor",
-            foreignKey: "fornecedores_id"
+            foreignKey: "fornecedor_id"
         });
         
         Produto.belongsTo(models.Categoria, {
             as: "categoria",
-            foreignKey: "categoria_id"
+            foreignKey: "categorias_id"
         });
     };
 
