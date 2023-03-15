@@ -50,12 +50,6 @@ module.exports = {
       }
     },
 
-    login: (req, res, next) => {
-        res.render('login', {
-          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
-        });
-    },
-
     carrinho: (req, res) => {
       try
       {

@@ -5,9 +5,13 @@ const { multerUserStorage } = require('../middlewares/configDisk');
 const validacoes = require('../middlewares/validacoesCadastroUsuario');
 
 
-const { getForm, createUser } = require('../controller/ClienteController');
+const { getFormLogin, getForm, createUser, login } = require('../controller/ClienteController');
 
 const upload = multer({ storage: multerUserStorage });
+
+router.get('/', getFormLogin);
+
+router.post('/login', login);
 
 /* GET users listing. */
 router.get('/cadastrar-conta', getForm );
