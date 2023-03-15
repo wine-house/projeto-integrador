@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+    <main>
+        <h1>
+            CADASTRO DE CATEGORIAS
+        </h1>
+        <hr>
+        <form action="/admin/produtos/criar" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+            <section class="section-filha-form section-container1 section-nome-preco">
+                <!-- Nome -->
+                <em class="emNome-Preco">
+                    Nome da Categoria:
+                </em>
+                <input class="inpt nome inptPreco" type="text" placeholder="Digite aqui o nome da categoria" name="categoria">
+            </section>
+            <button type="submit" id="btn-submit" >Enviar</button>
+        </form>
+
+    </main>
+
+    <!--JavaScript-->
+    <!-- <script src="/js/menu-footer.js"></script> -->
+    <!-- <script src="/js/cadastrar.js"></script> -->
+    <!--end JavaScript-->
+    
+<%-include("partials/footer")%> 

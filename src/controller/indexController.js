@@ -139,20 +139,21 @@ module.exports = {
     },
 
     painelUsuario: (req, res, next) => {
-      res.render('painel-usuario', {
+      res.render('painel-usuario',  {
+        usuario: req.session.usuario,
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
       });
     },
 
     conferirItens: (req, res) => {
       res.render('confira-itens', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+        css: ['/stylesheets/menu-footer.css','/stylesheets/confira-itens.css']
       });
     },
 
     selecionarEndereco:  (req, res) => {
       res.render('selecionar-endereco', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css'],
+        css: ['/stylesheets/menu-footer.css','/stylesheets/selecionar-endereco.css'],
       });
     },
 
@@ -164,7 +165,7 @@ module.exports = {
 
     fechamentoPedido: (req, res) => {
       res.render('fechamento-pedido', {
-        css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
+        css: ['/stylesheets/menu-footer.css','/stylesheets/fechamento-pedido.css']
       });
     },
     

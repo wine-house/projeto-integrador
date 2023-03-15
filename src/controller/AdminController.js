@@ -1,4 +1,4 @@
-const { Produto, Fornecedor } = require('../models');
+const { Produto, Fornecedor, Categoria } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
 
@@ -13,7 +13,7 @@ const AdminController = {
                     nome: {
                         [Op.like]: `%${search}%`
                     }} : null,
-                include: ["fornecedor"]
+                include: ["fornecedor", 'categoria']
             });
 
             return res.render('adminListar', {
@@ -22,6 +22,7 @@ const AdminController = {
             });
         } 
         catch (error){
+            console.log(error)
             return res.status(500).json({
                 mensagem: error,
                 status: 500
@@ -34,10 +35,13 @@ const AdminController = {
         try
         {
             const fornecedores = await Fornecedor.findAll();
+            const categorias = await Categoria.findAll();
+            
 
             res.render('cadastrar', {
                 css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
-                fornecedores: fornecedores
+                fornecedores: fornecedores,
+                categorias: categorias
             });
         } catch (error){
             return res.status(500).json({
@@ -50,12 +54,14 @@ const AdminController = {
     createProduct: async (req, res)=>{
         try
         {
-            const { nome, valor, categoria, fornecedor, safra } = req.body;
+            const { nome, valor, fornecedor, safra, categoria } = req.body;
 
             const avatar = req.files[0].originalname;
-            console.log(avatar);
+            
             const imagem = avatar.substring(0, avatar.indexOf('.'));
-            console.log(imagem);
+
+            console.log(fornecedor, categoria);
+            
         
             const errors = validationResult(req);
 
@@ -63,7 +69,7 @@ const AdminController = {
                 console.log(errors.mapped());
             };
 
-            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedores_id: fornecedor, categoria: categoria, safra: safra});
+            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categorias_id: categoria, safra: safra});
 
             res.redirect('/admin/produtos/');
         } 
@@ -82,10 +88,12 @@ const AdminController = {
         const { id } = req.params;
         const produto = await Produto.findByPk(id);
         const fornecedores = await Fornecedor.findAll();
+        const categorias = await Categoria.findAll();
 
         return res.render('editar', {
             produto: produto,
             fornecedores: fornecedores,
+            categorias: categorias,
             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
         });
         }
@@ -141,7 +149,71 @@ const AdminController = {
                 data: error
             });
         }
+    }, 
+    exibirCategorias: async (req, res) => {
+        try
+        {
+            // controller comunicando com o model
+            const { search } = req.query;
+
+            const categorias = await Categoria.findAll({ 
+                where: search ? {
+                    nome: {
+                        [Op.like]: `%${search}%`
+                    }} : null,
+            });
+
+            return res.render('adminCategorias', {
+                categorias: categorias,
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
+            });
+        } 
+        catch (error){
+            return res.status(500).json({
+                mensagem: error,
+                status: 500
+            });
+        };
     },
+    //exibir tela de criação de categoria
+    viewFormCategoria: async (req, res)=>{
+        try
+        {
+            const fornecedores = await Fornecedor.findAll();
+
+            res.render('cadastrarCategorias', {
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
+                fornecedores: fornecedores
+            });
+        } catch (error){
+            return res.status(500).json({
+                mensagem: "Não foi possível carregar essa página, tente novamente"
+            })
+        };
+    },
+    //Criar nova categoria
+    createCategoria: async (req, res)=>{
+        try
+        {
+            const { nome } = req.body;
+
+            const errors = validationResult(req);
+
+            if(errors.isEmpty()){
+                console.log(errors.mapped());
+            };
+
+            await Produto.create({ categoria: nome});
+
+            res.redirect('/admin/produtos/categorias');
+        } 
+        catch (error) {
+            return res.status(500).json({
+                mensagem: "Não foi póssivel criar a categoria",
+                data: error
+            });
+        };
+    }
 
     
 }

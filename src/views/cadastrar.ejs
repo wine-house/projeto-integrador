@@ -33,11 +33,11 @@
                         <em>
                             Categoria:
                         </em>
+
                         <select class="select-cadastro" name="categoria">
-                            <option value="Vinho Branco">Vinho Branco</option>
-                            <option value="Vinho Rose">Vinho Rose</option>
-                            <option value="Vinho Tinto">Vinho Tinto</option>
-                            <option value="Champanhe Espumante">Champanhe Espumante</option>
+                           <% for(let categoria of categorias){ %>
+                            <option value="<%=categoria.id%>"><%= categoria.nome %></option>
+                            <% } %>
                         </select>
                      </div>
                     <div>

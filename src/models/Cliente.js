@@ -12,11 +12,16 @@ const criarClienteModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
+        imageProfile: {
+            type: dataTypes.STRING
+        },
+
         email: {
             type: dataTypes.STRING,
             allowNull: false,
             unique: true
         },
+
         cpf:{
             type: dataTypes.STRING,
             allowNull: false,
@@ -30,11 +35,6 @@ const criarClienteModel = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-
-        dataDeNascimento: {
-            type: dataTypes.DATE,
-            allowNull: false
-        }
 };
 
     const opcoes = {
