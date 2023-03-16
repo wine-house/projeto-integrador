@@ -9,11 +9,9 @@ const {
     subtraiQtdDoItemCarrinho,
     deletaItemCarrinho,
     painelUsuario, 
-    conferirItens, 
-    selecionarEndereco, 
-    fechamentoPagamento, 
-    fechamentoPedido,
-    login
+    viewFinalizarPedido, 
+    selecionaMetodoPagamento,
+    criaPedido
 } = require('../controller/indexController');
 
 const router = express.Router();
@@ -38,16 +36,9 @@ router.delete('/carrinho/:id', deletaItemCarrinho);
 /* pagina painel de usuário*/
 router.get('/painel-usuario', painelUsuario);
 
-/* pagina confira itens*/
-router.get('/confira-itens', conferirItens);
-
-/* pagina selecionar endereço*/
-router.get('/selecionar-endereco', selecionarEndereco);
-
-/* pagina fechamento pagamento*/
-router.get('/fechamento-pagamento', fechamentoPagamento);
-
-/* pagina fechamento pedido*/
-router.get('/fechamento-pedido', fechamentoPedido);
+/* rotas para finalizar pedido*/
+router.get('/carrinho/finalizar', viewFinalizarPedido);
+router.post('/carrinho/finalizar', selecionaMetodoPagamento);
+router.post('/carrinho/finalizar/criaPedido', criaPedido);
 
 module.exports = router;

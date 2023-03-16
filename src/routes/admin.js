@@ -13,11 +13,9 @@ const upload = multer({ storage: multerProductStorage });
 router.get("/", index);
 router.get('/categorias', exibirCategorias);
 
-
 // editar
 router.get("/editar/:id", editProduct);
 router.put("/editar/:id", validacoes, upload.any("imagem"), updateProduct);
-
 
 // criar
 router.get ("/criar", viewForm);
@@ -25,8 +23,6 @@ router.post("/criar", validacoes, upload.any("imagem"), createProduct);
 router.get ("/categorias/criar", viewFormCategoria);
 router.post("/categorias/criar", validacoes, createCategoria);
 
-
-
-  
 router.delete("/:id", deleteProduct);
+
 module.exports = router;
