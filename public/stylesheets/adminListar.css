@@ -12,7 +12,18 @@ h1 {
 }
 .titulo{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+
+#titulo-page {
+    margin-right: 75rem;
+
+}
+
+#search-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5rem;
 }
 
 .form {
@@ -28,7 +39,7 @@ h1 {
     flex-direction: column;
 }
 
-#btn-flat:hover{
+.btn-flat:hover{
     margin-bottom: 5px;
 }
 
@@ -153,15 +164,7 @@ td:first-child {
     font-size: 1.5rem;
 }
 
-#btn-flat {
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    margin-top: 40px;
-    margin-right: 20px;
 
-}
 
 .opcoes-crud {
     display: flex;
@@ -171,11 +174,12 @@ td:first-child {
 }
 
 
-#btn-flat {
+.btn-flat {
     border: black;
     border-radius: 1rem;
     font-size: 1rem;
     line-height: 1rem;
+    padding: 1rem;
     padding: 1rem;
     width: 12rem;
     height: 3rem;
@@ -183,6 +187,12 @@ td:first-child {
     color: white;
     font-weight: 500;
     cursor: pointer;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    margin-top: 45px;
+    margin-right: 20px;
+
 }
 
 #editar-button{

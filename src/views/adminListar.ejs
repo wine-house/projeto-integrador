@@ -2,18 +2,23 @@
 
 	<main>
 		<div class="titulo">
-				<h1>
+				<h1 id="titulo-page">
 					PAINEL ADMINISTRATIVO
 				</h1>
-				<a id="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
+				<a class="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
+				<a class="btn-flat" href="/admin/produtos/categorias">Lista de Categorias</a>
 		</div>
 		
 		
 		<hr>
-		<form method="get">
-			<input type="search" name="search" id="search">
-			<button type="submit">Search</button>
-		</form>
+		<div>
+			<div id="search-div">
+				<form method="get">
+					<input type="search" name="search" id="search">
+					<button type="submit">Search</button>
+				</form>
+			</div>
+		</div>
 		<div class="teste">
 			<% if(produtos.length> 0){ %>
 				<div class="form" id="formulario">
@@ -37,7 +42,7 @@
 										<td> <%= produto.id %></td>
 										<td> <img id="img-lista-produto-admin" src="/images/imageProd/<%= produto.imagem%>.png"</td>
 										<td><%= produto.nome %></td>
-										<td>R$<%= produto.valor %>,00</td>
+										<td><%= produto.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%></td>
 										<td class="th-hide"><%= produto.categoria.nome%></td>
 										<td><%= produto.fornecedor.nome %></td>
 										<td><%= produto.safra %></td>

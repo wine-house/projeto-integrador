@@ -2,18 +2,23 @@
 
 	<main>
 		<div class="titulo">
-				<h1>
-					PAINEL ADMINISTRATIVO
+				<h1 id="titulo-page">
+					PAINEL ADMINISTRATIVO DE CATEGORIAS
 				</h1>
-				<a id="btn-flat" href="/admin/produtos/categoria/criar">Adicionar Categorias</a>
+				<a class="btn-flat" href="/admin/produtos">Lista de Produtos</a>
+				<a class="btn-flat" href="/admin/produtos/categorias/criar">Criar Categorias</a>
 		</div>
 		
 		
 		<hr>
-		<form method="get">
-			<input type="search" name="search" id="search">
-			<button type="submit">Search</button>
-		</form>
+		<div>
+			<div id="search-div">
+				<form id="search" method="get">
+					<input type="search" name="search" id="search">
+					<button type="submit">Search</button>
+				</form>
+			</div>
+		</div>
 		<div class="teste">
 			<% if(categorias.length> 0){ %>
 				<div class="form" id="formulario">
@@ -32,8 +37,8 @@
 										<td> <%= categoria.id %></td>
 										<td><%= categoria.nome %></td>
 										<td class="opcoes-crud"> 
-											<a id="editar-button" href="/admin/produtos/editar/<%= categoria.id %>">Editar</a> 
-											<form action="/admin/produtos/<%= categoria.id %>?_method=DELETE" method="post">
+											<a id="editar-button" href="/admin/produtos/categorias/editar/<%= categoria.id %>">Editar</a> 
+											<form action="/admin/produto/<%= categoria.id %>?_method=DELETE" method="post">
 												<button type="submit">Deletar</button>
 											</form>
 										</td>

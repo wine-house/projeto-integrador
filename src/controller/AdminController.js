@@ -64,7 +64,7 @@ const AdminController = {
                 console.log(errors.mapped());
             };
 
-            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categorias_id: categoria, safra: safra});
+            await Produto.create({ nome: nome, valor: valor, imagem: imagem, fornecedor_id: fornecedor, categoria_id: categoria, safra: safra});
 
             res.redirect('/admin/produtos/');
         } 
@@ -102,7 +102,7 @@ const AdminController = {
             const { id } = req.params;
             const { nome, valor, fornecedor, categoria, safra } = req.body;
         
-            const avatar = req.files[0].originalname;
+            const avatar = req.files[0]?.originalname;
             const imagem = avatar.substring(0, avatar.indexOf('.'));
 
 
@@ -152,7 +152,7 @@ const AdminController = {
                         [Op.like]: `%${search}%`
                     }} : null,
             });
-
+            console.log(categorias)
             return res.render('adminCategorias', {
                 categorias: categorias,
                 css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
@@ -179,27 +179,67 @@ const AdminController = {
             res.status(500).send('Erro ao exibir o formulário para criar categoria.');
         };
     },
-    //Criar nova categoria
-    createCategoria: async (req, res)=>{
+    //Edita a categoria
+    updateCategoria: async (req, res) => {
+        try
+        {
+            const { id } = req.params;
+            const { nome } = req.body;
+    
+            await Categoria.update({
+                nome: nome,
+            },
+            {
+                where: { id: id }
+            });
+            res.redirect('/admin/produtos/categorias/editar/');
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao atualizar o produto.');
+        }
+    },
+     //Criar nova categoria
+     createCategoria: async (req, res)=>{
         try
         {
             const { nome } = req.body;
 
+            console.log(categoria);
+            
             const errors = validationResult(req);
 
             if(errors.isEmpty()){
                 console.log(errors.mapped());
             };
 
-            await Produto.create({ categoria: nome});
+            await Categoria.create({ nome: nome});
 
             res.redirect('/admin/produtos/categorias');
         } 
         catch (error) {
             console.log(error);
-            res.status(500).send('Erro ao criar a categoria.');
+            res.status(500).send('Erro ao criar o produto.');
         };
-    }
+    },
+
+    // Visualiza a categoria
+    editCategoria: async (req, res) => {
+        try 
+        {
+ 
+         const { id } = req.params;
+         const categoria = await Categoria.findByPk(id);
+ 
+         return res.render('editarCategorias', {
+             categoria,
+             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
+         });
+         }
+         catch (error) {
+             console.log(error);
+             res.status(500).send('Erro ao editar o produto.');
+         };
+     },
 
     
 }

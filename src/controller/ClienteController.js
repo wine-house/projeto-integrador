@@ -23,7 +23,7 @@ const ClienteController = {
 
       console.log(password);
     
-      const imageProfile = req.files[0].originalname;
+      const imageProfile = req.files[0]?.originalname;
 
       const errors = validationResult(req);
 
