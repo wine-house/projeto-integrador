@@ -141,47 +141,49 @@ module.exports = {
       }
     },
 
-    conferirItens: (req, res) => {
+    viewFinalizarPedido: async(req, res) => {
       try {
-        res.render('confira-itens', {
-          css: ['/stylesheets/menu-footer.css','/stylesheets/confira-itens.css']
+        const { formaPagamento } = req.query;
+
+        const itensCarrinho = await ItensCarrinho.findAll();
+        let valorTotalPedido;
+        
+        if(itensCarrinho.length > 0) {
+          const arrValorTotalItens = itensCarrinho.map(item => item.valor_total);
+          const reducer = (accumulator, curr) => accumulator + curr;
+          valorTotalPedido = arrValorTotalItens.reduce(reducer);
+        } else {
+          valorTotalPedido = 0;
+        }
+        
+        res.render('finalizar-pedido', {
+          itensCarrinho: itensCarrinho,
+          valorTotalPedido: valorTotalPedido,
+          formaPagamento: formaPagamento,
+          css: ['/stylesheets/menu-footer.css','/stylesheets/finalizar-pedido.css']
         });
       } catch (error) {
         console.log(error);
-        res.status(500).send('Erro ao exibir a tela de conferir os itens.');
+        res.status(500).send('Erro ao exibir a tela para finalziar o pedido.');
       }
     },
 
-    selecionarEndereco:  (req, res) => {
+    selecionaMetodoPagamento: async(req, res) => {
       try {
-        res.render('selecionar-endereco', {
-          css: ['/stylesheets/menu-footer.css','/stylesheets/selecionar-endereco.css'],
-        });
+        const { formaPagamento } = req.body;
+        res.redirect(`/carrinho/finalizar?formaPagamento=${formaPagamento}`);
       } catch (error) {
         console.log(error);
-        res.status(500).send('Erro ao exibir a tela de endereços.');
+        res.status(500).send('Erro ao selecionar forma de pagamento.');
       }
     },
 
-    fechamentoPagamento: (req, res) => {
+    criaPedido: async (req, res) => {
       try {
-        res.render('fechamento-pagamento', {
-          css: ['/stylesheets/menu-footer.css','/stylesheets/carrinho.css']
-        });
+          res.redirect('/painel-usuario');
       } catch (error) {
-        console.log(error);
-        res.status(500).send('Erro ao exibir a tela de pagamentos.');
-      }
-    },
-
-    fechamentoPedido: (req, res) => {
-      try {
-        res.render('fechamento-pedido', {
-          css: ['/stylesheets/menu-footer.css','/stylesheets/fechamento-pedido.css']
-        });
-      } catch (error) {
-        console.log(error);
-        res.status(500).send('Erro ao exibir a tela de finalização de pedidos.');
+          console.error(error);
+          res.status(500).send('Erro ao criar o pedido.');
       }
     }
 }
