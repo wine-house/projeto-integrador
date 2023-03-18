@@ -6,7 +6,8 @@ const {
     deletaItemCarrinho,
     viewFinalizarPedido, 
     selecionaMetodoPagamento,
-    criaPedido
+    criaPedido,
+    salvaInformaçõesEntrega
 } = require('../controller/CarrinhoController');
 
 const router = express.Router();
@@ -20,6 +21,9 @@ router.delete('/:id', deletaItemCarrinho);
 /* rotas para finalizar pedido*/
 router.get('/finalizar', viewFinalizarPedido);
 router.post('/finalizar', selecionaMetodoPagamento);
-router.post('/finalizar/criaPedido', criaPedido);
+router.post('/finalizar/criaPedido/:id', criaPedido);
+router.post('/finalizar/entrega', salvaInformaçõesEntrega);
+
+
 
 module.exports = router;

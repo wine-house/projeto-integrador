@@ -1,4 +1,10 @@
-const { ItensCarrinho, Produto } = require('../models');
+const { 
+  ItensCarrinho, 
+  Produto, 
+  FormaPagamento, 
+  InformacoesEntrega,
+  Pedido
+} = require('../models');
   
   module.exports = {
     adicionaItemNoCarrinho: async (req, res) => {
@@ -100,8 +106,10 @@ const { ItensCarrinho, Produto } = require('../models');
       viewFinalizarPedido: async(req, res) => {
         try {
           const { formaPagamento } = req.query;
-  
+
           const itensCarrinho = await ItensCarrinho.findAll();
+          const listaMetodosPagamentos = await FormaPagamento.findAll();
+
           let valorTotalPedido;
           
           if(itensCarrinho.length > 0) {
@@ -115,12 +123,34 @@ const { ItensCarrinho, Produto } = require('../models');
           res.render('finalizar-pedido', {
             itensCarrinho: itensCarrinho,
             valorTotalPedido: valorTotalPedido,
+            listaMetodosPagamentos: listaMetodosPagamentos,
             formaPagamento: formaPagamento,
             css: ['/stylesheets/menu-footer.css','/stylesheets/finalizar-pedido.css']
           });
         } catch (error) {
           console.log(error);
           res.status(500).send('Erro ao exibir a tela para finalziar o pedido.');
+        }
+      },
+
+      salvaInformaçõesEntrega: async (req, res) => {
+        try {
+          const { cep, endereco, numero, complemento, telefone } = req.body;
+          const clienteMock = 1;
+  
+          await InformacoesEntrega.create({
+              cep: cep,
+              endereco: endereco,
+              numero: numero,
+              complemento: complemento,
+              telefone: telefone,
+              cliente_id: clienteMock
+          });
+
+          res.status(200);
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Erro ao salvar os dados da entrega.');
         }
       },
   
@@ -133,10 +163,25 @@ const { ItensCarrinho, Produto } = require('../models');
           res.status(500).send('Erro ao selecionar forma de pagamento.');
         }
       },
-  
+
       criaPedido: async (req, res) => {
         try {
-            res.redirect('/painel-usuario');
+          const { valorTotal } = req.body;
+          const { id } = req.params;
+          const clienteMock = 1;
+
+          const pagamento = await FormaPagamento.findByPk(id);
+
+          await Pedido.create({
+            data_criacao: new Date(),
+            valor_total: valorTotal,
+            metodo_pagamento: pagamento.metodo_pagamento,
+            cliente_id: clienteMock
+          });
+
+          await ItensCarrinho.destroy({ where: {} });
+
+          res.redirect('/painel-usuario');
         } catch (error) {
             console.error(error);
             res.status(500).send('Erro ao criar o pedido.');
