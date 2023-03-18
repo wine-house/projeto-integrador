@@ -1,0 +1,188 @@
+<%- include('partials/header') %>
+
+    <!--MAIN-->
+    <main>
+      <section class="titulos_entrega_pagamento">
+        <div>
+          <h1 class="titulo">OPÇÕES DE ENTREGA</h1>
+        </div>
+        <div>
+          <h1 class="titulo">MÉTODOS DE PAGAMENTOS</h1>
+        </div>
+      </section>
+      <section class="container">
+        <!-- seção dados da entrega -->
+        <article class="art-entrega">
+          <form action="/carrinho/finalizar/entrega" method="post" class="form">
+              <h2>Dados da entrega</h2>
+              <label for="CEP">CEP</label>
+              <input type="text" name="cep" id="cep" placeholder="000000-00">
+              <label for="Endereço">Endereço</label>
+              <input type="text" name="endereco" placeholder="Rua São João">
+              <label for="Número">Número</label>
+              <input type="number" name="numero" placeholder="4011">
+              <label for="Complemento">Complemento</label>
+              <input type="text" name="complemento" placeholder="Casa 31">
+              <label for="Telefone">Telefone</label>
+              <input type="tel" name="telefone"placeholder="(00)00000-0000">
+
+              <button class="carrinho__button__finish btn" type="submit">Salvar</button>
+          </form>
+        </article>
+
+        <!-- seção métodos de pagamento -->
+        <article class="art-pagamento">
+          <form action="/carrinho/finalizar" method="POST" class="form form_pagamento">
+            <label for="metodoPagamento">Escolha o método de pagamento:</label>
+              <% for(let item of listaMetodosPagamentos) { %>
+                <label>
+                  <input type="radio" name="formaPagamento" value="<%= item.id %>">
+                  <%= item.metodo_pagamento %>
+                </label>
+              <% } %>
+            <button class="carrinho__button__finish btn" type="submit">Continuar</button>
+          </form>
+
+        <!-- verifica o formulário que deve exibir-->
+          <% if (formaPagamento === '1') { %>
+          <section class="form-creditcard">
+            <form action="/carrinho/finalizar/salvaPagamento" method="post" class="form">
+              <h3>Cartão de Crédito</h3>
+              <input type="hidden" name="metodoSelecionado" value="<%= formaPagamento %>">
+              <label>
+                Número do Cartão
+              </label>
+                <input type="text" name="card_number">
+              <label>
+                Nome do Titular
+              </label>
+                <input type="text" name="card_holder_name">
+              <label>
+                Validade
+              </label>
+                <input type="text" name="card_expiry_date">
+              <label>
+                Código de Segurança
+              </label>
+                <input type="text" name="card_security_code">
+              <!-- <button class="carrinho__button__finish btn" type="submit">Pagar</button> -->
+              </form>
+          </section>
+
+          <% } else if (formaPagamento === '2') { %>
+          <section class="form-debitcard">
+            <form action="/carrinho/finalizar/salvaPagamento" method="post" class="form">
+            <h3>Cartão de Débito</h3>
+            <input type="hidden" name="metodoSelecionado" value="<%= formaPagamento %>">
+            <label>
+                Número do Cartão
+              </label>
+                <input type="text" name="card_number">
+              <label>
+                Nome do Titular
+              </label>
+                <input type="text" name="card_holder_name">
+              <label>
+                Validade
+              </label>
+                <input type="text" name="card_expiry_date">
+              <label>
+                Código de Segurança
+              </label>
+                <input type="text" name="card_security_code">
+              </form>
+          </section>
+
+          <% } else if (formaPagamento === '3') { %>
+          <section class="form-boleto">
+            <form action="/carrinho/finalizar/salvaPagamento" method="post" class="form form_img">
+              <h3>Boleto Bancário</h3>
+              <input type="hidden" name="metodoSelecionado" value="<%= formaPagamento %>">
+              <img src="/images/tela-finalizar/codigodebarras.png" class="cod_barras" alt="codigo de barras">
+            </form>
+          </section>
+
+          <% } else if (formaPagamento === '4') { %>
+          <section class="form-pix">
+            <form action="/carrinho/finalizar/salvaPagamento" method="post" class="form form_img">
+              <input type="hidden" name="metodoSelecionado" value="<%= formaPagamento %>">
+              <h3>Escaneie o QRCode PIX:</h3>
+              <img src="/images/tela-finalizar/qrcodepix.png" class="imgqrcode" alt="qrcodepix">
+            </form>
+          </section>
+          <% } %>
+        </article>
+      </section>
+      
+      <form action="/carrinho/finalizar/criaPedido/<%=formaPagamento%>" method="post">
+        <!-- seção resumo do pedido -->
+        <h1 class="titulo">RESUMO DO PEDIDO</h1>
+        <section class="container">
+          <table class="container__carrinho__table_produtos">
+            <thead>
+              <tr>
+                  <th>Imagem</th>
+                  <th>Nome</th>
+                  <th>Quantidade</th>
+                  <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let item of itensCarrinho) { %>
+              <tr>
+                <td class="container__img">
+                  <img class="container__imagem" src="/images/tela-produtos/<%= item.imagem%>.png" alt="Vinho">
+                </td>
+                <td>
+                  <h2 class="container__nome"><%= item.nome%></h2>
+                </td>
+                <td class="container__quantidade">
+                  <span><%= item.quantidade%></span>
+                </td>
+                <td>
+                  <p class="container__valor">
+                      R$
+                      <span id="valor-item" name="valorTotalDoProduto">
+                        <%= (item.valor_unitario * item.quantidade).toFixed(2)%>
+                      </span>
+                    </p>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <th class="carrinho__valor-total">Valor total</td>
+                <td class="valorTotal">
+                  R$<span id="valor-total-itens" name="valorTotal"><%= valorTotalPedido.toFixed(2) %></span></td>
+                  <input type="hidden" name="valorTotal" value="<%= valorTotalPedido %>">
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+
+        <!-- seção botões de rotas -->
+        <section class="btns_rotas">
+          <button class="carrinho__button__back_prod btn" onclick="window.location.href='/carrinho'">
+            Voltar para carrinho
+          </button>
+            <button class="carrinho__button__finish btn">
+              Concluir o pedido
+            </button>
+          </form>
+        </section>
+
+        <!--Link to Top-->
+        <a class="link-top" href="#carrinho"><i class="fas fa-arrow-up"></i></a>
+      </main> 
+    <!--end MAIN-->
+
+    <!--JavaScript-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--end JavaScript-->
+</body>
+</html>
+
+<%- include('partials/footer') %>

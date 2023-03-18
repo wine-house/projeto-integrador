@@ -1,4 +1,4 @@
-const criarPedidoModel = (sequelize, dataTypes) => {
+const criarInformacoesEntregaModel = (sequelize, dataTypes) => {
     const colunas = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -7,19 +7,29 @@ const criarPedidoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        data_criacao: {
-            type: dataTypes.DATE,
+        cep: {
+            type: dataTypes.STRING,
             allowNull: false
         },
 
-        valor_total: {
-            type: dataTypes.FLOAT,
+        endereco: {
+            type: dataTypes.STRING,
             allowNull: false,
         },
 
-        metodo_pagamento: {
+        numero: {
             type:dataTypes.STRING,
             allowNull: false
+        },
+
+        complemento: {
+            type:dataTypes.STRING,
+            allowNull: true
+        },
+
+        telefone: {
+            type:dataTypes.STRING,
+            allowNull: true
         },
 
         cliente_id: {
@@ -33,13 +43,13 @@ const criarPedidoModel = (sequelize, dataTypes) => {
 };
 
     const opcoes = {
-        tableName: 'pedidos',
+        tableName: 'informacoesEntregas',
         timestamps: false
     };
 
-    const Pedido = sequelize.define('Pedido', colunas, opcoes)
+    const InformacoesEntrega = sequelize.define('InformacoesEntrega', colunas, opcoes)
     
-    return Pedido;
+    return InformacoesEntrega;
 };
 
-module.exports = criarPedidoModel;
+module.exports = criarInformacoesEntregaModel;

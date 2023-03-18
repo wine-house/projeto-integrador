@@ -23,8 +23,6 @@ module.exports = {
                 }]
             });
 
-            console.log(produtos);
-
             const categorias = await Categoria.findAll({
                 attributes: [[
                     Sequelize.fn('DISTINCT', Sequelize.col('nome')), 'nome'

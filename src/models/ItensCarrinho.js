@@ -52,7 +52,7 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
     };
 
     const opcoes = {
-        tableName: 'ItensCarrinho',
+        tableName: 'itensCarrinho',
         timestamps: false
     };
 

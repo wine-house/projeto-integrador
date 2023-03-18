@@ -37,7 +37,7 @@ CREATE TABLE produtos(
 	FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 );
 
-CREATE TABLE itenscarrinho(
+CREATE TABLE itensCarrinho(
 	id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(45) NOT NULL,
 	imagem VARCHAR(150) NOT NULL,
@@ -54,10 +54,25 @@ CREATE TABLE pedidos(
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	data_criacao DATE NOT NULL,
 	valor_total FLOAT NOT NULL,
+    metodo_pagamento VARCHAR(25) NOT NULL,
 	cliente_id INT UNSIGNED NOT NULL,
-	itemcarrinho_id INT UNSIGNED NOT NULL,
-	FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-	FOREIGN KEY (itemcarrinho_id) REFERENCES itenscarrinho(id)
+	FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+);
+
+CREATE TABLE informacoesEntregas(
+	id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	cep VARCHAR(8) NOT NULL,
+	endereco VARCHAR(150) NOT NULL,
+	numero VARCHAR(10) NOT NULL,
+	complemento VARCHAR(20),
+	telefone VARCHAR(11),
+	cliente_id INT UNSIGNED NOT NULL,
+	FOREIGN KEY(cliente_id) REFERENCES clientes(id)
+);
+
+CREATE TABLE formasPagamentos(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	metodo_pagamento VARCHAR(45) NOT NULL
 );
 
 -- populando as tabelas
@@ -98,3 +113,10 @@ VALUES
 ('Keyla', 'keyla@gmail.com', 13456, '10236589578', '2002-12-10'),
 ('Rodrigo', 'rodrigo@gmail.com', 003456, '145265891', '1998-05-28'),
 ('Matheus', 'matheus@gmail.com', 48456, '15489545698', '1994-02-20');
+
+INSERT INTO formasPagamentos(metodo_pagamento)
+VALUES
+	('Cartão de crédito'),
+	('Cartão de débito'),
+    ('Boleto Bancário'),
+    ('PIX');
