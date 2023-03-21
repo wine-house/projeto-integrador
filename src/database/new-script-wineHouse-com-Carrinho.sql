@@ -10,7 +10,7 @@ CREATE TABLE clientes(
 	email VARCHAR(45) NOT NULL UNIQUE,
 	cpf VARCHAR(11) NOT NULL UNIQUE,
 	data_nascimento DATE NOT NULL,
-	senha VARCHAR(10) NOT NULL
+	senha VARCHAR(60) NOT NULL
 );
 
 CREATE TABLE fornecedores(
