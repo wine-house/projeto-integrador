@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 
 let loginForm = document.querySelector('.login');
 
@@ -13,6 +14,8 @@ loginForm.addEventListener('submit', function (event) {
     // };
 
     let fieldSenha = document.getElementById('password');
+    fieldSenha = bcrypt.hashSync(fieldSenha, 10)
+
     if (fieldSenha.value.length < 6) {            
         document.querySelector('.err-login-password').classList.remove('invisible')
     } 

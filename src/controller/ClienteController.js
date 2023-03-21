@@ -71,25 +71,25 @@ const ClienteController = {
     {
       const { email, senha } = req.body;
 
-      const cliente = await Cliente.findAll({
+      const cliente = await Cliente.findOne({
         where: {
-          email: {
-            [Op.like]: `${email}`
-          },
-          senha: {
-            [Op.like]: `${senha}`
-          }
+          email: email
         }
       });
 
-      if(cliente[0].email == email && cliente[0].senha == senha){
-        req.session.usuario = cliente[0];
-        return res.redirect('/painel-usuario');
-      } else {
-        res.status(500).send('Ops, você ainda não possui um cadastro no no site.');
+
+      if (cliente) {
+        const senhaCorreta = bcrypt.compareSync(senha, cliente.senha);
+    
+        if (senhaCorreta) {
+          req.session.usuario = cliente;
+          return res.redirect('/painel-usuario');
+        }
       }
       
+      res.status(500).send('Ops, você ainda não possui um cadastro no no site.');
 
+  
     } catch (error) {
       console.log(error);
       res.status(500).send('Erro ao tentar logar.');
