@@ -1,6 +1,7 @@
 const { Cliente } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
+const bcrypt = require('bcrypt')
 
 
 const ClienteController = {
@@ -21,7 +22,6 @@ const ClienteController = {
     {
       const { name, email, CPF, date, password } = req.body;
 
-      console.log(password);
     
       const imageProfile = req.files[0]?.originalname;
 
@@ -31,12 +31,16 @@ const ClienteController = {
         console.log(errors.mapped());
       } 
 
+      passwordHash = bcrypt.hashSync(password, 10)
+
+      console.log(passwordHash);
+
       const cliente = await Cliente.create({
         nome: name,
         imageProfile: imageProfile,
         email: email,
         cpf: CPF,
-        senha: password,
+        senha: passwordHash,
         data_nascimento: date
       });
 
