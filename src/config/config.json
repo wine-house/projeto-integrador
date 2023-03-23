@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "admin",
+    "password": "winehouse123",
     "database": "wine_house",
-    "host": "127.0.0.1",
+    "host": "winehouse.c7ccggfrsk8y.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
