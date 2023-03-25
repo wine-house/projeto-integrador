@@ -9,8 +9,10 @@ module.exports = {
         try
         {
           const produtos = await Produto.findAll();
-          return res.render('index', {produtos: produtos,
-              css: ['/stylesheets/home.css', '/stylesheets/menu-footer.css']
+          return res.render('index', {
+            produtos: produtos,
+            usuario: req.session.usuario,
+            css: ['/stylesheets/home.css', '/stylesheets/menu-footer.css']
           });
         } catch (error) {
           console.log(error);
@@ -21,6 +23,7 @@ module.exports = {
     somos: (req, res, next) => {
         try{
           res.render('somos', {
+          usuario: req.session.usuario,
           css: ['/stylesheets/somos.css', '/stylesheets/menu-footer.css']
         });
         } catch (error) {
@@ -33,6 +36,7 @@ module.exports = {
         try
         {
           res.render('eventos', {
+            usuario: req.session.usuario,
             css: ['/stylesheets/menu-footer.css', '/stylesheets/eventos.css']
           });
         } catch (error){
@@ -45,6 +49,7 @@ module.exports = {
        try
       { 
         res.render('parceiros', {
+          usuario: req.session.usuario,
           css: ['/stylesheets/parceiros.css', '/stylesheets/menu-footer.css']
         });
       } catch (error){

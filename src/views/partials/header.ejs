@@ -71,9 +71,16 @@
 
         <!--Login/Compras-->
         <div class="icons">
+            <% if(usuario){ %>
+            <a href="/painel-usuario">
+                <i class="fa-solid fa-user" id="user-icon" title="Login"></i>
+            </a>
+
+            <% } else { %>
             <a href="/cliente">
                 <i class="fa-solid fa-user" id="user-icon" title="Login"></i>
             </a>
+            <% } %>
 
             <a href="/carrinho">
                 <i class="fa-solid fa-cart-shopping" id="cart-icon" title="Carrinho"></i>
