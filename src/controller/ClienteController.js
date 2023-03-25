@@ -7,6 +7,7 @@ const ClienteController = {
   getForm: async (req, res) => {
     try{
       return res.render('cadastrarCliente', {
+        usuario: req.session.usuario,
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
       });
 
@@ -53,6 +54,7 @@ const ClienteController = {
   getFormLogin: (req, res) => {
     try {
       return res.render('login', {
+        usuario: req.session.usuario,
         css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css']
       });
     } catch (error) {
@@ -80,7 +82,7 @@ const ClienteController = {
 
       if(cliente[0].email == email && cliente[0].senha == senha){
         req.session.usuario = cliente[0];
-        return res.redirect('/painel-usuario');
+        return res.redirect('/produtos');
       } else {
         res.status(500).send('Ops, você ainda não possui um cadastro no no site.');
       }
@@ -90,6 +92,32 @@ const ClienteController = {
       console.log(error);
       res.status(500).send('Erro ao tentar logar.');
     }
+  },
+
+  editUser: async (req, res) => {
+    const { id } = req.params;
+    const { name, email, CPF, date, password } = req.body;
+
+    const imageProfile = req.files[0]?.originalname;
+
+    const updateCliente = await Cliente.update({
+      nome: name,
+      imageProfile: imageProfile,
+      email: email,
+      cpf: CPF,
+      data_nascimento: date,
+      senha: password
+    },
+    {
+      where: {
+        id: id
+      }
+    });
+
+    
+    
+    return res.redirect('/painel-usuario');
+
   }
 };
 

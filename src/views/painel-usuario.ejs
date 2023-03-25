@@ -4,7 +4,7 @@
     <div class="conteiner-painel-pedidos">
         <div class="painel-vertical">
             <div class="foto-cliente">
-                <a href="#"><img src="/images/imageProfile/<%= usuario.imageProfile %>" width="300px" alt=""></a>
+                <img src="/images/imageProfile/<%= usuario.imageProfile %>" width="300px" alt="">
                 <h3><%= usuario.nome %></h3>
             </div>
             <div class="nav-painel">
@@ -12,7 +12,7 @@
                     <h5><%= usuario.email %></h5>
                 </div>
                 <div>
-                    <h5>ARREPENDIMENTOS</h5>
+                    <h5> <a href="/cliente/cadastrar-conta">Editar perfil</a></h5>
                 </div>
             </div>
             <div class="atendimento-painel">

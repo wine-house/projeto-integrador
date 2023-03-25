@@ -31,6 +31,7 @@ module.exports = {
 
 
             return res.render('produtos', {  produtos, categorias,
+                usuario: req.session.usuario,
                 css: ["/stylesheets/produtos.css","/stylesheets/menu-footer.css"]
             });
         } catch (error) {
