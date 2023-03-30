@@ -1,5 +1,8 @@
 <%- include('partials/header') %>
 
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../public/js/finalizar-pedido.js" defer></script>
+
     <!--MAIN-->
     <main>
       <section class="titulos_entrega_pagamento">
@@ -18,11 +21,11 @@
               <label for="CEP">CEP</label>
               <input type="text" name="cep" id="cep" placeholder="000000-00">
               <label for="Endereço">Endereço</label>
-              <input type="text" name="endereco" placeholder="Rua São João">
+              <input type="text" name="endereco" id="endereco">
               <label for="Número">Número</label>
-              <input type="number" name="numero" placeholder="4011">
+              <input type="number" name="numero" id="numero">
               <label for="Complemento">Complemento</label>
-              <input type="text" name="complemento" placeholder="Casa 31">
+              <input type="text" name="complemento" id="complemento">
               <label for="Telefone">Telefone</label>
               <input type="tel" name="telefone"placeholder="(00)00000-0000">
 
@@ -180,9 +183,9 @@
     <!--end MAIN-->
 
     <!--JavaScript-->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/js/finalizar-pedido.js" defer></script>
+    
     <!--end JavaScript-->
-</body>
-</html>
 
 <%- include('partials/footer') %>

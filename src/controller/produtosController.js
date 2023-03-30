@@ -47,6 +47,7 @@ module.exports = {
             const produto = await Produto.findByPk(id);
     
             res.render('prod-interno', { produto: produto,
+                usuario: req.session.usuario,
                 css: ['/stylesheets/menu-footer.css', '/stylesheets/prod-interno.css']
             });
         } catch (error){

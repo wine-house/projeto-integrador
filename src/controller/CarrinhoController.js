@@ -36,6 +36,7 @@ const {
         try {
           const itensCarrinho = await ItensCarrinho.findAll();
           res.render('carrinho', {
+          usuario: req.session.usuario,
           itensCarrinho: itensCarrinho,
           css: [
             '/stylesheets/menu-footer.css',
@@ -121,6 +122,7 @@ const {
           }
           
           res.render('finalizar-pedido', {
+            usuario: req.session.usuario,
             itensCarrinho: itensCarrinho,
             valorTotalPedido: valorTotalPedido,
             listaMetodosPagamentos: listaMetodosPagamentos,
@@ -134,10 +136,10 @@ const {
       },
 
       salvaInformaçõesEntrega: async (req, res) => {
+        const { cep, endereco, numero, complemento, telefone } = req.body;
+        const clienteMock = 1;
+        
         try {
-          const { cep, endereco, numero, complemento, telefone } = req.body;
-          const clienteMock = 1;
-  
           await InformacoesEntrega.create({
               cep: cep,
               endereco: endereco,

@@ -1,7 +1,7 @@
 const { Cliente } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 
 
 const ClienteController = {
@@ -32,7 +32,7 @@ const ClienteController = {
         console.log(errors.mapped());
       } 
 
-      passwordHash = bcrypt.hashSync(password, 10)
+      const passwordHash = bcrypt.hashSync(password, 10)
 
       console.log(passwordHash);
 
