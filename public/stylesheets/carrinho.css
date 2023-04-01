@@ -180,6 +180,18 @@ button#botao-adiciona {
     background-color: #849207;
 }
 
+
+.frete-região  h1{
+font-size: 20px;
+}
+
+#resultado-frete{
+    font-size: 15px;
+}
+#meu-formulario label{
+    font-size: 15px;
+}
+
 /*Media Queries*/
 @media(max-width: 800px) {
     section.container {

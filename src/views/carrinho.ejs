@@ -20,10 +20,10 @@
           <% for(let item of itensCarrinho) { %>
           <tr>
             <td class="container__img">
-              <img class="container__imagem" src="/images/tela-produtos/<%= item.imagem%>.png" alt="Vinho" width="30%">
+              <img class="container__imagem" src="/images/tela-produtos/<%= item.imagem %>.png" alt="Vinho" width="30%">
             </td>
             <td>
-              <h2 class="container__nome"><%= item.nome%></h2>
+              <h2 class="container__nome"><%= item.nome %></h2>
             </td>
             <td>
               <section class="container__tabela_coluna_sub">
@@ -74,14 +74,31 @@
 
     <article class="container__resume">
       <table class="table_resume">
-        <tr>
+        <!--seção calculo do frete-->
+      <div class="frete-região">
+
+        <h1>Calcule o valor do frete</h1>
+        <form id="meu-formulario" >        
+        <label for="regiao-entrega"><strong>Região de entrega:</strong></label>
+        <select id="regiao-entrega" name="regiao-entrega">
+          <option value="São Paulo">São Paulo</option>
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Minas Gerais">Minas Gerais</option>
+          <option value="Outros Estados">Outros Estados</option>
+          </select>
+          </form><br><br>
+          <div id="resultado-frete"><strong>O valor do frete é : </strong> </div>
+        </div>
+      
+              
+        <!-- <tr>
           <td class="">Prazo de entrega</td>
           <td class="carrinho__tempo">5 a 7 dias úteis</td>
         </tr>
         <tr>
           <td class="">Valor do frete</td>
           <td class="carrinho__frete">Grátis</td>
-        </tr>
+        </tr> -->
         <tr>
           <td class="carrinho__valor-total">Valor total</td>
           <td class="">R$<span id="valor-total-itens"><%= total.toFixed(2) %></span></td>
@@ -89,6 +106,8 @@
 
       </table>
 
+     
+          
       <section class="btns_rotas">
         <button class="carrinho__button__back_prod btn" onclick="window.location.href='/produtos'">
           Voltar para produtos
