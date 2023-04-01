@@ -39,7 +39,6 @@ td {
 
 td, th {
     border: 1px solid var(--cor-vinho-verde);
-    text-align: left;
     padding: 8px;
 }
 
@@ -110,6 +109,21 @@ button#botao-adiciona {
     font-weight: 500;
 }
 
+.inptCep {
+    padding: 1rem;
+    font-style:italic;
+    font-size:18px;
+    border: 1px solid gray;  
+    border-radius: 0.3rem;     
+    height:3rem;
+    width: 85%;
+}
+
+.alinhaTexto {
+    text-align: center;
+}
+
+
 .container__resume {
     display: flex;
     flex-direction: column;
@@ -155,6 +169,16 @@ button#botao-adiciona {
     cursor: pointer;
 }
 
+.btn_2 {
+    border: 1px solid var(--cor-preta);
+    border-radius: 5px;
+    padding: .5rem .7rem;
+    font-size: 1.2rem;
+    color: var(--cor-branca);
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .carrinho__button__back_prod {
     background-color: var(--cor-vinho-escuro);
     font-size: 1.4rem;
@@ -163,7 +187,21 @@ button#botao-adiciona {
     min-width: 120px;
     transition: all .5s;
 }
+
+.carrinho__button__back_prod_2 {
+    background-color: var(--cor-vinho-escuro);
+    margin-left: 4rem;
+    font-size: 1.4rem;
+    padding: 1rem;
+    min-width: 120px;
+    transition: all .5s;
+}
+
+
 .carrinho__button__back_prod:hover {
+    background-color: var(--cor-vinho-claro);
+}
+.carrinho__button__back_prod_2:hover {
     background-color: var(--cor-vinho-claro);
 }
 

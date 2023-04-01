@@ -89,19 +89,17 @@
           </form><br><br>
           <div id="resultado-frete"><strong>O valor do frete é : </strong> </div>
         </div> -->
+        
         <tr>
-          <!--
-          <td class="">Calcular Frete</td>
-          <td class="carrinho__tempo"><input id="recebeCEP" type="text"></td>
-          <td class="carrinho__tempo"><button onclick="buscaCep()">Buscar CEP</button></td>
-          <input type="button" class="button" id="botao" value="Receber" onclick="buscaCEP()">
-          -->
+          <td><input type="text" class="inptCep" width="5" id="recebeCEP" placeholder="Digite o frete..."></td>
+          <td><input type="button" class="carrinho__button__back_prod_2 btn_2" id="botao" value="Buscar CEP" onclick="buscaCEP()"></td>
+       </tr>
+       <tr>
+        <td id="frete" class="alinhaTexto">Valor do frete</td>
+        <td id="prazoDoFrete" class="alinhaTexto">Prazo do frete</td>
+      </tr>
 
-          <input type="button" class="button" id="botao" value="Receber" onclick="buscaCEP()">
-          <input type="text" width="5" id="recebeCEP" placeholder="CEP">
-          <label for="" id="frete">Frete:</label>
-          
-        </tr>
+        
 
         <!-- <tr>
           <td class="">Prazo de entrega</td>
@@ -112,10 +110,9 @@
           <td class="carrinho__frete">Grátis</td>
         </tr> -->
         
-
         <tr>
-          <td class="carrinho__valor-total">Valor total</td>
-          <td class="">R$ <span id="valor-total-itens"><%= total.toFixed(2) %></span></td>
+          <td class="carrinho__valor-total alinhaTexto">Valor total</td>
+          <td class="alinhaTexto">R$ <span id="valor-total-itens"><%= total.toFixed(2) %></span></td>
         </tr>
 
       </table>
