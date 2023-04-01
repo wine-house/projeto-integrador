@@ -9,7 +9,7 @@ function buscaCEP(){
     var valores =[10,12,22,45,54,32,21,80,66,43,33,39,67,27,38,90,47,32,51,38,56,73,63,99,93,28,87,75]
       
     //dados do CEP
-      var recebeCEP = document.getElementById('cep')
+      var recebeCEP = document.getElementById('recebeCEP')
       var CEPValido = false
       
       //verifica se o campo do CEP esta preenchido
