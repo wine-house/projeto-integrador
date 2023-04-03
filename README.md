@@ -44,6 +44,7 @@ https://user-images.githubusercontent.com/113199352/222765325-cd8808be-ecf1-4616
 - Rodrigo Potel,
 - Guilherme Januário,
 - Maryelen Amaral,
+- Pedro Victor,
 - Matheus Oliveira.
      
 
