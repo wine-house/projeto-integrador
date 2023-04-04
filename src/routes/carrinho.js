@@ -10,6 +10,8 @@ const {
     salvaInformaçõesEntrega
 } = require('../controller/CarrinhoController');
 
+const validacaoDeUsuario = require('../middlewares/validacaoDeUsuario')
+
 const router = express.Router();
 
 /* rotas do carrinho*/
@@ -19,10 +21,10 @@ router.put('/subtrai/:id', subtraiQtdDoItemCarrinho);
 router.delete('/:id', deletaItemCarrinho);
 
 /* rotas para finalizar pedido*/
-router.get('/finalizar', viewFinalizarPedido);
-router.post('/finalizar', selecionaMetodoPagamento);
-router.post('/finalizar/criaPedido/:id', criaPedido);
-router.post('/finalizar/entrega', salvaInformaçõesEntrega);
+router.get('/finalizar',validacaoDeUsuario, viewFinalizarPedido);
+router.post('/finalizar',validacaoDeUsuario, selecionaMetodoPagamento);
+router.post('/finalizar/criaPedido/:id',validacaoDeUsuario, criaPedido);
+router.post('/finalizar/entrega',validacaoDeUsuario, salvaInformaçõesEntrega);
 
 
 
