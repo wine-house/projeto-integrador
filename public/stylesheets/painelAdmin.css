@@ -1,0 +1,23 @@
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 15rem;
+}
+
+section div {
+   width: 100%;
+   height: 100%;
+   padding: 10rem;
+}
+
+section div a {
+    border: black;
+    border-radius: 3rem;
+    padding: 20rem;
+    font-size: 3rem;
+    line-height: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}

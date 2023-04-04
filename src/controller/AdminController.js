@@ -240,6 +240,18 @@ const AdminController = {
              res.status(500).send('Erro ao editar o produto.');
          };
      },
+     indexAdmin: async (req, res) => {
+        try
+        {
+           return res.render('painelAdmin', {
+                css: ['/stylesheets/menu-footer.css', '/stylesheets/painelAdmin.css']
+            });
+        } 
+        catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao exibir a tela painel administrativo.');
+        };
+    }
 
     
 }

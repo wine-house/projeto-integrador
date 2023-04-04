@@ -5,26 +5,27 @@ const multer = require('multer');
 const { multerProductStorage } = require('../middlewares/configDisk');
 const validacoes = require('../middlewares/validacoes');
 
-const { index, editProduct, updateProduct, createProduct, viewForm, deleteProduct, exibirCategorias, createCategoria, updateCategoria } = require("../controller/AdminController");
+const { indexAdmin, index, editProduct, updateProduct, createProduct, viewForm, deleteProduct, exibirCategorias, createCategoria, updateCategoria } = require("../controller/AdminController");
 
 const upload = multer({ storage: multerProductStorage });
 
 // listar
-router.get("/", index);
-router.get('/categorias', exibirCategorias);
-router.get("/categorias/editar/:id", updateCategoria);
+router.get("/", indexAdmin);
+router.get("/produtos", index);
+router.get('/produtos/categorias', exibirCategorias);
+router.get("/produtos/categorias/editar/:id", updateCategoria);
 
 // editar
-router.get("/editar/:id", editProduct);
-router.put("/editar/:id", validacoes, upload.any("imagem"), updateProduct);
-router.put("/categorias/editar/:id", validacoes, updateCategoria);
+router.get("/produtos/editar/:id", editProduct);
+router.put("/produtos/editar/:id", validacoes, upload.any("imagem"), updateProduct);
+router.put("/produtos/categorias/editar/:id", validacoes, updateCategoria);
 
 // criar
-router.get ("/criar", viewForm);
-router.post("/criar", validacoes, upload.any("imagem"), createProduct);
-router.post ("/categorias/criar", createCategoria);
+router.get ("/produtos/criar", viewForm);
+router.post("/produtos/criar", validacoes, upload.any("imagem"), createProduct);
+router.post ("/produtos/categorias/criar", createCategoria);
 
 
-router.delete("/:id", deleteProduct);
+router.delete("/produtos/:id", deleteProduct);
 
 module.exports = router;

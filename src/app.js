@@ -32,7 +32,7 @@ app.use('/', indexRouter);
 app.use('/api', apiProdutosRouter);
 app.use('/cliente', clienteRouter);
 app.use('/produtos', produtosRouter);
-app.use('/admin/produtos',usuarioAdmin, adminRouter);
+app.use('/admin',usuarioAdmin, adminRouter);
 app.use('/carrinho', carrinhoRouter);
 
 // catch 404 and forward to error handler
