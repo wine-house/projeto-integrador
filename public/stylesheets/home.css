@@ -6,6 +6,10 @@
     position: relative;
 }
 
+#logadoAdmin{
+    color: white;
+}
+
 .banner::before,
 .banner::after {
     content: '';

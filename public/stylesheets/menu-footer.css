@@ -145,10 +145,17 @@ img {
     margin: .2rem 1.6rem 0 0;
 }
 
+
 .icons i, .search i {
     font-size: 2.1rem;
     cursor: pointer;
     color: var(--cor-branca);
+}
+
+.icons i:hover {
+    font-size: 2.1rem;
+    cursor: pointer;
+    color: --cor-dourada;
 }
 
 .icons i:first-child {

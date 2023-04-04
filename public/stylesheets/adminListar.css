@@ -20,6 +20,16 @@ h1 {
 
 }
 
+#logadoAdmin{
+    color: white;
+}
+
+#logadoAdmin:hover{
+    color: #997C00;
+}
+
+
+
 #search-div {
     display: flex;
     justify-content: flex-end;
