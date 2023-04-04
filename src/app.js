@@ -12,6 +12,7 @@ const adminRouter = require('./routes/admin');
 const carrinhoRouter = require('./routes/carrinho');
 const produtosRouter = require('./routes/produto');
 const apiProdutosRouter = require('./api/v1/routes/produtos');
+const usuarioAdmin = require('./middlewares/validaAdmin');
 
 const app = express();
 
@@ -31,7 +32,7 @@ app.use('/', indexRouter);
 app.use('/api', apiProdutosRouter);
 app.use('/cliente', clienteRouter);
 app.use('/produtos', produtosRouter);
-app.use('/admin/produtos', adminRouter);
+app.use('/admin/produtos',usuarioAdmin, adminRouter);
 app.use('/carrinho', carrinhoRouter);
 
 // catch 404 and forward to error handler

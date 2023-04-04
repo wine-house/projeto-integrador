@@ -7,6 +7,8 @@ const {
     painelUsuario
 } = require('../controller/indexController');
 
+const usuarioLogado = require('../middlewares/validacaoDeUsuario')
+
 const router = express.Router();
 
 router.get('/', index);
@@ -21,6 +23,6 @@ router.get('/eventos', eventos);
 router.get('/parceiros', parceiros);
 
 /* pagina painel de usuário*/
-router.get('/painel-usuario', painelUsuario);
+router.get('/painel-usuario',usuarioLogado, painelUsuario);
 
 module.exports = router;

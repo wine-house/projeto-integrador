@@ -35,6 +35,11 @@ const criarClienteModel = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
+        isAdmin: {
+            type: dataTypes.TINYINT,
+            allowNull: false,
+            defaultValue: 0
+        }
 };
 
     const opcoes = {

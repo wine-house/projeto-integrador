@@ -72,11 +72,15 @@
 
         <!--Login/Compras-->
         <div class="icons">
-            <% if(usuario){ %>
+            <% if(usuario?.isAdmin){ %>
             <a href="/painel-usuario">
                 <i class="fa-solid fa-user" id="user-icon" title="Login"></i>
             </a>
 
+            <a href="/admin/produtos">
+                <i class="fa-solid fa-plus" id="user-icon" title="Painel de Admin"></i>
+            </a>
+            
             <% } else { %>
             <a href="/cliente">
                 <i class="fa-solid fa-user" id="user-icon" title="Login"></i>

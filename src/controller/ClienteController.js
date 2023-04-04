@@ -82,7 +82,7 @@ const ClienteController = {
 
       if (cliente) {
         const senhaCorreta = bcrypt.compareSync(senha, cliente.senha);
-    
+        console.log("Usuário validado? " + senhaCorreta)
         if (senhaCorreta) {
           req.session.usuario = cliente;
           return res.redirect('/painel-usuario');
