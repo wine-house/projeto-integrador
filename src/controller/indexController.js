@@ -71,5 +71,21 @@ module.exports = {
         console.log(error);
         res.status(500).send('Erro ao exibir o painel do usuário.');
       }
-    }
+    },
+
+    viewDetalhesDoPedido: async(req, res, next) => {
+      try {
+        const { id } = req.params;
+        const pedido = await Pedido.findByPk(id);
+
+        res.render('detalhesDoPedido',  {
+          pedido: pedido,
+          usuario: req.session.usuario,
+          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/detalhesDoPedido.css']
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao exibir o detalhes do pedido.');
+      }
+    },
 }
