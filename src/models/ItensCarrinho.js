@@ -35,19 +35,12 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
         produto_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: 'produtos', //nome da tabela que será referenciada pela chave estrangeira
-                key: 'id' //nome da coluna que será referenciada pela chave estrangeira
-            }
+            
         },
 
         cliente_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: 'clientes', //nome da tabela que será referenciada pela chave estrangeira
-                key: 'id' //nome da coluna que será referenciada pela chave estrangeira
-            }
         }
     };
 
@@ -57,7 +50,19 @@ const criarItensCarrinhoModel = (sequelize, dataTypes) => {
     };
 
 
-    const ItensCarrinho = sequelize.define('ItensCarrinho', colunas, opcoes)
+    const ItensCarrinho = sequelize.define('ItensCarrinho', colunas, opcoes);
+
+    ItensCarrinho.associate = (models) => {
+        // ItensCarrinho.hasMany(models.Produto, {
+        //     as: "produtos",
+        //     foreignKey: "produto_id"
+        // });
+
+        // ItensCarrinho.hasMany(Cliente, {
+        //     as: "clientes",
+        //     foreignKey: "cliente_id"
+        // });
+    };
 
     return ItensCarrinho;
 };

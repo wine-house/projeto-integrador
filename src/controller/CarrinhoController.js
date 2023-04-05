@@ -3,7 +3,8 @@ const {
   Produto, 
   FormaPagamento, 
   InformacoesEntrega,
-  Pedido
+  Pedido,
+  Cliente
 } = require('../models');
   
   module.exports = {
@@ -34,10 +35,22 @@ const {
     },
 
       viewCarrinho: async (req, res) => {
+        const { usuario } = req.session;
         try {
-          const itensCarrinho = await ItensCarrinho.findAll();
+
+          const itensCarrinho = await ItensCarrinho.findAll(
+          //   {
+          //   include: [{
+          //     model: Cliente,
+          //     as: "cliente",
+          //   }]
+          // }
+          );
+
+          // console.log(itensCarrinho);
+
           res.render('carrinho', {
-          usuario: req.session.usuario,
+          usuario,
           itensCarrinho: itensCarrinho,
           css: [
             '/stylesheets/menu-footer.css',

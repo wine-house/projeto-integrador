@@ -58,7 +58,10 @@ const criarProdutoModel = (sequelize, dataTypes) => {
             as: "categoria",
             foreignKey: "categoria_id"
         });
-    };
+
+        Produto.belongsTo(models.ItensCarrinho);
+    }; 
+
 
   
     return Produto;
