@@ -79,16 +79,13 @@ const ClienteController = {
         }
       });
 
+      const senhaCorreta = bcrypt.compareSync(senha, cliente.senha);
 
-      if (cliente) {
-        const senhaCorreta = bcrypt.compareSync(senha, cliente.senha);
-        console.log("Usuário validado? " + senhaCorreta)
-        if (senhaCorreta) {
+      if (cliente && senhaCorreta) {
           req.session.usuario = cliente;
           return res.redirect('/painel-usuario');
-        }
       }
-      
+
       res.status(500).send('Ops, você ainda não possui um cadastro no no site.');
 
   
