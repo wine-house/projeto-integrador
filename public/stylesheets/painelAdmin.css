@@ -1,23 +1,78 @@
-section {
+:root {
+    --cor-vinho-escuro: #530112;
+    --cor-vinho-claro: #8C3555;
+    --cor-vinho-verde: rgb(160, 178, 0);
+    --cor-rosa: #A66F83;
+    --cor-dourada: #997C00;    
+    --cor-branca: white;
+    --cor-preta: black;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+  }
+  
+  header {
+    color: var(--cor-dourada);
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .painelAdmin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  
+  .box {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-prod {
+    background-color: rgb(75, 200, 138);
+  }
+
+  .btn-cat {
+    background-color: rgb(61, 157, 246);
+  }
+  
+  .btn-user {
+    background-color: rgb(200, 75, 75);
+  }
+
+  .btn-prod:hover {
+    background-color: rgb(116, 158, 137);
+  }
+
+  .btn-cat:hover {
+    background-color: rgb(116, 134, 158);
+  }
+  
+  .btn-user:hover {
+    background-color: rgb(158, 116, 116);
+  }
+
+  
+
+  .box a {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    padding: 15rem;
-}
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+    color: #333;
+  }
 
-section div {
-   width: 100%;
-   height: 100%;
-   padding: 10rem;
-}
-
-section div a {
-    border: black;
-    border-radius: 3rem;
-    padding: 20rem;
-    font-size: 3rem;
-    line-height: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
+  
+  

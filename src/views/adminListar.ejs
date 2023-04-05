@@ -2,20 +2,24 @@
 
 	<main>
 		<div class="titulo">
-				<h1 id="titulo-page">
-					CADASTRO DE PRODUTOS
-				</h1>
-				<a class="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
-				<a class="btn-flat" href="/admin/produtos/categorias">Lista de Categorias</a>
-		</div>
-		
-		
+				<div>
+					<h1 id="titulo-page">
+						CADASTRO DE PRODUTOS
+					</h1>	
+				</div>
+				<div class="nav-btn-admin">
+					<a class="btn-flat" href="/admin/produtos/criar">Adicionar Produto</a>
+					<a class="btn-flat" href="/admin/produtos/categorias">Lista de Categorias</a>
+					<a class="btn-flat" href="/admin/users">Lista de Usuários</a>
+					<a class="btn-flat" href="/admin">Painel de Admin</a>
+				</div>
+		</div>		
 		<hr>
 		<div>
 			<div id="search-div">
 				<form method="get">
 					<input type="search" name="search" id="search">
-					<button type="submit">Search</button>
+					<button id="search-button" type="submit">Search</button>
 				</form>
 			</div>
 		</div>
@@ -49,7 +53,7 @@
 										<td class="opcoes-crud"> 
 											<a id="editar-button" href="/admin/produtos/editar/<%= produto.id %>">Editar</a> 
 											<form action="/admin/produtos/<%= produto.id %>?_method=DELETE" method="post">
-												<button type="submit">Deletar</button>
+												<button id="deletar-button" type="submit">Deletar</button>
 											</form>
 										</td>
 									</tr>
