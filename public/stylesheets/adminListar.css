@@ -194,6 +194,7 @@ td:first-child {
     width: 12rem;
     height: 3rem;
     background-color: rgb(75, 200, 138);
+    text-align: center;
     color: white;
     font-weight: 500;
     cursor: pointer;
