@@ -2,6 +2,8 @@ const { Produto, Fornecedor, Categoria, Cliente } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
 
+const bcrypt = require('bcrypt')
+
 const AdminController = {
     index: async (req, res) => {
         try
@@ -312,8 +314,70 @@ const AdminController = {
             console.log(error);
             res.status(500).send('Erro ao criar o usuário.');
         };
-    }
+    },
+    editUser: async (req, res) => {
+        try 
+        {
+ 
+         const { id } = req.params;
+         const usuario = await Cliente.findByPk(id);
+         
+ 
+         return res.render('editarUsuario', {
+            usuario: usuario,
+             css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css']
+         });
+         }
+         catch (error) {
+             console.log(error);
+             res.status(500).send('Erro ao editar o produto.');
+         };
+     },
+     updateUser: async (req, res) => {
+        try
+        {
+            const { id } = req.params;
+            const { nome, email, cpf, data_nascimento, isAdmin, senha } = req.body;
+        
+            const avatar = req.files[0]?.originalname;
+            const imagem = avatar.substring(0, avatar.indexOf('.'));
 
+            const senhaHash = bcrypt.hashSync(senha, 10)
+
+            await Cliente.update({
+                nome: nome,
+                email: email,
+                imageProfile: imagem,
+                cpf: cpf,
+                data_nascimento: data_nascimento,
+                isAdmin: isAdmin,
+                senha: senhaHash
+            },
+            {
+                where: { id: id }
+            });
+            res.redirect('/admin/usuarios/');
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao atualizar o usuário.');
+        }
+    },
+    deleteUser: async (req, res)=>{
+        try
+        {    
+            const { id } = req.params;
+            await Cliente.destroy({
+                where: {
+                    id: id
+                }
+            });
+            
+            res.redirect('/admin/usuarios');
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao deletar o usuário.');
+        }
+    },
     
 }
 

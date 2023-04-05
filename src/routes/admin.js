@@ -5,7 +5,7 @@ const multer = require('multer');
 const { multerProductStorage } = require('../middlewares/configDisk');
 const validacoes = require('../middlewares/validacoes');
 
-const { indexUsers, indexAdmin, index, editProduct, updateProduct, createProduct, viewForm, deleteProduct, exibirCategorias, createCategoria, updateCategoria, viewFormUsuarios, createUsuario } = require("../controller/AdminController");
+const { indexUsers, indexAdmin, index, editProduct, updateProduct, createProduct, viewForm, deleteProduct, exibirCategorias, createCategoria, updateCategoria, viewFormUsuarios, createUsuario, editUser, updateUser, deleteUser } = require("../controller/AdminController");
 
 const upload = multer({ storage: multerProductStorage });
 
@@ -18,6 +18,8 @@ router.get("/produtos/categorias/editar/:id", updateCategoria);
 
 // editar
 router.get("/produtos/editar/:id", editProduct);
+router.get("/usuarios/editar/:id", editUser);
+router.put("/usuarios/editar/:id", validacoes, upload.any("imagem"), updateUser);
 router.put("/produtos/editar/:id", validacoes, upload.any("imagem"), updateProduct);
 router.put("/produtos/categorias/editar/:id", validacoes, updateCategoria);
 
@@ -28,7 +30,8 @@ router.get ("/usuarios/criar", validacoes, viewFormUsuarios);
 router.post("/usuarios/criar", validacoes, upload.any("imagem"), createUsuario);
 router.post ("/produtos/categorias/criar", createCategoria);
 
-
+//deletar
 router.delete("/produtos/:id", deleteProduct);
+router.delete("/usuarios/:id", deleteUser);
 
 module.exports = router;
