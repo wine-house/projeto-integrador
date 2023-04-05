@@ -33,7 +33,8 @@ const criarClienteModel = (sequelize, dataTypes) => {
         },
         senha: {
             type: dataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            defaultValue: '$2b$10$AYNs65Y2H9.kW3E8GmXsFOryRilovzQG2OsCMwFewPe.pnSUC87.i'
         },
         isAdmin: {
             type: dataTypes.TINYINT,

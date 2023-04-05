@@ -1,0 +1,75 @@
+<%- include("partials/headerAdm") %>
+
+    <main>
+        <h1>
+            CADASTRO DE USUÁRIO
+        </h1>
+        <hr>
+        <form action="/admin/usuarios/criar" method="POST" class="form" id="formulario" enctype="multipart/form-data">
+            <section class="section-filha-form section-container1 section-nome-preco">
+                <!-- Nome -->
+                <em class="emNome-Preco">
+                    Nome do Usuário:
+                </em>
+                <input class="inpt nome inptPreco" type="text" placeholder="Digite aqui o nome do usuário" name="nome">
+                <span role="alert" id="nameError" aria-hidden="true">O campo nome não pode estar vazio</span>
+                <!-- Preço -->
+                <div class="emPrecoClass">
+                    <em class="emNome-Preco">
+                        Email:
+                    </em>
+                        <input class="preco inptPreco" type="text" placeholder="email@gmail.com" name="email">
+                        <span role="alert" id="precoError" aria-hidden="true">O campo email não pode estar vazio</span>
+                </div>
+            </section>
+            <section class="section-filha-form section-container2">
+                
+                
+                
+                <div class="div-container2 div-filha2">
+                       
+                    <div class="cpf-cad">
+                        <!-- Categorias -->
+                        <em>
+                            CPF
+                        </em>
+                        <input class="preco inptPreco" type="text" placeholder="00000000000" name="cpf">
+                        <span role="alert" id="precoError" aria-hidden="true">O campo cpf não pode estar vazio</span>
+                        
+                     </div>
+                    <div>
+                        <em id="fornecedores">
+                            data_nascimento
+                        </em>
+                        <input class="preco inptPreco" type="date" placeholder="00/00/0000" name="data_nascimento">
+                        <span role="alert" id="precoError" aria-hidden="true">O campo data nascimento não pode estar vazio</span>
+                    </div>
+
+                    <div>
+                        <em id="safra">
+                            Tipo de Acesso
+                        </em>
+
+                        <select class="select-cadastro" name="isAdmin">
+                            <option value="0">Usuário Comum</option>
+                            <option value="1">admin</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="div-container2 div-filha2">
+                    <label id="labelFile" for="imagem">Inserir aqui a foto</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/png, image/jpeg"/>
+                </div>
+            </section>
+            <button type="submit" id="btn-submit" >Enviar</button>
+        </form>
+
+    </main>
+
+    <!--JavaScript-->
+    <!-- <script src="/js/menu-footer.js"></script> -->
+    <script src="../../public/js/register.js"></script>
+    <!--end JavaScript-->
+    
+<%-include("partials/footer")%> 

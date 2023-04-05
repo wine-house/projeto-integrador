@@ -1,4 +1,4 @@
-const { Produto, Fornecedor, Categoria } = require('../models');
+const { Produto, Fornecedor, Categoria, Cliente } = require('../models');
 const { validationResult } = require('express-validator');
 const { Op } = require('sequelize');
 
@@ -250,6 +250,67 @@ const AdminController = {
         catch (error){
             console.log(error);
             res.status(500).send('Erro ao exibir a tela painel administrativo.');
+        };
+    },
+    indexUsers: async (req, res) => {
+        try
+        {
+            const { search } = req.query;
+
+            const usuarios = await Cliente.findAll({ 
+                where: search ? {
+                    email: {
+                        [Op.like]: `%${search}%`
+                    }} : null,
+            });
+
+            return res.render('adminListarUser', {
+                usuarios: usuarios,
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css']
+            });
+        } 
+        catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao exibir a tela painel administrativo.');
+        };
+    },
+    viewFormUsuarios: async (req, res)=>{
+        try
+        {
+            const usuarios = await Cliente.findAll();
+
+            res.render('cadastrarUsuario', {
+                css: ['/stylesheets/menu-footer.css','/stylesheets/adminListar.css','/stylesheets/cadastrar.css'],
+                usuarios: usuarios,
+               
+            });
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Erro ao exibir a tela de editar usuário.');
+        };
+    },
+    createUsuario: async (req, res)=>{
+        try
+        {
+            const { nome, email, cpf, data_nascimento, isAdmin, senha} = req.body;
+
+            const avatar = req.files[0].originalname;
+            
+            const imagem = avatar.substring(0, avatar.indexOf('.'));          
+        
+            const errors = validationResult(req);
+
+            if(errors.isEmpty()){
+                console.log(errors.mapped());
+            };
+
+            await Cliente.create({ nome: nome, email: email, senha:senha, imageProfile: imagem, cpf: cpf, data_nascimento: data_nascimento, isAdmin: isAdmin});
+
+            res.redirect('/admin/usuarios/');
+        } 
+        catch (error) {
+            console.log(error);
+            res.status(500).send('Erro ao criar o usuário.');
         };
     }
 
