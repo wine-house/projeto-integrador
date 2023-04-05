@@ -172,7 +172,7 @@
           <button class="carrinho__button__back_prod btn" onclick="window.location.href='/carrinho'">
             Voltar para carrinho
           </button>
-            <button class="carrinho__button__finish btn">
+            <button class="carrinho__button__finish btn" onclick="abrirAlerta()">
               Concluir o pedido
             </button>
           </form>
@@ -180,6 +180,7 @@
 
         <!--Link to Top-->
         <a class="link-top" href="#carrinho"><i class="fas fa-arrow-up"></i></a>
+
       </main> 
     <!--end MAIN-->
 
@@ -187,7 +188,16 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/js/finalizar-pedido.js" defer></script>
     <script src="/js/finalizar-pedido-total.js" defer></script>
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function abrirAlerta() {
+        swal({
+          title: "Pedido feito com sucesso!",
+          text: "Obrigado pela preferência!",
+          icon: "success",
+          });
+      }
+    </script>
     <!--end JavaScript-->
 
 <%- include('partials/footer') %>
