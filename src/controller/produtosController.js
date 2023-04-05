@@ -54,30 +54,5 @@ module.exports = {
             console.log(error);
             res.status(500).send('Erro ao exibir a tela do produto selecionado.');
         }
-    },
-
-    adicionaItemNoCarrinho: async (req, res) => {
-        try {
-            const { id } = req.params;
-            const qtdInicial = 1;
-            const clienteMock = 1;
-    
-            const produto = await Produto.findByPk(id);
-    
-            await ItensCarrinho.create({
-                nome: produto.nome,
-                valor_unitario: produto.valor,
-                valor_total: produto.valor,
-                imagem: produto.imagem,
-                quantidade: qtdInicial,
-                produto_id: id,
-                cliente_id: clienteMock
-            });
-    
-            res.redirect('/carrinho/');
-        } catch (error) {
-            console.error(error);
-            res.status(500).send('Erro ao adicionar o item ao carrinho.');
-        }
-    }
+    } 
 }
