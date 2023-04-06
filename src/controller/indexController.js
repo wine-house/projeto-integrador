@@ -60,11 +60,16 @@ module.exports = {
 
     painelUsuario: async(req, res, next) => {
       try {
-        const pedidos = await Pedido.findAll();
+        const clienteLogado = req.session.usuario;
 
+        const pedidos = await Pedido.findAll({
+          where: {
+            cliente_id: clienteLogado.id
+          }
+        });
         res.render('painel-usuario',  {
           pedidos: pedidos,
-          usuario: req.session.usuario,
+          usuario: clienteLogado,
           css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
         });
       } catch (error) {

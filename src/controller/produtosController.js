@@ -60,8 +60,8 @@ module.exports = {
         try {
             const { id } = req.params;
             const qtdInicial = 1;
-            const clienteMock = 1;
-    
+            const clienteLogado = req.session.usuario;
+
             const produto = await Produto.findByPk(id);
     
             await ItensCarrinho.create({
@@ -71,7 +71,7 @@ module.exports = {
                 imagem: produto.imagem,
                 quantidade: qtdInicial,
                 produto_id: id,
-                cliente_id: clienteMock
+                cliente_id: clienteLogado.id
             });
     
             res.redirect('/carrinho/');
