@@ -27,6 +27,4 @@ router.post('/finalizar', selecionaMetodoPagamento);
 router.post('/finalizar/criaPedido/:id', usuarioLogado, criaPedido);
 router.post('/finalizar/entrega', salvaInformaçõesEntrega);
 
-
-
 module.exports = router;
