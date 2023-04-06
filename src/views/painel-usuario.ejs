@@ -45,7 +45,7 @@
                     <h3>Valor Total</h3>
                 </div>
                 <div class="txt-nota-fiscal">
-                    <h3>Nota Fiscal</h3>
+                    <h3>Detalhes do Pedido</h3>
                 </div>
             </div>
             <% if(pedidos.length === 0) { %>
@@ -70,13 +70,16 @@
                         <h4><%= pedido.valor_total%></h4>
                     </div>
                     <div class="nota-fiscal-cliente">
-                        <a href="#"><img src="images/tela-painel-usuario/icon-nfe.png" alt=""></a>
+                        <form action="/painel-usuario/detalhes-pedido/<%= pedido.id%>" method="get">
+                            <button type="submit">
+                                <img src="/images/tela-painel-usuario/lupa.png" alt="Ver detalhes do pedido" srcset="">
+                            </button>
+                        </form>
                     </div>
                 </div>
             <% } %>
         </div>
     </div>
 </main>
-</body>
 
 <%- include('partials/footer') %>

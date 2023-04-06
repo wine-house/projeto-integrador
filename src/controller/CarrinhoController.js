@@ -35,7 +35,14 @@ const {
 
       viewCarrinho: async (req, res) => {
         try {
-          const itensCarrinho = await ItensCarrinho.findAll();
+          const clienteLogado = req.session.usuario;
+
+          const itensCarrinho = await ItensCarrinho.findAll({
+            where: {
+              cliente_id: clienteLogado.id
+            }
+          });
+
           res.render('carrinho', {
           usuario: req.session.usuario,
           itensCarrinho: itensCarrinho,
@@ -175,7 +182,7 @@ const {
         try {
           const { valorTotal } = req.body;
           const { id } = req.params;
-          const clienteMock = 1;
+          const clienteLogado = req.session.usuario;
 
           const pagamento = await FormaPagamento.findByPk(id);
 
@@ -183,7 +190,7 @@ const {
             data_criacao: new Date(),
             valor_total: valorTotal,
             metodo_pagamento: pagamento.metodo_pagamento,
-            cliente_id: clienteMock
+            cliente_id: clienteLogado.id
           });
 
           await ItensCarrinho.destroy({ where: {} });

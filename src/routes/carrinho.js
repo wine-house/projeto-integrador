@@ -13,6 +13,7 @@ const {
 const validacaoDeUsuario = require('../middlewares/validacaoDeUsuario')
 
 const router = express.Router();
+const usuarioLogado = require('../middlewares/validacaoDeUsuario');
 
 /* rotas do carrinho*/
 router.get('/', viewCarrinho);
@@ -21,10 +22,10 @@ router.put('/subtrai/:id', subtraiQtdDoItemCarrinho);
 router.delete('/:id', deletaItemCarrinho);
 
 /* rotas para finalizar pedido*/
-router.get('/finalizar',validacaoDeUsuario, viewFinalizarPedido);
-router.post('/finalizar',validacaoDeUsuario, selecionaMetodoPagamento);
-router.post('/finalizar/criaPedido/:id',validacaoDeUsuario, criaPedido);
-router.post('/finalizar/entrega',validacaoDeUsuario, salvaInformaçõesEntrega);
+router.get('/finalizar', viewFinalizarPedido);
+router.post('/finalizar', selecionaMetodoPagamento);
+router.post('/finalizar/criaPedido/:id', usuarioLogado, criaPedido);
+router.post('/finalizar/entrega', salvaInformaçõesEntrega);
 
 
 

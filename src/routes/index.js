@@ -4,7 +4,8 @@ const {
     somos,
     eventos,
     parceiros,
-    painelUsuario
+    painelUsuario,
+    viewDetalhesDoPedido
 } = require('../controller/indexController');
 
 const usuarioLogado = require('../middlewares/validacaoDeUsuario')
@@ -24,5 +25,6 @@ router.get('/parceiros', parceiros);
 
 /* pagina painel de usuário*/
 router.get('/painel-usuario',usuarioLogado, painelUsuario);
+router.get('/painel-usuario/detalhes-pedido/:id', viewDetalhesDoPedido);
 
 module.exports = router;
