@@ -51,11 +51,11 @@ img {
 
 /*Logo*/
 .logo__image img {
-    width: calc(6rem + 1.2vw);
-    height: calc(6rem + 1.2vw);
+    width: calc(7rem + 1.2vw);
+    height: calc(7rem + 1.2vw);
     border-radius: 50%;
-    border: 2px solid var(--cor-branca);
-    margin: 4px 0 0 5px;
+    border: 1px solid var(--cor-branca);
+    margin: 1px 0 0 5px;
     animation: move-logo 10s infinite;
 }
 @keyframes move-logo {

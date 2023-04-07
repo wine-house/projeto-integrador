@@ -11,7 +11,7 @@ function buscaCEP(){
     var prazoEntrega =['Entrega em 2 dias úteis','Entrega em 3 dias úteis','Entrega em 4 dias úteis','Entrega em 5 dias úteis','Entrega em 6 dias úteis','Entrega em 8 dias úteis','Entrega em 7 dias úteis','Entrega em 6 dias úteis','Entrega em 6 dias úteis','Entrega em 7 dias úteis','Entrega em 2 dias úteis','Entrega em 12 dias úteis','Entrega em 6 dias úteis','Entrega em 9 dias úteis','Entrega em 2 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis','Entrega em 4 dias úteis']
       
     //dados do CEP
-      var recebeCEP = document.getElementById('recebeCEP')
+      var recebeCEP = document.getElementById('recebeCEP') 
       var CEPValido = false
       
       //verifica se o campo do CEP esta preenchido
