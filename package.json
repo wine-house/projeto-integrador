@@ -2,10 +2,9 @@
   "name": "projeto-integrador",
   "version": "0.0.0",
   "private": true,
-
+  "build": "npm install && npm run build && npm start",
   "scripts": {
-    "start": "nodemon ./src/bin/www",
-    "build": "webpack --config webpack.config.js"
+    "start": "nodemon ./src/bin/www"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
