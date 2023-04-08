@@ -1,8 +1,51 @@
 <%- include('./partials/header') %>
 
 <main>
-    <h1><% pedido %></h1>
-    <h1>DETALHES DO PEDIDO</h1>
+    <section>
+        <h1>Pedido Nº<% pedido.id %></h1>
+        <p>Aqui você encontra todas as informações do seus pedidos</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Itens</th>
+                    <th>Frete</th>
+                    <th>Total</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr>
+                    <td><% pedido.quantidade %></td>
+                    <td><% pedido.frete %></td>
+                    <td><% pedido.valor_total %></td>
+                </tr>
+            </tbody>
+        </table>
+    </section> 
+    <hr>
+    <section>
+        <h1>Detalhes do Pedido</h1>
+        <p>Aqui você encontra todos os detalhes dos seus pedidos</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Safra</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr>
+                    <td>
+                        <div><% produto.imagem %></div>
+                        <div><% produto.nome %></div>
+                    </td>
+                    <td><% produto.safra %></td>
+                    <td><% produto.categoria %></td>
+                    <td><% produto.valor %></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>    
 </main>
-
 <%- include('partials/footer') %>

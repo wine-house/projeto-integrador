@@ -1,0 +1,29 @@
+main {
+    font-size: 12px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+th {
+    background-color: var(--cor-vinho-escuro);
+    color: rgb(238, 237, 237);
+    font-size: 16px;
+}
+
+td {
+    background-color: #f8f4f4;
+}
+
+td, th {
+    border: 1px solid var(--cor-vinho-verde);
+    padding: 8px;
+}
+
