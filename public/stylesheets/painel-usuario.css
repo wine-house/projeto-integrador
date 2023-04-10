@@ -291,6 +291,52 @@ div.nota-fiscal-cliente img{
     width: 2rem;
 }
 
+@media (max-width: 1000px) {
 
+ .conteiner-painel-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 98vh;
+        padding: 1rem;
+        margin: 2rem;
+        border-radius: 2.5rem;
+        border: none;
 
+    }
 
+    div.painel-vertical {
+        width: 98vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgba(0, 0, 0, 0.524)
+    }
+
+    .foto-cliente {
+        justify-content: center;
+        margin: auto;
+    }
+
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 98vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgba(0, 0, 0, 0.524);
+        border-radius: 2.5rem;
+    }
+
+    .meus-pedidos-titulo {
+        justify-content: center;
+        margin: auto;
+    }
+
+    .search {
+        display: none;
+    }
+}
