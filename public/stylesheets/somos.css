@@ -499,10 +499,11 @@
     .banner2__bullets {
         position: absolute;
         bottom: 3.5%;
-        left: 50%;
+        left: 45%;
         transform: translateX(-50%);
-    
+        width: 100%;
         justify-content: flex-end;
+        
     }
 }
 
