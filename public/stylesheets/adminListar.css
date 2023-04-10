@@ -312,11 +312,6 @@ button {
 }
 
 /*Média Queries*/
-@media(max-width:800px){
-  
-
-
-    }
 
 @media (max-width: 600px) {
     .th-hide {
@@ -324,4 +319,36 @@ button {
 
     }
 
+    .opcoes-crud {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0 0 0;
+        height: 7rem;
+    }
+
+    .nav-btn-admin {
+        gap: .6rem;
+    }
+
+    .btn-flat {
+        margin: 0.6rem;
+    }
+
+    .form {
+        margin-top: 1rem;
+        padding: 0.3rem;
+    }
+
+    .search-div {
+        margin-right: 2rem;
+    }
+
+    .icons {
+        position: absolute;
+        top: 47%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
 }
