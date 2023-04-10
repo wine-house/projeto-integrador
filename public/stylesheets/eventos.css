@@ -92,3 +92,103 @@ hr {
     margin: 3rem 0 10rem 0;
 }
 
+
+@media(max-width: 950px) {
+    .curiosity__content {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .curiosity-wrapper {
+        flex-basis: 43%;
+    }
+
+    .curiosity-item {
+        max-height: 450px;
+    }
+
+    .curiosity-item__image-front img {
+        max-height: 350px;
+    }
+
+    .curiosity-item__back__img {
+        width: calc(100px + 3vw);
+    }
+
+    .curiosity-item__description {
+        font-size: calc(.85rem + .8vw);
+    }
+    
+    .curiosity-item__close {
+        padding: calc(5px + .3vw);
+        width: calc(100px + .5vw);
+    }
+}
+
+.icons-color {
+    color: white;
+}
+
+@media(max-width: 800px) {
+    /*Mission*/
+    .img-janeiro{
+        height: 40vh;
+    }
+
+    .img-fevereiro{
+        height: 40vh;
+    }
+
+    .escolha-vinhos {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+@media(max-width: 600px) {
+    /* Curiosity */
+    .curiosity-wrapper {
+        flex-basis: 75%;
+    }
+
+    .curiosity-item__back__img {
+        width: calc(130px + 3vw);
+    }
+
+    .curiosity-item__description {
+        font-size: calc(1.3rem + 1vw);
+    }
+    
+    .curiosity-item__close {
+        padding: calc(7.7px + .3vw);
+        width: calc(115px + .5vw);
+    }
+}
+
+@media(max-width: 500px) {
+    /*Mission*/
+    .mission__content__item {
+        flex-basis: 96%;
+    }
+}
+
+@media(max-width: 450px) {
+    /* Curiosity */
+    .curiosity-wrapper {
+        flex-basis: 85%;
+    }
+}
+
+@media(max-width: 330px) {
+    /* Curiosity */
+    .curiosity-wrapper {
+        flex-basis: 100%;
+    }
+
+    .curiosity-item__description {
+        font-size: calc(1.15rem + 1vw);
+    }
+}

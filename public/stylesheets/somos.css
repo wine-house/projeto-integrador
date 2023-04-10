@@ -449,6 +449,21 @@
         width: 48vw;
     }
 
+    .banner2 {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+    }
+    .banner2__bullets {
+        position: absolute;
+        bottom: 3.5%;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        justify-content: flex-end;
+    }
+
     .prize__content {
         grid-template-columns: 1fr;
     }
@@ -473,6 +488,21 @@
 
     .why__info {
         width: 70vw;
+    }
+
+    .banner2 {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+    }
+    .banner2__bullets {
+        position: absolute;
+        bottom: 3.5%;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        justify-content: flex-end;
     }
 }
 

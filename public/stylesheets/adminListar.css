@@ -311,6 +311,13 @@ button {
     cursor: pointer;
 }
 
+/*Média Queries*/
+@media(max-width:800px){
+  
+
+
+    }
+
 @media (max-width: 600px) {
     .th-hide {
         display: none;
