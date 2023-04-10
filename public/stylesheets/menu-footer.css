@@ -396,6 +396,18 @@ main {
     .logo__image img {
         margin: 4px 0 0 0px;
     }
+
+    .search {
+        display: none;
+    }
+
+    .search__input input  {
+       display: none;
+    }
+
+    .search__glass {
+        display: none;
+    }
     
     .navbar {
         opacity: 0;
@@ -437,7 +449,7 @@ main {
     .hamburger {
         display: block;
         position: absolute;
-        top: 3rem;
+        top: 2.5rem;
         right: 1.8rem;
         cursor: pointer;
         animation: pulse 2s infinite;
@@ -475,12 +487,10 @@ main {
         margin-right: 5.5rem;        
     }
 
-    .search {
-        left: 10rem;
-        top: 52%;
-        transform: translateY(-50%);
+    .banner__images {
+        max-width: 50vw;
     }
-
+   
     .footer__top__map,
     .footer__top__details {
         flex-basis: 100%;
@@ -510,14 +520,15 @@ main {
     }
 
     .hamburger {
-        top: 1.3rem;
+        top: 2.5rem;
     }
 
     .icons {
         position: absolute;
-        top: 25%;
-        left: 52%;
+        top: 47%;
+        left: 70%;
         transform: translate(-50%, -50%);
+        margin: 0;
     }
 
     .search {

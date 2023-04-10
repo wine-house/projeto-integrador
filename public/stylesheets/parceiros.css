@@ -140,15 +140,17 @@
     
     }
  }
- @media(max-width:1080px){
+ @media(max-width:1000px){
     .third-div{
         flex-direction: column-reverse;
     }
+
  }
 
  @media(max-width: 1080px){
     .container h3 {
         font-size:2rem;
-        margin-left: 200px;
- }
+        margin-left: 6rem;
+    }
+
  }
