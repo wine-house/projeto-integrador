@@ -22,6 +22,11 @@ const criarPedidoModel = (sequelize, dataTypes) => {
             allowNull: false
         },
 
+        itens: {
+            type: dataTypes.ARRAY(dataTypes.STRING),
+            allowNull: true
+        },
+
         cliente_id: {
             type: dataTypes.INTEGER,
             allowNull: false,

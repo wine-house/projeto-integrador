@@ -82,6 +82,9 @@ module.exports = {
       try {
         const { id } = req.params;
         const pedido = await Pedido.findByPk(id);
+        const ids = await Pedido.findAll();
+        console.log(ids, '@@@@@@@@@@@@@@@@')  
+
 
         res.render('detalhesDoPedido',  {
           pedido: pedido,

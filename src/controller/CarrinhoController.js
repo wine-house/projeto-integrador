@@ -180,14 +180,17 @@ const {
           const clienteLogado = req.session.usuario;
 
           const pagamento = await FormaPagamento.findByPk(id);
+          const itens = await ItensCarrinho.findAll()
+          const listaIdsProdutos = itens.map((item) => item.produto_id);
 
           await Pedido.create({
             data_criacao: new Date(),
             valor_total: valorTotal,
             metodo_pagamento: pagamento.metodo_pagamento,
-            cliente_id: clienteLogado.id
+            cliente_id: clienteLogado.id,
+            itens: listaIdsProdutos
           });
-
+          
           await ItensCarrinho.destroy({ where: {} });
 
           res.redirect('/painel-usuario');
