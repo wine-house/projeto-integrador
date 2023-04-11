@@ -35,7 +35,6 @@ img {
 
 /**HEADER**/
 .header {
-    position: fixed;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
@@ -211,6 +210,7 @@ main {
 }
 
 /** Link to Top **/
+/*
 .link-top {
     font-size: calc(1.3rem + .5vw);
     position: fixed;
@@ -244,7 +244,7 @@ main {
     visibility: visible;
     opacity: 1;
     z-index: 4;
-}
+} */
 
 /**FOOTER**/
 .footer {
@@ -545,10 +545,12 @@ main {
     #search-icon {    
         padding: 3px 3px 0px 5px;
     }
-
+    /*
     .link-top {
         font-size: calc(1.5rem + .5vw);
     }
+
+    */
 }
 
 @media (max-width: 375px) {
