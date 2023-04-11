@@ -235,6 +235,8 @@ main {
     50% {transform: scale(1.2);}
     100% {transform: scale(1);}
 }
+
+/* Seta Ancora 
 .link-top:hover {
     background: var(--cor-branca);
     color: var(--cor-dourada);
@@ -245,6 +247,7 @@ main {
     opacity: 1;
     z-index: 4;
 }
+*/
 
 /**FOOTER**/
 .footer {
