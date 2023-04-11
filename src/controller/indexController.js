@@ -60,16 +60,37 @@ module.exports = {
 
     painelUsuario: async(req, res, next) => {
       try {
-        const pedidos = await Pedido.findAll();
+        const clienteLogado = req.session.usuario;
 
+        const pedidos = await Pedido.findAll({
+          where: {
+            cliente_id: clienteLogado.id
+          }
+        });
         res.render('painel-usuario',  {
           pedidos: pedidos,
-          usuario: req.session.usuario,
+          usuario: clienteLogado,
           css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/painel-usuario.css']
         });
       } catch (error) {
         console.log(error);
         res.status(500).send('Erro ao exibir o painel do usuário.');
       }
-    }
+    },
+
+    viewDetalhesDoPedido: async(req, res, next) => {
+      try {
+        const { id } = req.params;
+        const pedido = await Pedido.findByPk(id);
+
+        res.render('detalhesDoPedido',  {
+          pedido: pedido,
+          usuario: req.session.usuario,
+          css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/detalhesDoPedido.css']
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao exibir o detalhes do pedido.');
+      }
+    },
 }

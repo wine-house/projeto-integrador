@@ -1,7 +1,6 @@
 const {
     Produto,
-    Categoria,
-    ItensCarrinho
+    Categoria
 } = require('../models');
 const { Sequelize, Op } = require('sequelize');
 
@@ -54,5 +53,5 @@ module.exports = {
             console.log(error);
             res.status(500).send('Erro ao exibir a tela do produto selecionado.');
         }
-    } 
+    }
 }

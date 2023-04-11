@@ -51,11 +51,11 @@ img {
 
 /*Logo*/
 .logo__image img {
-    width: calc(6rem + 1.2vw);
-    height: calc(6rem + 1.2vw);
+    width: calc(7rem + 1.2vw);
+    height: calc(7rem + 1.2vw);
     border-radius: 50%;
-    border: 2px solid var(--cor-branca);
-    margin: 4px 0 0 5px;
+    border: 1px solid var(--cor-branca);
+    margin: 1px 0 0 5px;
     animation: move-logo 10s infinite;
 }
 @keyframes move-logo {
@@ -396,6 +396,18 @@ main {
     .logo__image img {
         margin: 4px 0 0 0px;
     }
+
+    .search {
+        display: none;
+    }
+
+    .search__input input  {
+       display: none;
+    }
+
+    .search__glass {
+        display: none;
+    }
     
     .navbar {
         opacity: 0;
@@ -437,7 +449,7 @@ main {
     .hamburger {
         display: block;
         position: absolute;
-        top: 3rem;
+        top: 2.5rem;
         right: 1.8rem;
         cursor: pointer;
         animation: pulse 2s infinite;
@@ -475,12 +487,10 @@ main {
         margin-right: 5.5rem;        
     }
 
-    .search {
-        left: 10rem;
-        top: 52%;
-        transform: translateY(-50%);
+    .banner__images {
+        max-width: 50vw;
     }
-
+   
     .footer__top__map,
     .footer__top__details {
         flex-basis: 100%;
@@ -510,14 +520,16 @@ main {
     }
 
     .hamburger {
-        top: 1.3rem;
+        top: 2.5rem;
     }
 
     .icons {
         position: absolute;
-        top: 25%;
-        left: 52%;
+        top: 47%;
+        left: 70%;
         transform: translate(-50%, -50%);
+        margin: 0;
+        display: flex;
     }
 
     .search {
@@ -537,6 +549,17 @@ main {
     .link-top {
         font-size: calc(1.5rem + .5vw);
     }
+}
+
+@media (max-width: 375px) {
+.icons {
+    position: absolute;
+    top: 47%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    display: flex;
+}
 }
 
 @media(max-width: 350px) {

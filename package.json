@@ -2,6 +2,7 @@
   "name": "projeto-integrador",
   "version": "0.0.0",
   "private": true,
+  "build": "npm install && npm run build && npm start",
   "scripts": {
     "start": "nodemon ./src/bin/www"
   },
@@ -21,13 +22,14 @@
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.1.2",
+    "mysql2": "^3.2.0",
     "on-headers": "^1.0.2",
     "popper.js": "^1.14.3",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.30.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.6.0"
-  }
+  } 
+
 }

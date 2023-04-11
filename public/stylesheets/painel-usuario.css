@@ -291,6 +291,94 @@ div.nota-fiscal-cliente img{
     width: 2rem;
 }
 
+@media (max-width: 1000px) {
+
+ .conteiner-painel-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 98vh;
+        padding: 1rem;
+        margin: 2rem;
+        border-radius: 2.5rem;
+        border: none;
+
+    }
+
+    div.painel-vertical {
+        width: 98vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgba(0, 0, 0, 0.524)
+    }
+
+    .foto-cliente {
+        justify-content: center;
+        margin: auto;
+    }
+
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 98vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgba(0, 0, 0, 0.524);
+        border-radius: 2.5rem;
+    }
+
+    .meus-pedidos-titulo {
+        justify-content: center;
+        margin: auto;
+    }
+
+    .search {
+        display: none;
+    }
+}
 
 
+@media (max-width: 768px) {
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+    gap: 0.9rem;
+    margin-right: 2.1rem;
+}
+}
 
+@media (max-width: 425px) {
+       div.painel-vertical {
+            width: 76vh;
+            background: #fafafa;
+            border-radius: 3rem;
+            margin: 1rem;
+            box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+            margin-left: 12rem;
+       }
+   
+   
+       div.tabela-pedidos {
+           display: flex;
+           flex-wrap: wrap;
+           transition: 0.3s;
+           width: 80vh;
+           padding: 2rem;
+           margin: 2rem;
+           border: none;
+           box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+           border-radius: 2.5rem;
+           margin-left: 10rem;
+           justify-content: center;
+           align-items: center;
+           text-align: center;
+       }
+   
+   }

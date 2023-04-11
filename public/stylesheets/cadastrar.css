@@ -1,3 +1,13 @@
+:root {
+    --cor-vinho-escuro: #530112;
+    --cor-vinho-claro: #8C3555;
+    --cor-vinho-verde: rgb(160, 178, 0);
+    --cor-rosa: #A66F83;
+    --cor-dourada: #997C00;    
+    --cor-branca: white;
+    --cor-preta: black;
+}
+
 main * {
     font-family: Montserrat;
     overflow-x: hidden;
@@ -7,20 +17,16 @@ h1 {
     margin-top: 50px;
     margin-bottom: 15px;
     color: #540606;
+    margin-left: 5rem;
 }
 
 .form {
     display: flex;
     width: 80vw;
-    padding: 2rem;
     flex-direction: column;
-    margin: 4rem auto 0 auto;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    padding: 2.5rem 9rem;
-    width: 100%;
     /*box-shadow: .1rem .1rem .6rem .1rem gray;*/
     border-radius: 90px;
+    margin-bottom: 5rem;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 1.3rem 2.5rem rgba(0, 0, 0, 0.3);
     border-radius: 3rem;
@@ -53,7 +59,9 @@ h1 {
 }
 
 em {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000c0;
    
 }
 
@@ -86,11 +94,24 @@ em {
     font-style:italic;
     margin-right: 0.5rem;
     font-size:1.2rem;
-    border: 1px solid gray;  
+    border: 1px solid rgba(128, 128, 128, 0.27);  
     border-radius: 0.6rem;     
     height:3.5rem;
     width: 99%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+
 }
+
+.select-cadastro:hover {
+    background-color: #eeeeee75;
+}
+
+.select-cadastro:focus-visible {
+    outline: 1px solid #a66f832a;
+}
+
+
 .descricao {
     resize: none;
     height: 15rem;
@@ -126,12 +147,23 @@ em {
     font-style:italic;
     margin-right: 0.5rem;
     font-size:18px;
-    border: 1px solid gray;  
-    border-radius: 0.6rem;     
     height:3rem;
     width: 50%;
     margin-left: 1rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c; 
 }
+
+
+.inptPreco:hover {
+    background-color: #eeeeee75;
+}
+
+.inptPreco:focus-visible {
+    outline: 1px solid #a66f832a;
+}
+
 
 #imagem{
     border-radius: 2rem;
@@ -163,6 +195,11 @@ input[type="file"] {
     margin-top: 10px;
     cursor: pointer;
 }
+
+#labelFile:hover {
+        background-color: #997C00;
+}
+
 
 
 button {
