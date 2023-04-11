@@ -61,9 +61,6 @@ const criarProdutoModel = (sequelize, dataTypes) => {
 
         Produto.belongsTo(models.ItensCarrinho);
     }; 
-
-
-  
     return Produto;
 };
 
