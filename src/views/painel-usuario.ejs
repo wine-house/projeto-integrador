@@ -43,13 +43,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% if(pedidos.length === 0) { %>
-                        <section class="sec-sem-prod">
-                            <img src="/images/tela-painel-usuario/aviso-sem-pedidos.png" alt="aviso sem pedidos">
-                            <button class="btn-go-prod" onclick="window.location.href='/produtos'" >Ir para produtos</button>
-                        </section>
-                    <% } %>
-        
                     <% for(let pedido of pedidos) { %>
                         <tr class="pedidos-clientes">
                             <td class="nro-pedido-cliente">
@@ -75,6 +68,12 @@
                     <% } %>
                 </tbody>
             </table>
+            <% if(pedidos.length === 0) { %>
+                <section class="sec-sem-prod">
+                    <img src="/images/tela-painel-usuario/aviso-sem-pedidos.png" alt="aviso sem pedidos">
+                    <button class="btn-go-prod" onclick="window.location.href='/produtos'" >Ir para produtos</button>
+                </section>
+            <% } %>
         </div>
     </div>
 </main>
