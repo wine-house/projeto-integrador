@@ -35,6 +35,7 @@ img {
 
 /**HEADER**/
 .header {
+    position: fixed;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
@@ -235,8 +236,6 @@ main {
     50% {transform: scale(1.2);}
     100% {transform: scale(1);}
 }
-
-/* Seta Ancora 
 .link-top:hover {
     background: var(--cor-branca);
     color: var(--cor-dourada);
