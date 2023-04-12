@@ -74,22 +74,6 @@
 
     <article class="container__resume">
       <table class="table_resume">
-        <!--seção calculo do frete-->
-     <!-- <div class="frete-região">
-
-        <h1>Calcule o valor do frete</h1>
-        <form id="meu-formulario" >        
-        <label for="regiao-entrega"><strong>Região de entrega:</strong></label>
-        <select id="regiao-entrega" name="regiao-entrega">
-          <option value="São Paulo">São Paulo</option>
-          <option value="Rio de Janeiro">Rio de Janeiro</option>
-          <option value="Minas Gerais">Minas Gerais</option>
-          <option value="Outros Estados">Outros Estados</option>
-          </select>
-          </form><br><br>
-          <div id="resultado-frete"><strong>O valor do frete é : </strong> </div>
-        </div> -->
-        
         <tr>
           <td><input type="text" class="inptCep" width="5" id="recebeCEP" placeholder="Digite o frete..."></td>
           <td><input type="button" class="carrinho__button__back_prod_2 btn_2" id="botao" value="Buscar CEP" onclick="buscaCEP()"></td>
@@ -98,27 +82,11 @@
         <td id="frete" class="alinhaTexto">Valor do frete</td>
         <td id="prazoDoFrete" class="alinhaTexto">Prazo do frete</td>
       </tr>
-
-        
-
-        <!-- <tr>
-          <td class="">Prazo de entrega</td>
-          <td class="carrinho__tempo">5 a 7 dias úteis</td>
-        </tr>
-        <tr>
-          <td class="">Valor do frete</td>
-          <td class="carrinho__frete">Grátis</td>
-        </tr> -->
-        
         <tr>
           <td class="carrinho__valor-total alinhaTexto">Valor total</td>
           <td class="alinhaTexto">R$ <span id="valor-total-itens"><%= total.toFixed(2) %></span></td>
         </tr>
-
       </table>
-
-     
-          
       <section class="btns_rotas">
         <button class="carrinho__button__back_prod btn" onclick="window.location.href='/produtos'">
           Voltar para produtos

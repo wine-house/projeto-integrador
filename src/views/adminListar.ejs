@@ -43,7 +43,7 @@
 								<% for(let produto of produtos) { %>
 									<tr>
 										<td> <%= produto.id %></td>
-										<td> <img id="img-lista-produto-admin" src="/images/imageProd/<%= produto.imagem%>.png"</td>
+										<td> <img id="img-lista-produto-admin" src="/images/imageProd/<%= produto.imagem%>.png"></td>
 										<td><%= produto.nome %></td>
 										<td><%= produto.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%></td>
 										<td class="th-hide"><%= produto.categoria.nome%></td>

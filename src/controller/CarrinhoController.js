@@ -45,6 +45,7 @@ const {
           res.render('carrinho', {
           usuario: req.session.usuario,
           itensCarrinho: itensCarrinho,
+          valorFrete: 0,
           css: [
             '/stylesheets/menu-footer.css',
             '/stylesheets/carrinho.css'
@@ -142,7 +143,7 @@ const {
           });
         } catch (error) {
           console.log(error);
-          res.status(500).send('Erro ao exibir a tela para finalziar o pedido.');
+          res.status(500).send('Erro ao exibir a tela para finalizar o pedido.');
         }
       },
 
@@ -184,14 +185,23 @@ const {
           const clienteLogado = req.session.usuario;
 
           const pagamento = await FormaPagamento.findByPk(id);
+          const itensCarrinho = await ItensCarrinho.findAll();
+          const listaIdsProdutos = itensCarrinho.map((item) => item.produto_id);
+          const listaQuantidadeProduto = itensCarrinho.map((item) => item.quantidade);
+
+          
+          const reducer = (accumulator, curr) => accumulator + curr;
+          const quantidadeTotalPedido = listaQuantidadeProduto.reduce(reducer);
 
           await Pedido.create({
             data_criacao: new Date(),
             valor_total: valorTotal,
             metodo_pagamento: pagamento.metodo_pagamento,
-            cliente_id: clienteLogado.id
+            cliente_id: clienteLogado.id,
+            itens: listaIdsProdutos,
+            quantidade: quantidadeTotalPedido
           });
-
+          
           await ItensCarrinho.destroy({ where: {} });
 
           res.redirect('/painel-usuario');

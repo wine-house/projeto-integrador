@@ -1,8 +1,48 @@
 <%- include('./partials/header') %>
 
 <main>
-    <h1><% pedido %></h1>
-    <h1>DETALHES DO PEDIDO</h1>
+    <p class="titulo-pagina">Detalhes do Pedido</p>
+    <p>Aqui você encontra todos os detalhes do seu pedido</p>
+        <section class="detalhes-pedido">
+            <table class="table-produtos">
+                <thead>
+                    <tr>
+                        <th class="titulo-produto">Produto</th>
+                        <th>Safra</th>
+                        <th>Categoria</th>
+                        <th>Valor Unitário</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <% for(let produto of produtos) { %>
+                        <tr>
+                            <td class="coluna-produto">
+                                <div class="imagem-produto">
+                                    <img src="/images/imageProd/<%= produto.imagem%>.png" width="30%">
+                                </div>
+                                <div class="nome"><%= produto.nome %></div>
+                            </td>
+                            <td><%= produto.safra %></td>
+                            <td><%= produto.categoria.nome %></td>
+                            <td>R$ <%= (produto.valor).toFixed(2) %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <table class="table-resumo-final">
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Total do Pedido</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <tr>
+                        <td><%= pedido.quantidade %></td>
+                        <td>R$ <%= (pedido.valor_total).toFixed(2) %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 </main>
-
 <%- include('partials/footer') %>

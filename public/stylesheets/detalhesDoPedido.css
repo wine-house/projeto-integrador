@@ -1,0 +1,67 @@
+main {
+    font-size: 25px;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 20rem;
+}
+
+.numero-pedido > table {
+    border-radius: 50rem;
+}
+
+main > .titulo-pagina {
+    padding-bottom: .5rem;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--cor-vinho-escuro);
+}
+
+main > p {
+    font-size: 25px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+th {
+    background-color: var(--cor-vinho-escuro);
+    color: rgb(238, 237, 237);
+}
+
+td {
+    background-color: #d1b6c0;
+}
+
+td, th {
+    border: none;
+    padding: 8px;
+}
+
+.table-produtos {
+    margin-bottom: 4rem;
+}
+
+.coluna-produto {
+    display: flex;
+}
+
+.nome {
+    margin-left: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-produto {
+    width: 40vw;
+}
+
+tbody {
+    font-weight: 500;
+}
