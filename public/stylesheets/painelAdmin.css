@@ -28,6 +28,13 @@ body {
     justify-content: center;
     margin: 20px auto;
     max-width: 1200px;
+   
+   
+  }
+
+  .painelAdmin > div > a > h2 {
+    color: white;  
+
   }
   
   .box {
@@ -38,28 +45,36 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 
+  header > h1 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
   .btn-prod {
-    background-color: rgb(75, 200, 138);
+    background-color: #530112;
+    border-radius: 3rem;
   }
 
   .btn-cat {
-    background-color: rgb(61, 157, 246);
+    background-color: #8C3555;
+    border-radius: 3rem;
   }
   
   .btn-user {
-    background-color: rgb(200, 75, 75);
+    background-color: #A66F83;
+    border-radius: 3rem;
   }
 
   .btn-prod:hover {
-    background-color: rgb(116, 158, 137);
+    background-color: #5301117e;
+  
   }
 
   .btn-cat:hover {
-    background-color: rgb(116, 134, 158);
+    background-color: #8c355589;
   }
   
   .btn-user:hover {
-    background-color: rgb(158, 116, 116);
+    background-color: #a66f837c;
   }
 
   

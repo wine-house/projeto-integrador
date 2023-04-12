@@ -10,19 +10,18 @@
 				<div class="nav-btn-admin">
 					<a class="btn-flat" href="/admin/usuarios/criar">Adicionar Usuário</a>
 					<a class="btn-flat" href="/admin/produtos/categorias">Lista de Categorias</a>
-					<a class="btn-flat" href="/admin/users">Lista de Usuários</a>
+					<a class="btn-flat" href="/admin/usuarios">Lista de Usuários</a>
 					<a class="btn-flat" href="/admin">Painel de Admin</a>
+					<div id="search-div">
+						<form method="get">
+							<input type="search" name="search" id="search">
+							<button id="search-button" type="submit">Search</button>
+						</form>
+					</div>
 				</div>
 		</div>		
 		<hr>
-		<div>
-			<div id="search-div">
-				<form method="get">
-					<input type="search" name="search" id="search">
-					<button id="search-button" type="submit">Search</button>
-				</form>
-			</div>
-		</div>
+		
 		<div class="teste">
 			<% if(usuarios.length> 0){ %>
 				<div class="form" id="formulario">
@@ -43,7 +42,7 @@
 								<% for(let usuario of usuarios) { %>
 									<tr>
 										<td> <%= usuario.id %></td>
-										<td> <img id="img-lista-produto-admin" src="/images/imageProd/<%= usuario.imageProfile%>.png"</td>
+										<td> <img id="img-lista-produto-admin" src="/images/imageProfile/<%=usuario.imageProfile%>"</td>
 										<td><%= usuario.nome %></td>
 										<td><%= usuario.email%></td>
 										<td><%= usuario.cpf %></td>

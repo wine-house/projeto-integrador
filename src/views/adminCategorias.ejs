@@ -12,19 +12,18 @@
 				<a class="btn-flat" href="/admin/produtos/categorias">Lista de Categorias</a>
 				<a class="btn-flat" href="/admin/users">Lista de Usuários</a>
 				<a class="btn-flat" href="/admin">Painel de Admin</a>
+				<div id="search-div">
+					<form id="search" method="get">
+						<input type="search" name="search" id="search">
+						<button id="search-button" type="submit">Search</button>
+					</form>
+				</div>
 			</div>
 	</div>
 		
 		
 		<hr>
-		<div>
-			<div id="search-div">
-				<form id="search" method="get">
-					<input type="search" name="search" id="search">
-					<button id="search-button" type="submit">Search</button>
-				</form>
-			</div>
-		</div>
+		
 		<div class="teste">
 			<% if(categorias.length> 0){ %>
 				<div class="form" id="formulario">

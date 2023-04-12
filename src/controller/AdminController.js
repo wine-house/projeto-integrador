@@ -297,8 +297,7 @@ const AdminController = {
             const { nome, email, cpf, data_nascimento, isAdmin, senha} = req.body;
 
             const avatar = req.files[0].originalname;
-            
-            const imagem = avatar.substring(0, avatar.indexOf('.'));          
+                  
         
             const errors = validationResult(req);
 
@@ -306,7 +305,7 @@ const AdminController = {
                 console.log(errors.mapped());
             };
 
-            await Cliente.create({ nome: nome, email: email, senha:senha, imageProfile: imagem, cpf: cpf, data_nascimento: data_nascimento, isAdmin: isAdmin});
+            await Cliente.create({ nome: nome, email: email, senha:senha, imageProfile: avatar, cpf: cpf, data_nascimento: data_nascimento, isAdmin: isAdmin});
 
             res.redirect('/admin/usuarios/');
         } 

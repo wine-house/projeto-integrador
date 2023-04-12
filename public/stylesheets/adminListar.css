@@ -1,3 +1,16 @@
+:root {
+    --cor-vinho-escuro: #530112;
+    --cor-vinho-escuro-hover: #530111c2;
+    --cor-vinho-claro: #8C3555;
+    --cor-vinho-claro-hover: #8c3555c2;
+    --cor-vinho-verde: rgb(160, 178, 0);
+    --cor-rosa: #A66F83;
+    --cor-rosa-hover: #a66f83b8;
+    --cor-dourada: #997C00;    
+    --cor-branca: white;
+    --cor-preta: black;
+}
+
 main * {
     font-family: Montserrat;
 }
@@ -31,8 +44,9 @@ h1 {
 
 #search-div {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 5rem;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    margin-right: 3rem;
 }
 
 .form {
@@ -50,7 +64,7 @@ h1 {
 
 .btn-flat:hover{
     margin-bottom: 5px;
-    background-color: rgb(116, 158, 137);;
+    background-color: var(--cor-vinho-escuro-hover);
 }
 
 .section-container2 {
@@ -193,7 +207,7 @@ td:first-child {
     padding: 1rem;
     width: 12rem;
     height: 3rem;
-    background-color: rgb(75, 200, 138);
+    background-color: var(--cor-vinho-escuro);
     text-align: center;
     color: white;
     font-weight: 500;
@@ -214,7 +228,7 @@ td:first-child {
     padding: 1rem;
     width: 6rem;
     height: 2.5rem;
-    background-color: #007bff;
+    background-color: var(--cor-rosa);
     color: white;
     font-weight: 500;
     cursor: pointer;
@@ -228,7 +242,7 @@ td:first-child {
     padding: 1rem;
     width: 6rem;
     height: 2.5rem;
-    background-color: rgb(61, 157, 246);
+    background-color: var(--cor-rosa-hover);
     color: white;
     font-weight: 500;
     cursor: pointer;
@@ -242,7 +256,7 @@ td:first-child {
     padding: 1rem;
     width: 6rem;
     height: 2.5rem;
-    background-color: #dc3545;
+    background-color: var(--cor-vinho-claro);
     color: white;
     font-weight: 500;
     cursor: pointer;
@@ -256,7 +270,7 @@ td:first-child {
     padding: 1rem;
     width: 6rem;
     height: 2.5rem;
-    background-color: rgb(200, 75, 75);
+    background-color: var(--cor-vinho-claro-hover);
     color: white;
     font-weight: 500;
     cursor: pointer;
@@ -270,7 +284,7 @@ td:first-child {
     padding: 1rem;
     width: 6rem;
     height: 2.5rem;
-    background-color: #dcc935;
+    background-color: var(--cor-vinho-escuro);
     color: white;
     font-weight: 500;
     cursor: pointer;
@@ -291,7 +305,7 @@ td:first-child {
     padding: 1rem;
     width: 6rem;
     height: 2.5rem;
-    background-color: #928524;;
+    background-color: var(--cor-vinho-escuro-hover);
     color: white;
     font-weight: 500;
     cursor: pointer;
