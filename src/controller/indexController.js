@@ -1,6 +1,7 @@
 const {
   Produto,
-  Pedido
+  Pedido,
+  Categoria
 } = require('../models');
 
 module.exports = {
@@ -82,12 +83,17 @@ module.exports = {
       try {
         const { id } = req.params;
         const pedido = await Pedido.findByPk(id);
-        const ids = await Pedido.findAll();
-        console.log(ids, '@@@@@@@@@@@@@@@@')  
 
+        const idsDosProdutos = pedido.itens;
+        const produtos = await Produto.findAll({
+          where: { id: idsDosProdutos },
+          include: ['categoria']
+        })
+        
 
         res.render('detalhesDoPedido',  {
           pedido: pedido,
+          produtos: produtos,
           usuario: req.session.usuario,
           css: ['/stylesheets/menu-footer.css', '/stylesheets/login.css', '/stylesheets/detalhesDoPedido.css']
         });

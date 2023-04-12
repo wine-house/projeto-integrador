@@ -1,51 +1,48 @@
 <%- include('./partials/header') %>
 
 <main>
-    <section>
-        <h1>Pedido Nº<% pedido.id %></h1>
-        <p>Aqui você encontra todas as informações do seus pedidos</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Itens</th>
-                    <th>Frete</th>
-                    <th>Total</th>
-                </tr>
-            </thead> 
-            <tbody>
-                <tr>
-                    <td><% pedido.quantidade %></td>
-                    <td><% pedido.frete %></td>
-                    <td><% pedido.valor_total %></td>
-                </tr>
-            </tbody>
-        </table>
-    </section> 
-    <hr>
-    <!-- <section>
-        <h1>Detalhes do Pedido</h1>
-        <p>Aqui você encontra todos os detalhes dos seus pedidos</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Safra</th>
-                    <th>Categoria</th>
-                    <th>Valor</th>
-                </tr>
-            </thead> 
-            <tbody>
-                <tr>
-                    <td>
-                        <div><% produto.imagem %></div>
-                        <div><% produto.nome %></div>
-                    </td>
-                    <td><% produto.safra %></td>
-                    <td><% produto.categoria %></td>
-                    <td><% produto.valor %></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>     -->
+    <p class="titulo-pagina">Detalhes do Pedido</p>
+    <p>Aqui você encontra todos os detalhes do seu pedido</p>
+        <section class="detalhes-pedido">
+            <table class="table-produtos">
+                <thead>
+                    <tr>
+                        <th class="titulo-produto">Produto</th>
+                        <th>Safra</th>
+                        <th>Categoria</th>
+                        <th>Valor Unitário</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <% for(let produto of produtos) { %>
+                        <tr>
+                            <td class="coluna-produto">
+                                <div class="imagem-produto">
+                                    <img src="/images/imageProd/<%= produto.imagem%>.png" width="30%">
+                                </div>
+                                <div class="nome"><%= produto.nome %></div>
+                            </td>
+                            <td><%= produto.safra %></td>
+                            <td><%= produto.categoria.nome %></td>
+                            <td>R$ <%= (produto.valor).toFixed(2) %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <table class="table-resumo-final">
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Total do Pedido</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <tr>
+                        <td><%= pedido.quantidade %></td>
+                        <td>R$ <%= (pedido.valor_total).toFixed(2) %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 </main>
 <%- include('partials/footer') %>

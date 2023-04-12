@@ -25,58 +25,56 @@
                 </div>
             </div>
         </div>
+        
         <div class="tabela-pedidos">
             <div class="meus-pedidos-titulo">
                 <h1>Meus pedidos</h1>
                 <p>Aqui você encontra todos os seus pedidos.</p>
             </div>
-            <div class="cabecalho-pedido">
-                <div class="txt-nro-pedido">
-                    <h3>Número do pedido</h3>
-                </div>
-                <div class="txt-data-compra">
-                    <h3>Data</h3>
-                </div>
-                <div class="txt-status-pagamento">
-                    <h3>Pagamento</h3>
-                </div>
-                <div class="txt-andamento-compra">
-                    <h3>Valor Total</h3>
-                </div>
-                <div class="txt-nota-fiscal">
-                    <h3>Detalhes do Pedido</h3>
-                </div>
-            </div>
-            <% if(pedidos.length === 0) { %>
-                <section class="sec-sem-prod">
-                    <img src="/images/tela-painel-usuario/aviso-sem-pedidos.png" alt="aviso sem pedidos">
-                    <button class="btn-go-prod" onclick="window.location.href='/produtos'" >Ir para produtos</button>
-                </section>
-            <% } %>
 
-            <% for(let pedido of pedidos) { %>
-                <div class="pedidos-clientes">
-                    <div class="nro-pedido-cliente">
-                        <h4><%= pedido.id%></h4>
-                    </div>
-                    <div class="data-compra-cliente">
-                        <h4><%= pedido.data_criacao%></h4>
-                    </div>
-                    <div class="status-pagamento-cliente">
-                        <h4><%= pedido.metodo_pagamento%></h4>
-                    </div>
-                    <div class="andamento-compra-cliente">
-                        <h4><%= pedido.valor_total%></h4>
-                    </div>
-                    <div class="nota-fiscal-cliente">
-                        <form action="/painel-usuario/detalhes-pedido/<%= pedido.id%>" method="get">
-                            <button type="submit">
-                                <img src="/images/tela-painel-usuario/lupa.png" alt="Ver detalhes do pedido" srcset="">
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            <% } %>
+            <table class="cabecalho-pedido">
+                <thead>
+                    <tr>
+                        <th>N. do pedido</th>
+                        <th>Data</th>
+                        <th>Pagamento</th>
+                        <th>Valor Total</th>
+                        <th>Detalhes do Pedido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(pedidos.length === 0) { %>
+                        <section class="sec-sem-prod">
+                            <img src="/images/tela-painel-usuario/aviso-sem-pedidos.png" alt="aviso sem pedidos">
+                            <button class="btn-go-prod" onclick="window.location.href='/produtos'" >Ir para produtos</button>
+                        </section>
+                    <% } %>
+        
+                    <% for(let pedido of pedidos) { %>
+                        <tr class="pedidos-clientes">
+                            <td class="nro-pedido-cliente">
+                                <h4><%= pedido.id%></h4>
+                            </td>
+                            <td class="data-compra-cliente">
+                                <h4><%= pedido.data_criacao%></h4>
+                            </td>
+                            <td class="status-pagamento-cliente">
+                                <h4><%= pedido.metodo_pagamento%></h4>
+                            </td>
+                            <td class="andamento-compra-cliente">
+                                <h4><%= pedido.valor_total%></h4>
+                            </td>
+                            <td class="nota-fiscal-cliente">
+                                <form action="/painel-usuario/detalhes-pedido/<%= pedido.id%>" method="get">
+                                    <button class="btn-detalhes" type="submit">
+                                        <img src="/images/tela-painel-usuario/lupa.png" width="20px" alt="Ver detalhes do pedido" srcset="">
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
     </div>
 </main>

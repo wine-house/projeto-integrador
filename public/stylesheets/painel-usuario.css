@@ -1,11 +1,12 @@
 main {
-    font-size: 12px;
+    font-size: 20px;
 }
 
 
 div.conteiner-painel-pedidos {
     display: flex;
     gap: 5rem;
+    color: #530112;
 }
 
 div.painel-vertical {
@@ -205,6 +206,11 @@ div.txt-status-pagamento {
     border-radius: 1rem;
     opacity: 1;
 }
+.btn-detalhes {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
 
 div.txt-andamento-compra {
     width: 20%;
@@ -224,15 +230,22 @@ div.txt-nota-fiscal {
     opacity: 1;
 }
 
+thead {
+    font-size: 20px;
+}
 
-div.pedidos-clientes {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    gap: 3rem;
+tbody {
+    font-size: 14px;
+}
+
+th {
+    color: rgb(30, 22, 22);
+    padding: 1rem;
+    box-shadow: 3px 0px 5px rgb(189, 189, 189);
+    border-radius: 5px;
+}
+
+.pedidos-clientes {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 20px 40px #0000001c;
     border-radius: 1rem;
