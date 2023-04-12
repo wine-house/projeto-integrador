@@ -182,45 +182,30 @@ div.cabecalho-pedido > div > h3 {
 div.txt-nro-pedido {
     width: 30%;
     padding: 1rem;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 20px 40px #2426721C;
-    border-radius: 1rem;
     opacity: 1;
 }
 
 div.txt-data-compra {
     width: 20%;
     padding: 1rem;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 20px 40px #2426721C;
-    border-radius: 1rem;
     opacity: 1;
 }
 
 div.txt-status-pagamento {
     width: 20%;
     padding: 1rem;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 20px 40px #2426721C;
-    border-radius: 1rem;
     opacity: 1;
 }
 
 div.txt-andamento-compra {
     width: 20%;
     padding: 1rem;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 20px 40px #2426721C;
-    border-radius: 1rem;
     opacity: 1;
 }
 
 div.txt-nota-fiscal {
     width: 10%;
     padding: 1rem;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 20px 40px #2426721C;
-    border-radius: 1rem;
     opacity: 1;
 }
 
@@ -291,6 +276,66 @@ div.nota-fiscal-cliente img{
     width: 2rem;
 }
 
+@media (max-width:1399px) {
+    div.painel-vertical {
+        padding: 2rem;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 20px 40px #2426721c;
+        border-radius: 1.4px;
+        margin-left: -2rem;
+        opacity: 1;
+    }
+    
+
+
+div#contatos p {
+    font-size: 13px;
+}
+
+}
+
+@media (max-width:1131px) {
+    div.painel-vertical {
+        padding: 2rem;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 20px 40px #2426721c;
+        border-radius: 1.4px;
+        margin-left: -2rem;
+        opacity: 1;
+    }
+    
+
+div#contatos p {
+    font-size: 13px;
+}
+}
+
+@media (max-width:1024px) {
+    div.painel-vertical {
+        padding: 2rem;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 20px 40px #2426721c;
+        border-radius: 1.4px;
+        margin-left: 1rem;
+        opacity: 1;
+    }
+    
+    div.tabela-pedidos {
+        padding: 2rem;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 20px 40px #2426721c;
+        border-radius: 1.4px;
+        opacity: 1;
+        margin-right: 5rem;
+
+}
+
+div#contatos p {
+    font-size: 13px;
+}
+
+}
+
 @media (max-width: 1000px) {
 
  .conteiner-painel-pedidos {
@@ -354,31 +399,554 @@ div.cabecalho-pedido {
 }
 }
 
-@media (max-width: 425px) {
-       div.painel-vertical {
-            width: 76vh;
-            background: #fafafa;
-            border-radius: 3rem;
-            margin: 1rem;
-            box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
-            margin-left: 12rem;
-       }
-   
-   
-       div.tabela-pedidos {
-           display: flex;
-           flex-wrap: wrap;
-           transition: 0.3s;
-           width: 80vh;
-           padding: 2rem;
-           margin: 2rem;
-           border: none;
-           box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
-           border-radius: 2.5rem;
-           margin-left: 10rem;
-           justify-content: center;
-           align-items: center;
-           text-align: center;
-       }
+
+@media (max-width: 628px) {
+    div.painel-vertical {
+        width: 75vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 6rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 86vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
    
    }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+}
+
+@media (max-width: 608px) {
+    div.painel-vertical {
+        width: 70vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 6rem;
+    }
+}
+
+@media (max-width: 568px) {
+    div.painel-vertical {
+        width: 65vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 6rem;
+    }
+}
+
+@media (max-width: 509px) {
+    div.painel-vertical {
+        width: 60vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 6rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 60vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 4.8rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 90%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -1rem;
+    font-size: 10px;
+}
+}
+
+@media (max-width:480px) {
+    div.painel-vertical {
+        width: 50vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 7rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 50vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 7.2rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -1rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+}
+}
+
+@media (max-width:443px) {
+    div.painel-vertical {
+        width: 45vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 6rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 45vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 6rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -2.5rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+    margin-left: -7px;
+}
+}
+
+@media (max-width:403px) {
+    div.painel-vertical {
+        width: 45vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 5rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 45vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 5rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -2.5rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+    margin-left: -7px;
+}
+}
+
+@media (max-width:381px) {
+    div.painel-vertical {
+        width: 45vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 3rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 45vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 3rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -2.5rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+    margin-left: -7px;
+}
+}
+
+@media (max-width:352px) {
+    div.painel-vertical {
+        width: 45vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 2rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 45vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 2rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -2.5rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+    margin-left: -7px;
+}
+}
+
+@media (max-width:332px) {
+    div.painel-vertical {
+        width: 45vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 1rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 45vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: 1rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -2.5rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+    margin-left: -7px;
+}
+}
+
+@media (max-width:320px) {
+    div.painel-vertical {
+        width: 45vh;
+        margin-left: 0;
+        background: #fafafa;
+        border-radius: 3rem;
+        margin: 1rem;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        margin-left: 1rem;
+    }
+    
+    div.tabela-pedidos {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        width: 45vh;
+        padding: 1rem;
+        margin: 2rem;
+        border: none;
+        box-shadow: 0px 1.8rem 3rem rgb(0 0 0 / 52%);
+        border-radius: 2.5rem;
+        margin-left: .3rem;
+   }
+
+   .conteiner-painel-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 2.5rem;
+    border: none;
+}
+
+div.cabecalho-pedido {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    padding: 0.5rem;
+    gap: 1.9000000000000004rem;
+    margin-left: -2.5rem;
+    font-size: 7px;
+}
+
+div.pedidos-clientes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 40px #0000001c;
+    border-radius: 1rem;
+    opacity: 1;
+    font-size: 7px;
+    margin-left: -7px;
+}
+
+div#contatos p {
+    font-size: 12px;
+}
+}
