@@ -43,11 +43,18 @@
 .banner2__image {
     height: 100%;
     width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
 }
+
+.banner2__image img{
+    border-radius: 3rem;
+}
+
 
 .show2-item.banner2__image {
     animation: show-img .7s forwards;
@@ -225,6 +232,8 @@
 /**SECTION PRIZE**/
 .prize {
     padding: 3rem 2.5rem;
+    margin: 2rem;
+    border-radius: 2rem;
     background-color: var(--cor-rosa);
 }
 
@@ -490,10 +499,11 @@
     .banner2__bullets {
         position: absolute;
         bottom: 3.5%;
-        left: 50%;
+        left: 45%;
         transform: translateX(-50%);
-    
+        width: 100%;
         justify-content: flex-end;
+        
     }
 }
 
